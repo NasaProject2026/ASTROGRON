@@ -5,7 +5,7 @@ import { configuredPublicOrigin, sessionId } from '@/server/core-backend';
 // the D gateway additionally enforces per-session ownership and same-origin POSTs.
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  if (['/', '/explore', '/research', '/help', '/methodology', '/api/core/session', '/api/public-demo'].includes(pathname)) return NextResponse.next();
+  if (['/', '/explore', '/research', '/help', '/methodology', '/api/core/session', '/api/public-demo', '/api/public-location-analysis'].includes(pathname)) return NextResponse.next();
   try {
     sessionId(request);
     if (process.env.ASTRAGRON_BACKEND_PROTOCOL === 'D_V1' &&

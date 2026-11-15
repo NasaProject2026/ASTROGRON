@@ -61,13 +61,45 @@ async function handle(request: Request, context: { params: Promise<{ path: strin
       if (method === 'GET' && action === 'summary') {
         const result = await coreJson(`/v1/analyses/${aid}/result`);
         // An exact projection for display. All numbers still come from canonical D.
+        const alts = Array.isArray(result.alternatives) ? result.alternatives : [];
         return json({ status: result.status, farm_id: result.farm_id, run_id: result.run_id,
           decision: result.decision, qualification: result.qualification, warnings: result.warnings,
           missing_requirements: result.missing_requirements, provenance: result.provenance,
-          alternatives: result.alternatives.map((a: { policy_id: string; choices: unknown; important_uncertainty?: string }) =>
-            ({ policy_id: a.policy_id, choices: a.choices, important_uncertainty: a.important_uncertainty })),
-          engine_result: { scientific_result_sha256: result.engine_result.scientific_result_sha256 },
-          report_dto: { limitations: result.report_dto.limitations, summary: result.report_dto.summary },
+          alternatives: alts.map((a: {
+            policy_id: string;
+            choices: unknown;
+            important_uncertainty?: string;
+            scenarios?: Array<{
+              scenario_id?: string;
+              status?: string;
+              ET_shortfall_m3_equivalent?: string;
+              source_withdrawal_m3?: string;
+              worst_service_deficit_mm?: string;
+              service_pass?: boolean;
+              harvest_years?: number;
+            }>;
+          }) => ({
+            policy_id: a.policy_id,
+            choices: a.choices,
+            important_uncertainty: a.important_uncertainty,
+            ...(Array.isArray(a.scenarios) ? {
+              scenarios: a.scenarios.map((s) => ({
+                scenario_id: s.scenario_id,
+                status: s.status,
+                ET_shortfall_m3_equivalent: s.ET_shortfall_m3_equivalent,
+                source_withdrawal_m3: s.source_withdrawal_m3,
+                worst_service_deficit_mm: s.worst_service_deficit_mm,
+                service_pass: s.service_pass,
+                harvest_years: s.harvest_years,
+              })),
+            } : {}),
+          })),
+          engine_result: {
+            scientific_result_sha256: result.engine_result?.scientific_result_sha256,
+            location: result.engine_result?.normalized_request?.location ?? null,
+            scenario_sources: result.engine_result?.scenario_sources ?? null,
+          },
+          report_dto: { limitations: result.report_dto?.limitations, summary: result.report_dto?.summary },
         });
       }
       if (method === 'GET' && (!action || ['queue', 'result', 'report', 'comparison', 'evidence', 'manifest', 'bindings', 'appendix', 'pdf', 'html', 'csv'].includes(action))) {

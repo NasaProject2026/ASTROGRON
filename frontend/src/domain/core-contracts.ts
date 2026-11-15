@@ -27,6 +27,7 @@ export interface CoreResult {
   farm_id: string;
   run_id: string;
   decision: {
+    status?: string;
     pareto_ids: string[];
     selected_ids: string[];
     field_recommendation: unknown;
@@ -34,7 +35,11 @@ export interface CoreResult {
     comparison_excludes?: string;
     objectives?: {
       policy_id: string;
-      scenarios: {
+      worst_ET_m3_equivalent?: string;
+      worst_regret_m3_equivalent?: string;
+      service_all_requested_scenarios?: boolean;
+      worst_ET_scenarios?: string[];
+      scenarios?: {
         scenario_id: string;
         N_leaching_kg_N_field: number;
         crop_storage_DM_kg_field_by_crop: Record<string, number>;
@@ -45,6 +50,15 @@ export interface CoreResult {
     policy_id: string;
     choices: Record<string, string[]>;
     important_uncertainty?: string;
+    scenarios?: {
+      scenario_id: string;
+      status?: string;
+      ET_shortfall_m3_equivalent?: string;
+      source_withdrawal_m3?: string;
+      worst_service_deficit_mm?: string;
+      service_pass?: boolean;
+      harvest_years?: number;
+    }[];
   }[];
   qualification: Record<string, unknown>;
   warnings: unknown[];

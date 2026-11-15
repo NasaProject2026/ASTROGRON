@@ -29,7 +29,10 @@ export function buildResearchChartModel(
   result: CoreResult,
   requestedScenario: string
 ): ResearchChartModel {
-  const objectives = result.decision.objectives || [];
+  const objectives = (result.decision.objectives || []).map((o) => ({
+    ...o,
+    scenarios: Array.isArray(o.scenarios) ? o.scenarios : [],
+  }));
   const scenarios = [...new Set(objectives.flatMap((o) => o.scenarios.map((s) => s.scenario_id)))];
   const activeScenario = scenarios.includes(requestedScenario)
     ? requestedScenario

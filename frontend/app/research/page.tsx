@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { AlertTriangle, ArrowRight, Database, FileDown, FlaskConical, Lock, MapPin, MessageSquareText, RefreshCw, ShieldCheck } from 'lucide-react';
 import type { CoreChatReply, CoreResult, CoreState } from '@/domain/core-contracts';
 import { ResearchChartsPanel } from '@/components/research/research-charts-panel';
+import { LocationAnalysisRunner } from '@/components/research/location-analysis-runner';
+import {
+  buildLocationAnalysisRequest,
+  resolveDefaultLocationMode,
+  resolveLocationPoint,
+} from '@/lib/location-analysis-request';
 import {
   loadExplorerSelection,
   parseResearchSelectionFromUrl,
@@ -128,7 +134,10 @@ function ScientificResultView({
   headingId?: string;
   extraLinks?: { aid: string };
 }) {
-  const objectives = result.decision.objectives || [];
+  const objectives = (result.decision.objectives || []).map(o => ({
+    ...o,
+    scenarios: Array.isArray(o.scenarios) ? o.scenarios : [],
+  }));
   const scenarios = [...new Set(objectives.flatMap(o => o.scenarios.map(s => s.scenario_id)))];
   return (
     <section className={`${card} space-y-5`} aria-labelledby={headingId}>
@@ -314,7 +323,27 @@ export default function ResearchPage() {
   async function submitFresh() {
     setBusy(true); setError('');
     try {
-      const body = selectedCase === 'custom' ? { request: JSON.parse(requestText) } : { case: selectedCase };
+      let body: Record<string, unknown>;
+      if (selectedCase === 'custom') {
+        body = { request: JSON.parse(requestText) };
+      } else if (selectedCase === 'selected-location') {
+        const target = selectedExplorerRegion ?? {
+          siteKey: 'wagga-australia',
+          label: 'Wagga Wagga, Australia',
+          countryCode: 'AU',
+          regionName: 'Riverina, NSW',
+          lon: 147.35,
+          lat: -35.05,
+        };
+        const resolved = resolveLocationPoint(target);
+        const built = buildLocationAnalysisRequest({
+          ...target,
+          mode: resolveDefaultLocationMode(resolved),
+        });
+        body = { request: built.payload };
+      } else {
+        body = { case: selectedCase };
+      }
       chooseJob(await api<CoreState>('analyses', body));
     } catch (e) { setError((e as Error).message); } finally { setBusy(false); }
   }
@@ -491,6 +520,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
+      <LocationAnalysisRunner selectedExplorerRegion={selectedExplorerRegion} />
       <section className={`${card} space-y-4`} aria-labelledby="public-demo-intro-heading">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
@@ -698,6 +728,7 @@ export default function ResearchPage() {
       <section className={`${card} space-y-5`} aria-labelledby="select-field-heading">
         <div className="flex items-center gap-3"><FlaskConical className="h-6 w-6 text-[#72E4F1]" /><h2 id="select-field-heading" className="text-xl font-semibold">1. Select a research field</h2></div>
         <label className="block space-y-2 text-sm"><span>Scientific request</span><select className={input} value={selectedCase} onChange={e => setSelectedCase(e.target.value)}>
+          <option value="selected-location">Selected Explorer location · live /v1/analyses request</option>
           <option value="research">Wageningen teaching field · 1 ha · potato, barley, sugar beet</option>
           <option value="blocked">Missing local evidence · Australian teaching fields · expected blocked</option>
           <option value="custom">Supply a canonical scientific request (JSON)</option>

@@ -1512,7 +1512,7 @@ export function EarthExplorerClient() {
                   data-testid="explorer-open-research-link"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-500/10 px-4 py-2 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-500/20"
                 >
-                  <span>Compare Selected Location vs. Public Research Demo</span>
+                  <span>Analyze Location (/v1/analyses) or Compare Public Demo</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
