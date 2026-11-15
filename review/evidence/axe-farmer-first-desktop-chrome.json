@@ -1,0 +1,31 @@
+{
+  "measuredAt": "2026-11-14T22:24:51.866Z",
+  "project": "desktop-chrome",
+  "axeSummary": [
+    {
+      "route": "/",
+      "criticalSeriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farms",
+      "criticalSeriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/new",
+      "criticalSeriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/results",
+      "criticalSeriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/chat",
+      "criticalSeriousCount": 0,
+      "violations": []
+    }
+  ]
+}

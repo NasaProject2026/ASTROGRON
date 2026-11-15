@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:astragron:global-evidence:v1",
+  "$defs": {
+    "SiteContext": {
+      "type": "object",
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,64}$"
+        },
+        "geometry": {
+          "$ref": "#/$defs/FieldGeometry"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "purpose": {
+          "enum": [
+            "DESCRIPTIVE_CONTEXT",
+            "FUTURE_CLIMATE_CONTEXT",
+            "MODEL_INPUT_REVIEW"
+          ]
+        }
+      },
+      "required": [
+        "site_id",
+        "geometry",
+        "as_of",
+        "purpose"
+      ]
+    },
+    "FieldGeometry": {
+      "type": "object",
+      "properties": {
+        "point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "polygon": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "crs": {
+          "const": "EPSG:4326"
+        },
+        "area_ha": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "area_basis": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "point",
+        "crs"
+      ]
+    },
+    "SourceCoverage": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "variable": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "CONDITIONAL",
+            "INSUFFICIENT_EVIDENCE",
+            "OUT_OF_COVERAGE",
+            "TEMPORARILY_UNAVAILABLE"
+          ]
+        },
+        "spatial_coverage": {
+          "type": "string"
+        },
+        "acquisition_status": {
+          "type": "string"
+        },
+        "inference_eligibility": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "site_id": {
+          "type": "string"
+        },
+        "requested_point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "observation_period": {
+          "type": "object"
+        },
+        "purpose": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "variable",
+        "status",
+        "spatial_coverage",
+        "acquisition_status",
+        "inference_eligibility",
+        "reason",
+        "site_id",
+        "requested_point",
+        "observation_period",
+        "purpose"
+      ]
+    },
+    "EvidenceRecord": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "site_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "object"
+        },
+        "variable": {
+          "type": "string"
+        },
+        "evidence_class": {
+          "enum": [
+            "DERIVED",
+            "MISSING_OR_UNQUALIFIED",
+            "OBSERVED",
+            "REGIONAL_MODEL_EVIDENCE",
+            "RESEARCH_ASSUMPTION"
+          ]
+        },
+        "spatial_support": {
+          "type": "object"
+        },
+        "period": {
+          "type": "object"
+        },
+        "available_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "units": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "object"
+        },
+        "uncertainty": {
+          "type": "string"
+        },
+        "license": {
+          "type": "object"
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "extraction_recipe": {
+          "type": "object"
+        },
+        "samples": {
+          "type": "array"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "site_id",
+        "source",
+        "variable",
+        "evidence_class",
+        "spatial_support",
+        "period",
+        "available_at",
+        "units",
+        "quality",
+        "uncertainty",
+        "license",
+        "source_sha256",
+        "extraction_recipe",
+        "samples",
+        "limitations"
+      ]
+    },
+    "CapabilityAssessment": {
+      "type": "object",
+      "properties": {
+        "capability": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "CONDITIONAL",
+            "INSUFFICIENT_EVIDENCE",
+            "OUT_OF_COVERAGE",
+            "TEMPORARILY_UNAVAILABLE"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array"
+        },
+        "requirements_missing": {
+          "type": "array"
+        },
+        "scientific_scope": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "capability",
+        "status",
+        "evidence_ids",
+        "requirements_missing",
+        "scientific_scope"
+      ]
+    },
+    "SeasonWindow": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        },
+        "time_standard": {
+          "enum": [
+            "UTC",
+            "LST"
+          ]
+        },
+        "basis": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "time_standard",
+        "basis"
+      ]
+    },
+    "RegionalProvider": {
+      "type": "object",
+      "properties": {
+        "provider_id": {
+          "type": "string"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "dataset_version": {
+          "type": "string"
+        },
+        "crs": {
+          "type": "string"
+        },
+        "coverage_country_codes": {
+          "type": "array"
+        },
+        "coverage_bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "variables": {
+          "type": "array"
+        },
+        "license": {
+          "type": "object"
+        },
+        "approved_receipt_keys": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "provider_id",
+        "publisher",
+        "dataset_version",
+        "crs",
+        "coverage_country_codes",
+        "coverage_bbox",
+        "variables",
+        "license",
+        "approved_receipt_keys"
+      ]
+    }
+  },
+  "description": "Structural wire validation; semantic geometry/date/provenance/license/inference checks also required by the executable validators."
+}

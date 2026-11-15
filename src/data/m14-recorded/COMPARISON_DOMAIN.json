@@ -1,0 +1,2720 @@
+{
+  "schema": "astragron.m14.comparison-domain.v1",
+  "timing": "Before new M14 physics/frontier or preference execution; M12/M13 results already known, not blinded or held out",
+  "candidate_ids": [
+    "10e4f587b144b38bae9d",
+    "19cfb902282a48e86984",
+    "204f160b78c5fc84e0a1",
+    "2bd5c84ad41ee5d6e9b4",
+    "2d5edfe0e4b8edd47b04",
+    "354214201a2c0b4a1ec9",
+    "4cd1e3a29a9a096383a3",
+    "4e14889665fbcf722573",
+    "5503fb8f0cc983e5385e",
+    "656882191cc0e9d8dfa7",
+    "6fcc29ebffe3b418671e",
+    "a27063ce2eca13f02e03",
+    "bc098ae90f90e3460bce",
+    "e8678a534b4b0022fd68",
+    "f2d7914fba1005bb5584",
+    "fa0e548ed3a7ccbcad4e"
+  ],
+  "policy_capsules": {
+    "10e4f587b144b38bae9d": {
+      "policy_id": "10e4f587b144b38bae9d",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "955db1d8dda4534c7f511d6b"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "ebfb4bbdbf3a8d11af8970d7"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "fa2ddc8ea51fbc417aa23ce4"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "749f48fa2a3c720fb57dca0f"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "49265bccb2c5139d940829ac"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "48ca906db005f9c8619d265d"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1652120,
+        "scenario_net_return_EUR_interval": [
+          16521.2,
+          235277.6
+        ],
+        "final_cash_after_repayment_cents": 9652120,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1796040,
+            "receipt_cents_at_end": 1858720,
+            "water_litres": 0,
+            "labor_minutes": 12240,
+            "equipment_minutes": 9000
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8571600,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9080520,
+            "cost_cents": 1796040,
+            "receipt_cents_at_end": 1858720,
+            "water_litres": 0,
+            "labor_minutes": 12240,
+            "equipment_minutes": 9000
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9143200,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          }
+        ],
+        "gross_cents": 20768960,
+        "cost_cents": 19116840,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 16521.2,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "19cfb902282a48e86984": {
+      "policy_id": "19cfb902282a48e86984",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "2a5784848f42577820d212a4"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "4d342db0cf0550c0893c55af"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2971cbfd7251a2fce9f8754c"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "204f160b78c5fc84e0a1": {
+      "policy_id": "204f160b78c5fc84e0a1",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c20febfa435c20c530bb1800"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c77dc079105f51a00d74853e"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c76666e58520432abd26dc6f"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 2100520,
+        "scenario_net_return_EUR_interval": [
+          21005.2,
+          240729.6
+        ],
+        "final_cash_after_repayment_cents": 10100520,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8670880,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9280720,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1985760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9490680,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          }
+        ],
+        "gross_cents": 21116160,
+        "cost_cents": 19015640,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 21005.2,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "2bd5c84ad41ee5d6e9b4": {
+      "policy_id": "2bd5c84ad41ee5d6e9b4",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c20febfa435c20c530bb1800"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c77dc079105f51a00d74853e"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c76666e58520432abd26dc6f"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "2a5784848f42577820d212a4"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "4d342db0cf0550c0893c55af"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1837960,
+        "scenario_net_return_EUR_interval": [
+          18379.6,
+          237716.8
+        ],
+        "final_cash_after_repayment_cents": 9837960,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5215400,
+            "receipt_cents_at_end": 5525760,
+            "water_litres": 6000000,
+            "labor_minutes": 27720,
+            "equipment_minutes": 20040
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8310360,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1873760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8408320,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9018160,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1985760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9228120,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          }
+        ],
+        "gross_cents": 20894080,
+        "cost_cents": 19056120,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 18379.6,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "2d5edfe0e4b8edd47b04": {
+      "policy_id": "2d5edfe0e4b8edd47b04",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d6644ba1e0e6aa8458c878f0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2b99d2861b9a4fdc1c91ba58"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "48ca906db005f9c8619d265d"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "354214201a2c0b4a1ec9": {
+      "policy_id": "354214201a2c0b4a1ec9",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "4b9135a84a9dd9ffe67e087d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c76666e58520432abd26dc6f"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1903600,
+        "scenario_net_return_EUR_interval": [
+          19036.0,
+          238470.0
+        ],
+        "final_cash_after_repayment_cents": 9903600,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8670880,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5635840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9131800,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9293760,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          }
+        ],
+        "gross_cents": 20949600,
+        "cost_cents": 19046000,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 19036.0,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "4cd1e3a29a9a096383a3": {
+      "policy_id": "4cd1e3a29a9a096383a3",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c20febfa435c20c530bb1800"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c77dc079105f51a00d74853e"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d4b32dc545a1810e91572077"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1951600,
+        "scenario_net_return_EUR_interval": [
+          19516.0,
+          238950.0
+        ],
+        "final_cash_after_repayment_cents": 9951600,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8670880,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9280720,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1985760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9490680,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5635840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          }
+        ],
+        "gross_cents": 20997600,
+        "cost_cents": 19046000,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 19516.0,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "4e14889665fbcf722573": {
+      "policy_id": "4e14889665fbcf722573",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "2a5784848f42577820d212a4"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "4d342db0cf0550c0893c55af"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "bedbe79229fbce494a3e18cf"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2fa0627c3ddb5f412e8ddd9c"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1157880,
+        "scenario_net_return_EUR_interval": [
+          11578.8,
+          184084.4
+        ],
+        "final_cash_after_repayment_cents": 9157880,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5215400,
+            "receipt_cents_at_end": 5525760,
+            "water_litres": 6000000,
+            "labor_minutes": 27720,
+            "equipment_minutes": 20040
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8310360,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1873760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8408320,
+            "cost_cents": 1785920,
+            "receipt_cents_at_end": 1914240,
+            "water_litres": 0,
+            "labor_minutes": 12480,
+            "equipment_minutes": 9120
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 8536640,
+            "cost_cents": 5185040,
+            "receipt_cents_at_end": 5660320,
+            "water_litres": 6000000,
+            "labor_minutes": 28440,
+            "equipment_minutes": 20400
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9011920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1921760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          }
+        ],
+        "gross_cents": 16895840,
+        "cost_cents": 15737960,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 11578.8,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "5503fb8f0cc983e5385e": {
+      "policy_id": "5503fb8f0cc983e5385e",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "48ca906db005f9c8619d265d"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "656882191cc0e9d8dfa7": {
+      "policy_id": "656882191cc0e9d8dfa7",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d6644ba1e0e6aa8458c878f0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2b99d2861b9a4fdc1c91ba58"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "bedbe79229fbce494a3e18cf"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2fa0627c3ddb5f412e8ddd9c"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "6fcc29ebffe3b418671e": {
+      "policy_id": "6fcc29ebffe3b418671e",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c20febfa435c20c530bb1800"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c77dc079105f51a00d74853e"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c76666e58520432abd26dc6f"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c5476aca45aab1ba116d0af7"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "6954133b49d1704b9890c576"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "52c6cd01535ed9a0e815b5f2"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1837960,
+        "scenario_net_return_EUR_interval": [
+          18379.6,
+          237716.8
+        ],
+        "final_cash_after_repayment_cents": 9837960,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8670880,
+            "cost_cents": 5185040,
+            "receipt_cents_at_end": 5596320,
+            "water_litres": 6000000,
+            "labor_minutes": 28440,
+            "equipment_minutes": 20400
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9082160,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1921760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9228120,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          }
+        ],
+        "gross_cents": 20894080,
+        "cost_cents": 19056120,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 18379.6,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "a27063ce2eca13f02e03": {
+      "policy_id": "a27063ce2eca13f02e03",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d6644ba1e0e6aa8458c878f0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2b99d2861b9a4fdc1c91ba58"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2971cbfd7251a2fce9f8754c"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "bc098ae90f90e3460bce": {
+      "policy_id": "bc098ae90f90e3460bce",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c20febfa435c20c530bb1800"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "c77dc079105f51a00d74853e"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "c76666e58520432abd26dc6f"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "980e7cf1f8f6336b4af22c54"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "946b65698ad0f1d0ff33f960"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "f4c77fa63c020ab994a75ffc"
+          }
+        ]
+      },
+      "original_constraint_audit": {
+        "feasible": true,
+        "violations": [],
+        "objective": 1901960,
+        "scenario_net_return_EUR_interval": [
+          19019.6,
+          238356.8
+        ],
+        "final_cash_after_repayment_cents": 9901960,
+        "trace": [
+          {
+            "season": 0,
+            "cash_before_cents": 8000000,
+            "cost_cents": 5174920,
+            "receipt_cents_at_end": 5683840,
+            "water_litres": 6000000,
+            "labor_minutes": 28680,
+            "equipment_minutes": 20520
+          },
+          {
+            "season": 1,
+            "cash_before_cents": 8508920,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1937760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 2,
+            "cash_before_cents": 8670880,
+            "cost_cents": 5144560,
+            "receipt_cents_at_end": 5754400,
+            "water_litres": 6000000,
+            "labor_minutes": 29400,
+            "equipment_minutes": 20880
+          },
+          {
+            "season": 3,
+            "cash_before_cents": 9280720,
+            "cost_cents": 1775800,
+            "receipt_cents_at_end": 1985760,
+            "water_litres": 0,
+            "labor_minutes": 12720,
+            "equipment_minutes": 9240
+          },
+          {
+            "season": 4,
+            "cash_before_cents": 9490680,
+            "cost_cents": 5185040,
+            "receipt_cents_at_end": 5596320,
+            "water_litres": 6000000,
+            "labor_minutes": 28440,
+            "equipment_minutes": 20400
+          }
+        ],
+        "gross_cents": 20958080,
+        "cost_cents": 19056120,
+        "repayment_cents": 0,
+        "legacy_stage4_cash_status": "FEASIBLE_GIVEN_DOCUMENTED_EVENTS",
+        "FIELD_DECISION_GO": false,
+        "classification": "ASSUMPTION_CONDITIONAL / NOT_FIELD_VALIDATED"
+      },
+      "original_assumed_EUR_reference": 19019.6,
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "e8678a534b4b0022fd68": {
+      "policy_id": "e8678a534b4b0022fd68",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "2a5784848f42577820d212a4"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "4d342db0cf0550c0893c55af"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "48ca906db005f9c8619d265d"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "f2d7914fba1005bb5584": {
+      "policy_id": "f2d7914fba1005bb5584",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "bedbe79229fbce494a3e18cf"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2fa0627c3ddb5f412e8ddd9c"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    },
+    "fa0e548ed3a7ccbcad4e": {
+      "policy_id": "fa0e548ed3a7ccbcad4e",
+      "choices": {
+        "F1": [
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F2": [
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512"
+        ],
+        "F3": [
+          "cropuse:agrovoc:c_7221:c_7370",
+          "cropuse:agrovoc:c_5933:c_3348",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_6919:c_25512",
+          "cropuse:agrovoc:c_5933:c_3348"
+        ]
+      },
+      "original_paths": {
+        "F1": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "bbdeb0f803ae6bd94c8e26ce"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d1ac0acbef317bcb35345ff9"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "5894900950ec8135b3a130e8"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "5c7995fc59f47a914aa966fc"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "036dd6017043979215ca1cbd"
+          }
+        ],
+        "F2": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "e8c8b741b0cd2cdb0b6996c0"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "b34e082909fe5f7385fe4438"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "7b58fdc9d591ae0ed511e095"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "615da29f85e5069c417f8d1d"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "dbe8c6a62e3c7581d5208ba1"
+          }
+        ],
+        "F3": [
+          {
+            "start": 0,
+            "end": 1,
+            "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+            "arc_id": "99f331ecc07dc2fb187bd33c"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "d47dc8297b679ece875e831d"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "79540afa9724f5f7d9e74c26"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+            "arc_id": "d8e74873c76b94aa8bc7c728"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+            "arc_id": "2971cbfd7251a2fce9f8754c"
+          }
+        ]
+      },
+      "source_model_hash": "fbf634cccd0a8f435384236fc5cde9f1e41d86995a9e112db913f25b79e92f64"
+    }
+  },
+  "original_ids": [
+    "204f160b78c5fc84e0a1",
+    "4e14889665fbcf722573",
+    "10e4f587b144b38bae9d",
+    "354214201a2c0b4a1ec9",
+    "4cd1e3a29a9a096383a3",
+    "2bd5c84ad41ee5d6e9b4",
+    "6fcc29ebffe3b418671e",
+    "bc098ae90f90e3460bce"
+  ],
+  "new_ids": [
+    "19cfb902282a48e86984",
+    "e8678a534b4b0022fd68",
+    "fa0e548ed3a7ccbcad4e",
+    "5503fb8f0cc983e5385e",
+    "a27063ce2eca13f02e03",
+    "f2d7914fba1005bb5584",
+    "2d5edfe0e4b8edd47b04",
+    "656882191cc0e9d8dfa7"
+  ],
+  "states": [
+    [
+      "BASE",
+      "DRY_ANCHOR_2018"
+    ],
+    [
+      "BASE",
+      "MEDIAN_ANCHOR_2006"
+    ],
+    [
+      "BASE",
+      "WET_ANCHOR_2012"
+    ],
+    [
+      "WATER_LOW",
+      "DRY_ANCHOR_2018"
+    ],
+    [
+      "WATER_LOW",
+      "MEDIAN_ANCHOR_2006"
+    ],
+    [
+      "WATER_LOW",
+      "WET_ANCHOR_2012"
+    ],
+    [
+      "WATER_HIGH",
+      "DRY_ANCHOR_2018"
+    ],
+    [
+      "WATER_HIGH",
+      "MEDIAN_ANCHOR_2006"
+    ],
+    [
+      "WATER_HIGH",
+      "WET_ANCHOR_2012"
+    ]
+  ],
+  "historical_windows": {
+    "DRY_ANCHOR_2018": [
+      "2018-01-01",
+      "2022-12-31"
+    ],
+    "MEDIAN_ANCHOR_2006": [
+      "2006-01-01",
+      "2010-12-31"
+    ],
+    "WET_ANCHOR_2012": [
+      "2012-01-01",
+      "2016-12-31"
+    ]
+  },
+  "fields": [
+    {
+      "field_id": "F1",
+      "area_ha": 6.0,
+      "irrigation_access": false,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    },
+    {
+      "field_id": "F2",
+      "area_ha": 8.0,
+      "irrigation_access": false,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    },
+    {
+      "field_id": "F3",
+      "area_ha": 10.0,
+      "irrigation_access": true,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    }
+  ],
+  "service": {
+    "parameter": "service_limit_crop_ET_deficit_mm_per_harvest_year",
+    "value_mm": "100",
+    "comparison": "each raw field/harvest cumulative crop ET deficit <= tolerance + 1e-8mm",
+    "engine_tolerance_mm": "0.00000001",
+    "not_survival_yield_rights_or_profit": true
+  },
+  "calendar_policy": {
+    "retained_invalid_ids": [
+      "10e4f587b144b38bae9d"
+    ],
+    "invalid_case_count": 9,
+    "metrics": null,
+    "common_pool": "Every scenario complete and hard arc/calendar/daily/annual admissible; same fixed15 comparator IDs in all9 states",
+    "missing_case": "NOT_COMPUTED, never zero; whole-domain conclusion unresolved if any potentially eligible candidate missing"
+  },
+  "resource_baseline": {
+    "annual_farm_source_m3": 8000,
+    "source_daily_m3": 80,
+    "pump_daily_m3": 80,
+    "field_delivered_cap_mm_day": 10,
+    "conveyance_efficiency": 0.9,
+    "application_efficiency": 0.8,
+    "storage_mode": "DIRECT_NO_RESERVOIR",
+    "storage_capacity_m3": 0,
+    "initial_storage_m3": 0,
+    "rights_basis": "ASSUMED_NOT_VERIFIED",
+    "service_limit_crop_ET_deficit_mm_per_harvest_year": 100,
+    "service_optional_not_crop_viability": true
+  },
+  "units": {
+    "ET": "m3 equivalent = sum crop deficit_mm * area_ha *10",
+    "regret": "m3 equivalent; per-scenario difference from best in same fixed common15; M12 half-even 1e-6m3 precision",
+    "source": "m3 source withdrawal, gross/net loss separated",
+    "service": "mm per field harvest year, not five-year irrigation volume"
+  },
+  "evidence": {
+    "NASA": "SOURCE_ESTIMATED_HISTORICAL_REGIONAL_WEATHER",
+    "soil_crop_winter_access": "RESEARCH_ASSUMPTION",
+    "rights_law_field_calibration_N_yield": "MISSING_OR_UNQUALIFIED",
+    "profits": null,
+    "N_ranking": null
+  },
+  "frontier": {
+    "representative_ids": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e",
+      "19cfb902282a48e86984"
+    ],
+    "selection": "M13 two robust criteria winners plus lexicographically first distinct calendar-valid existing candidate, no outcome-based alternate selection",
+    "dimensions": [
+      "joint_daily_delivery_cap_m3_day",
+      "allowed_service_shortfall_mm_per_field_harvest"
+    ],
+    "daily_cap_grid": [
+      20,
+      80,
+      200
+    ],
+    "pump_equals_source": true,
+    "annual_quota_m3": 8000,
+    "access_storage_crops_calendars_soil_unchanged": true,
+    "service_grid_rule": "100 plus ceil((max raw field/harvest deficit -1e-8)/1e-6)*1e-6 and previous1e-6 for each representative/cap; report finite tested delivery grid, no supply monotonicity assumption",
+    "boundary_full_daily_probes": "BASE for all3 representatives: both adjacent points × all3windows; M13 two additionally165.47 and165.48 on DRY_ANCHOR_2018",
+    "rain_zero": "one labeled synthetic DRY case for alternate only, excluded from main9",
+    "classification": "BRACKETED_RESEARCH_SENSITIVITY for service; CERTIFIED_MODEL_BOUND only fixed-access rainfed recurrence with witness and counterchecks"
+  },
+  "preferences": [
+    "STRICT_ALL_SCENARIOS_SERVICE",
+    "MINIMIZE_WORST_ET_SHORTFALL",
+    "MINIMAX_REGRET",
+    "PARETO_FRONTIER"
+  ],
+  "no_preference": "NO_UNIQUE_WINNER with nondominated conditional alternatives",
+  "missing_N_yield_rights": "field recommendation always BLOCKED; no hidden imputation",
+  "budget": {
+    "G0_M13_full_cases": 60,
+    "G1_new_cases_max": 117,
+    "G1_reused_fresh_G0_cases": 18,
+    "G2_new_cases_max": 32,
+    "max_total_fresh_physics_cases": 209,
+    "max_case_seconds": 60,
+    "max_full_pass_seconds": 2400,
+    "max_portable_files": 160,
+    "max_bundle_uncompressed_bytes": 20000000,
+    "new_data_requests": 0,
+    "new_candidates": 0,
+    "new_solver_calls": 0
+  },
+  "in_sample_selection": true,
+  "independent_agronomic_validation": 0,
+  "stop": "G5 M14 only; no M15, UI, public endpoint, deployment or submissions"
+}

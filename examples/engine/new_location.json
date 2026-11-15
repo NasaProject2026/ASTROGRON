@@ -1,0 +1,25 @@
+{
+  "schema": "astragron.client-decision.request.v1",
+  "farm_id": "new-location-blocked-demo",
+  "location": {
+    "site_id": "FR_LYON",
+    "name": "Lyon Uncached Farm",
+    "point_lon_lat": [4.8357, 45.7640],
+    "crs": "EPSG:4326"
+  },
+  "engine_request": {
+    "location": {
+      "site_id": "FR_LYON",
+      "name": "Lyon Uncached Farm",
+      "point_lon_lat": [4.8357, 45.7640],
+      "crs": "EPSG:4326"
+    },
+    "fields": [
+      {
+        "field_id": "F1",
+        "irrigation_access": false,
+        "crop_candidates": ["wheat"]
+      }
+    ]
+  }
+}

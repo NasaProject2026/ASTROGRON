@@ -1,0 +1,42 @@
+{
+  "measuredAt": "2026-11-14T22:25:27.893Z",
+  "project": "desktop-chrome",
+  "recordedAxeSummary": [
+    {
+      "route": "/farm/uppsala-demo/results",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/decisions",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/climate",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/evidence",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/uppsala-demo/reports",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/farm/nyeri-kenya/coverage",
+      "criticalCount": 0,
+      "seriousCount": 0,
+      "violations": []
+    }
+  ]
+}

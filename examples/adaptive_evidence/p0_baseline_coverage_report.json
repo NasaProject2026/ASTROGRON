@@ -1,0 +1,2011 @@
+{
+  "schema": "astragron.adaptive-evidence.p0-baseline-report.v1",
+  "stage": "P0",
+  "upstream_integrity": {
+    "schema": "astragron.upstream-integrity-check.v1",
+    "passed": true,
+    "uploaded_archive_sha256": "df30964c51035d3c578bae135b676c91c6ef064e99a69dedcf9929f7634c2ae5",
+    "original_source_archive_sha256": "55d3ef378e33405a5a3a88215aaec26e2322d801db3dcf75dff317080561368e",
+    "prompt_sha256": "23307fc9880c25afb53edda301411b8d644aa40e9ae1f9b45b458c2a319a3a12",
+    "baseline_commit": "03be95432d6ee5b83f80b2e98b9575484b927025",
+    "protected_baseline_files_verified": 301,
+    "protected_baseline_mismatches": [],
+    "baseline_lock_sha256": "5447e3eb907ebe1a70f5e8e63f8a63aacf140811cc04d6f95c8518abd4f92dfe",
+    "growth_input_files_verified": 59,
+    "growth_input_mismatches": [],
+    "growth_input_lock_sha256": "473df07aa704cc7459ff18f2f8fabb97f67521d5be04743eb6be62ef483915b4",
+    "upstream_tracked_file_count": 33,
+    "upstream_tracked_files_sha256": {
+      "brain/__init__.py": "bed6db1b4fe60d75578a59a9bfbca231979d7037955c87515420bea4deeaed4b",
+      "brain/baseline.py": "84cef14e9637035fb47daf3f2e665729a300915f8fb6baa021fde748d245290c",
+      "brain/cli.py": "c227adb6a96ae28021528b10fb00c3b0d89b45df2c946be94dc364294dacbd43",
+      "brain/economics.py": "b6fddbf6fbc986ae6f2771d0c6c3991f40b1fb92e0da8101f12b3cab145cac56",
+      "brain/growth_decision.py": "329e696d26a0ef8164a96b2c708b31c04d51da478bebad31d2bd87b79568feec",
+      "brain/growth_experiment.py": "86718648a30806e91c0239c5a45bdbf74e6961faf9110c2e090fcf510c0d8971",
+      "brain/growth_pk.py": "e5b364513e44a81287d9918fe86e5ef6d65d2f135153b5bce1eb14e08930c49b",
+      "brain/growth_source.py": "1a288247bab94e1854e8c1c3658506f5d2f7f225b958ebc2e84258c23e03b063",
+      "brain/growth_worker.py": "76775ab592f6e1c24bd8b654d043c732efc0000bc144d7153f586f943aba7e49",
+      "brain/nutrient_response.py": "baccd3bc7667885c567d282d2a8311992ba8df32dfe66058e5527bd9c3f1f8a4",
+      "brain/service.py": "5def43c3d3212207a97b8d7d8faf50a1beb668a39fbc03a5cfaeefdabd75022a",
+      "brain/transport.py": "826132db02498f78cb5f0a026c367bffd0edcc67d4dc4e4e7f36959767a14045",
+      "brain/verify_new_location.py": "bc66c69152118c81d96d5d998328df9d6cc9e5e9bb714457019b2268133a6a91",
+      "brain/verify_release.py": "f1a45f47a90dc58266e9e32a576244e4d2d46a2e3183c35076a494b1c70e8450",
+      "brain/verify_transport.py": "cbcf609979326078c17ad9fddb3a6372cf213f7764822bfdf5dfbfb2b3b9c695",
+      "contracts/CLIENT_DECISION_API_V1.md": "fcbb5654f5b9a4413abceed7120cd552e961869e058b69dd10ada550466cfe51",
+      "contracts/client_decision_request_v1.schema.json": "cb0fc754d2a5972b25a210fd2489782a09927f9fa297c19998cb57db9fe77212",
+      "contracts/client_decision_response_v1.schema.json": "b4f70cd09683c50ffc46c4687fbebc18766dc8ef962f655bc6013986ae36b56b",
+      "contracts/GROWTH_DECISION_BRIDGE_V1.md": "ab4e1bd1b45aae5b1f2d94571103f7904fd28418c1f5630bbf7a31b09396ac7f",
+      "contracts/growth_decision_request_v1.schema.json": "d36c65e2ee7842e6d838b4f9b02757b496720fd66f5d36491c75e6ca927079b2",
+      "contracts/growth_experiment_request_v1.schema.json": "f26a771d85023879d179159f41da47a78afe821124bb1468b04da5c554e305f1",
+      "contracts/growth_experiment_response_v1.schema.json": "0c64027ac5e2884b788edd39fc7e11b65209a42aed44fd4fea543cb56c40c8d7",
+      "contracts/GROWTH_PROCESS_DIAGNOSTIC_V1.md": "eab57eddea13822cc97db412ded39425daa13e45a18b82868875daa2646e7b3d",
+      "tests/engine/test_client_api.py": "d0de684ab5ecce4542efa511a53fb9d710d111c5aa939b9dc2e153a9a29361ea",
+      "tests/engine/test_growth_decision.py": "bed1f02e44057c5bc35471b01a822aabe4fe92e7092a4b705ce240fa774700d1",
+      "tests/engine/test_growth_experiment.py": "231642711053120948963808cda8268406ebd2a3d1e3fdc8e4114c01f55020b2",
+      "examples/engine/growth_decision.json": "05bd8e40d750aa2e2794fb29970e48e64d5b645cef9b0ecc92de9fdcdb288d19",
+      "examples/engine/growth_research.json": "ea9091ba68192092fa7ffb80ebd90bd211c7bb120cedf6b3f5b709f20f355a0e",
+      "examples/engine/missing_evidence.json": "b640c03c11fad8acc8e1c15e0af110c0ad427494238df3d949056966de9473f2",
+      "examples/engine/new_location.json": "61d756263603aafdb4de8917b7e9ade185d6474aa22b4231351b39f707e00064",
+      "examples/engine/README.md": "d2fad6279d7b679e0b4bf01dee487724b23504eaa59326529b1afa78f6298143",
+      "examples/engine/supported_soil.json": "d3dd8df3b8b445643d795de28330e702436ef3603503407d9c359c6645325172",
+      "examples/engine/water_only.json": "6fab21bfafc8922dbfd42d9ff871db0549314f53dd4ed5dec5cd6b92cc8ef9cc"
+    },
+    "pre_existing_files_altered": []
+  },
+  "capability_dependency_registry": {
+    "schema": "astragron.capability-dependency-registry.v1",
+    "capabilities": {
+      "C1": {
+        "capability_id": "C1",
+        "name": "Coordinates, land/geographic identity and source coverage",
+        "short_label": "Geographic & Land Identity",
+        "upstream_dependencies": [],
+        "required_parameters": [
+          "location.point_lon_lat",
+          "location.crs",
+          "location.land_mask_status"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE",
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Validated WGS84 (EPSG:4326) coordinate bounds and geometry consistency",
+          "Terrestrial land-cell vs. open-ocean/ice-sheet screening",
+          "Regional data provider grid-cell mapping and spatial support metadata"
+        ],
+        "strictly_prohibited_claims": [
+          "Cadastral parcel ownership or legal boundary survey verification",
+          "Field-level micro-topography or drainage infrastructure certification"
+        ],
+        "farmer_explanation_template": "Your farm coordinates are valid and map to a terrestrial land area where regional weather and soil screening datasets can be queried.",
+        "default_next_action": "Provide valid EPSG:4326 [longitude, latitude] coordinates on land.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C2": {
+        "capability_id": "C2",
+        "name": "Historical regional climate profile and limitations",
+        "short_label": "Historical Regional Climate",
+        "upstream_dependencies": [
+          "C1"
+        ],
+        "required_parameters": [
+          "climate.T2M",
+          "climate.T2M_MIN",
+          "climate.T2M_MAX",
+          "climate.PRECTOTCORR",
+          "climate.period_utc"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Multi-year historical daily temperature and precipitation statistics from NASA POWER (MERRA-2)",
+          "Seasonal rainfall distribution, dry/wet historical year envelopes, and frost-day frequency",
+          "Conditional Hargreaves-Samani reference evapotranspiration (ET0) screening"
+        ],
+        "strictly_prohibited_claims": [
+          "Deterministic future weather forecast for upcoming seasons",
+          "Local on-farm weather station measurement equivalence"
+        ],
+        "farmer_explanation_template": "Historical regional satellite and reanalysis weather (NASA POWER, ~50 km grid) is available to show past rainfall and temperature patterns, though it is not an on-farm weather station or a future weather forecast.",
+        "default_next_action": "Fetch or load an authenticated historical NASA POWER snapshot for this location.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C3": {
+        "capability_id": "C3",
+        "name": "Soil property screening with depth, spatial resolution and uncertainty",
+        "short_label": "Regional Soil Property Screening",
+        "upstream_dependencies": [
+          "C1"
+        ],
+        "required_parameters": [
+          "soil.clay_g_kg",
+          "soil.sand_g_kg",
+          "soil.silt_g_kg",
+          "soil.bdod_kg_dm3",
+          "soil.cfvo_cm3_dm3",
+          "soil.soc_dg_kg",
+          "soil.phh2o",
+          "soil.depth_intervals_cm"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE",
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Depth-stratified soil texture (clay, silt, sand), bulk density, coarse fragments, SOC, and pH screening",
+          "Spatial resolution (250 m ISRIC SoilGrids v2.0) and quantile uncertainty (Q0.05, Q0.50, Q0.95) reporting"
+        ],
+        "strictly_prohibited_claims": [
+          "Direct field laboratory soil test equivalence when using SoilGrids",
+          "Available mineral nitrogen (NO3/NH4) or plant-available P/K from total N or texture"
+        ],
+        "farmer_explanation_template": "Regional modeled soil layers (ISRIC SoilGrids 250 m) or user soil records provide an initial picture of soil texture, organic carbon, and pH by depth, with explicit uncertainty ranges. They do not replace a local laboratory soil test.",
+        "default_next_action": "Retrieve ISRIC SoilGrids v2.0 depth-layer profiles or supply dated laboratory soil test results.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C4": {
+        "capability_id": "C4",
+        "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+        "short_label": "Derived Soil Hydraulic Range",
+        "upstream_dependencies": [
+          "C1",
+          "C3"
+        ],
+        "required_parameters": [
+          "hydraulics.theta_fc_m3_m3",
+          "hydraulics.theta_wp_m3_m3",
+          "hydraulics.awc_mm_m",
+          "hydraulics.estimator_domain_valid"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE",
+          "DERIVED_WITH_VALIDATED_METHOD",
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Physically bounded field capacity (theta_fc), wilting point (theta_wp), saturation (theta_s), and coarse-fragment-adjusted available water capacity (AWC) range",
+          "Published pedotransfer function (Saxton & Rawls 2006 / Van Genuchten) low/reference/high envelope"
+        ],
+        "strictly_prohibited_claims": [
+          "Direct field tensiometer or pressure-plate hydraulic calibration",
+          "Unbounded extrapolation to organic peats (OM > 8 wt%), extreme clays (> 60%), or bedrock layers"
+        ],
+        "farmer_explanation_template": "Using your soil texture, organic matter, bulk density, and gravel fraction, a published soil-water equation estimates how much water the root zone can hold between field capacity and wilting point across low, reference, and high scenarios.",
+        "default_next_action": "Verify soil texture/SOC/bulk density stay within pedotransfer validity bounds or measure field water retention directly.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C5": {
+        "capability_id": "C5",
+        "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+        "short_label": "Regional Crop Suitability Screening",
+        "upstream_dependencies": [
+          "C1"
+        ],
+        "required_parameters": [
+          "suitability.source_receipt",
+          "suitability.crop_id",
+          "suitability.input_level",
+          "suitability.water_supply_regime",
+          "suitability.license_verified"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Regional agro-ecological suitability class screening (~9 km grid) under declared input/water assumptions"
+        ],
+        "strictly_prohibited_claims": [
+          "Calibrated farm-level crop yield prediction or local variety recommendation",
+          "Unlicensed or fabricated FAO GAEZ live data substitution"
+        ],
+        "farmer_explanation_template": "Regional agro-ecological suitability maps indicate broad regional climate/terrain compatibility when a verified licensed source snapshot is present, but never predict your specific field's yield.",
+        "default_next_action": "Provide a license-verified FAO GAEZ v5 regional suitability extract or rely on explicit crop/climate diagnostics.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C6": {
+        "capability_id": "C6",
+        "name": "Historical water-demand/deficit research diagnostics with qualified inputs",
+        "short_label": "Historical Water-Demand Diagnostics",
+        "upstream_dependencies": [
+          "C1",
+          "C2",
+          "C4"
+        ],
+        "required_parameters": [
+          "water_diag.climate_series",
+          "water_diag.hydraulic_range",
+          "water_diag.crop_or_reference_et_profile"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE",
+          "DERIVED_WITH_VALIDATED_METHOD",
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Historical reference evapotranspiration (ET0) vs. precipitation deficit distribution",
+          "Root-zone soil moisture buffer range and drought-stress exposure under historical weather scenarios"
+        ],
+        "strictly_prohibited_claims": [
+          "Guaranteed future irrigation volume sufficiency or legal water abstraction approval"
+        ],
+        "farmer_explanation_template": "Combining historical NASA weather with your soil's estimated water-holding range shows seasonal water demand, rainfall shortfall, and drought sensitivity across past dry and wet years.",
+        "default_next_action": "Ensure historical climate (C2) and soil hydraulic bounds (C4) are available; add crop calendar/Kc for crop-specific ET.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C7": {
+        "capability_id": "C7",
+        "name": "Conditional five-year crop planning with admissible crop/soil/calendar inputs and preserved planner constraints",
+        "short_label": "Conditional 5-Year Crop Planning",
+        "upstream_dependencies": [
+          "C1",
+          "C2",
+          "C4",
+          "C6"
+        ],
+        "required_parameters": [
+          "planner.fields",
+          "planner.crop_profiles",
+          "planner.winter",
+          "planner.supply",
+          "planner.scenarios",
+          "planner.assumptions_manifest"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE",
+          "DERIVED_WITH_VALIDATED_METHOD",
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Finite candidate 5-year crop sequence evaluation under historical weather scenarios and declared constraints",
+          "Decision-sensitivity classification (DECISION_SENSITIVE, DECISION_STABLE_WITHIN_TESTED_SCENARIOS, UNDETERMINED) across soil/climate uncertainty"
+        ],
+        "strictly_prohibited_claims": [
+          "Global agronomic optimum or field-validated commercial rotation prescription",
+          "Silently overriding upstream engine water or P/K accounting rules"
+        ],
+        "farmer_explanation_template": "Evaluates candidate 5-year crop rotations against historical weather and soil water constraints when complete crop calendar, Kc, root depth, winter, and irrigation supply assumptions are provided.",
+        "default_next_action": "Supply complete dated assumptions_manifest, crop_profiles (planting/harvest dates, Kc, rooting depth), winter parameters, and water supply limits.",
+        "can_proceed_independently_of_planner": false,
+        "ready_implies_field_validated": false
+      },
+      "C8": {
+        "capability_id": "C8",
+        "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+        "short_label": "Native Crop-Growth & N Research",
+        "upstream_dependencies": [
+          "C1",
+          "C2"
+        ],
+        "required_parameters": [
+          "growth.profile_id",
+          "growth.point_lon_lat_5_67_51_97",
+          "growth.complete_8var_nasa_forcing",
+          "growth.admitted_crops_potato_sugarbeet",
+          "growth.pinned_pcse_runtime"
+        ],
+        "admissible_provenance_classes": [
+          "OBSERVED_OR_AUTHENTIC_SOURCE"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Coupled WOFOST 8.1 / SNOMIN daily crop dry matter and soil N process research for [5.67, 51.97] (NL, 2016-2020, Fontane potato / Sugarbeet_601)"
+        ],
+        "strictly_prohibited_claims": [
+          "Worldwide crop physiology transfer outside the admitted Wageningen research profile",
+          "Field-validated yield prediction, marketable fresh tuber/root yield, or fertilizer prescription"
+        ],
+        "farmer_explanation_template": "Native daily crop-growth and soil-nitrogen simulation (WOFOST/SNOMIN) is restricted to the validated Dutch research benchmark [5.67, 51.97] for potato and sugarbeet with complete solar/weather forcing and pinned PCSE runtime; it is blocked elsewhere rather than faked.",
+        "default_next_action": "Use the admitted Wageningen research profile [5.67, 51.97] with cached 8-variable NASA forcing and pinned PCSE environment, or abstain from native growth simulation.",
+        "can_proceed_independently_of_planner": false,
+        "ready_implies_field_validated": false
+      },
+      "C9": {
+        "capability_id": "C9",
+        "name": "Optional conditional economics using user-supplied or licensed and dated price/cost/yield sources",
+        "short_label": "Conditional Scenario Economics",
+        "upstream_dependencies": [
+          "C1"
+        ],
+        "required_parameters": [
+          "economics.currency",
+          "economics.basis",
+          "economics.source_id",
+          "economics.available_at",
+          "economics.uncertainty",
+          "economics.rows_yield_price_cost"
+        ],
+        "admissible_provenance_classes": [
+          "USER_SCENARIO_ASSUMPTION"
+        ],
+        "supported_claims_when_ready_or_conditional": [
+          "Conditional scenario margin arithmetic: area_ha * (supplied_yield_t_ha * supplied_price_per_t - supplied_cost_per_ha)"
+        ],
+        "strictly_prohibited_claims": [
+          "Model-predicted commercial profit or market price forecasting",
+          "Altering biophysical water/soil feasibility rankings based on unverified economic assumptions"
+        ],
+        "farmer_explanation_template": "Calculates conditional gross margins only when you explicitly supply your own expected yields, crop prices, and per-hectare costs with dates and currency; missing values remain null, never zero.",
+        "default_next_action": "Supply explicit dated farm yield_t_ha, price_per_t, and cost_per_ha rows in one ISO currency.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      },
+      "C10": {
+        "capability_id": "C10",
+        "name": "Pesticide, water-right and legal clearance",
+        "short_label": "Legal, Water-Right & Pesticide Clearance",
+        "upstream_dependencies": [
+          "C1"
+        ],
+        "required_parameters": [
+          "legal.official_water_abstraction_permit",
+          "legal.official_pesticide_registration_authority",
+          "legal.environmental_compliance_certificate"
+        ],
+        "admissible_provenance_classes": [
+          "OFFICIAL_VERIFICATION_REQUIRED"
+        ],
+        "supported_claims_when_ready_or_conditional": [],
+        "strictly_prohibited_claims": [
+          "Inferring water abstraction rights, pesticide dosage legality, or environmental permits from satellite data or user self-assertion"
+        ],
+        "farmer_explanation_template": "Legal water abstraction rights, pesticide approvals, and regulatory compliance cannot be determined from satellite or soil data and always require verification with your official local water and agricultural authorities.",
+        "default_next_action": "Consult your local water management authority and official national pesticide registration agency.",
+        "can_proceed_independently_of_planner": true,
+        "ready_implies_field_validated": false
+      }
+    },
+    "topological_order": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "C10"
+    ],
+    "dependency_edges": [
+      {
+        "from": "C1",
+        "to": "C2"
+      },
+      {
+        "from": "C1",
+        "to": "C3"
+      },
+      {
+        "from": "C1",
+        "to": "C4"
+      },
+      {
+        "from": "C3",
+        "to": "C4"
+      },
+      {
+        "from": "C1",
+        "to": "C5"
+      },
+      {
+        "from": "C1",
+        "to": "C6"
+      },
+      {
+        "from": "C2",
+        "to": "C6"
+      },
+      {
+        "from": "C4",
+        "to": "C6"
+      },
+      {
+        "from": "C1",
+        "to": "C7"
+      },
+      {
+        "from": "C2",
+        "to": "C7"
+      },
+      {
+        "from": "C4",
+        "to": "C7"
+      },
+      {
+        "from": "C6",
+        "to": "C7"
+      },
+      {
+        "from": "C1",
+        "to": "C8"
+      },
+      {
+        "from": "C2",
+        "to": "C8"
+      },
+      {
+        "from": "C1",
+        "to": "C9"
+      },
+      {
+        "from": "C1",
+        "to": "C10"
+      }
+    ],
+    "independent_partial_capabilities": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C9",
+      "C10"
+    ],
+    "planner_gated_capabilities": [
+      "C7",
+      "C8"
+    ],
+    "always_official_verification_required": [
+      "C10"
+    ],
+    "forbidden_derivations": {
+      "MINERAL_N_FROM_SOILGRIDS_TOTAL_N": "Never derive farm-level mineral N (NO3/NH4) or plant-available N from SoilGrids total nitrogen maps; mineralization depends on dynamic moisture, temperature, management, and C:N history.",
+      "WATER_RIGHTS_FROM_REMOTE_SENSING": "Never infer legal water extraction rights or allocation caps from satellite imagery, climate grids, or self-declaration.",
+      "PESTICIDE_OR_LEGAL_CLEARANCE_INFERENCE": "Never infer pesticide authorization, dosage legality, or regulatory compliance without verified official local registries.",
+      "INVENTED_CROP_PHYSIOLOGY_COEFFICIENTS": "Never fabricate crop Kc, stage durations, rooting depths, or WOFOST/PCSE cultivar parameters for unsupported crops.",
+      "SIMULATED_DM_TO_MARKETABLE_YIELD_OR_PROFIT": "Never convert modeled storage-organ dry matter or water deficit into calibrated marketable yield or profit without independent field-validated conversion and dated price/cost evidence.",
+      "NULL_TO_ZERO_COERCION": "Never coerce null, missing, or unverified quantities into numeric zero."
+    },
+    "non_negotiable_rules": {
+      "ready_implies_field_validated": false,
+      "null_converted_to_zero": false,
+      "c7_block_suppresses_c2_or_c3": false,
+      "soilgrids_total_n_to_mineral_n_allowed": false,
+      "satellite_to_water_rights_allowed": false,
+      "simulated_dm_to_marketable_yield_allowed": false
+    }
+  },
+  "source_consumer_graph": {
+    "schema": "astragron.source-consumer-graph.v1",
+    "authoritative_root_entrypoints": [
+      {
+        "module": "brain.service.ClientDecisionService",
+        "contract_request": "contracts/client_decision_request_v1.schema.json",
+        "contract_response": "contracts/client_decision_response_v1.schema.json",
+        "cli": "python -B -X utf8 -m brain.cli REQUEST.json --output runtime/agent-a/result.json",
+        "scope": "Five-year conditional research comparison; never authorizes field advice."
+      },
+      {
+        "module": "brain.growth_decision.evaluate",
+        "contract_request": "contracts/growth_decision_request_v1.schema.json",
+        "contract_doc": "contracts/GROWTH_DECISION_BRIDGE_V1.md",
+        "scope": "Opt-in bounded 2-to-4 candidate WOFOST 8.1/SNOMIN research comparison at [5.67, 51.97] (NL, 2016-2020, Fontane potato / Sugarbeet_601)."
+      }
+    ],
+    "upstream_missing_data_bottlenecks": [
+      {
+        "pathway_id": "MP_01_ALL_OR_NOTHING_SCIENTIFIC_GATE",
+        "location": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/application.py:57-77",
+        "behavior": "If `scientific_gate(d)` reports any missing crop_profiles, soil hydraulics, winter snow/freeze parameters, or irrigation supply limits, `application.py` immediately returns `status='CLIMATE_READY_CROP_MODEL_BLOCKED'` with `cases=[]`, suppressing daily forcing extraction, monthly climate summaries, and water diagnostics.",
+        "sidecar_remediation": "Evaluate C1 (geography) and C2 (historical regional climate profile) independently of C7 (5-year planner) so farmers and researchers receive full climate diagnostics even when local crop/soil planner inputs are incomplete."
+      },
+      {
+        "pathway_id": "MP_02_MISSING_SOIL_HYDRAULIC_PARAMETERS",
+        "location": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/contract.py:174-189",
+        "behavior": "Every field requires explicit `theta_fc` and `theta_wp` in `m3/m3` bound to an assumptions_manifest. Users with only coordinates or regional soil texture are completely blocked.",
+        "sidecar_remediation": "Provide C3 (ISRIC SoilGrids v2.0 depth-stratified texture/SOC/BD/CFVO/pH screening) and C4 (defensible pedotransfer estimator for theta_fc, theta_wp, and gravel-adjusted AWC with low/reference/high bounds) while keeping derived status distinct from lab measurements."
+      },
+      {
+        "pathway_id": "MP_03_PINNED_SITE_REGISTRY_VS_GLOBAL_CACHE",
+        "location": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/evidence.py:13-23",
+        "behavior": "`NASA_POWER_PINNED` only admits 3 hardcoded sites (`SE_UPPSALA`, `KE_NYERI_REGION`, `AU_WAGGA_REGION`), and only `SE_UPPSALA` has 20-year pinned forcing in `DATA_LOCK.json`; `NASA_POWER_GLOBAL` requires exact coordinate/period receipts in `source_cache`.",
+        "sidecar_remediation": "Reuse authentic NASA POWER receipts (`SE_UPPSALA`, `AU_WAGGA_REGION`, `KE_NYERI_REGION`, `DE_BERLIN`) and support bounded live/cached NASA POWER point retrieval with strict checksum, unit, leap-year, and missingness verification."
+      },
+      {
+        "pathway_id": "MP_04_GROWTH_BRIDGE_GEOGRAPHIC_AND_RUNTIME_LOCK",
+        "location": "brain/growth_decision.py:41-69 & brain/growth_experiment.py:59-63",
+        "behavior": "Native WOFOST/SNOMIN growth (`C8`) is restricted to `[5.67, 51.97]` (`NL`, 2016-2020) and requires both `growth-weather.receipt.json` (8 solar/weather variables) and an external PCSE Python environment.",
+        "sidecar_remediation": "Explicitly evaluate C8 input coverage vs. runtime availability and abstain cleanly outside `[5.67, 51.97]` or when PCSE/solar forcing is absent, never fabricating growth outputs."
+      }
+    ],
+    "historical_vs_current_conflicts": [
+      {
+        "historical_artifact": "ASTRAGRON_COMPLETE_RND_PACK_2026-10-20/starter/",
+        "conflict": "Contains early October 2026 FastAPI prototype and milestone 1-3 schemas.",
+        "resolution": "Treated strictly as read-only historical R&D reference and locked PCSE fixture source (`coordination/GROWTH_INPUT_LOCK.json`). Root `brain/` and `contracts/CLIENT_DECISION_API_V1.md` are authoritative."
+      }
+    ]
+  },
+  "summary_metrics": {
+    "total_cases": 32,
+    "geographic_cases": 24,
+    "adversarial_cases": 8,
+    "baseline_engine_complete_geographic_cases": 2,
+    "p0_climate_ready_geographic_cases": 4,
+    "p0_useful_partial_geographic_cases": 4,
+    "p0_conditional_planning_geographic_cases": 2,
+    "false_qualification_upgrades": 0,
+    "field_validated_count": 0,
+    "prediction_accuracy": "NOT_MEASURED_NO_INDEPENDENT_GROUND_TRUTH"
+  },
+  "geographic_capability_status_counts": {
+    "C1": {
+      "READY": 24,
+      "CONDITIONAL": 0,
+      "BLOCKED": 0,
+      "NOT_EVALUATED": 0
+    },
+    "C2": {
+      "READY": 4,
+      "CONDITIONAL": 0,
+      "BLOCKED": 20,
+      "NOT_EVALUATED": 0
+    },
+    "C3": {
+      "READY": 0,
+      "CONDITIONAL": 0,
+      "BLOCKED": 0,
+      "NOT_EVALUATED": 24
+    },
+    "C4": {
+      "READY": 0,
+      "CONDITIONAL": 2,
+      "BLOCKED": 22,
+      "NOT_EVALUATED": 0
+    },
+    "C5": {
+      "READY": 0,
+      "CONDITIONAL": 0,
+      "BLOCKED": 0,
+      "NOT_EVALUATED": 24
+    },
+    "C6": {
+      "READY": 0,
+      "CONDITIONAL": 2,
+      "BLOCKED": 22,
+      "NOT_EVALUATED": 0
+    },
+    "C7": {
+      "READY": 0,
+      "CONDITIONAL": 2,
+      "BLOCKED": 22,
+      "NOT_EVALUATED": 0
+    },
+    "C8": {
+      "READY": 0,
+      "CONDITIONAL": 0,
+      "BLOCKED": 24,
+      "NOT_EVALUATED": 0
+    },
+    "C9": {
+      "READY": 0,
+      "CONDITIONAL": 1,
+      "BLOCKED": 23,
+      "NOT_EVALUATED": 0
+    },
+    "C10": {
+      "READY": 0,
+      "CONDITIONAL": 0,
+      "BLOCKED": 24,
+      "NOT_EVALUATED": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "GEO_01_SE_UPPSALA",
+      "category": "geographic",
+      "region_class": "cool_temperate_boreal_transition",
+      "hemisphere": "Northern",
+      "country": "SE",
+      "site_id": "SE_UPPSALA",
+      "point_lon_lat": [
+        17.65,
+        59.82
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "CONDITIONAL_RESEARCH_COMPLETE",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "NOT_EVALUATED",
+        "C4": "CONDITIONAL",
+        "C5": "NOT_EVALUATED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": true,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_02_AU_WAGGA",
+      "category": "geographic",
+      "region_class": "dryland_semi_arid_mediterranean",
+      "hemisphere": "Southern",
+      "country": "AU",
+      "site_id": "AU_WAGGA_REGION",
+      "point_lon_lat": [
+        147.35,
+        -35.05
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "CONDITIONAL_RESEARCH_COMPLETE",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "NOT_EVALUATED",
+        "C4": "CONDITIONAL",
+        "C5": "NOT_EVALUATED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "CONDITIONAL",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "CONDITIONAL",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": true,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_03_KE_NYERI",
+      "category": "geographic",
+      "region_class": "humid_tropical_highland",
+      "hemisphere": "Southern",
+      "country": "KE",
+      "site_id": "KE_NYERI_REGION",
+      "point_lon_lat": [
+        36.95,
+        -0.42
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_04_DE_BERLIN",
+      "category": "geographic",
+      "region_class": "cool_temperate_continental",
+      "hemisphere": "Northern",
+      "country": "DE",
+      "site_id": "DE_BRANDENBURG_PLAIN",
+      "point_lon_lat": [
+        13.405,
+        52.52
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_05_NL_WAGENINGEN",
+      "category": "geographic",
+      "region_class": "cool_temperate_maritime",
+      "hemisphere": "Northern",
+      "country": "NL",
+      "site_id": "NL_WAGENINGEN_RESEARCH",
+      "point_lon_lat": [
+        5.67,
+        51.97
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "CONDITIONAL",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_06_NL_LELYSTAD",
+      "category": "geographic",
+      "region_class": "coastal_polder_lowland",
+      "hemisphere": "Northern",
+      "country": "NL",
+      "site_id": "NL_LELYSTAD_NEW_20261113",
+      "point_lon_lat": [
+        5.47,
+        52.52
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_07_EG_NILE_DELTA",
+      "category": "geographic",
+      "region_class": "dryland_hyper_arid_irrigated_delta",
+      "hemisphere": "Northern",
+      "country": "EG",
+      "site_id": "EG_NILE_DELTA_TANTA",
+      "point_lon_lat": [
+        31.01,
+        30.79
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_08_MA_SAISS",
+      "category": "geographic",
+      "region_class": "dryland_mediterranean_semi_arid",
+      "hemisphere": "Northern",
+      "country": "MA",
+      "site_id": "MA_SAISS_MEKNES",
+      "point_lon_lat": [
+        -5.0,
+        33.89
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_09_NG_KANO",
+      "category": "geographic",
+      "region_class": "dryland_sudano_sahelian_savanna",
+      "hemisphere": "Northern",
+      "country": "NG",
+      "site_id": "NG_KANO_SAVANNA",
+      "point_lon_lat": [
+        8.52,
+        12.0
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_10_BR_MATO_GROSSO",
+      "category": "geographic",
+      "region_class": "humid_tropics_cerrado",
+      "hemisphere": "Southern",
+      "country": "BR",
+      "site_id": "BR_SORRISO_CERRADO",
+      "point_lon_lat": [
+        -55.72,
+        -12.54
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_11_ID_WEST_JAVA",
+      "category": "geographic",
+      "region_class": "humid_tropics_equatorial_volcanic",
+      "hemisphere": "Southern",
+      "country": "ID",
+      "site_id": "ID_WEST_JAVA_BANDUNG",
+      "point_lon_lat": [
+        107.61,
+        -6.91
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_12_IN_PUNJAB",
+      "category": "geographic",
+      "region_class": "subtropical_monsoon_alluvial_plain",
+      "hemisphere": "Northern",
+      "country": "IN",
+      "site_id": "IN_PUNJAB_LUDHIANA",
+      "point_lon_lat": [
+        75.85,
+        30.9
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_13_VN_MEKONG",
+      "category": "geographic",
+      "region_class": "humid_tropics_coastal_delta",
+      "hemisphere": "Northern",
+      "country": "VN",
+      "site_id": "VN_MEKONG_CAN_THO",
+      "point_lon_lat": [
+        105.78,
+        10.03
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_14_US_IOWA",
+      "category": "geographic",
+      "region_class": "cool_temperate_humid_continental",
+      "hemisphere": "Northern",
+      "country": "US",
+      "site_id": "US_IOWA_AMES",
+      "point_lon_lat": [
+        -93.62,
+        42.03
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_15_US_CALIFORNIA",
+      "category": "geographic",
+      "region_class": "dryland_semi_arid_irrigated_valley",
+      "hemisphere": "Northern",
+      "country": "US",
+      "site_id": "US_CA_SAN_JOAQUIN",
+      "point_lon_lat": [
+        -119.77,
+        36.75
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_16_CA_SASKATCHEWAN",
+      "category": "geographic",
+      "region_class": "cold_continental_prairie",
+      "hemisphere": "Northern",
+      "country": "CA",
+      "site_id": "CA_SK_SASKATOON",
+      "point_lon_lat": [
+        -106.67,
+        52.13
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_17_FI_OULU",
+      "category": "geographic",
+      "region_class": "cold_high_latitude_subarctic",
+      "hemisphere": "Northern",
+      "country": "FI",
+      "site_id": "FI_OSTROBOTHNIA_OULU",
+      "point_lon_lat": [
+        25.47,
+        65.01
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_18_PE_CUSCO_ANDES",
+      "category": "geographic",
+      "region_class": "mountain_high_altitude_tropical",
+      "hemisphere": "Southern",
+      "country": "PE",
+      "site_id": "PE_CUSCO_SACRED_VALLEY",
+      "point_lon_lat": [
+        -71.97,
+        -13.53
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_19_ET_AMHARA_HIGHLAND",
+      "category": "geographic",
+      "region_class": "mountain_tropical_plateau",
+      "hemisphere": "Northern",
+      "country": "ET",
+      "site_id": "ET_BAHIR_DAR_PLATEAU",
+      "point_lon_lat": [
+        37.39,
+        11.59
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_20_AR_PAMPAS",
+      "category": "geographic",
+      "region_class": "humid_subtropical_pampas",
+      "hemisphere": "Southern",
+      "country": "AR",
+      "site_id": "AR_PERGAMINO_PAMPAS",
+      "point_lon_lat": [
+        -60.52,
+        -33.89
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_21_ZA_WESTERN_CAPE",
+      "category": "geographic",
+      "region_class": "coastal_mediterranean_southern",
+      "hemisphere": "Southern",
+      "country": "ZA",
+      "site_id": "ZA_SWARTLAND_CAPE",
+      "point_lon_lat": [
+        18.86,
+        -33.93
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_22_ES_ALMERIA_COAST",
+      "category": "geographic",
+      "region_class": "coastal_semi_arid_mediterranean",
+      "hemisphere": "Northern",
+      "country": "ES",
+      "site_id": "ES_ALMERIA_COASTAL",
+      "point_lon_lat": [
+        -2.46,
+        36.84
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_23_KZ_ASTANA_STEPPE",
+      "category": "geographic",
+      "region_class": "cold_semi_arid_steppe",
+      "hemisphere": "Northern",
+      "country": "KZ",
+      "site_id": "KZ_AKMOLA_STEPPE",
+      "point_lon_lat": [
+        71.43,
+        51.16
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "GEO_24_NZ_CANTERBURY",
+      "category": "geographic",
+      "region_class": "cool_temperate_southern_island_plain",
+      "hemisphere": "Southern",
+      "country": "NZ",
+      "site_id": "NZ_CANTERBURY_LINCOLN",
+      "point_lon_lat": [
+        172.48,
+        -43.64
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_01_PACIFIC_OCEAN",
+      "category": "adversarial",
+      "region_class": "open_ocean",
+      "hemisphere": "Equatorial",
+      "country": "ZZ",
+      "site_id": "ADV_PACIFIC_OCEAN_0_140W",
+      "point_lon_lat": [
+        -140.0,
+        0.0
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_02_UNSUPPORTED_CRS",
+      "category": "adversarial",
+      "region_class": "invalid_crs",
+      "hemisphere": "Southern",
+      "country": "AU",
+      "site_id": "ADV_EPSG_3857_REJECTED",
+      "point_lon_lat": [
+        147.35,
+        -35.05
+      ],
+      "crs": "EPSG:3857",
+      "baseline_engine_status": "INVALID_REQUEST",
+      "p0_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_03_OUT_OF_BOUNDS_LAT_LON",
+      "category": "adversarial",
+      "region_class": "out_of_bounds_coordinates",
+      "hemisphere": "Invalid",
+      "country": "AU",
+      "site_id": "ADV_LON_195_LAT_MINUS_95",
+      "point_lon_lat": [
+        195.0,
+        -95.0
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "INVALID_REQUEST",
+      "p0_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_04_ANTARCTICA_ICE_CAP",
+      "category": "adversarial",
+      "region_class": "polar_ice_sheet",
+      "hemisphere": "Southern",
+      "country": "AQ",
+      "site_id": "ADV_ANTARCTICA_82S",
+      "point_lon_lat": [
+        0.0,
+        -82.0
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_05_MISALIGNED_SOIL_DEPTH",
+      "category": "adversarial",
+      "region_class": "dryland_semi_arid_mediterranean",
+      "hemisphere": "Southern",
+      "country": "AU",
+      "site_id": "AU_WAGGA_REGION",
+      "point_lon_lat": [
+        147.35,
+        -35.05
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "INVALID_REQUEST",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_06_FAKE_MINERAL_N_AND_LEGAL_UPGRADE",
+      "category": "adversarial",
+      "region_class": "dryland_semi_arid_mediterranean",
+      "hemisphere": "Southern",
+      "country": "AU",
+      "site_id": "AU_WAGGA_REGION",
+      "point_lon_lat": [
+        147.35,
+        -35.05
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "INVALID_REQUEST",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": true,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_07_CORRUPT_RECEIPT_AND_STALE_CUTOFF",
+      "category": "adversarial",
+      "region_class": "cool_temperate_continental",
+      "hemisphere": "Northern",
+      "country": "DE",
+      "site_id": "DE_BRANDENBURG_PLAIN",
+      "point_lon_lat": [
+        13.405,
+        52.52
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    },
+    {
+      "case_id": "ADV_08_UNSUPPORTED_CROP_AND_PROFIT_CLAIM",
+      "category": "adversarial",
+      "region_class": "cool_temperate_maritime",
+      "hemisphere": "Northern",
+      "country": "NL",
+      "site_id": "NL_WAGENINGEN_RESEARCH",
+      "point_lon_lat": [
+        5.67,
+        51.97
+      ],
+      "crs": "EPSG:4326",
+      "baseline_engine_status": "EVIDENCE_BLOCKED",
+      "p0_capabilities": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "NOT_EVALUATED",
+        "C4": "BLOCKED",
+        "C5": "NOT_EVALUATED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "target_sidecar_capabilities": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "useful_partial_in_p0_baseline": false,
+      "conditional_planning_in_p0_baseline": false,
+      "field_validated": false,
+      "marketable_yield": null,
+      "profit": null,
+      "false_qualification_upgrades": 0
+    }
+  ]
+}

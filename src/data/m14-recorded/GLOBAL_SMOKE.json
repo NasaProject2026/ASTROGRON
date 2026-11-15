@@ -1,0 +1,261 @@
+{
+  "PASS": true,
+  "sites": {
+    "SE_UPPSALA": {
+      "context": {
+        "schema": "astragron.m7.continuous-water.v1",
+        "site_id": "SE_UPPSALA",
+        "country": "SE",
+        "region": "Uppsala",
+        "point_lon_lat": [
+          17.65,
+          59.82
+        ],
+        "polygon": null,
+        "purpose": "SOURCE_COVERAGE",
+        "crop_identity": null,
+        "cultivar": null,
+        "source_spatial_support": "NASA native regional grids; not surveyed fields",
+        "license": "NASA POWER public-access attribution; no endorsement",
+        "geometry": {
+          "point": [
+            17.65,
+            59.82
+          ],
+          "polygon": null,
+          "crs": "EPSG:4326",
+          "area_ha": null,
+          "area_basis": "USER_DECLARED_NOT_SURVEYED",
+          "antimeridian_unwrapped_for_validation": false,
+          "area_from_degree_geometry": null,
+          "survey_validation": false
+        },
+        "FIELD_CALIBRATED": false
+      },
+      "season": {
+        "schema": "astragron.m9.global-season.v1",
+        "field_id": "GENERIC_CONTROL_ONLY",
+        "crop_taxon": "UNNAMED_METHOD_CONTROL",
+        "crop_use": "GENERIC_METHOD_COVER",
+        "sowing": "2024-05-01",
+        "harvest": "2024-08-28",
+        "hemisphere": "NORTH",
+        "time_standard": "UTC",
+        "source_ids": [
+          "b7a2c27089598df80077000cfe28ce7a1f32c1d7c793615e68e4dcecd2efa079"
+        ],
+        "evidence_status": "USER_ASSUMPTION",
+        "cultivar": null,
+        "context": {
+          "schema": "astragron.m7.continuous-water.v1",
+          "site_id": "SE_UPPSALA",
+          "country": "SE",
+          "region": "Uppsala",
+          "point_lon_lat": [
+            17.65,
+            59.82
+          ],
+          "polygon": null,
+          "purpose": "SOURCE_COVERAGE",
+          "crop_identity": null,
+          "cultivar": null,
+          "source_spatial_support": "NASA native regional grids; not surveyed fields",
+          "license": "NASA POWER public-access attribution; no endorsement",
+          "geometry": {
+            "point": [
+              17.65,
+              59.82
+            ],
+            "polygon": null,
+            "crs": "EPSG:4326",
+            "area_ha": null,
+            "area_basis": "USER_DECLARED_NOT_SURVEYED",
+            "antimeridian_unwrapped_for_validation": false,
+            "area_from_degree_geometry": null,
+            "survey_validation": false
+          },
+          "FIELD_CALIBRATED": false
+        },
+        "cross_year": false,
+        "days_inclusive": 120,
+        "no_default_swedish_calendar": true,
+        "record_id": "205ac858339605b438134108098970c1d9f5bb004f48fd00fbb00abb6f2be8a5"
+      },
+      "hemisphere": "NORTH",
+      "model_status": "RESEARCH_CONDITIONAL",
+      "field_status": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "Swedish_parameter_fallback": false
+    },
+    "KE_NYERI_REGION": {
+      "context": {
+        "schema": "astragron.m7.continuous-water.v1",
+        "site_id": "KE_NYERI_REGION",
+        "country": "KE",
+        "region": "Nyeri",
+        "point_lon_lat": [
+          36.95,
+          -0.42
+        ],
+        "polygon": null,
+        "purpose": "SOURCE_COVERAGE",
+        "crop_identity": null,
+        "cultivar": null,
+        "source_spatial_support": "NASA native regional grids; not surveyed fields",
+        "license": "NASA POWER public-access attribution; no endorsement",
+        "geometry": {
+          "point": [
+            36.95,
+            -0.42
+          ],
+          "polygon": null,
+          "crs": "EPSG:4326",
+          "area_ha": null,
+          "area_basis": "USER_DECLARED_NOT_SURVEYED",
+          "antimeridian_unwrapped_for_validation": false,
+          "area_from_degree_geometry": null,
+          "survey_validation": false
+        },
+        "FIELD_CALIBRATED": false
+      },
+      "season": {
+        "schema": "astragron.m9.global-season.v1",
+        "field_id": "GENERIC_CONTROL_ONLY",
+        "crop_taxon": "UNNAMED_METHOD_CONTROL",
+        "crop_use": "GENERIC_METHOD_COVER",
+        "sowing": "2024-03-01",
+        "harvest": "2024-06-28",
+        "hemisphere": "SOUTH",
+        "time_standard": "UTC",
+        "source_ids": [
+          "c1174170555d92e71aa8151f3a8ea0f02396fa05bd942e8ef6dd6f52d46ebafd"
+        ],
+        "evidence_status": "USER_ASSUMPTION",
+        "cultivar": null,
+        "context": {
+          "schema": "astragron.m7.continuous-water.v1",
+          "site_id": "KE_NYERI_REGION",
+          "country": "KE",
+          "region": "Nyeri",
+          "point_lon_lat": [
+            36.95,
+            -0.42
+          ],
+          "polygon": null,
+          "purpose": "SOURCE_COVERAGE",
+          "crop_identity": null,
+          "cultivar": null,
+          "source_spatial_support": "NASA native regional grids; not surveyed fields",
+          "license": "NASA POWER public-access attribution; no endorsement",
+          "geometry": {
+            "point": [
+              36.95,
+              -0.42
+            ],
+            "polygon": null,
+            "crs": "EPSG:4326",
+            "area_ha": null,
+            "area_basis": "USER_DECLARED_NOT_SURVEYED",
+            "antimeridian_unwrapped_for_validation": false,
+            "area_from_degree_geometry": null,
+            "survey_validation": false
+          },
+          "FIELD_CALIBRATED": false
+        },
+        "cross_year": false,
+        "days_inclusive": 120,
+        "no_default_swedish_calendar": true,
+        "record_id": "d5f7ad2150aa4dadc77df19997dbe3d97945e7f78ce276a816b208002ef126bc"
+      },
+      "hemisphere": "SOUTH",
+      "model_status": "MODEL_UNQUALIFIED",
+      "field_status": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "Swedish_parameter_fallback": false
+    },
+    "AU_WAGGA_REGION": {
+      "context": {
+        "schema": "astragron.m7.continuous-water.v1",
+        "site_id": "AU_WAGGA_REGION",
+        "country": "AU",
+        "region": "Wagga",
+        "point_lon_lat": [
+          147.35,
+          -35.05
+        ],
+        "polygon": null,
+        "purpose": "SOURCE_COVERAGE",
+        "crop_identity": null,
+        "cultivar": null,
+        "source_spatial_support": "NASA native regional grids; not surveyed fields",
+        "license": "NASA POWER public-access attribution; no endorsement",
+        "geometry": {
+          "point": [
+            147.35,
+            -35.05
+          ],
+          "polygon": null,
+          "crs": "EPSG:4326",
+          "area_ha": null,
+          "area_basis": "USER_DECLARED_NOT_SURVEYED",
+          "antimeridian_unwrapped_for_validation": false,
+          "area_from_degree_geometry": null,
+          "survey_validation": false
+        },
+        "FIELD_CALIBRATED": false
+      },
+      "season": {
+        "schema": "astragron.m9.global-season.v1",
+        "field_id": "GENERIC_CONTROL_ONLY",
+        "crop_taxon": "UNNAMED_METHOD_CONTROL",
+        "crop_use": "GENERIC_METHOD_COVER",
+        "sowing": "2023-12-01",
+        "harvest": "2024-03-29",
+        "hemisphere": "SOUTH",
+        "time_standard": "UTC",
+        "source_ids": [
+          "f5ea1640b0d4d7f06dd05147317894222216aa3f147104481dbf3e21778e4013"
+        ],
+        "evidence_status": "USER_ASSUMPTION",
+        "cultivar": null,
+        "context": {
+          "schema": "astragron.m7.continuous-water.v1",
+          "site_id": "AU_WAGGA_REGION",
+          "country": "AU",
+          "region": "Wagga",
+          "point_lon_lat": [
+            147.35,
+            -35.05
+          ],
+          "polygon": null,
+          "purpose": "SOURCE_COVERAGE",
+          "crop_identity": null,
+          "cultivar": null,
+          "source_spatial_support": "NASA native regional grids; not surveyed fields",
+          "license": "NASA POWER public-access attribution; no endorsement",
+          "geometry": {
+            "point": [
+              147.35,
+              -35.05
+            ],
+            "polygon": null,
+            "crs": "EPSG:4326",
+            "area_ha": null,
+            "area_basis": "USER_DECLARED_NOT_SURVEYED",
+            "antimeridian_unwrapped_for_validation": false,
+            "area_from_degree_geometry": null,
+            "survey_validation": false
+          },
+          "FIELD_CALIBRATED": false
+        },
+        "cross_year": true,
+        "days_inclusive": 120,
+        "no_default_swedish_calendar": true,
+        "record_id": "4b97d841c3f947de563578a8977d2010cc050e67212231c5f47509dedd9c28f8"
+      },
+      "hemisphere": "SOUTH",
+      "model_status": "MODEL_UNQUALIFIED",
+      "field_status": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "Swedish_parameter_fallback": false
+    }
+  },
+  "no_new_global_crop_qualification": true
+}

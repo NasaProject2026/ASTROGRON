@@ -1,0 +1,584 @@
+{
+  "schema": "astrogron.omitted-media-inventory.v1",
+  "generatedAt": "2026-11-14T01:52:32.074Z",
+  "note": "To keep the review archive strictly under 20 MB while retaining 100% of application source, public runtime assets, M4/M14 data corpora, tests, and Smart Fields verification evidence, legacy pre-mission videos and earlier milestone PNGs remain in the local workspace and are hashed below.",
+  "zeroRuntimeFilesOmitted": true,
+  "omittedMediaFileCount": 92,
+  "omittedMediaTotalBytes": 0,
+  "omittedInfraDirectories": [
+    {
+      "path": ".git/",
+      "reason": "excluded_vcs_deps_or_build_cache_dir"
+    },
+    {
+      "path": ".next/",
+      "reason": "excluded_vcs_deps_or_build_cache_dir"
+    },
+    {
+      "path": "node_modules/",
+      "reason": "excluded_vcs_deps_or_build_cache_dir"
+    },
+    {
+      "path": "test-results/",
+      "reason": "excluded_vcs_deps_or_build_cache_dir"
+    },
+    {
+      "path": "tsconfig.tsbuildinfo",
+      "reason": "transient_or_local_env_file"
+    }
+  ],
+  "omittedMediaFiles": [
+    {
+      "path": "review/screenshots/01_landing_desktop_1440.png",
+      "bytes": 3168055,
+      "sha256": "cf42a1fc22da7481420b024898003c770e6a7a1c42e2bdf72c347344fe5bb245",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/02_explore_globe_orbital_1440.png",
+      "bytes": 676518,
+      "sha256": "ecddf673086f3b42b243978124a8d0140f7eccb43554ab3b7319ddc0f9365c85",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/02b_explore_satellite_uppsala_1440.png",
+      "bytes": 356947,
+      "sha256": "fe09a3a88fdc698391f60255fc38e8e02d1115802c47fb1abdf3648ae9ba89d2",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/02c_explore_webgl_fallback_2d.png",
+      "bytes": 534045,
+      "sha256": "ba5ad14577e4f8448e82fa0146f288dd0bb21ed3dc504827aa8229cb038d70ca",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/03_explore_boundary_layers_1440.png",
+      "bytes": 699085,
+      "sha256": "cce681192c1e1289ac63ac343e162bcbca8867f84c0a42bd11a2458ddeb2c2be",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/04_farm_wizard_1440.png",
+      "bytes": 254171,
+      "sha256": "d57210d24399c40e79b0342a7245a5badf29154631695bb2b8568a972eef7e29",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/05_uppsala_results_1440.png",
+      "bytes": 386588,
+      "sha256": "5a1030dfaca8b66d0aed21e5e160d335d1adddcca17abb1946589c3a3084aeed",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/06_provenance_drawer_1440.png",
+      "bytes": 369415,
+      "sha256": "0ad3f21b257bfb2eede9d164e4ed70e7459bcaf5476c347e5111a5c23fc240f3",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/07_uppsala_plans_1440.png",
+      "bytes": 290976,
+      "sha256": "79fb3dcd39e86c2a7bc3295a12dc548784bb5a171f0fafe2607de6e193df3058",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/08_uppsala_climate_1440.png",
+      "bytes": 344567,
+      "sha256": "cbf3845f604e91c6cc744c54a41b4d30c7986341ff9d24abf9380f815d06658a",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/09_uppsala_reports_1440.png",
+      "bytes": 319282,
+      "sha256": "91fdac5994ef1145cc618d37c58b38361b4a00e3390c521749af0514f7ba6cc0",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/10_kenya_isolation_blocked_1440.png",
+      "bytes": 368467,
+      "sha256": "559fa6487b3ec47ceeb62a0609c4dee97bce1686de4d224414144071d1cd3d26",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/11_unknown_site_not_found_1440.png",
+      "bytes": 279387,
+      "sha256": "7f33eadaf071a322da0126e9b2874c3213bf9a8792c81831663c525463e0d9f0",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/12_landing_mobile_390.png",
+      "bytes": 980071,
+      "sha256": "0823ca8777ce6ea99bee27885d94eefa21c815b7eef0fad31a53929abf8453cc",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/13_explore_globe_mobile_390.png",
+      "bytes": 665781,
+      "sha256": "61bcf449ae7496464eb7ed2fdabcb38dc7507b4912800f75f0479eb594ae675b",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/14_uppsala_results_mobile_390.png",
+      "bytes": 124816,
+      "sha256": "1eae3da24ba61d1573d55d86c4818e8b8a9c15cbc3beecb183b55c45f37071a4",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/15_explore_landscape_844x390.png",
+      "bytes": 449169,
+      "sha256": "05aa4b68c6a9a012a73ad4fd2b998aa921bd2bb4130dba9ca8692ad7630dafd8",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/16_custom_uppsala_fork_blocked_1440.png",
+      "bytes": 338113,
+      "sha256": "7c2e23d69887a83f8f6e324dda54ae8dcba6e02093f73cd4108055dd1bb42dac",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/17_webgl_tile_outage_natural_earth_3d_1440.png",
+      "bytes": 372622,
+      "sha256": "eb73ac8ea13a804e2c0f9dcdb2d67f043ff1b59fa2a991ca9c8b56c684a6a68f",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_01_desktop_1440_orbit3d.png",
+      "bytes": 869167,
+      "sha256": "c6f55030b1261436636720719068c7d06a3f45ea6c43571c62bc9bf8a740926c",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_01_desktop_1440_static.png",
+      "bytes": 1165513,
+      "sha256": "0303f33076b0a2f3186342e0a92d27f7ca5d0d6375a90a85716ff44512b43119",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_02_desktop_1920_orbit3d.png",
+      "bytes": 1176955,
+      "sha256": "0d8f329afc33498195ae6260151c6e287b0ae09fdb64174985b88b914ef10ff5",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_02_desktop_1920_static.png",
+      "bytes": 1463834,
+      "sha256": "0d94d49ec8aefbaf9214b66ad6e53249dc90b05e1c0c8a78d6ab4a8bd24fe266",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_03_tablet_portrait_820_orbit3d.png",
+      "bytes": 637282,
+      "sha256": "91758ce90deed78e2d7df674ff106b98a2ed45f17e4c5e0ce9a2d1bf864a724a",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_03_tablet_portrait_820_static.png",
+      "bytes": 872243,
+      "sha256": "c9dddb034370ce32dbc0b36ac8e435c8f338a91d6118160e0de213316fad4c25",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_04_tablet_landscape_1180_orbit3d.png",
+      "bytes": 684338,
+      "sha256": "9ad6fe1e753ae024823c597104ac6337472a9082a2fe34a6bb7cbdb5cfa9c2d5",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_04_tablet_landscape_1180_static.png",
+      "bytes": 919790,
+      "sha256": "98bed160a67476993d70e053be045c9e98756f4a00560b96b792af90adb6faa3",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_05_mobile_390_orbit3d.png",
+      "bytes": 230612,
+      "sha256": "446f2de190c9d96fb6e2ee7f9b0b9309ccdc3ef8f90192b01eadd651ead07c32",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_05_mobile_390_static.png",
+      "bytes": 326799,
+      "sha256": "553e9748ebc9c7f40a50ddeadf12be04f02b9110ebb742aad069b6259c30c29c",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_06_mobile_360_orbit3d.png",
+      "bytes": 201208,
+      "sha256": "58a40780b0e67629659ec9bcf9a5572e60c187839c20df7a9d9aef191a71852c",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_06_mobile_360_static.png",
+      "bytes": 281117,
+      "sha256": "cae472d95f0e513797eb8bc3bbcedf50ccc29f18b1a5b06e35e3c77a8e559539",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_07_mobile_320_orbit3d.png",
+      "bytes": 104427,
+      "sha256": "8d36e10b07351d336828c9bea3b6290d1fea7d56c687977a58f6ff678f201974",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/ab_07_mobile_320_static.png",
+      "bytes": 167464,
+      "sha256": "559cf2dc76ca44d8e6da911cf48caa3cbaed143c558e06982e2b278119862cc5",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_analysis_1440.png",
+      "bytes": 135665,
+      "sha256": "7760b6c2b34838732765e3936f5ee773efb370b31ecf499ad529b6dba07f0a63",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_chat_1440.png",
+      "bytes": 157508,
+      "sha256": "924e73d211d704e9f238c6a88fe81ff82d544e653deb8ef22f7b61ad172f112a",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_explore_1440.png",
+      "bytes": 194429,
+      "sha256": "20c74322dc1d46d42492425b5b1efed11aa152901143460ec285dfb4d5a7c1a2",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_explore_390.png",
+      "bytes": 64175,
+      "sha256": "716247efd3911a31164be85a65ea652d4fd9915fe13f844eb7c90fa3fd7de6f3",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_farm_nyeri-kenya_coverage_390.png",
+      "bytes": 78771,
+      "sha256": "6fdf74e0b8856760c5642a6a61be5540793e94cfc31082bce89739c649a03350",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_farm_uppsala-demo_results_360.png",
+      "bytes": 64372,
+      "sha256": "4844478aac62a86e69cdb7d2e477a792e207d20ee8dfbceef0601c6cc8122099",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_farm_uppsala-demo_results_390.png",
+      "bytes": 67712,
+      "sha256": "7416a993486bf5ea18fb4be2cf4abba13d42c32fb6068c0a81f741d6189abcd6",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_farm_uppsala-demo_results_820.png",
+      "bytes": 138531,
+      "sha256": "9b7a47e64a801fbcc8f8cc6f6fb38e70408c26e778e7cfcecf2add3f83f94847",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_farms_1440.png",
+      "bytes": 96332,
+      "sha256": "cf42330144d6448433102856c910a8245ccda2cab8e1bfc49fa9cafe8b403561",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_hero_1440.png",
+      "bytes": 1167408,
+      "sha256": "8279eb73f977bdf0deba1b4128ab1fed54f7d17e6a7e9a40f71449c42de7af69",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_hero_1920.png",
+      "bytes": 1463198,
+      "sha256": "761380bb9d4993cca7b35ac4326ea0daefeb9d7c5eab5c09bf3a24f6909d000c",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_hero_390.png",
+      "bytes": 327852,
+      "sha256": "c3a49a8e2a977bc7582c8017e1807db0b67a8c980329a5fa71a918bebceff4f1",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_hero_820.png",
+      "bytes": 874424,
+      "sha256": "25cc38d9772be1dfba3813ae4c5c7386fb61895afa1c0f501f0ea6095bbdbb05",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_home_1440.png",
+      "bytes": 1167713,
+      "sha256": "cb99c038340fa7b7ef2edcd1427bf7af5e20510effe74ad3b46d3f58317e6735",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_home_390.png",
+      "bytes": 327903,
+      "sha256": "1e66e12d05b786a9bce200aead49bdce1e0f669c9268f7d11ce64b760c06e6aa",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_kenya_coverage_1440.png",
+      "bytes": 182306,
+      "sha256": "d7ea66e5002af7ffb576cc3d7f4172574e79bdea1824260fd02c721f97dc995c",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_recorded_results_1440.png",
+      "bytes": 887360,
+      "sha256": "bccf4f844da7d7eee16fec152ce6e1146d17ea58e31ba943c0ee82d016fb16ba",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_results_1440.png",
+      "bytes": 213332,
+      "sha256": "548bf0ddd0c5fd9416d6641847428a712f5e11398033e08f9a0205bfd04a0f20",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_results_390.png",
+      "bytes": 67712,
+      "sha256": "7416a993486bf5ea18fb4be2cf4abba13d42c32fb6068c0a81f741d6189abcd6",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/after/after_wizard_1440.png",
+      "bytes": 144861,
+      "sha256": "a62c060b0ec4ca8e598f4e1b93208d488799f316f902c958a9bc36fac109c7f3",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_home_1440.png",
+      "bytes": 1172324,
+      "sha256": "2debba328cdbb24a9da303810f6e1fb82669917f86ab22806864ec121f04542f",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_home_390.png",
+      "bytes": 338341,
+      "sha256": "e2aa6784083219d1175db60df3b3903146bd0fa366bb89738235582df5f0f926",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_home_820.png",
+      "bytes": 872821,
+      "sha256": "8351bc4a6a92f9a747df11d9ab723383461afbcb55d7ff8e2081279edb2cf44e",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_reports_1440.png",
+      "bytes": 183880,
+      "sha256": "dcaa71d6d9a2d7bc2f31048328ad18a1ea306f8e06ae2c30b5fc69683da23257",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_results_1440.png",
+      "bytes": 256486,
+      "sha256": "d85a4ad5f17a7c147f874e697ee99a533b0ee8d013a1c590552b77914e89e91d",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_results_390.png",
+      "bytes": 129625,
+      "sha256": "0a4671a79199ccc1610eeec1f1876a5a9d587dd3556233fdbebef3e4f39fe84b",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/before/before_wizard_1440.png",
+      "bytes": 149752,
+      "sha256": "63c3c7a491e844ce6c1a33249301f7c43d13fd84a49a64c4e791487f97ce2a44",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_nyeri_1280.png",
+      "bytes": 242478,
+      "sha256": "563af183b7a265d2653f17d2be0e00aff5a1e7c075b645ef3f62b397380aee82",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_uppsala_1280.png",
+      "bytes": 296166,
+      "sha256": "7295174f22a9b626c6b911c4544d4c3512fa82c68b933c7a46fcad745fcd7a1d",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_explore_403_recovery_1280.png",
+      "bytes": 592434,
+      "sha256": "7ac3734ed3320daf3f8580b0f7d44a6930c90867c68aa320f884fe761f105dd8",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_header_1024.png",
+      "bytes": 2058932,
+      "sha256": "a06b3a27d897f34214cf80f9b62227ebdb97c145d88a6121851fb602aa163629",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_plans_compare_mobile_390.png",
+      "bytes": 117745,
+      "sha256": "58c4c0949dc9ece091d5a05a39b5163f74c4f76939f9cd15e024202b46714cb4",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v42_reports_320.png",
+      "bytes": 84961,
+      "sha256": "53879c39bcac643dfab2c6b2f5e298145020f21b8fcbd94ad7a10650fb8ace63",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v5_simple_view_plans_1440.png",
+      "bytes": 155772,
+      "sha256": "dc6fb9fccbc035f43d4a596e1bbd38ed6afc0184dac9c3de25f947c79b149fb1",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/v5_simple_view_results_1440.png",
+      "bytes": 212823,
+      "sha256": "e519ac3257ab46b1fd7d3e0d87faca91d34e40b6005d016891123e543920ba54",
+      "reason": "legacy_pre_mission_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/videos/01_desktop_earth_to_field_journey.webm",
+      "bytes": 4402126,
+      "sha256": "7d77ab73df6fdff67c282cbe15747d51cbb4533a89ba2d0581965094c0565c88",
+      "reason": "legacy_video_heavy_media_size_limit"
+    },
+    {
+      "path": "review/videos/02_mobile_390_earth_to_results.webm",
+      "bytes": 3917121,
+      "sha256": "7d486e23e4480a4ee4c927c526854cc0ff0e2324d80c939c10eb96ff2c7d8a60",
+      "reason": "legacy_video_heavy_media_size_limit"
+    },
+    {
+      "path": "review/videos/03_custom_fork_and_outage.webm",
+      "bytes": 1680119,
+      "sha256": "4f4028dc8c3cf041018397f6200b6376b90c96ee9389f80e91dcbbe89afe2c10",
+      "reason": "legacy_video_heavy_media_size_limit"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_analysis_1440.png",
+      "bytes": 125019,
+      "sha256": "55b6cf00b876705995df1be96df74bf2caa46c24710484e19dc2115aa9a41acc",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_chat_1440.png",
+      "bytes": 157508,
+      "sha256": "924e73d211d704e9f238c6a88fe81ff82d544e653deb8ef22f7b61ad172f112a",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_explore_1440.png",
+      "bytes": 190631,
+      "sha256": "28c82d6f5d15233f017b3a602ec198943226cac454a1997d39e5e128587286a9",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_explore_390.png",
+      "bytes": 64804,
+      "sha256": "dcdb46198046b5c6dc3af56e1c1663da2b4718d988f60f16791b79dc66133c56",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_farm_nyeri-kenya_coverage_390.png",
+      "bytes": 78771,
+      "sha256": "6fdf74e0b8856760c5642a6a61be5540793e94cfc31082bce89739c649a03350",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_farm_uppsala-demo_results_360.png",
+      "bytes": 64372,
+      "sha256": "4844478aac62a86e69cdb7d2e477a792e207d20ee8dfbceef0601c6cc8122099",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_farm_uppsala-demo_results_390.png",
+      "bytes": 67712,
+      "sha256": "7416a993486bf5ea18fb4be2cf4abba13d42c32fb6068c0a81f741d6189abcd6",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_farm_uppsala-demo_results_820.png",
+      "bytes": 138531,
+      "sha256": "9b7a47e64a801fbcc8f8cc6f6fb38e70408c26e778e7cfcecf2add3f83f94847",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_farms_1440.png",
+      "bytes": 96332,
+      "sha256": "cf42330144d6448433102856c910a8245ccda2cab8e1bfc49fa9cafe8b403561",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_hero_1440.png",
+      "bytes": 1165397,
+      "sha256": "556c01d157889a48905ea0012f2a6f8b707c4786af9b19598b91082661b03dec",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_hero_1920.png",
+      "bytes": 1463314,
+      "sha256": "3119cafb42468632076d2e2b028476eab11ef671a910b558ddb0c19956bb15fe",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_hero_390.png",
+      "bytes": 327852,
+      "sha256": "c3a49a8e2a977bc7582c8017e1807db0b67a8c980329a5fa71a918bebceff4f1",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_hero_820.png",
+      "bytes": 874553,
+      "sha256": "1dcdf33c49ad099fe7858f50960ff47c896368c73f08b1fe60f4e5ef2cbde0cd",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_home_1440.png",
+      "bytes": 1167663,
+      "sha256": "28adfb37ed49a6950f620b24175a43a38b2b83f478cf93d3a5ccbfc192ff692b",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_home_390.png",
+      "bytes": 327854,
+      "sha256": "77ca6d2dd6db1d8cfc9cc962b92cf14c53eb805ca7f797671651a5033dfb1a15",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_kenya_coverage_1440.png",
+      "bytes": 182306,
+      "sha256": "d7ea66e5002af7ffb576cc3d7f4172574e79bdea1824260fd02c721f97dc995c",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_recorded_results_1440.png",
+      "bytes": 898002,
+      "sha256": "d880c17c77c95144516637c349a1b56c0d8fc293164447ca24db90791e88e9e8",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_results_1440.png",
+      "bytes": 213559,
+      "sha256": "ca8b63e8a4cbf278368ba6b27dfe99e3087e13e7e67a00e721ea5313addbdfd5",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_results_390.png",
+      "bytes": 67712,
+      "sha256": "7416a993486bf5ea18fb4be2cf4abba13d42c32fb6068c0a81f741d6189abcd6",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/screenshots/smart_before/after_wizard_1440.png",
+      "bytes": 116707,
+      "sha256": "4e7b1c431edd6c9a647c116da2340f465be25740377a51b7ecfd4706f5be65bd",
+      "reason": "duplicate_pre_mission_baseline_screenshots_omitted_for_20mb_budget"
+    },
+    {
+      "path": "review/recordings/live_smart_fields_flow.webm",
+      "bytes": 5147036,
+      "sha256": "cd89d7b5d35f760b16c172145daa4473ab4177cc09e6f3bd51a6a1f7e3b35fc6",
+      "reason": "legacy_pre_mission_recording_omitted_for_20mb_budget"
+    }
+  ]
+}

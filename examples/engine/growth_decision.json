@@ -1,0 +1,25 @@
+{
+  "schema": "astragron.client-decision.request.v1",
+  "farm_id": "growth-decision-blocked-demo",
+  "location": {
+    "site_id": "NL_WAGENINGEN_RESEARCH",
+    "name": "Wageningen Growth Bridge Demo",
+    "point_lon_lat": [5.67, 51.97],
+    "crs": "EPSG:4326"
+  },
+  "engine_request": {
+    "location": {
+      "site_id": "NL_WAGENINGEN_RESEARCH",
+      "name": "Wageningen Growth Bridge Demo",
+      "point_lon_lat": [5.67, 51.97],
+      "crs": "EPSG:4326"
+    },
+    "fields": [
+      {
+        "field_id": "F1",
+        "irrigation_access": false,
+        "crop_candidates": ["potato", "sugarbeet"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-13T00:43:34Z",
+  "selectedDataset": {
+    "id": "eox-s2cloudless-2016",
+    "layerIdentifier": "s2cloudless_3857",
+    "tileUrlTemplate": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+    "probeTileUrl": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/GoogleMapsCompatible/0/0/0.jpg",
+    "probeHttpStatus": 200,
+    "probeContentType": "image/jpeg",
+    "probeBytes": 15002
+  },
+  "wmtsCapabilitiesCheck": {
+    "url": "https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml",
+    "httpStatus": 200,
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseName": "Creative Commons Attribution 4.0 International License (CC BY 4.0)",
+    "creditExcerpt": "EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016) released under Creative Commons Attribution 4.0 International License"
+  },
+  "vintagePolicyDecision": "2016 EOX S2Cloudless (s2cloudless_3857) selected cleanly as CC BY 4.0; 2018-2025 EOX S2Cloudless releases excluded due to CC BY-NC-SA 4.0 non-commercial restrictions; no live uptime SLA assumed."
+}

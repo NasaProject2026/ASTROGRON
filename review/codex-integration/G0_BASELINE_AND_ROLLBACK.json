@@ -1,0 +1,33 @@
+{
+  "gate": "G0",
+  "recordedAt": "2026-11-14T18:19:00Z",
+  "environment": {
+    "os": "Windows_NT 10.0.26100 (win32 x64)",
+    "nodeVersion": "v22.14.0",
+    "npmVersion": "10.9.2",
+    "shell": "powershell.exe"
+  },
+  "outerHandoffPackage": {
+    "path": "C:/Users/HP/.gemini/antigravity/brain/3ac899d3-46e0-4094-ad7f-0b55172ca787/.user_uploaded/media_1794676237874_6e666e48.zip",
+    "uploadedAs": "ASTRAGRON_CODEX_V7_SAFE_HANDOFF.zip",
+    "extractedTo": "C:/Users/HP/.gemini/antigravity/brain/3ac899d3-46e0-4094-ad7f-0b55172ca787/scratch/astragron_codex_v7_safe_handoff",
+    "packageManifestVerifiedFiles": 9,
+    "status": "PASS"
+  },
+  "innerSourceZip": {
+    "path": "SOURCE/ASTRAGRON_FRONTEND_V7_CLOSURE_CODEX_READY.zip",
+    "sizeBytes": 13603803,
+    "sha256": "8ab271899a75cd710eb13bd6660f09928a8572d36498cb6f3dfe29014c134918",
+    "extractedTo": "C:/Users/HP/.gemini/antigravity/brain/3ac899d3-46e0-4094-ad7f-0b55172ca787/scratch/astragron_codex_v7_safe_handoff/FRONTEND_V7_EXTRACTED",
+    "manifestVerifiedFiles": 283,
+    "manifestFailedFiles": 0,
+    "protectedFilesVerified": "28/28 PASS"
+  },
+  "gitIsolation": {
+    "baselineBranch": "feat/v7-final-release-closure",
+    "baselineCommit": "21b8bfa",
+    "preservedBaselineWorktree": "C:/Users/HP/.gemini/antigravity/brain/3ac899d3-46e0-4094-ad7f-0b55172ca787/scratch/astragron_farmer_first/GEMINI_V7_BASELINE_WORKTREE",
+    "integrationBranch": "feat/v7-codex-safe-integration",
+    "integrationWorktree": "C:/Users/HP/.gemini/antigravity/brain/3ac899d3-46e0-4094-ad7f-0b55172ca787/scratch/astragron_farmer_first/FARMER_FIRST_WORK"
+  }
+}

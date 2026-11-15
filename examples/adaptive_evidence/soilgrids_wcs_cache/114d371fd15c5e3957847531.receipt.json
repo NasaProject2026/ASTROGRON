@@ -1,0 +1,73 @@
+{
+  "depth_label": "0-5cm",
+  "geotiff_sha256": {
+    "bdod": "7a3102ff17af912e857eb0f7da62dbd93940122b5fd54c5340651fbf25640296",
+    "cfvo": "ad9bc4dd1f6165aaa6b96b47c6a478204d9eb5e9cbd6cc67e5a4d9a1af677a63",
+    "clay": "e81427975fa1d224bd54d05eb4236286f23fc7dcbfedab57da4afd2bf5c6d1e5",
+    "phh2o": "57897ff8f1a24c925988ea35d1d84786b809eb4add3fade5b02d6c1128ff9486",
+    "sand": "ab759a2ff7b0a1cb2b32ae3aa6e732e98eac2d71d076dbc90e4b897029fc67ae",
+    "silt": "6224443848724c22dcc4b1b1c561d0d7df7ef51d3867e7b69ed00efd121a46a9",
+    "soc": "315f305987f43572f384e9ac9f4e60eebe0e8f70c63e568c643a7c2bb91dfbc9"
+  },
+  "payload_sha256": "86f8ec413106b8c21cd333f3782e58dc84082c276bb386c4c2c037834bc1d371",
+  "point_lon_lat": [
+    17.65,
+    59.82
+  ],
+  "properties": {
+    "bdod": {
+      "mean": 96,
+      "q05": 10,
+      "q50": 109,
+      "q95": 158
+    },
+    "cfvo": {
+      "mean": 88,
+      "q05": 0,
+      "q50": 70,
+      "q95": 230
+    },
+    "clay": {
+      "mean": 368,
+      "q05": 22,
+      "q50": 270,
+      "q95": 898
+    },
+    "phh2o": {
+      "mean": 60,
+      "q05": 42,
+      "q50": 59,
+      "q95": 76
+    },
+    "sand": {
+      "mean": 347,
+      "q05": 62,
+      "q50": 287,
+      "q95": 772
+    },
+    "silt": {
+      "mean": 284,
+      "q05": 16,
+      "q50": 209,
+      "q95": 745
+    },
+    "soc": {
+      "mean": 1034,
+      "q05": 109,
+      "q50": 411,
+      "q95": 4307
+    }
+  },
+  "provider": "ISRIC_WDC_SOILS_SOILGRIDS_V2_WCS",
+  "retrieved_at": "2026-11-08T12:00:00+00:00",
+  "urls": {
+    "bdod": "https://maps.isric.org/mapserv?map=/map/bdod.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=bdod_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "cfvo": "https://maps.isric.org/mapserv?map=/map/cfvo.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=cfvo_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "clay": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "phh2o": "https://maps.isric.org/mapserv?map=/map/phh2o.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=phh2o_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "sand": "https://maps.isric.org/mapserv?map=/map/sand.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=sand_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "silt": "https://maps.isric.org/mapserv?map=/map/silt.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=silt_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+    "soc": "https://maps.isric.org/mapserv?map=/map/soc.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=soc_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(17.6475,17.6525)&SUBSET=lat(59.8175,59.8225)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326"
+  },
+  "wcs_version": "2.0.1"
+}

@@ -1,0 +1,140 @@
+{
+  "verifiedAt": "2026-11-14T12:41:12.962Z",
+  "baseUrl": "http://127.0.0.1:3006",
+  "browserChannel": "msedge (Chromium)",
+  "mockedRoutes": 0,
+  "capturedRequestsCount": 9,
+  "requests": [
+    {
+      "timestamp": "2026-11-14T12:40:43.597Z",
+      "url": "http://127.0.0.1:3006/api/geocode?q=Heilbronn",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "status": "OK",
+        "providerHost": "geocoding-api.open-meteo.com",
+        "resultCount": 6,
+        "firstId": "Heilbronn"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:40:48.726Z",
+      "url": "http://127.0.0.1:3006/api/capabilities/site-check",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "providerHost": null,
+        "firstId": null
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:40:59.726Z",
+      "url": "http://127.0.0.1:3006/api/field-boundaries/suggest?lon=9.14156&lat=48.98443&source=FTW&year=2025",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "status": "FOUND",
+        "providerHost": null,
+        "resultCount": 1,
+        "firstId": "32UNV_0_0-139038"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:01.445Z",
+      "url": "http://127.0.0.1:3006/api/capabilities/site-check",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "providerHost": null,
+        "firstId": null
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:03.946Z",
+      "url": "http://127.0.0.1:3006/api/capabilities",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "providerHost": null,
+        "firstId": null
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:03.947Z",
+      "url": "http://127.0.0.1:3006/api/capabilities/site-check",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "providerHost": null,
+        "firstId": null
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:05.023Z",
+      "url": "http://127.0.0.1:3006/api/capabilities/footprints",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "providerHost": null,
+        "firstId": null
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:06.034Z",
+      "url": "http://127.0.0.1:3006/api/geocode?q=Damascus",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "status": "OK",
+        "providerHost": "geocoding-api.open-meteo.com",
+        "resultCount": 8,
+        "firstId": "Damascus"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T12:41:07.793Z",
+      "url": "http://127.0.0.1:3006/api/capabilities/site-check",
+      "status": 200,
+      "headers": {
+        "contentType": "application/json",
+        "cacheControl": "no-store"
+      },
+      "summary": {
+        "ok": true,
+        "providerHost": null,
+        "firstId": null
+      }
+    }
+  ]
+}

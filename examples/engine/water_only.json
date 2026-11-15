@@ -1,0 +1,31 @@
+{
+  "schema": "astragron.client-decision.request.v1",
+  "farm_id": "uppsala-water-only-demo",
+  "location": {
+    "site_id": "SE_UPPSALA",
+    "name": "Uppsala Plain Farm, Sweden",
+    "point_lon_lat": [17.65, 59.82],
+    "crs": "EPSG:4326"
+  },
+  "engine_request": {
+    "location": {
+      "site_id": "SE_UPPSALA",
+      "name": "Uppsala Plain Farm, Sweden",
+      "point_lon_lat": [17.65, 59.82],
+      "crs": "EPSG:4326"
+    },
+    "period": {"start": "2016-01-01", "end": "2020-12-31"},
+    "fields": [
+      {
+        "field_id": "F1",
+        "area_ha": 10.0,
+        "irrigation_access": false,
+        "crop_candidates": ["barley", "wheat", "faba_bean"]
+      }
+    ],
+    "supply": {
+      "regime": "rainfed",
+      "annual_farm_source_m3": 0.0
+    }
+  }
+}

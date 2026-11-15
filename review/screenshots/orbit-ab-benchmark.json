@@ -1,0 +1,1025 @@
+{
+  "measuredAt": "2026-11-14T22:27:05.225Z",
+  "environment": {
+    "browserEngine": "desktop-chrome",
+    "cpuThrottleModes": [
+      "1x (unthrottled cold & warm)",
+      "4x (Chromium CDP Emulation)"
+    ],
+    "webglRendererTested": true
+  },
+  "summaries": {
+    "staticCold": {
+      "trials": 2,
+      "ttfbMs": {
+        "min": 5.9,
+        "median": 6,
+        "max": 6.1,
+        "samples": 2
+      },
+      "fcpMs": {
+        "min": 304,
+        "median": 322,
+        "max": 340,
+        "samples": 2
+      },
+      "lcpMs": {
+        "min": 304,
+        "median": 322,
+        "max": 340,
+        "samples": 2
+      },
+      "cls": {
+        "min": 0,
+        "median": 0.01,
+        "max": 0.02684,
+        "samples": 2
+      },
+      "tbtApproxMs": {
+        "min": 121,
+        "median": 133,
+        "max": 145,
+        "samples": 2
+      },
+      "longTaskCount": {
+        "min": 2,
+        "median": 2,
+        "max": 2,
+        "samples": 2
+      },
+      "totalTransferBytes": {
+        "min": 793892,
+        "median": 793892,
+        "max": 793892,
+        "samples": 2
+      },
+      "fps": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      },
+      "p95FrameMs": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      }
+    },
+    "staticWarm": {
+      "trials": 2,
+      "ttfbMs": {
+        "min": 2.2,
+        "median": 2.45,
+        "max": 2.7,
+        "samples": 2
+      },
+      "fcpMs": {
+        "min": 132,
+        "median": 132,
+        "max": 132,
+        "samples": 2
+      },
+      "lcpMs": {
+        "min": 132,
+        "median": 132,
+        "max": 132,
+        "samples": 2
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "max": 0,
+        "samples": 2
+      },
+      "tbtApproxMs": {
+        "min": 0,
+        "median": 0,
+        "max": 0,
+        "samples": 2
+      },
+      "longTaskCount": {
+        "min": 0,
+        "median": 0,
+        "max": 0,
+        "samples": 2
+      },
+      "totalTransferBytes": {
+        "min": 3908,
+        "median": 3908,
+        "max": 3908,
+        "samples": 2
+      },
+      "fps": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      },
+      "p95FrameMs": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      }
+    },
+    "staticCpu4x": {
+      "trials": 1,
+      "ttfbMs": {
+        "min": 4.5,
+        "median": 4.5,
+        "max": 4.5,
+        "samples": 1
+      },
+      "fcpMs": {
+        "min": 1136,
+        "median": 1136,
+        "max": 1136,
+        "samples": 1
+      },
+      "lcpMs": {
+        "min": 1136,
+        "median": 1136,
+        "max": 1136,
+        "samples": 1
+      },
+      "cls": {
+        "min": 0,
+        "median": 0,
+        "max": 0,
+        "samples": 1
+      },
+      "tbtApproxMs": {
+        "min": 1114,
+        "median": 1114,
+        "max": 1114,
+        "samples": 1
+      },
+      "longTaskCount": {
+        "min": 4,
+        "median": 4,
+        "max": 4,
+        "samples": 1
+      },
+      "totalTransferBytes": {
+        "min": 793892,
+        "median": 793892,
+        "max": 793892,
+        "samples": 1
+      },
+      "fps": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      },
+      "p95FrameMs": {
+        "min": null,
+        "median": null,
+        "max": null,
+        "samples": 0
+      }
+    },
+    "orbit3dCold": {
+      "trials": 2,
+      "ttfbMs": {
+        "min": 7.4,
+        "median": 23.6,
+        "max": 39.8,
+        "samples": 2
+      },
+      "fcpMs": {
+        "min": 216,
+        "median": 268,
+        "max": 320,
+        "samples": 2
+      },
+      "lcpMs": {
+        "min": 580,
+        "median": 876,
+        "max": 1172,
+        "samples": 2
+      },
+      "cls": {
+        "min": 0.00038,
+        "median": 0,
+        "max": 0.00054,
+        "samples": 2
+      },
+      "tbtApproxMs": {
+        "min": 584,
+        "median": 872,
+        "max": 1160,
+        "samples": 2
+      },
+      "longTaskCount": {
+        "min": 3,
+        "median": 3.5,
+        "max": 4,
+        "samples": 2
+      },
+      "totalTransferBytes": {
+        "min": 4053041,
+        "median": 4053044,
+        "max": 4053047,
+        "samples": 2
+      },
+      "fps": {
+        "min": 60.1,
+        "median": 60.1,
+        "max": 60.1,
+        "samples": 2
+      },
+      "p95FrameMs": {
+        "min": 16.7,
+        "median": 16.75,
+        "max": 16.8,
+        "samples": 2
+      }
+    },
+    "orbit3dWarm": {
+      "trials": 2,
+      "ttfbMs": {
+        "min": 2,
+        "median": 2.1,
+        "max": 2.2,
+        "samples": 2
+      },
+      "fcpMs": {
+        "min": 120,
+        "median": 134,
+        "max": 148,
+        "samples": 2
+      },
+      "lcpMs": {
+        "min": 184,
+        "median": 200,
+        "max": 216,
+        "samples": 2
+      },
+      "cls": {
+        "min": 0.00044,
+        "median": 0,
+        "max": 0.00055,
+        "samples": 2
+      },
+      "tbtApproxMs": {
+        "min": 563,
+        "median": 629.5,
+        "max": 696,
+        "samples": 2
+      },
+      "longTaskCount": {
+        "min": 2,
+        "median": 3,
+        "max": 4,
+        "samples": 2
+      },
+      "totalTransferBytes": {
+        "min": 14605,
+        "median": 14606,
+        "max": 14607,
+        "samples": 2
+      },
+      "fps": {
+        "min": 60.1,
+        "median": 60.1,
+        "max": 60.1,
+        "samples": 2
+      },
+      "p95FrameMs": {
+        "min": 16.8,
+        "median": 16.8,
+        "max": 16.8,
+        "samples": 2
+      }
+    },
+    "orbit3dCpu4x": {
+      "trials": 1,
+      "ttfbMs": {
+        "min": 3.2,
+        "median": 3.2,
+        "max": 3.2,
+        "samples": 1
+      },
+      "fcpMs": {
+        "min": 644,
+        "median": 644,
+        "max": 644,
+        "samples": 1
+      },
+      "lcpMs": {
+        "min": 1592,
+        "median": 1592,
+        "max": 1592,
+        "samples": 1
+      },
+      "cls": {
+        "min": 0.00054,
+        "median": 0.00054,
+        "max": 0.00054,
+        "samples": 1
+      },
+      "tbtApproxMs": {
+        "min": 2768,
+        "median": 2768,
+        "max": 2768,
+        "samples": 1
+      },
+      "longTaskCount": {
+        "min": 8,
+        "median": 8,
+        "max": 8,
+        "samples": 1
+      },
+      "totalTransferBytes": {
+        "min": 4053044,
+        "median": 4053044,
+        "max": 4053044,
+        "samples": 1
+      },
+      "fps": {
+        "min": 60.1,
+        "median": 60.1,
+        "max": 60.1,
+        "samples": 1
+      },
+      "p95FrameMs": {
+        "min": 16.8,
+        "median": 16.8,
+        "max": 16.8,
+        "samples": 1
+      }
+    }
+  },
+  "visualChecks": [
+    {
+      "key": "01_desktop_1440",
+      "viewport": "1440x900",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.509,0.731",
+      "satClearedTextArea": true,
+      "staticShot": "ab_01_desktop_1440_static.png",
+      "orbit3dShot": "ab_01_desktop_1440_orbit3d.png"
+    },
+    {
+      "key": "02_desktop_1920",
+      "viewport": "1920x1080",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.391,0.73",
+      "satClearedTextArea": true,
+      "staticShot": "ab_02_desktop_1920_static.png",
+      "orbit3dShot": "ab_02_desktop_1920_orbit3d.png"
+    },
+    {
+      "key": "03_tablet_portrait_820",
+      "viewport": "820x1180",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.535,0.521",
+      "satClearedTextArea": true,
+      "staticShot": "ab_03_tablet_portrait_820_static.png",
+      "orbit3dShot": "ab_03_tablet_portrait_820_orbit3d.png"
+    },
+    {
+      "key": "04_tablet_landscape_1180",
+      "viewport": "1180x820",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.502,0.635",
+      "satClearedTextArea": true,
+      "staticShot": "ab_04_tablet_landscape_1180_static.png",
+      "orbit3dShot": "ab_04_tablet_landscape_1180_orbit3d.png"
+    },
+    {
+      "key": "05_mobile_390",
+      "viewport": "390x844",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.446,-0.713",
+      "satClearedTextArea": true,
+      "staticShot": "ab_05_mobile_390_static.png",
+      "orbit3dShot": "ab_05_mobile_390_orbit3d.png"
+    },
+    {
+      "key": "06_mobile_360",
+      "viewport": "360x800",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.482,-0.713",
+      "satClearedTextArea": true,
+      "staticShot": "ab_06_mobile_360_static.png",
+      "orbit3dShot": "ab_06_mobile_360_orbit3d.png"
+    },
+    {
+      "key": "07_mobile_320",
+      "viewport": "320x640",
+      "staticOverflowPx": 0,
+      "orbit3dOverflowPx": 0,
+      "orbitStatus": "WEBGL_ACTIVE",
+      "orbitWebglReady": true,
+      "landsatLoaded": true,
+      "satNdc": "0.559,-0.713",
+      "satClearedTextArea": true,
+      "staticShot": "ab_07_mobile_320_static.png",
+      "orbit3dShot": "ab_07_mobile_320_orbit3d.png"
+    }
+  ],
+  "rawSamples": [
+    {
+      "route": "/",
+      "mode": "cold_unthrottled",
+      "trial": 1,
+      "ttfbMs": 5.9,
+      "fcpMs": 340,
+      "lcpMs": 340,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "inpMs": 56,
+      "longTaskCount": 2,
+      "maxLongTaskMs": 177,
+      "tbtApproxMs": 145,
+      "webglContextsCreated": 0,
+      "totalTransferBytes": 793892,
+      "totalEncodedBytes": 787892,
+      "jsTransferBytes": 263727,
+      "glbTransferBytes": 0,
+      "imageTransferBytes": 418195,
+      "orbitStageMetrics": null,
+      "webVitalsApi": {
+        "LCP": {
+          "value": 340,
+          "rating": "good",
+          "delta": 340,
+          "id": "v6-1794695141641-8237304398241"
+        },
+        "FCP": {
+          "value": 340,
+          "rating": "good",
+          "delta": 340,
+          "id": "v6-1794695141642-6266640258941"
+        },
+        "TTFB": {
+          "value": 8.9,
+          "rating": "good",
+          "delta": 8.9,
+          "id": "v6-1794695141642-3464751034345"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695141655-1744623664060"
+        },
+        "INP": {
+          "value": 56,
+          "rating": "good",
+          "delta": 56,
+          "id": "v6-1794695141642-4130870063368"
+        }
+      }
+    },
+    {
+      "route": "/",
+      "mode": "warm_unthrottled",
+      "trial": 1,
+      "ttfbMs": 2.2,
+      "fcpMs": 132,
+      "lcpMs": 132,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "inpMs": 48,
+      "longTaskCount": 0,
+      "maxLongTaskMs": 0,
+      "tbtApproxMs": 0,
+      "webglContextsCreated": 0,
+      "totalTransferBytes": 3908,
+      "totalEncodedBytes": 370925,
+      "jsTransferBytes": 260727,
+      "glbTransferBytes": 0,
+      "imageTransferBytes": 1228,
+      "orbitStageMetrics": null,
+      "webVitalsApi": {
+        "LCP": {
+          "value": 132,
+          "rating": "good",
+          "delta": 132,
+          "id": "v6-1794695143084-1512388727365"
+        },
+        "FCP": {
+          "value": 132,
+          "rating": "good",
+          "delta": 132,
+          "id": "v6-1794695143084-2445641903384"
+        },
+        "TTFB": {
+          "value": 5.1,
+          "rating": "good",
+          "delta": 5.1,
+          "id": "v6-1794695143084-4050993418268"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695143090-4824869777337"
+        },
+        "INP": {
+          "value": 48,
+          "rating": "good",
+          "delta": 48,
+          "id": "v6-1794695143084-5151792825944"
+        }
+      }
+    },
+    {
+      "route": "/",
+      "mode": "cold_unthrottled",
+      "trial": 2,
+      "ttfbMs": 6.1,
+      "fcpMs": 304,
+      "lcpMs": 304,
+      "lcpElement": "IMG",
+      "cls": 0.02684,
+      "inpMs": 56,
+      "longTaskCount": 2,
+      "maxLongTaskMs": 156,
+      "tbtApproxMs": 121,
+      "webglContextsCreated": 0,
+      "totalTransferBytes": 793892,
+      "totalEncodedBytes": 787892,
+      "jsTransferBytes": 263727,
+      "glbTransferBytes": 0,
+      "imageTransferBytes": 418195,
+      "orbitStageMetrics": null,
+      "webVitalsApi": {
+        "LCP": {
+          "value": 304,
+          "rating": "good",
+          "delta": 304,
+          "id": "v6-1794695145125-2997415631329"
+        },
+        "FCP": {
+          "value": 304,
+          "rating": "good",
+          "delta": 304,
+          "id": "v6-1794695145125-5505446491528"
+        },
+        "TTFB": {
+          "value": 11.4,
+          "rating": "good",
+          "delta": 11.4,
+          "id": "v6-1794695145125-6211270090014"
+        },
+        "CLS": {
+          "value": 0.0268,
+          "rating": "good",
+          "delta": 0.0268,
+          "id": "v6-1794695145136-7936953153965"
+        },
+        "INP": {
+          "value": 56,
+          "rating": "good",
+          "delta": 56,
+          "id": "v6-1794695145125-6234265186680"
+        }
+      }
+    },
+    {
+      "route": "/",
+      "mode": "warm_unthrottled",
+      "trial": 2,
+      "ttfbMs": 2.7,
+      "fcpMs": 132,
+      "lcpMs": 132,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "inpMs": 48,
+      "longTaskCount": 0,
+      "maxLongTaskMs": 0,
+      "tbtApproxMs": 0,
+      "webglContextsCreated": 0,
+      "totalTransferBytes": 3908,
+      "totalEncodedBytes": 370925,
+      "jsTransferBytes": 260727,
+      "glbTransferBytes": 0,
+      "imageTransferBytes": 1228,
+      "orbitStageMetrics": null,
+      "webVitalsApi": {
+        "LCP": {
+          "value": 132,
+          "rating": "good",
+          "delta": 132,
+          "id": "v6-1794695146578-3622101870199"
+        },
+        "FCP": {
+          "value": 132,
+          "rating": "good",
+          "delta": 132,
+          "id": "v6-1794695146579-3818233891673"
+        },
+        "TTFB": {
+          "value": 6.2,
+          "rating": "good",
+          "delta": 6.2,
+          "id": "v6-1794695146579-3993303367831"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695146582-4712720972702"
+        },
+        "INP": {
+          "value": 48,
+          "rating": "good",
+          "delta": 48,
+          "id": "v6-1794695146579-3442088386378"
+        }
+      }
+    },
+    {
+      "route": "/orbit-ab",
+      "mode": "cold_unthrottled",
+      "trial": 1,
+      "ttfbMs": 39.8,
+      "fcpMs": 320,
+      "lcpMs": 1172,
+      "lcpElement": "IMG",
+      "cls": 0.00038,
+      "inpMs": 56,
+      "longTaskCount": 4,
+      "maxLongTaskMs": 592,
+      "tbtApproxMs": 1160,
+      "webglContextsCreated": 1,
+      "totalTransferBytes": 4053047,
+      "totalEncodedBytes": 4041347,
+      "jsTransferBytes": 765944,
+      "glbTransferBytes": 707645,
+      "imageTransferBytes": 2384110,
+      "orbitStageMetrics": {
+        "status": "WEBGL_ACTIVE",
+        "webglReady": true,
+        "fps": 60.1,
+        "p95FrameMs": 16.7,
+        "droppedFrames": 2,
+        "satNdc": "0.539,0.709",
+        "satOccluded": false,
+        "landsatLoaded": true
+      },
+      "webVitalsApi": {
+        "LCP": {
+          "value": 1172,
+          "rating": "good",
+          "delta": 852,
+          "id": "v6-1794695148455-9933840144733"
+        },
+        "FCP": {
+          "value": 320,
+          "rating": "good",
+          "delta": 320,
+          "id": "v6-1794695148455-9969195731948"
+        },
+        "TTFB": {
+          "value": 46.3,
+          "rating": "good",
+          "delta": 46.3,
+          "id": "v6-1794695148456-7767675030041"
+        },
+        "CLS": {
+          "value": 0.0004,
+          "rating": "good",
+          "delta": 0.0002,
+          "id": "v6-1794695148465-7860235090674"
+        },
+        "INP": {
+          "value": 56,
+          "rating": "good",
+          "delta": 56,
+          "id": "v6-1794695148456-9122180670510"
+        }
+      }
+    },
+    {
+      "route": "/orbit-ab",
+      "mode": "warm_unthrottled",
+      "trial": 1,
+      "ttfbMs": 2,
+      "fcpMs": 120,
+      "lcpMs": 184,
+      "lcpElement": "IMG",
+      "cls": 0.00044,
+      "inpMs": 48,
+      "longTaskCount": 2,
+      "maxLongTaskMs": 598,
+      "tbtApproxMs": 563,
+      "webglContextsCreated": 1,
+      "totalTransferBytes": 14607,
+      "totalEncodedBytes": 1659063,
+      "jsTransferBytes": 749696,
+      "glbTransferBytes": 300,
+      "imageTransferBytes": 1828,
+      "orbitStageMetrics": {
+        "status": "WEBGL_ACTIVE",
+        "webglReady": true,
+        "fps": 60.1,
+        "p95FrameMs": 16.8,
+        "droppedFrames": 1,
+        "satNdc": "0.542,0.707",
+        "satOccluded": false,
+        "landsatLoaded": true
+      },
+      "webVitalsApi": {
+        "TTFB": {
+          "value": 5.6,
+          "rating": "good",
+          "delta": 5.6,
+          "id": "v6-1794695154696-6521446290469"
+        },
+        "FCP": {
+          "value": 120,
+          "rating": "good",
+          "delta": 120,
+          "id": "v6-1794695154696-1154175453466"
+        },
+        "LCP": {
+          "value": 184,
+          "rating": "good",
+          "delta": 64,
+          "id": "v6-1794695154696-2485783976185"
+        },
+        "CLS": {
+          "value": 0.0004,
+          "rating": "good",
+          "delta": 0.0002,
+          "id": "v6-1794695154796-5279649763971"
+        },
+        "INP": {
+          "value": 48,
+          "rating": "good",
+          "delta": 48,
+          "id": "v6-1794695154696-7251939729228"
+        }
+      }
+    },
+    {
+      "route": "/orbit-ab",
+      "mode": "cold_unthrottled",
+      "trial": 2,
+      "ttfbMs": 7.4,
+      "fcpMs": 216,
+      "lcpMs": 580,
+      "lcpElement": "IMG",
+      "cls": 0.00054,
+      "inpMs": 56,
+      "longTaskCount": 3,
+      "maxLongTaskMs": 592,
+      "tbtApproxMs": 584,
+      "webglContextsCreated": 1,
+      "totalTransferBytes": 4053041,
+      "totalEncodedBytes": 4041341,
+      "jsTransferBytes": 765944,
+      "glbTransferBytes": 707645,
+      "imageTransferBytes": 2384110,
+      "orbitStageMetrics": {
+        "status": "WEBGL_ACTIVE",
+        "webglReady": true,
+        "fps": 60.1,
+        "p95FrameMs": 16.8,
+        "droppedFrames": 1,
+        "satNdc": "0.542,0.706",
+        "satOccluded": false,
+        "landsatLoaded": true
+      },
+      "webVitalsApi": {
+        "LCP": {
+          "value": 580,
+          "rating": "good",
+          "delta": 364,
+          "id": "v6-1794695160559-6516082902178"
+        },
+        "FCP": {
+          "value": 216,
+          "rating": "good",
+          "delta": 216,
+          "id": "v6-1794695160559-5798088593326"
+        },
+        "TTFB": {
+          "value": 10.4,
+          "rating": "good",
+          "delta": 10.4,
+          "id": "v6-1794695160560-7780236571130"
+        },
+        "CLS": {
+          "value": 0.0005,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695160565-2682004967169"
+        },
+        "INP": {
+          "value": 56,
+          "rating": "good",
+          "delta": 56,
+          "id": "v6-1794695160560-1711068078274"
+        }
+      }
+    },
+    {
+      "route": "/orbit-ab",
+      "mode": "warm_unthrottled",
+      "trial": 2,
+      "ttfbMs": 2.2,
+      "fcpMs": 148,
+      "lcpMs": 216,
+      "lcpElement": "IMG",
+      "cls": 0.00055,
+      "inpMs": 48,
+      "longTaskCount": 4,
+      "maxLongTaskMs": 702,
+      "tbtApproxMs": 696,
+      "webglContextsCreated": 1,
+      "totalTransferBytes": 14605,
+      "totalEncodedBytes": 1659061,
+      "jsTransferBytes": 749696,
+      "glbTransferBytes": 300,
+      "imageTransferBytes": 1828,
+      "orbitStageMetrics": {
+        "status": "WEBGL_ACTIVE",
+        "webglReady": true,
+        "fps": 60.1,
+        "p95FrameMs": 16.8,
+        "droppedFrames": 6,
+        "satNdc": "0.543,0.704",
+        "satOccluded": false,
+        "landsatLoaded": true
+      },
+      "webVitalsApi": {
+        "TTFB": {
+          "value": 4.9,
+          "rating": "good",
+          "delta": 4.9,
+          "id": "v6-1794695166230-3485203252399"
+        },
+        "FCP": {
+          "value": 148,
+          "rating": "good",
+          "delta": 148,
+          "id": "v6-1794695166230-8512284291557"
+        },
+        "LCP": {
+          "value": 216,
+          "rating": "good",
+          "delta": 68,
+          "id": "v6-1794695166229-2467835619752"
+        },
+        "CLS": {
+          "value": 0.0005,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695166422-6001556074383"
+        },
+        "INP": {
+          "value": 48,
+          "rating": "good",
+          "delta": 48,
+          "id": "v6-1794695166230-5748039891442"
+        }
+      }
+    },
+    {
+      "route": "/",
+      "mode": "cold_cpu_4x",
+      "trial": 1,
+      "ttfbMs": 4.5,
+      "fcpMs": 1136,
+      "lcpMs": 1136,
+      "lcpElement": "IMG",
+      "cls": 0,
+      "inpMs": 208,
+      "longTaskCount": 4,
+      "maxLongTaskMs": 680,
+      "tbtApproxMs": 1114,
+      "webglContextsCreated": 0,
+      "totalTransferBytes": 793892,
+      "totalEncodedBytes": 787892,
+      "jsTransferBytes": 263727,
+      "glbTransferBytes": 0,
+      "imageTransferBytes": 418195,
+      "orbitStageMetrics": null,
+      "webVitalsApi": {
+        "LCP": {
+          "value": 1136,
+          "rating": "good",
+          "delta": 1136,
+          "id": "v6-1794695174131-3099173960774"
+        },
+        "FCP": {
+          "value": 1136,
+          "rating": "good",
+          "delta": 1136,
+          "id": "v6-1794695174135-2689449959875"
+        },
+        "TTFB": {
+          "value": 10.6,
+          "rating": "good",
+          "delta": 10.6,
+          "id": "v6-1794695174136-8357972063351"
+        },
+        "CLS": {
+          "value": 0,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695174230-2444634667657"
+        },
+        "INP": {
+          "value": 208,
+          "rating": "needs-improvement",
+          "delta": 208,
+          "id": "v6-1794695174136-5493222701242"
+        }
+      }
+    },
+    {
+      "route": "/orbit-ab",
+      "mode": "cold_cpu_4x",
+      "trial": 1,
+      "ttfbMs": 3.2,
+      "fcpMs": 644,
+      "lcpMs": 1592,
+      "lcpElement": "IMG",
+      "cls": 0.00054,
+      "inpMs": 40,
+      "longTaskCount": 8,
+      "maxLongTaskMs": 2256,
+      "tbtApproxMs": 2768,
+      "webglContextsCreated": 1,
+      "totalTransferBytes": 4053044,
+      "totalEncodedBytes": 4041344,
+      "jsTransferBytes": 765944,
+      "glbTransferBytes": 707645,
+      "imageTransferBytes": 2384110,
+      "orbitStageMetrics": {
+        "status": "WEBGL_ACTIVE",
+        "webglReady": true,
+        "fps": 60.1,
+        "p95FrameMs": 16.8,
+        "droppedFrames": 5,
+        "satNdc": "0.542,0.706",
+        "satOccluded": false,
+        "landsatLoaded": true
+      },
+      "webVitalsApi": {
+        "LCP": {
+          "value": 1592,
+          "rating": "good",
+          "delta": 948,
+          "id": "v6-1794695176685-6945650129056"
+        },
+        "FCP": {
+          "value": 644,
+          "rating": "good",
+          "delta": 644,
+          "id": "v6-1794695176687-2411030548991"
+        },
+        "TTFB": {
+          "value": 6.4,
+          "rating": "good",
+          "delta": 6.4,
+          "id": "v6-1794695176688-3927060719740"
+        },
+        "CLS": {
+          "value": 0.0005,
+          "rating": "good",
+          "delta": 0,
+          "id": "v6-1794695176730-7298020479589"
+        },
+        "INP": {
+          "value": 40,
+          "rating": "good",
+          "delta": 40,
+          "id": "v6-1794695176687-4649769072463"
+        }
+      }
+    }
+  ]
+}

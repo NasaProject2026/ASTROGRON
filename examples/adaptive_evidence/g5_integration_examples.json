@@ -1,0 +1,772 @@
+{
+  "schema": "astragron.adaptive-evidence.g5-integration-examples.v1",
+  "gate": "G5_INTEGRATION_INTERFACE",
+  "status": "PASS",
+  "release_readiness_separation": {
+    "GLOBAL_GEO_BASELINE_REVIEW_READY": true,
+    "ADAPTIVE_EVIDENCE_REVIEW_READY": true,
+    "OPEN_SOURCE_RELEASE_REVIEW_READY": true,
+    "WHOLE_SYSTEM_PRODUCTION_RELEASE_READY": false,
+    "whole_system_note": "Adaptive evidence sidecar, global Natural Earth 10m baseline, and open-source compliance gate are review-ready; whole-system commercial farmer production release requires explicit project-owner root LICENSE selection, field calibration trials, and official local water/regulatory clearance."
+  },
+  "canonical_scenarios": {
+    "a_inland_farm": {
+      "scenario_key": "a_inland_farm",
+      "title": "(a) Inland Terrestrial Farm (Uppsala Plain, Sweden)",
+      "request_summary": {
+        "site_id": "SE_UPPSALA",
+        "point_lon_lat": [
+          17.65,
+          59.82
+        ],
+        "candidate_crops": [
+          "wheat",
+          "barley",
+          "faba_bean"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": {
+          "allow_offline_reference_fixture": true,
+          "allow_conditional_crop_planning": true
+        }
+      },
+      "overall_summary_status": "PARTIAL_OR_CONDITIONAL_READY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "license_unverified",
+      "c7_missing_reason": null,
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [
+        "historical_regional_climate",
+        "location_identity",
+        "regional_crop_water_screening",
+        "regional_soil_properties_250m",
+        "soil_hydraulic_retention_scenarios",
+        "water_balance_screening"
+      ],
+      "blocked_claims": [
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        },
+        {
+          "capability_id": "C8",
+          "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_region",
+          "explanation": "Native WOFOST/SNOMIN process simulation (brain/growth_decision.py) is locked to the pinned Wageningen research envelope [5.67, 51.97] and cannot be extrapolated globally without local cultivar calibration and measured initial mineral NO3/NH4."
+        },
+        {
+          "capability_id": "C9",
+          "name": "Optional conditional economics using user-supplied or licensed and dated price/cost/yield sources",
+          "status": "BLOCKED",
+          "missing_reason": "insufficient_parameters",
+          "explanation": "Economic cost screening requires user-supplied local input costs; net profit and marketable yield remain strictly null without field-validated yield calibration."
+        },
+        {
+          "capability_id": "C10",
+          "name": "Pesticide, water-right and legal clearance",
+          "status": "BLOCKED",
+          "missing_reason": "official_verification_required",
+          "explanation": "Water abstraction rights and pesticide registration compliance cannot be inferred from global environmental datasets; official local regulatory verification is required."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "b_ocean": {
+      "scenario_key": "b_ocean",
+      "title": "(b) Open Ocean Site ([0.0, 0.0] Gulf of Guinea, Null Island Filtered)",
+      "request_summary": {
+        "site_id": "GULF_OF_GUINEA",
+        "point_lon_lat": [
+          0.0,
+          0.0
+        ],
+        "candidate_crops": [
+          "wheat"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": null
+      },
+      "overall_summary_status": "ALL_CAPABILITIES_BLOCKED",
+      "capability_statuses": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "ocean_or_non_land_cell",
+      "c7_missing_reason": "ocean_or_non_land_cell",
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [],
+      "blocked_claims": [
+        {
+          "capability_id": "C1",
+          "name": "Coordinates, land/geographic identity and source coverage",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Location [0.0, 0.0] is open ocean/sea per Natural Earth 10m (569799.2 m from coast)."
+        },
+        {
+          "capability_id": "C2",
+          "name": "Historical regional climate profile and limitations",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Location [0.0, 0.0] is open ocean/sea per Natural Earth 10m (569799.2 m from coast)."
+        },
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Blocked because C1 geographic/land validation failed (ocean_or_non_land_cell): Location [0.0, 0.0] is open ocean/sea per Natural Earth 10m (569799.2 m from coast)."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Blocked because C1 geographic/land validation failed (ocean_or_non_land_cell): Location [0.0, 0.0] is open ocean/sea per Natural Earth 10m (569799.2 m from coast)."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "location.point_lon_lat",
+          "measurement_action": "Supply valid terrestrial agricultural coordinates in EPSG:4326.",
+          "upgrades_capabilities": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "c_inland_water": {
+      "scenario_key": "c_inland_water",
+      "title": "(c) Major Inland Water Body ([-87.0, 47.5] Lake Superior)",
+      "request_summary": {
+        "site_id": "LAKE_SUPERIOR",
+        "point_lon_lat": [
+          -87.0,
+          47.5
+        ],
+        "candidate_crops": [
+          "wheat"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": null
+      },
+      "overall_summary_status": "ALL_CAPABILITIES_BLOCKED",
+      "capability_statuses": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "ocean_or_non_land_cell",
+      "c7_missing_reason": "ocean_or_non_land_cell",
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [],
+      "blocked_claims": [
+        {
+          "capability_id": "C1",
+          "name": "Coordinates, land/geographic identity and source coverage",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Location [-87.0, 47.5] falls in inland water body (Lake Superior) per Natural Earth 10m."
+        },
+        {
+          "capability_id": "C2",
+          "name": "Historical regional climate profile and limitations",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Location [-87.0, 47.5] falls in inland water body (Lake Superior) per Natural Earth 10m."
+        },
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Blocked because C1 geographic/land validation failed (ocean_or_non_land_cell): Location [-87.0, 47.5] falls in inland water body (Lake Superior) per Natural Earth 10m."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "BLOCKED",
+          "missing_reason": "ocean_or_non_land_cell",
+          "explanation": "Blocked because C1 geographic/land validation failed (ocean_or_non_land_cell): Location [-87.0, 47.5] falls in inland water body (Lake Superior) per Natural Earth 10m."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "location.point_lon_lat",
+          "measurement_action": "Supply valid terrestrial agricultural coordinates in EPSG:4326.",
+          "upgrades_capabilities": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "d_coastal_uncertain": {
+      "scenario_key": "d_coastal_uncertain",
+      "title": "(d) Coastal Uncertain Site ([4.0159, 51.5308] 1.6 m from Zeeland Shoreline)",
+      "request_summary": {
+        "site_id": "NL_ZEELAND_SHORELINE",
+        "point_lon_lat": [
+          4.0159,
+          51.5308
+        ],
+        "candidate_crops": [
+          "wheat"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": null
+      },
+      "overall_summary_status": "ALL_CAPABILITIES_BLOCKED",
+      "capability_statuses": {
+        "C1": "BLOCKED",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "land_status_unverified",
+      "c7_missing_reason": "land_status_unverified",
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [],
+      "blocked_claims": [
+        {
+          "capability_id": "C1",
+          "name": "Coordinates, land/geographic identity and source coverage",
+          "status": "BLOCKED",
+          "missing_reason": "land_status_unverified",
+          "explanation": "Location [4.0159, 51.5308] is on land within 1.6 m (< 500.0 m 1:10M cartographic uncertainty threshold) of coastline/shoreline; fails closed as COASTAL_UNCERTAIN."
+        },
+        {
+          "capability_id": "C2",
+          "name": "Historical regional climate profile and limitations",
+          "status": "BLOCKED",
+          "missing_reason": "land_status_unverified",
+          "explanation": "Location [4.0159, 51.5308] is on land within 1.6 m (< 500.0 m 1:10M cartographic uncertainty threshold) of coastline/shoreline; fails closed as COASTAL_UNCERTAIN."
+        },
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "BLOCKED",
+          "missing_reason": "land_status_unverified",
+          "explanation": "Blocked because C1 geographic/land validation failed (land_status_unverified): Location [4.0159, 51.5308] is on land within 1.6 m (< 500.0 m 1:10M cartographic uncertainty threshold) of coastline/shoreline; fails closed as COASTAL_UNCERTAIN."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "BLOCKED",
+          "missing_reason": "land_status_unverified",
+          "explanation": "Blocked because C1 geographic/land validation failed (land_status_unverified): Location [4.0159, 51.5308] is on land within 1.6 m (< 500.0 m 1:10M cartographic uncertainty threshold) of coastline/shoreline; fails closed as COASTAL_UNCERTAIN."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "location.point_lon_lat",
+          "measurement_action": "Supply valid terrestrial agricultural coordinates in EPSG:4326.",
+          "upgrades_capabilities": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "C10"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "e_unsupported_crop": {
+      "scenario_key": "e_unsupported_crop",
+      "title": "(e) Unsupported Crop Request (quinoa_andean, cassava_tropical \u2014 No Silent Substitution)",
+      "request_summary": {
+        "site_id": "SE_UPPSALA",
+        "point_lon_lat": [
+          17.65,
+          59.82
+        ],
+        "candidate_crops": [
+          "quinoa_andean",
+          "cassava_tropical"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": {
+          "allow_offline_reference_fixture": true,
+          "allow_conditional_crop_planning": true
+        }
+      },
+      "overall_summary_status": "PARTIAL_OR_CONDITIONAL_READY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "license_unverified",
+      "c7_missing_reason": "unsupported_crop_profile",
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [
+        "historical_regional_climate",
+        "location_identity",
+        "regional_soil_properties_250m",
+        "soil_hydraulic_retention_scenarios"
+      ],
+      "blocked_claims": [
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        },
+        {
+          "capability_id": "C6",
+          "name": "Historical water-demand/deficit research diagnostics with qualified inputs",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_crop_profile",
+          "explanation": "Unsupported crop profile(s) ['quinoa_andean', 'cassava_tropical']; generic uncalibrated Kc substitution is prohibited. Independent climate (C2) and soil hydraulic (C3/C4) analyses remain available."
+        },
+        {
+          "capability_id": "C7",
+          "name": "Regional crop water suitability screening (C7_SCREENING; not a 5-year rotation plan)",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_crop_profile",
+          "explanation": "Blocked because C6 water-balance screening is blocked (unsupported_crop_profile)."
+        },
+        {
+          "capability_id": "C8",
+          "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_region",
+          "explanation": "Native WOFOST/SNOMIN process simulation (brain/growth_decision.py) is locked to the pinned Wageningen research envelope [5.67, 51.97] and cannot be extrapolated globally without local cultivar calibration and measured initial mineral NO3/NH4."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "f_source_outage": {
+      "scenario_key": "f_source_outage",
+      "title": "(f) Source Outage / Uncached Site with Offline Reference Disabled",
+      "request_summary": {
+        "site_id": "IN_PUNJAB_LUDHIANA",
+        "point_lon_lat": [
+          75.85,
+          30.9
+        ],
+        "candidate_crops": [
+          "wheat",
+          "barley"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": {
+          "acquisition": "CACHE_ONLY",
+          "allow_offline_reference_fixture": false,
+          "allow_conditional_crop_planning": true
+        }
+      },
+      "overall_summary_status": "PARTIAL_OR_CONDITIONAL_READY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "BLOCKED",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "license_unverified",
+      "c7_missing_reason": "source_outage",
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [
+        "location_identity"
+      ],
+      "blocked_claims": [
+        {
+          "capability_id": "C2",
+          "name": "Historical regional climate profile and limitations",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "No authenticated NASA POWER receipt in local cache and live fetch was not enabled."
+        },
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "No cached SoilGrids WCS receipt and neither live fetch nor offline reference fixture was enabled."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "Cannot derive C4 soil hydraulics because C3 soil properties are blocked (source_outage)."
+        },
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "g_ambiguous_data_license": {
+      "scenario_key": "g_ambiguous_data_license",
+      "title": "(g) Ambiguous / Non-Commercial Data License (FAO GAEZ v4 CC-BY-NC-SA-3.0-IGO Blocked)",
+      "request_summary": {
+        "site_id": "SE_UPPSALA",
+        "point_lon_lat": [
+          17.65,
+          59.82
+        ],
+        "candidate_crops": [
+          "wheat",
+          "barley"
+        ],
+        "water_supply_scenario": {
+          "regime": "rainfed"
+        },
+        "options": {
+          "allow_offline_reference_fixture": true,
+          "allow_conditional_crop_planning": true
+        }
+      },
+      "overall_summary_status": "PARTIAL_OR_CONDITIONAL_READY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "c1_land_status": null,
+      "c1_distance_to_coast_m": null,
+      "c5_missing_reason": "license_unverified",
+      "c7_missing_reason": null,
+      "decision_sensitivity": {
+        "sensitivity_gate_status": "DECISION_SENSITIVITY_UNDETERMINED",
+        "stability_classification": "UNDETERMINED",
+        "undetermined_reason": "invalid_coordinates_or_crs"
+      },
+      "usable_outputs_keys": [
+        "historical_regional_climate",
+        "location_identity",
+        "regional_crop_water_screening",
+        "regional_soil_properties_250m",
+        "soil_hydraulic_retention_scenarios",
+        "water_balance_screening"
+      ],
+      "blocked_claims": [
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        },
+        {
+          "capability_id": "C8",
+          "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_region",
+          "explanation": "Native WOFOST/SNOMIN process simulation (brain/growth_decision.py) is locked to the pinned Wageningen research envelope [5.67, 51.97] and cannot be extrapolated globally without local cultivar calibration and measured initial mineral NO3/NH4."
+        },
+        {
+          "capability_id": "C9",
+          "name": "Optional conditional economics using user-supplied or licensed and dated price/cost/yield sources",
+          "status": "BLOCKED",
+          "missing_reason": "insufficient_parameters",
+          "explanation": "Economic cost screening requires user-supplied local input costs; net profit and marketable yield remain strictly null without field-validated yield calibration."
+        },
+        {
+          "capability_id": "C10",
+          "name": "Pesticide, water-right and legal clearance",
+          "status": "BLOCKED",
+          "missing_reason": "official_verification_required",
+          "explanation": "Water abstraction rights and pesticide registration compliance cannot be inferred from global environmental datasets; official local regulatory verification is required."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ],
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    }
+  }
+}

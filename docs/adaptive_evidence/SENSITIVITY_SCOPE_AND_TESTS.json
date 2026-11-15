@@ -1,0 +1,80 @@
+{
+  "schema": "astragron.sensitivity-scope-and-tests.v1",
+  "generated_by": "G3_CANONICAL_AND_SCREENING_SENSITIVITY_AUDIT",
+  "honesty_boundary": "DecisionSensitivityAnalyzer evaluates regional C6/C7 water screening ONLY (analysis_kind=REGIONAL_WATER_SCREENING_SENSITIVITY). CanonicalDecisionSensitivityRunner calls unmodified brain.service.ClientDecisionService (analysis_kind=CANONICAL_DECISION_SENSITIVITY).",
+  "side_by_side_divergence_witness": {
+    "site_id": "AU_WAGGA_REGION",
+    "point_lon_lat": [
+      147.35,
+      -35.05
+    ],
+    "screening_result": {
+      "analysis_kind": "REGIONAL_WATER_SCREENING_SENSITIVITY",
+      "canonical_decision_sensitivity_executed": false,
+      "stability_classification": "DECISION_STABLE_WITHIN_TESTED_SCENARIOS",
+      "reference_top_crop": "chickpea",
+      "flip_witness_count": 0
+    },
+    "canonical_result": {
+      "analysis_kind": "CANONICAL_DECISION_SENSITIVITY",
+      "canonical_service_used": "brain.service.ClientDecisionService",
+      "canonical_stability_status": "CHANGED_WITHIN_TESTED_SCENARIOS",
+      "tested_scenario_count": 4,
+      "flip_witness_count": 2,
+      "flip_witnesses": [
+        {
+          "reference_scenario_id": "CANONICAL_REFERENCE",
+          "perturbed_scenario_id": "CANONICAL_CORRELATED_DRY_LOW_RETENTION",
+          "top_status_changed": false,
+          "decision_status_changed": false,
+          "selected_ids_changed": false,
+          "service_compliance_changed": true,
+          "alternative_case_status_changed": true,
+          "reference_selected_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "perturbed_selected_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "reference_service_compliant_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "perturbed_service_compliant_ids": [],
+          "reference_worst_et_shortfall_m3": 5998.8967,
+          "perturbed_worst_et_shortfall_m3": 12161.286,
+          "et_shortfall_delta_m3": 6162.3893
+        },
+        {
+          "reference_scenario_id": "CANONICAL_REFERENCE",
+          "perturbed_scenario_id": "CANONICAL_CORRELATED_MODERATE_STRESS",
+          "top_status_changed": false,
+          "decision_status_changed": false,
+          "selected_ids_changed": false,
+          "service_compliance_changed": true,
+          "alternative_case_status_changed": true,
+          "reference_selected_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "perturbed_selected_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "reference_service_compliant_ids": [
+            "9c7e28e0739484acb905"
+          ],
+          "perturbed_service_compliant_ids": [],
+          "reference_worst_et_shortfall_m3": 5998.8967,
+          "perturbed_worst_et_shortfall_m3": 8898.2633,
+          "et_shortfall_delta_m3": 2899.3666
+        }
+      ],
+      "max_et_shortfall_delta_m3": 6162.3893
+    },
+    "divergence_explanation": "Regional screening treats AU_WAGGA_REGION rainfed wheat vs chickpea at threshold 0.35 as DECISION_STABLE_WITHIN_TESTED_SCENARIOS (0 flips), whereas 5-year daily ClientDecisionService flips service_compliant_ids from [9c7e28e0739484acb905] to [] and transitions alternatives from valid_research_comparison to evaluated_but_not_service_compliant under correlated drought/retention stress (+7744 m3 shortfall)."
+  },
+  "canonical_status_coverage": {
+    "CHANGED_WITHIN_TESTED_SCENARIOS": "CHANGED_WITHIN_TESTED_SCENARIOS",
+    "UNCHANGED_WITHIN_TESTED_SCENARIOS": "UNCHANGED_WITHIN_TESTED_SCENARIOS",
+    "CANONICAL_DECISION_SENSITIVITY_UNDETERMINED": "CANONICAL_DECISION_SENSITIVITY_UNDETERMINED",
+    "undetermined_witness_reason": "canonical_reference_status_EVIDENCE_BLOCKED"
+  }
+}

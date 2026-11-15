@@ -1,0 +1,105 @@
+{
+  "attempts": 1,
+  "authentication_used": false,
+  "bytes": 215570,
+  "elapsed_ms": 3458.34,
+  "http_status": 200,
+  "license": {
+    "identifier": "NASA_POWER_PUBLIC_DATA_WITH_ATTRIBUTION"
+  },
+  "period": [
+    "2012-01-01",
+    "2020-12-31"
+  ],
+  "point_lon_lat": [
+    13.405,
+    52.52
+  ],
+  "provider_version": "v2.10.3",
+  "qualification": {
+    "api": {
+      "name": "POWER Daily API",
+      "version": "v2.10.3"
+    },
+    "days": 3288,
+    "grid": {
+      "extraction": "Official POWER daily point API; no client interpolation/downscaling",
+      "independent_field_measurement": false,
+      "nominal_center_lon_lat": [
+        13.125,
+        52.5
+      ],
+      "provider_response_geometry": {
+        "coordinates": [
+          13.405,
+          52.52,
+          48.98
+        ],
+        "type": "Point"
+      },
+      "resolution_lon_lat_degrees": [
+        0.625,
+        0.5
+      ],
+      "source": "MERRA2"
+    },
+    "leap_days_present": [
+      "20120229",
+      "20160229",
+      "20200229"
+    ],
+    "period": [
+      "2012-01-01",
+      "2020-12-31"
+    ],
+    "provider_issue_header": {
+      "api": {
+        "name": "POWER Daily API",
+        "version": "v2.10.3"
+      },
+      "end": "20201231",
+      "fill_value": -999.0,
+      "sources": [
+        "MERRA2",
+        "POWER"
+      ],
+      "start": "20120101",
+      "time_standard": "UTC"
+    },
+    "variables": {
+      "PRECTOTCORR": {
+        "source": "MERRA2",
+        "time_standard": "UTC",
+        "unit": "mm/day"
+      },
+      "T2M": {
+        "source": "MERRA2",
+        "time_standard": "UTC",
+        "unit": "C"
+      },
+      "T2M_MAX": {
+        "source": "MERRA2",
+        "time_standard": "UTC",
+        "unit": "C"
+      },
+      "T2M_MIN": {
+        "source": "MERRA2",
+        "time_standard": "UTC",
+        "unit": "C"
+      }
+    }
+  },
+  "receipt_sha256": "f33d4de2f088ef9fa48c4b8482d5e1c00c0397a4f5d0f72b2c40ea9bc02539e4",
+  "request_key": "2b7ba7317be3006ec804966478fa8ee1efa0d905bf3ae7355f95e819b856a3a2",
+  "response_headers": {
+    "Content-Type": "application/json",
+    "Date": "Sat, 14 Nov 2026 19:35:00 GMT"
+  },
+  "retrieved_at": "2026-11-14T19:35:02.191381+00:00",
+  "schema": "astragron.nasa-global-receipt.v2",
+  "sha256": "0c2ba1cbbccdf48e93aa7c61379fb72fd857486e218928e59d364c39e6f30ccf",
+  "started_at": "2026-11-14T19:34:58.661338+00:00",
+  "status": "QUALIFIED_HISTORICAL",
+  "time_standard": "UTC",
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=13.405&latitude=52.52&start=20120101&end=20201231&format=JSON&time-standard=UTC"
+}

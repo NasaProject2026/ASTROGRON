@@ -1,0 +1,1060 @@
+{
+  "package": "ASTRAGRON_FRONTEND_V5_FINAL_INDEPENDENT_REVIEW",
+  "generatedAt": "2026-11-13T12:42:06.198Z",
+  "excludedPaths": [
+    "node_modules",
+    ".next",
+    ".git",
+    "test-results",
+    "playwright-report",
+    ".env*",
+    "tsconfig.tsbuildinfo",
+    "*.zip",
+    "review/11_DELIVERY_MANIFEST.json",
+    "review/12_HASHES_AND_DELIVERY_MANIFEST.json"
+  ],
+  "fileCount": 208,
+  "totalBytes": 65814763,
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 1307,
+      "sha256": "2fa5ab605801c7f10f56bd488e992f49720a83c3d034cbc97bb5092d45791df6"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 301,
+      "sha256": "48e4305ea6659a1c392c466fc8baa1fff1e1f622250a361c031e4641a294b825"
+    },
+    {
+      "path": "app/design-system/page.tsx",
+      "bytes": 7246,
+      "sha256": "1b68a697f4816d28da283f0c03fae606a0c5c198f8600557ace610d6b54bd70d"
+    },
+    {
+      "path": "app/explore/page.tsx",
+      "bytes": 183,
+      "sha256": "06a5e191f52e2a2792c7f8827d1e382aec2e51444a3b6a4912c4bce2b9f4c0c8"
+    },
+    {
+      "path": "app/farm/[id]/analysis/page.tsx",
+      "bytes": 7638,
+      "sha256": "fd012591f9a05de904a021faeb8e41c5026f7d6f8aa42feb56f68c4eadb7f0fe"
+    },
+    {
+      "path": "app/farm/[id]/climate/page.tsx",
+      "bytes": 9180,
+      "sha256": "cd68130a9708c3c4740735eb805d9645263ed77e6f61ad9e83ca95247ff7293a"
+    },
+    {
+      "path": "app/farm/[id]/coverage/page.tsx",
+      "bytes": 13435,
+      "sha256": "d77c33509d8ad46c91e5f64d052084a38a8b3755e5ce700e83c6fea21635076c"
+    },
+    {
+      "path": "app/farm/[id]/decisions/page.tsx",
+      "bytes": 15737,
+      "sha256": "6fc542f8e25f7f4c7d6ba4a5669f7dd32784196f0379a52cf49e88a641520388"
+    },
+    {
+      "path": "app/farm/[id]/evidence/page.tsx",
+      "bytes": 7363,
+      "sha256": "00edadce65f9b1763f71a48882b2bf9ec09ca5386c67e4a33cf47387fe5d0284"
+    },
+    {
+      "path": "app/farm/[id]/layout.tsx",
+      "bytes": 349,
+      "sha256": "e0001ebacde978d3d51c3a83b00762f6be09937f67e4e18c1aa073b93ca8af9c"
+    },
+    {
+      "path": "app/farm/[id]/page.tsx",
+      "bytes": 9904,
+      "sha256": "e120cb1b51223e18f540b8db881a767120829460c6df07adb962179c291f324f"
+    },
+    {
+      "path": "app/farm/[id]/plans/page.tsx",
+      "bytes": 21098,
+      "sha256": "7895f679a711a7d2ded51c24729e0c9b0aa8cca1741a170049ef9d8e884c5412"
+    },
+    {
+      "path": "app/farm/[id]/reports/page.tsx",
+      "bytes": 14195,
+      "sha256": "34753598cb8aa8109cca3347662fbde9ff07a7c373c8b0aedd5fe4308f7fcfee"
+    },
+    {
+      "path": "app/farm/[id]/results/page.tsx",
+      "bytes": 24744,
+      "sha256": "c0d23b449cc5dcb263242855d7016dc5c8e8a2a53ea01fb51f981c2ff9bb24d2"
+    },
+    {
+      "path": "app/farm/new/page.tsx",
+      "bytes": 385,
+      "sha256": "4b039cc41dd7fa05023fdd38b142c732f6d8bc4751d9847f2dc0fbc249b921a6"
+    },
+    {
+      "path": "app/help/page.tsx",
+      "bytes": 6557,
+      "sha256": "6d2abf626228567ee8346d4581ec987dc2f9bb99982e2a696f961924ed3a27bb"
+    },
+    {
+      "path": "app/icon.svg",
+      "bytes": 598,
+      "sha256": "1e03ff8ad984927d5fc85946b0f41f094d69b840cfa190be8e668adeb968e11d"
+    },
+    {
+      "path": "app/layout.tsx",
+      "bytes": 1695,
+      "sha256": "ed640d59d47d2a5773686ffa37ee98e243d2a60efd5115262d664fae7c6a5629"
+    },
+    {
+      "path": "app/methodology/page.tsx",
+      "bytes": 10367,
+      "sha256": "2e4665177616bb85b3ec2574ad9e1de2940f46b9555ef2d4c3a06f36c48e7c43"
+    },
+    {
+      "path": "app/orbit-ab/page.tsx",
+      "bytes": 4624,
+      "sha256": "293e1e79ed4b3447661232ca169494d82996b333758159324fc942e356e616dd"
+    },
+    {
+      "path": "app/page.tsx",
+      "bytes": 170,
+      "sha256": "309d721d65b416b6a47e5aefcdddaef5ffd76e8132618a3640227df0003df323"
+    },
+    {
+      "path": "app/settings/page.tsx",
+      "bytes": 7468,
+      "sha256": "944f1fa253766670a4de8c04ec49e98926dd684db34f6c97ff078a4b93559b3b"
+    },
+    {
+      "path": "assets-manifest.json",
+      "bytes": 8475,
+      "sha256": "359de22836f5288931a9ea5c45528abccb3024b4136a78815bce939594ddc4b4"
+    },
+    {
+      "path": "docs/ACCESSIBILITY_AND_PERFORMANCE.md",
+      "bytes": 2276,
+      "sha256": "3e3addf3dd0f18910edb02ecc24606cc4cf832d68193a78031cd2924671792c7"
+    },
+    {
+      "path": "docs/ACCESSIBILITY_PERFORMANCE.md",
+      "bytes": 941,
+      "sha256": "e41b8e7e53f8b1b669a718d859e1f430034b4fc1a8046d08cab7e0437a47ca2d"
+    },
+    {
+      "path": "docs/ASSET_PROVENANCE.md",
+      "bytes": 4366,
+      "sha256": "ce98fcf31dc927e445b08a21b10c45987eedb33159968bc6791e460ef3089fca"
+    },
+    {
+      "path": "docs/CONTRACT_MAPPING.md",
+      "bytes": 2165,
+      "sha256": "31e403fda60b1ddd8a78e02c35dfb68224fdb11e1bd85dc701c1e6597723c843"
+    },
+    {
+      "path": "docs/DELIVERY_SUMMARY.md",
+      "bytes": 2444,
+      "sha256": "3fde72f2db9e7b059044c29733aff4c0ec820dbc1fb6a854e341643657981656"
+    },
+    {
+      "path": "docs/DEMO_SCRIPT.md",
+      "bytes": 3923,
+      "sha256": "8c3cc2aae46a1955f399af935d7a67bc48fd269d61707eee517d2e6a9573f9dd"
+    },
+    {
+      "path": "docs/DESIGN_SYSTEM.md",
+      "bytes": 4881,
+      "sha256": "49757f42de6319fdc382514bc7cdede7445383a593b92deb5346d7911989dc12"
+    },
+    {
+      "path": "docs/PRODUCT_FLOWS.md",
+      "bytes": 755,
+      "sha256": "de4c61f25d3a6b5255523608d87c16daba544f4f0074135b7fa84ed926832931"
+    },
+    {
+      "path": "docs/RESPONSIVE_AUDIT.md",
+      "bytes": 1745,
+      "sha256": "7540be5ed10ccc4119ada461099246337f16a71e524369b7c7017c269c738967"
+    },
+    {
+      "path": "docs/SCIENTIFIC_TRUTH_RULES.md",
+      "bytes": 3236,
+      "sha256": "b4cc7b2708ef454fd20920b8b4f5c3c4184e0d099364a4f44582a0a710ea374e"
+    },
+    {
+      "path": "docs/TEST_REPORT.md",
+      "bytes": 3242,
+      "sha256": "70072b7d5045e57411b5bddb2d5cda4d8dec94795f68a5194141ff1f80693635"
+    },
+    {
+      "path": "docs/UX_AND_PAGE_ARCHITECTURE.md",
+      "bytes": 3296,
+      "sha256": "96219743bc87b04faf4b0c35c869da74ecbaa674c40f1b19c6b31170f9a23107"
+    },
+    {
+      "path": "e2e/astragron-journey.spec.ts",
+      "bytes": 21432,
+      "sha256": "0e0a5458464a4dde91948c6a6bee6a48d206411663f59bccedd11e207a33cbf5"
+    },
+    {
+      "path": "e2e/orbit-ab-benchmark.spec.ts",
+      "bytes": 17747,
+      "sha256": "5ca177a93ca859423fa5ea93b2c4844d1908383ac7acff5f96e0070db1ff8945"
+    },
+    {
+      "path": "e2e/v4-review-regressions.spec.ts",
+      "bytes": 11410,
+      "sha256": "7bdfc51d64f6650c4fd6d30112c745e0f0ea88e05810130a2da859dfb3a3cd8f"
+    },
+    {
+      "path": "e2e/v5-acceptance-gates.spec.ts",
+      "bytes": 11747,
+      "sha256": "4e9016db1e95fbe1f1976fb257e13ff904bcd173abd62c5c9d2698698f700fc7"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "bytes": 770,
+      "sha256": "0fa819ed3fe1c7ae2857ec182ba1b3ef265c3d07deee558614f7208e2fe74c68"
+    },
+    {
+      "path": "GEMINI_AGENT_LONG_RUN_HANDOFF.md",
+      "bytes": 4413,
+      "sha256": "d6a798189d511b136e1be03c4d2fa2ed8cb1623cc4c98eeee5dd9962f1f50fb2"
+    },
+    {
+      "path": "next-env.d.ts",
+      "bytes": 295,
+      "sha256": "1b59d4c6b83807db275d43f3cf2cc8e9323f465fab764eea091cc5becd5bad37"
+    },
+    {
+      "path": "next.config.ts",
+      "bytes": 170,
+      "sha256": "b4c296688a398040182abf0324e9a115506a525e5b73b36e9ea68e73254a4e07"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 417086,
+      "sha256": "9ea8104a1822effd42eb19bf52dddeabf1c8a7548587b511980a429e279c2df1"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1414,
+      "sha256": "b8cfeaf317848cb99d39372fb153046a592a8cb03067e5e0a1fdcb45a018d73a"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 991,
+      "sha256": "6a631a65223d7fee2985cadf23829c7628158558fdd788b9998fb7b8f82f1317"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "bytes": 93,
+      "sha256": "97ab34f7517584bbb828c26113103bfedf1329754cc4ecdf12cd9be105630070"
+    },
+    {
+      "path": "public/assets/agricultural-watershed-swath.jpg",
+      "bytes": 283228,
+      "sha256": "651c869caf8e7fddc5e93d017e183143ff0719bf3537ec7524808b2bb9597e88"
+    },
+    {
+      "path": "public/assets/orbital-earth-horizon-mobile.jpg",
+      "bytes": 155325,
+      "sha256": "ca83dac7f609646c0d66785d909e3a256411d1a03727ff9f33cf1341e57b15bf"
+    },
+    {
+      "path": "public/assets/orbital-earth-horizon-wide.jpg",
+      "bytes": 133739,
+      "sha256": "4849ff378362000bc1c434e91055d8f6d026521f5b3b4e6374109dab0afc1522"
+    },
+    {
+      "path": "public/favicon.ico",
+      "bytes": 1150,
+      "sha256": "50d683da6e0f499ea13ea83ce285e1cb1b3b2f34ec6bd5540a618fee9421eeda"
+    },
+    {
+      "path": "public/geodata/natural-earth-world.geojson",
+      "bytes": 32102,
+      "sha256": "394323c68958300b26c8a26cab73a9c59b5534e1a9019d73f3ca10a31f8a912f"
+    },
+    {
+      "path": "public/geodata/ne_110m_admin_0_countries.geojson",
+      "bytes": 838726,
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.js",
+      "bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.wasm",
+      "bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_bump_roughness_clouds_4096.jpg",
+      "bytes": 1508389,
+      "sha256": "0796f4211c209d1afe9e26a06a283cdc21434430a780a25457b2417568a8591e"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_day_4096.jpg",
+      "bytes": 473093,
+      "sha256": "cd7712d3e891425d9948ea5ac18d3bb1e7e834ea038188587897e689a7b35d0f"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_night_4096.jpg",
+      "bytes": 267061,
+      "sha256": "17a868f79c7be40fa1f557e6114d7889d907f18f7a3fce51f33b0b830ef50242"
+    },
+    {
+      "path": "public/orbit-ab-assets/landsat_8.glb",
+      "bytes": 780280,
+      "sha256": "8b599e867be20589cd35e55ed1d46da104299b430b1827b548a25d3fad0a314d"
+    },
+    {
+      "path": "public/orbit-lab.html",
+      "bytes": 67318,
+      "sha256": "bfbac836d0ee04d4395c6dfc0cb9c986f97ca75dad9010a80973aded7ec881ff"
+    },
+    {
+      "path": "public/workers/maplibre-gl-worker.js",
+      "bytes": 519500,
+      "sha256": "7ad0fc05178aff1690b899f7277912ebbb1659c40bf2214c83b6b914e44d2e33"
+    },
+    {
+      "path": "README_RUN_AND_REVIEW.md",
+      "bytes": 4406,
+      "sha256": "d85ee0b44c157e890d9cae64822db8d7c99632d66fc2dd25f0f03f1542f64d95"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8759,
+      "sha256": "4bae6bdc11d940454d98893c542cf8963b349ae180d8c0e7291875c5f9ae8233"
+    },
+    {
+      "path": "review/00_FINAL_EXECUTIVE_REPORT_AR.md",
+      "bytes": 7194,
+      "sha256": "caa33520cee51c8b2ad9630cf971c4e6a1fe39dcf64d926c3dd06b9df911d668"
+    },
+    {
+      "path": "review/01_BASELINE_AND_CHANGED_PATHS.md",
+      "bytes": 2852,
+      "sha256": "2ff3bd9434adb34ddfac05a53f38842ea0b666d9a3a19e4b408c1ad0d9ab70c3"
+    },
+    {
+      "path": "review/01_REQUIREMENT_TO_EVIDENCE_MATRIX.csv",
+      "bytes": 8318,
+      "sha256": "c0a8ba6c6895ded4aa1fc01bc583d7e32e32e5b3acf87bae9e25d828c85755cc"
+    },
+    {
+      "path": "review/02_REAL_SCIENCE_AND_MOCK_DATA_BOUNDARY.md",
+      "bytes": 4790,
+      "sha256": "cb8d4a691a0aaf2b996cb3e0db1a89502fa6c373a013557d488df5d4ad9dde9d"
+    },
+    {
+      "path": "review/02_SCIENTIFIC_TRUTH_INPUT_REVISION_AND_SITE_ISOLATION.md",
+      "bytes": 3410,
+      "sha256": "538b6bff29c9fa77454d10412776032ad5456dca332cf9b4c38ee26cdcca2bc7"
+    },
+    {
+      "path": "review/03_COVERAGE_MODEL_RECOMMENDATION_SEPARATION.md",
+      "bytes": 2631,
+      "sha256": "57556cf07037e345347842052f70a8c46fd6c5db6d4955b21b22aa01f3af3595"
+    },
+    {
+      "path": "review/03_HERO_AB_COMPARISON_AND_VISUAL_DECISION.md",
+      "bytes": 4723,
+      "sha256": "109b17fbd59daa536abd1c6831f3d0e3b328cf5224b9c0bda22e38ee8735276a"
+    },
+    {
+      "path": "review/04_GLOBE_AND_LOCATION_INTERACTION_PROOFS.md",
+      "bytes": 4397,
+      "sha256": "69c50b21ed76838087a50dfad45e184e3c127e34d4b3402d7375c10cf01451c7"
+    },
+    {
+      "path": "review/04_GLOBE_PROVIDER_FAILOVER_DMS_AND_POLYGONS.md",
+      "bytes": 3379,
+      "sha256": "4987d37e967a66645f71b724f095d0dd4d6a0416121cc556b566ede9a978741f"
+    },
+    {
+      "path": "review/05_CINEMATIC_DESIGN_AND_UX_BEFORE_AFTER.md",
+      "bytes": 3560,
+      "sha256": "9763965475e012ef9e1f6d241c570604c61f33a2fab9a4097ffc4c267fd919ed"
+    },
+    {
+      "path": "review/05_TRUE_PERFORMANCE_MEASUREMENTS.md",
+      "bytes": 3626,
+      "sha256": "4bb4a5bfc73747a5f4971d7cf367703b16faa622f41d1ee1dff747407c37c7cf"
+    },
+    {
+      "path": "review/06_CROSS_DEVICE_ACCESSIBILITY_PERFORMANCE.md",
+      "bytes": 3437,
+      "sha256": "d85eb0ebc8c247fef623b9cbaf23da87cf6fee3f87dfd308fb71cd7794ee2597"
+    },
+    {
+      "path": "review/06_FINAL_BUILD_TYPES_LINT_UNIT_E2E_ACCESSIBILITY.md",
+      "bytes": 3803,
+      "sha256": "0e83ecaa18d5e9991f743aa13c50e2a84228ccacf27c66f9d0bbfc119a280a37"
+    },
+    {
+      "path": "review/07_BROWSER_MATRIX_AND_MOBILE_BUGS.md",
+      "bytes": 3613,
+      "sha256": "51aaa0a0f4094401e9e58f670d023ffc6b9dcf37629f23f595419f2ba158823a"
+    },
+    {
+      "path": "review/07_REAL_BUILD_TEST_NETWORK_PROOFS.md",
+      "bytes": 4071,
+      "sha256": "a4b371fd427c446ece90d8b87c6139a85a7de1bd923c9b4ecf3f1f14a7d64caa"
+    },
+    {
+      "path": "review/08_ASSET_PROVENANCE_AND_REDISTRIBUTION.md",
+      "bytes": 5181,
+      "sha256": "7b8fd4556efc92a11c5ba925df88931b88f2ef10d662eb296b1a1730097cb73d"
+    },
+    {
+      "path": "review/08_ASSET_RIGHTS_AND_ATTRIBUTION.md",
+      "bytes": 3519,
+      "sha256": "ef9cf225cff6fd9951e57abbef2918514eaf2cdd04086ccc199077896f67b86a"
+    },
+    {
+      "path": "review/09_ARCHITECTURE_AND_CODEX_INTEGRATION_HANDOFF.md",
+      "bytes": 3392,
+      "sha256": "96f628a5a166f5f74577b491f2df379503ff9ba31ec65444473ab106ff008314"
+    },
+    {
+      "path": "review/09_REQUIREMENTS_ACCEPTANCE_RESULTS.csv",
+      "bytes": 12051,
+      "sha256": "04b10dd15eecd9311a88208d7326553e148d80b4ad4507f19edb3ef5e7709200"
+    },
+    {
+      "path": "review/10_KNOWN_DEFECTS_UNRESOLVED_BLOCKERS.md",
+      "bytes": 3809,
+      "sha256": "adf62c1a11b6d55558e66c39d05c766b80aced231ed2681fa162b9a5aa090161"
+    },
+    {
+      "path": "review/10_KNOWN_LIMITATIONS_AND_STOP_DECISION.md",
+      "bytes": 4262,
+      "sha256": "ef0f4c4ea87da79465ce0202caabcd14dcd43c8816e0c5f818df5340383db262"
+    },
+    {
+      "path": "review/11_PORTABLE_REPRODUCTION_AND_SHA256.md",
+      "bytes": 1799,
+      "sha256": "32a394bef0a07a4c0f2181264a08e852e30911aba3eedf1d99bcc8646afb352f"
+    },
+    {
+      "path": "review/12_BACKEND_INTEGRATION_HANDOFF_CONTRACT.md",
+      "bytes": 2872,
+      "sha256": "2f00cb905c48cdfd73bdc1043620662699073cf03c4d3c1cbdb131ab6d37c739"
+    },
+    {
+      "path": "review/13_INDEPENDENT_V4_AUDIT_AND_ORBIT_DESIGN_AR.md",
+      "bytes": 11566,
+      "sha256": "bffc2eafd7e02d0e1240c53ff8a4529e7103f54604cc21c4a6e1bd4ec8110733"
+    },
+    {
+      "path": "review/14_MOBILE_FIRST_UX_AND_3D_DECISION_AR.md",
+      "bytes": 7545,
+      "sha256": "6b27fc4fdf1b64b6b4cbe2cb125fa793762a9fd4358d40c7ab2ebe5acfd27337"
+    },
+    {
+      "path": "review/15_CODEX_REMEDIATION_AND_3D_AB_REPORT_AR.md",
+      "bytes": 21457,
+      "sha256": "042f7a9d58d95716bbd1955b80a2ddaed03aa1086dce8354b6aee19b4025639a"
+    },
+    {
+      "path": "review/evidence/axe-audit-desktop-chrome.json",
+      "bytes": 1527,
+      "sha256": "866a0f80a5d4633001e6741c8e9c711355263b7a58d7fce3771879bb63145a24"
+    },
+    {
+      "path": "review/evidence/axe-audit-webkit-desktop.json",
+      "bytes": 1527,
+      "sha256": "8d096c42077217157a7c74fb08e420f73d9637e896a89b590cda6e50f65fb72b"
+    },
+    {
+      "path": "review/evidence/eox-license-check.json",
+      "bytes": 1151,
+      "sha256": "69134e044bad36fc0b1854a7cf90f9f6e6d317c7e0659d1f96787acfd36b3aba"
+    },
+    {
+      "path": "review/evidence/perf-benchmark-raw.json",
+      "bytes": 24164,
+      "sha256": "28281619fa5c2cb49d4d8b5f69aea3067bb1aaf24ae717ffe852af1374273e69"
+    },
+    {
+      "path": "review/evidence/playwright-junit.xml",
+      "bytes": 17446,
+      "sha256": "5c818e7cac7e457748257f2213a8f8b5137c445e35ee5b2b4039e721fe63298c"
+    },
+    {
+      "path": "review/evidence/playwright-results.json",
+      "bytes": 68094,
+      "sha256": "e77d98b0930bfe5860867f6fd32ef3f08c14f5d15ed20926737b1eea3291d503"
+    },
+    {
+      "path": "review/evidence/responsive-overflow-matrix.json",
+      "bytes": 3921,
+      "sha256": "ecf4ef46e13ed26238050d5cfcaa61a8c45daee5fcaf0905ec2bdd562fc0367a"
+    },
+    {
+      "path": "review/evidence/tile-network-proof.json",
+      "bytes": 2022,
+      "sha256": "3675aa0c42e728838a5e16dac636e65fe8ae130fd59bbe3542c9237e073d76e9"
+    },
+    {
+      "path": "review/evidence/unit-and-e2e-summary.json",
+      "bytes": 2004,
+      "sha256": "85bdafa308fbcc5deaae6b55b70b6d288822ca4522eb532e634c901466690e8d"
+    },
+    {
+      "path": "review/evidence/v5-final-verification-summary.json",
+      "bytes": 1951,
+      "sha256": "04c45fe382a16a193d2c2f3ba9ebb374667dac1310d272de0e5d8ebc821339c4"
+    },
+    {
+      "path": "review/FINAL_V5_IMPLEMENTATION_STATUS_AR.md",
+      "bytes": 7584,
+      "sha256": "139b61364f3dcc22bf4c806f63e9c71284766711818845ff5f991dd0d3a7d621"
+    },
+    {
+      "path": "review/screenshots/01_landing_desktop_1440.png",
+      "bytes": 3179524,
+      "sha256": "38d0ae2194218477bb9dc49ae06a83fe40f6b4b177a9183288c1b0333c85a178"
+    },
+    {
+      "path": "review/screenshots/02_explore_globe_orbital_1440.png",
+      "bytes": 1982224,
+      "sha256": "252f023e0792ae9564a7a40281a23a42a1ffe9b919f1b533ec97f31e03a9423d"
+    },
+    {
+      "path": "review/screenshots/02b_explore_satellite_uppsala_1440.png",
+      "bytes": 2943234,
+      "sha256": "8c32b9b9a4d15447017e9d7e4f583f41fdc95ae13cbf2697a05b539a2b367194"
+    },
+    {
+      "path": "review/screenshots/02c_explore_webgl_fallback_2d.png",
+      "bytes": 549026,
+      "sha256": "ffab518d4c5576dc377c3f6a072eea49d2e082774bf69926154c057e0c6bda74"
+    },
+    {
+      "path": "review/screenshots/03_explore_boundary_layers_1440.png",
+      "bytes": 2922702,
+      "sha256": "602569acbdaf7a61428bec29d1c0495275b514ab36415f0d5bc7fab08e5275f2"
+    },
+    {
+      "path": "review/screenshots/04_farm_wizard_1440.png",
+      "bytes": 220977,
+      "sha256": "ee171ebae9efba3dcbbe6158b8afae19d117781416ca4ad028caeed2c71b9f72"
+    },
+    {
+      "path": "review/screenshots/05_uppsala_results_1440.png",
+      "bytes": 380594,
+      "sha256": "128bf79d32cf16b0cfd120f6e7872a1dad54cc0e968904e3d120031c5170fb03"
+    },
+    {
+      "path": "review/screenshots/06_provenance_drawer_1440.png",
+      "bytes": 404545,
+      "sha256": "74fa4000f0a9fc21560221f0c1f1dc2f80420c15b6a4bf611f2163d12580ffa3"
+    },
+    {
+      "path": "review/screenshots/07_uppsala_plans_1440.png",
+      "bytes": 316314,
+      "sha256": "44a1fc6fe4fa5f7d1f0db671138473bcfb8325bd16640d5850a26b886072d004"
+    },
+    {
+      "path": "review/screenshots/08_uppsala_climate_1440.png",
+      "bytes": 351897,
+      "sha256": "cc32680acd562a5d45feff0456df8c916788d36e75069c77e7df2f30bd5c5510"
+    },
+    {
+      "path": "review/screenshots/09_uppsala_reports_1440.png",
+      "bytes": 315862,
+      "sha256": "7cf335dd6b41709073e3dd42e97fb25eb7b865397e0edf012769ff15459b6cbf"
+    },
+    {
+      "path": "review/screenshots/10_kenya_isolation_blocked_1440.png",
+      "bytes": 314838,
+      "sha256": "7bc8dc6cd7992bf250e355458df81ab0b719079505607f558fc3243176d9cf5b"
+    },
+    {
+      "path": "review/screenshots/11_unknown_site_not_found_1440.png",
+      "bytes": 291625,
+      "sha256": "77ca0a0b55d3fb0949a77601dee9000cc90ca4e9f5cd2586a97a8383f163acbf"
+    },
+    {
+      "path": "review/screenshots/12_landing_mobile_390.png",
+      "bytes": 1012190,
+      "sha256": "b6acbdc2b1d2e273c34d93385f84f708aecd35991696c0fb2da15a2ec67af377"
+    },
+    {
+      "path": "review/screenshots/13_explore_globe_mobile_390.png",
+      "bytes": 674185,
+      "sha256": "301f5c5807913e96cac01d02bf4a61cb3cd524f80df7f6b3bae23ac7e297df2f"
+    },
+    {
+      "path": "review/screenshots/14_uppsala_results_mobile_390.png",
+      "bytes": 163038,
+      "sha256": "8e127c4d79c0f6501a492135e3100fedc2183149864846febfbb74d086184f25"
+    },
+    {
+      "path": "review/screenshots/15_explore_landscape_844x390.png",
+      "bytes": 450299,
+      "sha256": "154296cce85ddf670e0430d26c9ed0b08558250106f58bacad0fa6753ba028a9"
+    },
+    {
+      "path": "review/screenshots/16_custom_uppsala_fork_blocked_1440.png",
+      "bytes": 348538,
+      "sha256": "dd1ef263e8a91d7a78d258ff40144a648a70aefc1fc3836651f5b49cb594eb98"
+    },
+    {
+      "path": "review/screenshots/17_webgl_tile_outage_natural_earth_3d_1440.png",
+      "bytes": 377725,
+      "sha256": "eab3cf08cc375ea48785893e182ad7c02d26b10af51976989eb6090fe12bb543"
+    },
+    {
+      "path": "review/screenshots/ab_01_desktop_1440_orbit3d.png",
+      "bytes": 877111,
+      "sha256": "af7d6931ee25d496587f801af0b8c1c34ef45417c489f1949417401b2a70eefe"
+    },
+    {
+      "path": "review/screenshots/ab_01_desktop_1440_static.png",
+      "bytes": 1171415,
+      "sha256": "1efe4b0e3d8aa24f86dd176ba30e6e61b53f82dc77c18fb8a2d9ba84518ea0cf"
+    },
+    {
+      "path": "review/screenshots/ab_02_desktop_1920_orbit3d.png",
+      "bytes": 1183476,
+      "sha256": "463412f500ba774e28fa5ded8aa91037ddb0f1d7236d4d411910e044dd086745"
+    },
+    {
+      "path": "review/screenshots/ab_02_desktop_1920_static.png",
+      "bytes": 1468744,
+      "sha256": "f70a0b201abd0524425eb47471883e0c3d6c6b64112c63ac31a1c6a200d8c6c9"
+    },
+    {
+      "path": "review/screenshots/ab_03_tablet_portrait_820_orbit3d.png",
+      "bytes": 637912,
+      "sha256": "072045cb501e1ea17dee01415b1a116e5b876dc0d5fcf5735c07bf4715a84e20"
+    },
+    {
+      "path": "review/screenshots/ab_03_tablet_portrait_820_static.png",
+      "bytes": 872351,
+      "sha256": "ad7428a5f705848e98785680d14a21768218b271484006af6f3431dcc21203ae"
+    },
+    {
+      "path": "review/screenshots/ab_04_tablet_landscape_1180_orbit3d.png",
+      "bytes": 687987,
+      "sha256": "57f7c8eb46935b722af3c29554975c862a0dcc38912934363e96586099fe5740"
+    },
+    {
+      "path": "review/screenshots/ab_04_tablet_landscape_1180_static.png",
+      "bytes": 924510,
+      "sha256": "461368364175e0fd650bbd519c13bc2ce19a6011ef0329ec3195b3ab1630eb9d"
+    },
+    {
+      "path": "review/screenshots/ab_05_mobile_390_orbit3d.png",
+      "bytes": 231047,
+      "sha256": "436085d3a5b86a550c9c03d69e465e0508c46c8cd434c67c165c56e36a02f356"
+    },
+    {
+      "path": "review/screenshots/ab_05_mobile_390_static.png",
+      "bytes": 338318,
+      "sha256": "c54cfb4df033e19c65caec7cdcbda52a943897faa57c0d25ba52c6c77813eae9"
+    },
+    {
+      "path": "review/screenshots/ab_06_mobile_360_orbit3d.png",
+      "bytes": 201465,
+      "sha256": "ba1f62e3c0980d1800a2bf208f340b792c9463a627095afab0029bbcb009b561"
+    },
+    {
+      "path": "review/screenshots/ab_06_mobile_360_static.png",
+      "bytes": 294691,
+      "sha256": "448f2426730a4631b54881dd46044c0965e7d8afd3b17dfbdac831801adc0c26"
+    },
+    {
+      "path": "review/screenshots/ab_07_mobile_320_orbit3d.png",
+      "bytes": 104751,
+      "sha256": "a2ea1370036d095e326610c67a047ed4175745a56a35bf76c7bec53033292f11"
+    },
+    {
+      "path": "review/screenshots/ab_07_mobile_320_static.png",
+      "bytes": 171431,
+      "sha256": "31ef4d51c786f1da8bdb0d5fd3b2072533df87faf7cdc96565309036a4673a8b"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_1440.png",
+      "bytes": 1166333,
+      "sha256": "893f90cc342082037c485ceacf09a24272621b223ac6004db68b4b5a64f9a495"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_390.png",
+      "bytes": 336815,
+      "sha256": "fab9a09b9747b83a86abaa820737a7b2e06a657eef8b3fdd56117906a0352bc3"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_820.png",
+      "bytes": 869256,
+      "sha256": "08a4f26cbb45a618043f6d25d44481248ec5c1844e640ad4b24094bb15849256"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_1440.png",
+      "bytes": 1169716,
+      "sha256": "aeeaa90a291769508816e1eac3fd36be621305f96cd76ffa96f553af678f1d0e"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_390.png",
+      "bytes": 250137,
+      "sha256": "17fb5f4919cfc683e0415d1d6e06252f6453b37ad30277905bb86fc436e0373c"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_820.png",
+      "bytes": 824091,
+      "sha256": "b45ce981bb37e1a8acd79fd47968dcae9545e26861a3bfcaa5fd537cfdaaa288"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_fallback.png",
+      "bytes": 1178306,
+      "sha256": "81a6f02d8643ed25383e02f62f13c8131d62d321166eba95fa0ccab95b2163d3"
+    },
+    {
+      "path": "review/screenshots/orbit-ab-benchmark.json",
+      "bytes": 24164,
+      "sha256": "28281619fa5c2cb49d4d8b5f69aea3067bb1aaf24ae717ffe852af1374273e69"
+    },
+    {
+      "path": "review/screenshots/responsive-overflow-matrix.json",
+      "bytes": 3921,
+      "sha256": "ecf4ef46e13ed26238050d5cfcaa61a8c45daee5fcaf0905ec2bdd562fc0367a"
+    },
+    {
+      "path": "review/screenshots/tile-network-proof.json",
+      "bytes": 2158,
+      "sha256": "c8040c74791edbea0e15b6f0f4d59a587cb27aed55779fefd6bc7c7d7aef2486"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_nyeri_1280.png",
+      "bytes": 292051,
+      "sha256": "6d3a89deefb4fc18bbcb9d9ee9115064859e50ff228cf22ffbc9c21ed6908fa8"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_uppsala_1280.png",
+      "bytes": 292604,
+      "sha256": "c5e50383da4f8f74d187b10a0b8a46a9aee0c5b81cfb767e76734cd1ac46b4b8"
+    },
+    {
+      "path": "review/screenshots/v42_explore_403_recovery_1280.png",
+      "bytes": 612077,
+      "sha256": "307420e2ef139e36b45136f60ea03627aa0c4962565250cd4976e7f99a1e82c5"
+    },
+    {
+      "path": "review/screenshots/v42_header_1024.png",
+      "bytes": 2066298,
+      "sha256": "693861f0e62db8c129fdcf9e28086e3482b9cea40d647043de7d1ad08d98a6b9"
+    },
+    {
+      "path": "review/screenshots/v42_plans_compare_mobile_390.png",
+      "bytes": 114780,
+      "sha256": "e1073bf6269eaee89e3dba823aa2da97e8ee7d069fde7ff8e4e9ab8c019d657e"
+    },
+    {
+      "path": "review/screenshots/v42_reports_320.png",
+      "bytes": 83737,
+      "sha256": "2e06d93307eb766730f9d0ebecff71d30d6ccb687118ac6733136ef0a6c13ab8"
+    },
+    {
+      "path": "review/screenshots/v5_simple_view_plans_1440.png",
+      "bytes": 174907,
+      "sha256": "39986d266d34a0372eabbd67f9b4a7e4e69c51297785987397d4248065f76585"
+    },
+    {
+      "path": "review/screenshots/v5_simple_view_results_1440.png",
+      "bytes": 256051,
+      "sha256": "66b56294c41377dd418cea4e9055bf187cd1ed3fc0d197d64c1db1084c9c4614"
+    },
+    {
+      "path": "review/screenshots_v3_before/01_landing_desktop_1440.png",
+      "bytes": 1150145,
+      "sha256": "a96a2d718f32d8332acd7fe13bd88b97d0d275ba2b7bf7965d91f72a42b35811"
+    },
+    {
+      "path": "review/screenshots_v3_before/02_explore_globe_orbital_1440.png",
+      "bytes": 586828,
+      "sha256": "9a60585c632bc938eb0daa501ceaee4a8a0e1d50576b626e478be6dc29bad7ae"
+    },
+    {
+      "path": "review/screenshots_v3_before/02b_explore_satellite_uppsala_1440.png",
+      "bytes": 983230,
+      "sha256": "2cb0f1503212d3298138432b42ae799e81cc5373df6a13b26051384e9e56a346"
+    },
+    {
+      "path": "review/screenshots_v3_before/02c_explore_webgl_fallback_2d.png",
+      "bytes": 236366,
+      "sha256": "23e2a49975e110ba4bcf4483cced862ba603bf4d00b0d07420c0f2bb8f7effc5"
+    },
+    {
+      "path": "review/screenshots_v3_before/03_explore_boundary_layers_1440.png",
+      "bytes": 1007003,
+      "sha256": "f35d5f0757f8aba3e104699d4c994b8f6b68819195cc4a826eed21cced5a0fdb"
+    },
+    {
+      "path": "review/screenshots_v3_before/04_farm_wizard_1440.png",
+      "bytes": 121601,
+      "sha256": "77544479be4096d880114003a40434703b6866b61f35f58a7cce07d9cdddf774"
+    },
+    {
+      "path": "review/screenshots_v3_before/05_uppsala_results_1440.png",
+      "bytes": 276604,
+      "sha256": "ab3c89ddef6af1562aeaf87564e8a01ab8951604fcf68dafeb1d4d8122cee9ba"
+    },
+    {
+      "path": "review/screenshots_v3_before/06_provenance_drawer_1440.png",
+      "bytes": 279707,
+      "sha256": "b6ee0c172b0f916df26123fc0b44ab86c69f8dfad039e163838916cf8dfb59ed"
+    },
+    {
+      "path": "review/screenshots_v3_before/07_uppsala_plans_1440.png",
+      "bytes": 193603,
+      "sha256": "eec273302f517e7f876203a175f573e02837615935930d5068d06d2e0a2cef6f"
+    },
+    {
+      "path": "review/screenshots_v3_before/08_uppsala_climate_1440.png",
+      "bytes": 217859,
+      "sha256": "4f2ce19c904cf93b8da89fd9b79163eda2216da29b87a9281232f9271fe360b1"
+    },
+    {
+      "path": "review/screenshots_v3_before/09_uppsala_reports_1440.png",
+      "bytes": 199738,
+      "sha256": "f67f715038b7180cb47d2da43a2e6c347c7773cfcee161dc2cb77f7403a71d33"
+    },
+    {
+      "path": "review/screenshots_v3_before/10_kenya_isolation_blocked_1440.png",
+      "bytes": 188756,
+      "sha256": "d526194496e14af041c568e0101dfafa63057d98ff89145ebfd2d5d0e9f5db38"
+    },
+    {
+      "path": "review/screenshots_v3_before/11_unknown_site_not_found_1440.png",
+      "bytes": 176996,
+      "sha256": "94112df7b9f5edffdeb1b2977130ce5c88600bb951d6b13143f91d6b29d414a4"
+    },
+    {
+      "path": "review/screenshots_v3_before/12_landing_mobile_390.png",
+      "bytes": 326414,
+      "sha256": "3ac93154f3af529852e0a85a007be25bbbc9b0de4a93cb28b6c03e3839023b34"
+    },
+    {
+      "path": "review/screenshots_v3_before/13_explore_globe_mobile_390.png",
+      "bytes": 206491,
+      "sha256": "3c87294214e133d30aa514f9b909e4ca642e77649553928b72ceffba49ec0e07"
+    },
+    {
+      "path": "review/screenshots_v3_before/14_uppsala_results_mobile_390.png",
+      "bytes": 76171,
+      "sha256": "531d1c84543243be9d7c9e5baa92583fb48d4d286292f36598588c909fb563b4"
+    },
+    {
+      "path": "review/screenshots_v3_before/15_explore_landscape_844x390.png",
+      "bytes": 150365,
+      "sha256": "6557e030d8a362bf5fc0e41d6be54b2b815614350e9c1c75f4fdfcb2b190ce75"
+    },
+    {
+      "path": "review/V3_BASELINE_MANIFEST_SNAPSHOT.json",
+      "bytes": 21459,
+      "sha256": "fcd1ace9ab53cfc0da955db09266c83b503078d9df162f437d35f24c74eb0944"
+    },
+    {
+      "path": "review/V42_BASELINE_MANIFEST_SNAPSHOT.json",
+      "bytes": 30584,
+      "sha256": "35d879ec196dd504d316d21791869af6c6bc9ce0d634f7b4083d8a7fb2553c91"
+    },
+    {
+      "path": "review/videos/01_desktop_earth_to_field_journey.webm",
+      "bytes": 5655249,
+      "sha256": "1b64f76fdc554863d9ea2ab86faed372e63a56458cf034f5259fe624e54a4258"
+    },
+    {
+      "path": "review/videos/02_mobile_390_earth_to_results.webm",
+      "bytes": 3841299,
+      "sha256": "9254f5257ec980e1d8fd75a74c27daad485ad898a943dad98deccf3272b30053"
+    },
+    {
+      "path": "review/videos/03_custom_fork_and_outage.webm",
+      "bytes": 1222576,
+      "sha256": "f7869d481d23792f60669dde4b1f2270d5d475163eb67143f41507c7af2e047e"
+    },
+    {
+      "path": "review/videos/04_orbit_ab_3d_benchmark.webm",
+      "bytes": 5181411,
+      "sha256": "63a521e14169831e35ac8bd95106108392ff10474e5c71f2e7628ee1a00e688b"
+    },
+    {
+      "path": "scripts/generate-manifest.mjs",
+      "bytes": 2605,
+      "sha256": "99af24dac19ecd34f18c419963d09b04791cf16618548a5517cba140375025e3"
+    },
+    {
+      "path": "scripts/mobile-ux-offline-gates.mjs",
+      "bytes": 3134,
+      "sha256": "75e4b2ee97ca14a221ab08049255394f1fed4dde2a5b562ec30dcccf433bef33"
+    },
+    {
+      "path": "scripts/review-regression.mjs",
+      "bytes": 4483,
+      "sha256": "70faf4460e48e94c4de3e2851ea9c01fde4f4f483cd327f67bba73cd238e92a9"
+    },
+    {
+      "path": "scripts/verify-manifest.d.mts",
+      "bytes": 316,
+      "sha256": "9b77a9f6c54531daca524b169c06487a68e9d1332bdf7e24bbd5c6cfc60c3886"
+    },
+    {
+      "path": "scripts/verify-manifest.mjs",
+      "bytes": 5409,
+      "sha256": "71adf1488869d6a08cec5c23a27c4e61373783984220b4bda422c52f3f50d40d"
+    },
+    {
+      "path": "src/adapters/repositories.ts",
+      "bytes": 50678,
+      "sha256": "8be50c70e7ace770de0dc0518c56aa58b15d0d8bbdf05d80f39a7046e623feb3"
+    },
+    {
+      "path": "src/components/charts/climate-echarts.tsx",
+      "bytes": 10167,
+      "sha256": "691d4ddd2a9801046b0ef4ccb2c386867401131ae3e4635e9b0db3871d7aae13"
+    },
+    {
+      "path": "src/components/design-system/primitives.tsx",
+      "bytes": 18369,
+      "sha256": "092156ebffa83db7b535e5cf8648d67adb748d4ba070ecc9696e48c603e146e5"
+    },
+    {
+      "path": "src/components/evidence/provenance-drawer.tsx",
+      "bytes": 16398,
+      "sha256": "b0fedd9e40900bd1fa3835a06d0d67510e3a2250dc3cbbaf2e7d49edf3de7d49"
+    },
+    {
+      "path": "src/components/forms/farm-setup-wizard.tsx",
+      "bytes": 49249,
+      "sha256": "fcc35421801d7942a721ccae704de0583b8fa6fcc1c255e68a309bd822ba378e"
+    },
+    {
+      "path": "src/components/hero/cinematic-landing.tsx",
+      "bytes": 26325,
+      "sha256": "e1adad2f68b2a8e871f6e1f057d19f75854eb15d83a1861166879c6d3e333196"
+    },
+    {
+      "path": "src/components/maps/earth-explorer-client.tsx",
+      "bytes": 58573,
+      "sha256": "8f422706ee2eb42339dc7841273fcc2b4fe3debebfee28510714ce1063e27033"
+    },
+    {
+      "path": "src/components/maps/map-providers.ts",
+      "bytes": 17844,
+      "sha256": "01578dc8122f6d30cb576b2bc9a368354d4d18969e8416a5b7595d12ce6fac2d"
+    },
+    {
+      "path": "src/components/maps/maplibre-globe-canvas.tsx",
+      "bytes": 44886,
+      "sha256": "c200333c94f865139ee061b9024872c44c4d801cccc6d4e50bf2acebf8fcb3a0"
+    },
+    {
+      "path": "src/components/navigation/app-chrome.tsx",
+      "bytes": 26240,
+      "sha256": "8e40621c65958a3287eee70efee284c5b55ab384a95d62e87d2d8a49d6fdb9d7"
+    },
+    {
+      "path": "src/components/orbital/orbit-ab-stage.tsx",
+      "bytes": 32271,
+      "sha256": "b884d4e83042b929611743029e4510937cbd6ae61bb74638d04a862d3c74f2a3"
+    },
+    {
+      "path": "src/components/telemetry/web-vitals-reporter.tsx",
+      "bytes": 926,
+      "sha256": "15dcfbf17b32e09526f4b97755fd5c47d64fd6c955df420fedd46cada659153b"
+    },
+    {
+      "path": "src/domain/contracts.ts",
+      "bytes": 11579,
+      "sha256": "6e929135bca5367911840b602ca4537da9491d894e60b054cf2b37f37e54c461"
+    },
+    {
+      "path": "src/domain/schemas.ts",
+      "bytes": 33313,
+      "sha256": "fc3c0961c0f86afd179be23c3c3032792a82d83175bb67734f60e999fd21365c"
+    },
+    {
+      "path": "src/fixtures/climate-water-fixture.ts",
+      "bytes": 7303,
+      "sha256": "fe51cfca03cda81b73ffefb85615a9634738cd7e882640cd5311834383fd7d7a"
+    },
+    {
+      "path": "src/fixtures/m14-decision-fixture.ts",
+      "bytes": 25797,
+      "sha256": "f55aa3c8317e8a7530496539fd5764504d4df6873ef58c325d92fa9c2fb80586"
+    },
+    {
+      "path": "src/fixtures/natural-earth-world.ts",
+      "bytes": 10428,
+      "sha256": "fd5519c5131fb9ae8819d0039e2cab92bd79d08bf9c4c09185b33b220ea99faa"
+    },
+    {
+      "path": "src/fixtures/sites-and-coverage.ts",
+      "bytes": 49631,
+      "sha256": "0ec979af55d315580709d6e74d68e1efc0fb716cb058e9e92ac20663d03f4df9"
+    },
+    {
+      "path": "src/hooks/use-astragron-store.tsx",
+      "bytes": 18013,
+      "sha256": "72066592878028248fd7b80d158664938d9a034d9874e2904b79c63a37509c31"
+    },
+    {
+      "path": "src/lib/i18n.ts",
+      "bytes": 2589,
+      "sha256": "84097a0cfe452fbb06658d3eb2f0cc3021fe6e3cc5ba5da31aa8a5f9287a5e85"
+    },
+    {
+      "path": "src/messages/en/index.ts",
+      "bytes": 12349,
+      "sha256": "557f91f41fc6132dd0cabc1eadff34011eaa86f88b6f0ca1c0a0dab585d6363c"
+    },
+    {
+      "path": "src/styles/globals.css",
+      "bytes": 5638,
+      "sha256": "17cfcdf9b467898ecee4ae3f0eb0fc55411d90f967a9e11ab347c6f28010d97d"
+    },
+    {
+      "path": "tests/contracts-and-adapters.test.ts",
+      "bytes": 23367,
+      "sha256": "ff6e59f1c93baa774eaa7cfb73d83799b27426c33dbe01dea820016b9a28e250"
+    },
+    {
+      "path": "tests/p1-scientific-integrity.test.ts",
+      "bytes": 11828,
+      "sha256": "ac57396b500592607418478777503e48c5b50f73954a324adbcd06f24eb2c37d"
+    },
+    {
+      "path": "tests/remediation-gates.test.ts",
+      "bytes": 6900,
+      "sha256": "15df0a72906bf04adf5c03f7d4a66a952e0378e825b371267e6c34c7a4b0ef97"
+    },
+    {
+      "path": "tests/v4-precision-gates.test.ts",
+      "bytes": 11644,
+      "sha256": "aa47f702fcf55b407a20bf37882983e5ce4a5e540f75eb63158d86b73e8ec664"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 813,
+      "sha256": "a4c3b4bdb2115aca4d2a0ce7050bcabec457e5384b90c1c18ca1edc524cc5fa6"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 373,
+      "sha256": "fcc06776be395579d3944a90fd59911dd15a60b850f8178df1167c4633cf451f"
+    }
+  ]
+}

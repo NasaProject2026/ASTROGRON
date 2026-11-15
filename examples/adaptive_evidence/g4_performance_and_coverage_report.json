@@ -1,0 +1,69 @@
+{
+  "schema": "astragron.adaptive-evidence.g4-performance-and-coverage.v1",
+  "gate": "G4_TESTS",
+  "status": "PASS",
+  "performance_benchmarks": {
+    "natural_earth_10m_index_startup_ms": 8879.41,
+    "natural_earth_10m_startup_peak_ram_mb": 44.85,
+    "natural_earth_10m_retained_ram_mb": 8.71,
+    "point_query_sample_size": 100,
+    "point_query_p50_ms": 0.414,
+    "point_query_p95_ms": 2.027,
+    "polygon_query_sample_size": 20,
+    "polygon_query_p50_ms": 12.354,
+    "polygon_query_p95_ms": 636.751,
+    "land_polygon_count": 9631,
+    "inland_water_polygon_count": 1367
+  },
+  "separated_coverage_metrics": {
+    "AUTHENTIC_SOURCE_RETRIEVAL": {
+      "denominator": 24,
+      "c2_authentic_climate_ready_count": 4,
+      "c3_authentic_soilgrids_wcs_count": 5,
+      "authentic_source_retrieval_count": 6,
+      "authentic_source_retrieval_coverage": 0.25,
+      "c7_screening_from_authentic_cache_count": 3,
+      "c7_screening_from_authentic_cache_rate": 0.125,
+      "counts_offline_fixtures": false,
+      "note": "Genuine cached NASA POWER / SoilGrids WCS retrievals only; NOT broad live global coverage."
+    },
+    "OFFLINE_REFERENCE_SCENARIO": {
+      "denominator": 24,
+      "allow_offline_reference_fixture": true,
+      "is_authentic_live_source_retrieval": false,
+      "offline_fixture_partial_count": 24,
+      "offline_fixture_partial_rate": 1.0,
+      "offline_fixture_c7_screening_count": 23,
+      "offline_fixture_c7_screening_rate": 0.9583,
+      "domain_blocked_peatland_cases": [
+        "FI_OSTROBOTHNIA_OULU"
+      ],
+      "note": "Offline reference-fixture scenario mode only; NEVER represent as real-world global source availability."
+    },
+    "CONDITIONAL_PLANNING_COVERAGE": {
+      "denominator": 24,
+      "assumed_water_regime": "rainfed",
+      "assumed_candidate_crops": [
+        "barley",
+        "wheat",
+        "faba_bean"
+      ],
+      "c7_screening_count": 23,
+      "c7_screening_rate": 0.9583,
+      "is_verified_5yr_plan": false,
+      "note": "Seasonal water-suitability screening under explicit user-assumed rainfed & crop priors; NOT a 5-year rotation plan."
+    },
+    "GEO_VERIFIED_COUNT": 24,
+    "GEO_INDEPENDENT_GROUND_TRUTH_VERIFIED_COUNT": 32,
+    "GEO_UNCERTAIN_COUNT": 1,
+    "FALSE_SCIENTIFIC_UPGRADES": 0,
+    "prediction_accuracy": "NOT_MEASURED"
+  },
+  "test_suite_summary": {
+    "adaptive_evidence_unit_tests_passed": 64,
+    "adaptive_evidence_unit_tests_failed": 0,
+    "upstream_client_api_tests_passed": 37,
+    "upstream_client_api_tests_failed": 0,
+    "pcse_native_worker_tests": "SKIPPED_NATIVE_DEPENDENCY_UNAVAILABLE_IN_VENV"
+  }
+}

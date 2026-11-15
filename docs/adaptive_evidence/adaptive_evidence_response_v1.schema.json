@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astragron.org/schemas/adaptive_evidence_response_v1.schema.json",
+  "title": "ASTRAGRON Adaptive Evidence Response v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "request_id",
+    "overall_summary_status",
+    "capability_statuses",
+    "capabilities",
+    "usable_outputs",
+    "conditional_outputs",
+    "blocked_claims",
+    "minimal_next_measurements",
+    "provenance_and_uncertainty_ledger",
+    "scientific_guardrails"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.adaptive-evidence.response.v1"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "status_outcome": {
+      "type": "string",
+      "enum": [
+        "INVALID_LOCATION_OR_GEOMETRY",
+        "WATER_OR_UNVERIFIED_LOCATION",
+        "CLIMATE_READY_SOIL_PARTIAL",
+        "SOIL_READY_CLIMATE_PARTIAL",
+        "REGIONAL_SCREENING_ONLY",
+        "CONDITIONAL_RESEARCH_COMPARISON",
+        "EVIDENCE_BLOCKED"
+      ]
+    },
+    "overall_summary_status": {
+      "type": "string",
+      "enum": ["PARTIAL_OR_CONDITIONAL_READY", "ALL_CAPABILITIES_BLOCKED"]
+    },
+    "capability_statuses": {
+      "type": "object",
+      "required": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"],
+      "properties": {
+        "C1": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C2": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C3": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C4": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C5": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C6": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C7": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C8": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C9": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] },
+        "C10": { "type": "string", "enum": ["READY", "CONDITIONAL", "BLOCKED", "NOT_EVALUATED"] }
+      }
+    },
+    "capabilities": {
+      "type": "object"
+    },
+    "usable_outputs": {
+      "type": "object"
+    },
+    "conditional_outputs": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "blocked_claims": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "minimal_next_measurements": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "provenance_and_uncertainty_ledger": {
+      "type": "object"
+    },
+    "evidence_levels_observed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "single_next_missing_input": {
+      "type": ["object", "null"]
+    },
+    "quality_assessment": {
+      "type": "object"
+    },
+    "sensitivity_scope_note": {
+      "type": "string"
+    },
+    "scientific_guardrails": {
+      "type": "object",
+      "required": ["field_validated", "marketable_yield", "profit", "prediction_accuracy"],
+      "properties": {
+        "field_validated": { "const": false },
+        "marketable_yield": { "type": "null" },
+        "profit": { "type": "null" },
+        "prediction_accuracy": { "const": "NOT_MEASURED" },
+        "false_qualification_upgrades": { "const": 0 }
+      }
+    }
+  }
+}

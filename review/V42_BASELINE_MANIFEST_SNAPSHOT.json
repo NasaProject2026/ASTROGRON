@@ -1,0 +1,856 @@
+{
+  "capturedAt": "2026-11-13T11:37:18.956Z",
+  "total_files": 170,
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 301,
+      "sha256": "48e4305ea6659a1c392c466fc8baa1fff1e1f622250a361c031e4641a294b825"
+    },
+    {
+      "path": "app/design-system/page.tsx",
+      "size_bytes": 7246,
+      "sha256": "1b68a697f4816d28da283f0c03fae606a0c5c198f8600557ace610d6b54bd70d"
+    },
+    {
+      "path": "app/explore/page.tsx",
+      "size_bytes": 183,
+      "sha256": "06a5e191f52e2a2792c7f8827d1e382aec2e51444a3b6a4912c4bce2b9f4c0c8"
+    },
+    {
+      "path": "app/farm/[id]/analysis/page.tsx",
+      "size_bytes": 7638,
+      "sha256": "fd012591f9a05de904a021faeb8e41c5026f7d6f8aa42feb56f68c4eadb7f0fe"
+    },
+    {
+      "path": "app/farm/[id]/climate/page.tsx",
+      "size_bytes": 9180,
+      "sha256": "cd68130a9708c3c4740735eb805d9645263ed77e6f61ad9e83ca95247ff7293a"
+    },
+    {
+      "path": "app/farm/[id]/coverage/page.tsx",
+      "size_bytes": 12904,
+      "sha256": "737163940e9028a2038d30542b3722fdcaa9a222a4d6b84a57b93462b9561881"
+    },
+    {
+      "path": "app/farm/[id]/decisions/page.tsx",
+      "size_bytes": 15737,
+      "sha256": "6fc542f8e25f7f4c7d6ba4a5669f7dd32784196f0379a52cf49e88a641520388"
+    },
+    {
+      "path": "app/farm/[id]/evidence/page.tsx",
+      "size_bytes": 7363,
+      "sha256": "00edadce65f9b1763f71a48882b2bf9ec09ca5386c67e4a33cf47387fe5d0284"
+    },
+    {
+      "path": "app/farm/[id]/layout.tsx",
+      "size_bytes": 349,
+      "sha256": "e0001ebacde978d3d51c3a83b00762f6be09937f67e4e18c1aa073b93ca8af9c"
+    },
+    {
+      "path": "app/farm/[id]/page.tsx",
+      "size_bytes": 9904,
+      "sha256": "e120cb1b51223e18f540b8db881a767120829460c6df07adb962179c291f324f"
+    },
+    {
+      "path": "app/farm/[id]/plans/page.tsx",
+      "size_bytes": 19926,
+      "sha256": "493419e4ddc035eb83475d337fc97ff7e5819b50410aad529c25969946f1ebd7"
+    },
+    {
+      "path": "app/farm/[id]/reports/page.tsx",
+      "size_bytes": 13698,
+      "sha256": "fed5d7b3c00110b28750a5356e9b4902da9e4e41f0fab92f3dca0ecfdb957a66"
+    },
+    {
+      "path": "app/farm/[id]/results/page.tsx",
+      "size_bytes": 22866,
+      "sha256": "f4e04e0bda99bb5582c9d50b508a24fedb707d9e83bbc36e84fb5d7bc17ce05e"
+    },
+    {
+      "path": "app/farm/new/page.tsx",
+      "size_bytes": 385,
+      "sha256": "4b039cc41dd7fa05023fdd38b142c732f6d8bc4751d9847f2dc0fbc249b921a6"
+    },
+    {
+      "path": "app/help/page.tsx",
+      "size_bytes": 6557,
+      "sha256": "6d2abf626228567ee8346d4581ec987dc2f9bb99982e2a696f961924ed3a27bb"
+    },
+    {
+      "path": "app/icon.svg",
+      "size_bytes": 598,
+      "sha256": "1e03ff8ad984927d5fc85946b0f41f094d69b840cfa190be8e668adeb968e11d"
+    },
+    {
+      "path": "app/layout.tsx",
+      "size_bytes": 1583,
+      "sha256": "6eaea297a4a67f01a1dded3da1c2670106bdcae8f4490132bf9804297bf5c299"
+    },
+    {
+      "path": "app/methodology/page.tsx",
+      "size_bytes": 10367,
+      "sha256": "2e4665177616bb85b3ec2574ad9e1de2940f46b9555ef2d4c3a06f36c48e7c43"
+    },
+    {
+      "path": "app/orbit-ab/page.tsx",
+      "size_bytes": 4624,
+      "sha256": "293e1e79ed4b3447661232ca169494d82996b333758159324fc942e356e616dd"
+    },
+    {
+      "path": "app/page.tsx",
+      "size_bytes": 170,
+      "sha256": "309d721d65b416b6a47e5aefcdddaef5ffd76e8132618a3640227df0003df323"
+    },
+    {
+      "path": "app/settings/page.tsx",
+      "size_bytes": 7468,
+      "sha256": "944f1fa253766670a4de8c04ec49e98926dd684db34f6c97ff078a4b93559b3b"
+    },
+    {
+      "path": "assets-manifest.json",
+      "size_bytes": 8475,
+      "sha256": "359de22836f5288931a9ea5c45528abccb3024b4136a78815bce939594ddc4b4"
+    },
+    {
+      "path": "docs/ACCESSIBILITY_AND_PERFORMANCE.md",
+      "size_bytes": 2276,
+      "sha256": "3e3addf3dd0f18910edb02ecc24606cc4cf832d68193a78031cd2924671792c7"
+    },
+    {
+      "path": "docs/ACCESSIBILITY_PERFORMANCE.md",
+      "size_bytes": 941,
+      "sha256": "e41b8e7e53f8b1b669a718d859e1f430034b4fc1a8046d08cab7e0437a47ca2d"
+    },
+    {
+      "path": "docs/ASSET_PROVENANCE.md",
+      "size_bytes": 4366,
+      "sha256": "ce98fcf31dc927e445b08a21b10c45987eedb33159968bc6791e460ef3089fca"
+    },
+    {
+      "path": "docs/CONTRACT_MAPPING.md",
+      "size_bytes": 2165,
+      "sha256": "31e403fda60b1ddd8a78e02c35dfb68224fdb11e1bd85dc701c1e6597723c843"
+    },
+    {
+      "path": "docs/DELIVERY_SUMMARY.md",
+      "size_bytes": 2444,
+      "sha256": "3fde72f2db9e7b059044c29733aff4c0ec820dbc1fb6a854e341643657981656"
+    },
+    {
+      "path": "docs/DEMO_SCRIPT.md",
+      "size_bytes": 3923,
+      "sha256": "8c3cc2aae46a1955f399af935d7a67bc48fd269d61707eee517d2e6a9573f9dd"
+    },
+    {
+      "path": "docs/DESIGN_SYSTEM.md",
+      "size_bytes": 4881,
+      "sha256": "49757f42de6319fdc382514bc7cdede7445383a593b92deb5346d7911989dc12"
+    },
+    {
+      "path": "docs/PRODUCT_FLOWS.md",
+      "size_bytes": 755,
+      "sha256": "de4c61f25d3a6b5255523608d87c16daba544f4f0074135b7fa84ed926832931"
+    },
+    {
+      "path": "docs/RESPONSIVE_AUDIT.md",
+      "size_bytes": 1745,
+      "sha256": "7540be5ed10ccc4119ada461099246337f16a71e524369b7c7017c269c738967"
+    },
+    {
+      "path": "docs/SCIENTIFIC_TRUTH_RULES.md",
+      "size_bytes": 3236,
+      "sha256": "b4cc7b2708ef454fd20920b8b4f5c3c4184e0d099364a4f44582a0a710ea374e"
+    },
+    {
+      "path": "docs/TEST_REPORT.md",
+      "size_bytes": 3242,
+      "sha256": "70072b7d5045e57411b5bddb2d5cda4d8dec94795f68a5194141ff1f80693635"
+    },
+    {
+      "path": "docs/UX_AND_PAGE_ARCHITECTURE.md",
+      "size_bytes": 3296,
+      "sha256": "96219743bc87b04faf4b0c35c869da74ecbaa674c40f1b19c6b31170f9a23107"
+    },
+    {
+      "path": "e2e/astragron-journey.spec.ts",
+      "size_bytes": 21432,
+      "sha256": "0e0a5458464a4dde91948c6a6bee6a48d206411663f59bccedd11e207a33cbf5"
+    },
+    {
+      "path": "e2e/orbit-ab-benchmark.spec.ts",
+      "size_bytes": 6417,
+      "sha256": "dab72ef527c8a9582909f05a9562a37d9aaae6a8b71b947b80bc7461a1bed9d4"
+    },
+    {
+      "path": "e2e/v4-review-regressions.spec.ts",
+      "size_bytes": 11410,
+      "sha256": "7bdfc51d64f6650c4fd6d30112c745e0f0ea88e05810130a2da859dfb3a3cd8f"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "size_bytes": 770,
+      "sha256": "0fa819ed3fe1c7ae2857ec182ba1b3ef265c3d07deee558614f7208e2fe74c68"
+    },
+    {
+      "path": "GEMINI_AGENT_LONG_RUN_HANDOFF.md",
+      "size_bytes": 4413,
+      "sha256": "d6a798189d511b136e1be03c4d2fa2ed8cb1623cc4c98eeee5dd9962f1f50fb2"
+    },
+    {
+      "path": "next-env.d.ts",
+      "size_bytes": 295,
+      "sha256": "1b59d4c6b83807db275d43f3cf2cc8e9323f465fab764eea091cc5becd5bad37"
+    },
+    {
+      "path": "next.config.ts",
+      "size_bytes": 170,
+      "sha256": "b4c296688a398040182abf0324e9a115506a525e5b73b36e9ea68e73254a4e07"
+    },
+    {
+      "path": "package-lock.json",
+      "size_bytes": 416187,
+      "sha256": "f89d5d711c5af36d7e5230372098695a1e547a12381733d099a33d6504957b8b"
+    },
+    {
+      "path": "package.json",
+      "size_bytes": 1347,
+      "sha256": "ef3db4e77b756b655a4e0e785446e426d6fc37eaa5522e63a380e2378e9b40a0"
+    },
+    {
+      "path": "playwright.config.ts",
+      "size_bytes": 704,
+      "sha256": "8c5d1c901c312e4ae0f4cdebff1c1ce20ccc05938e15d49cc14f741b0cfc2cfd"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "size_bytes": 93,
+      "sha256": "97ab34f7517584bbb828c26113103bfedf1329754cc4ecdf12cd9be105630070"
+    },
+    {
+      "path": "public/assets/agricultural-watershed-swath.jpg",
+      "size_bytes": 283228,
+      "sha256": "651c869caf8e7fddc5e93d017e183143ff0719bf3537ec7524808b2bb9597e88"
+    },
+    {
+      "path": "public/assets/orbital-earth-horizon-mobile.jpg",
+      "size_bytes": 155325,
+      "sha256": "ca83dac7f609646c0d66785d909e3a256411d1a03727ff9f33cf1341e57b15bf"
+    },
+    {
+      "path": "public/assets/orbital-earth-horizon-wide.jpg",
+      "size_bytes": 133739,
+      "sha256": "4849ff378362000bc1c434e91055d8f6d026521f5b3b4e6374109dab0afc1522"
+    },
+    {
+      "path": "public/favicon.ico",
+      "size_bytes": 1150,
+      "sha256": "50d683da6e0f499ea13ea83ce285e1cb1b3b2f34ec6bd5540a618fee9421eeda"
+    },
+    {
+      "path": "public/geodata/natural-earth-world.geojson",
+      "size_bytes": 32102,
+      "sha256": "394323c68958300b26c8a26cab73a9c59b5534e1a9019d73f3ca10a31f8a912f"
+    },
+    {
+      "path": "public/geodata/ne_110m_admin_0_countries.geojson",
+      "size_bytes": 838726,
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.js",
+      "size_bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.wasm",
+      "size_bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_wasm_wrapper.js",
+      "size_bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_bump_roughness_clouds_4096.jpg",
+      "size_bytes": 1508389,
+      "sha256": "0796f4211c209d1afe9e26a06a283cdc21434430a780a25457b2417568a8591e"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_day_4096.jpg",
+      "size_bytes": 473093,
+      "sha256": "cd7712d3e891425d9948ea5ac18d3bb1e7e834ea038188587897e689a7b35d0f"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_night_4096.jpg",
+      "size_bytes": 267061,
+      "sha256": "17a868f79c7be40fa1f557e6114d7889d907f18f7a3fce51f33b0b830ef50242"
+    },
+    {
+      "path": "public/orbit-ab-assets/landsat_8.glb",
+      "size_bytes": 780280,
+      "sha256": "8b599e867be20589cd35e55ed1d46da104299b430b1827b548a25d3fad0a314d"
+    },
+    {
+      "path": "public/orbit-lab.html",
+      "size_bytes": 67318,
+      "sha256": "bfbac836d0ee04d4395c6dfc0cb9c986f97ca75dad9010a80973aded7ec881ff"
+    },
+    {
+      "path": "public/workers/maplibre-gl-worker.js",
+      "size_bytes": 519500,
+      "sha256": "7ad0fc05178aff1690b899f7277912ebbb1659c40bf2214c83b6b914e44d2e33"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 8759,
+      "sha256": "4bae6bdc11d940454d98893c542cf8963b349ae180d8c0e7291875c5f9ae8233"
+    },
+    {
+      "path": "review/00_FINAL_EXECUTIVE_REPORT_AR.md",
+      "size_bytes": 7194,
+      "sha256": "caa33520cee51c8b2ad9630cf971c4e6a1fe39dcf64d926c3dd06b9df911d668"
+    },
+    {
+      "path": "review/01_BASELINE_AND_CHANGED_PATHS.md",
+      "size_bytes": 2852,
+      "sha256": "2ff3bd9434adb34ddfac05a53f38842ea0b666d9a3a19e4b408c1ad0d9ab70c3"
+    },
+    {
+      "path": "review/02_SCIENTIFIC_TRUTH_INPUT_REVISION_AND_SITE_ISOLATION.md",
+      "size_bytes": 3410,
+      "sha256": "538b6bff29c9fa77454d10412776032ad5456dca332cf9b4c38ee26cdcca2bc7"
+    },
+    {
+      "path": "review/03_COVERAGE_MODEL_RECOMMENDATION_SEPARATION.md",
+      "size_bytes": 2631,
+      "sha256": "57556cf07037e345347842052f70a8c46fd6c5db6d4955b21b22aa01f3af3595"
+    },
+    {
+      "path": "review/04_GLOBE_PROVIDER_FAILOVER_DMS_AND_POLYGONS.md",
+      "size_bytes": 3379,
+      "sha256": "4987d37e967a66645f71b724f095d0dd4d6a0416121cc556b566ede9a978741f"
+    },
+    {
+      "path": "review/05_CINEMATIC_DESIGN_AND_UX_BEFORE_AFTER.md",
+      "size_bytes": 3560,
+      "sha256": "9763965475e012ef9e1f6d241c570604c61f33a2fab9a4097ffc4c267fd919ed"
+    },
+    {
+      "path": "review/06_CROSS_DEVICE_ACCESSIBILITY_PERFORMANCE.md",
+      "size_bytes": 3437,
+      "sha256": "d85eb0ebc8c247fef623b9cbaf23da87cf6fee3f87dfd308fb71cd7794ee2597"
+    },
+    {
+      "path": "review/07_REAL_BUILD_TEST_NETWORK_PROOFS.md",
+      "size_bytes": 4071,
+      "sha256": "a4b371fd427c446ece90d8b87c6139a85a7de1bd923c9b4ecf3f1f14a7d64caa"
+    },
+    {
+      "path": "review/08_ASSET_RIGHTS_AND_ATTRIBUTION.md",
+      "size_bytes": 3519,
+      "sha256": "ef9cf225cff6fd9951e57abbef2918514eaf2cdd04086ccc199077896f67b86a"
+    },
+    {
+      "path": "review/09_REQUIREMENTS_ACCEPTANCE_RESULTS.csv",
+      "size_bytes": 12051,
+      "sha256": "04b10dd15eecd9311a88208d7326553e148d80b4ad4507f19edb3ef5e7709200"
+    },
+    {
+      "path": "review/10_KNOWN_DEFECTS_UNRESOLVED_BLOCKERS.md",
+      "size_bytes": 3809,
+      "sha256": "adf62c1a11b6d55558e66c39d05c766b80aced231ed2681fa162b9a5aa090161"
+    },
+    {
+      "path": "review/11_PORTABLE_REPRODUCTION_AND_SHA256.md",
+      "size_bytes": 1799,
+      "sha256": "32a394bef0a07a4c0f2181264a08e852e30911aba3eedf1d99bcc8646afb352f"
+    },
+    {
+      "path": "review/12_BACKEND_INTEGRATION_HANDOFF_CONTRACT.md",
+      "size_bytes": 2872,
+      "sha256": "2f00cb905c48cdfd73bdc1043620662699073cf03c4d3c1cbdb131ab6d37c739"
+    },
+    {
+      "path": "review/12_HASHES_AND_DELIVERY_MANIFEST.json",
+      "size_bytes": 31269,
+      "sha256": "80e28e57aad32950137c17a1276c2420acde942e644c950dba8ba3bdec5928bc"
+    },
+    {
+      "path": "review/13_INDEPENDENT_V4_AUDIT_AND_ORBIT_DESIGN_AR.md",
+      "size_bytes": 11566,
+      "sha256": "bffc2eafd7e02d0e1240c53ff8a4529e7103f54604cc21c4a6e1bd4ec8110733"
+    },
+    {
+      "path": "review/14_MOBILE_FIRST_UX_AND_3D_DECISION_AR.md",
+      "size_bytes": 7545,
+      "sha256": "6b27fc4fdf1b64b6b4cbe2cb125fa793762a9fd4358d40c7ab2ebe5acfd27337"
+    },
+    {
+      "path": "review/15_CODEX_REMEDIATION_AND_3D_AB_REPORT_AR.md",
+      "size_bytes": 21457,
+      "sha256": "042f7a9d58d95716bbd1955b80a2ddaed03aa1086dce8354b6aee19b4025639a"
+    },
+    {
+      "path": "review/evidence/eox-license-check.json",
+      "size_bytes": 1151,
+      "sha256": "69134e044bad36fc0b1854a7cf90f9f6e6d317c7e0659d1f96787acfd36b3aba"
+    },
+    {
+      "path": "review/evidence/responsive-overflow-matrix.json",
+      "size_bytes": 3921,
+      "sha256": "ecf4ef46e13ed26238050d5cfcaa61a8c45daee5fcaf0905ec2bdd562fc0367a"
+    },
+    {
+      "path": "review/evidence/tile-network-proof.json",
+      "size_bytes": 2022,
+      "sha256": "3675aa0c42e728838a5e16dac636e65fe8ae130fd59bbe3542c9237e073d76e9"
+    },
+    {
+      "path": "review/evidence/unit-and-e2e-summary.json",
+      "size_bytes": 2004,
+      "sha256": "85bdafa308fbcc5deaae6b55b70b6d288822ca4522eb532e634c901466690e8d"
+    },
+    {
+      "path": "review/screenshots/01_landing_desktop_1440.png",
+      "size_bytes": 1165355,
+      "sha256": "5517f66270dee047abcd2f1c0026f264ce4f2ef0763bc2379705c780142edc7e"
+    },
+    {
+      "path": "review/screenshots/02_explore_globe_orbital_1440.png",
+      "size_bytes": 596130,
+      "sha256": "9dc546286c559d15c879a2fcc9ad470771c44aff1832ddc93e208405a59dd50b"
+    },
+    {
+      "path": "review/screenshots/02b_explore_satellite_uppsala_1440.png",
+      "size_bytes": 955776,
+      "sha256": "1cf159b01b0754e43a0e71ad9d32d4407ea381e0bd92ef25c0f82759e81d08da"
+    },
+    {
+      "path": "review/screenshots/02c_explore_webgl_fallback_2d.png",
+      "size_bytes": 250120,
+      "sha256": "b00b6b0db9241ddb343b6b11294a1957a261d78d1ba71070a4ab22e2b3e988ab"
+    },
+    {
+      "path": "review/screenshots/03_explore_boundary_layers_1440.png",
+      "size_bytes": 938308,
+      "sha256": "e30e7a8662a73164727abb659f45d285d33e5c14c7a466d8688bb1e92ac764e4"
+    },
+    {
+      "path": "review/screenshots/04_farm_wizard_1440.png",
+      "size_bytes": 107717,
+      "sha256": "c1d6ce16faa6afdff9da3bbe3136d25ffce1a3ea241bc54c1e249e99e8be20fe"
+    },
+    {
+      "path": "review/screenshots/05_uppsala_results_1440.png",
+      "size_bytes": 264081,
+      "sha256": "14c26082f27acf2843bd8127bf39fc2e2277f3fbe82a5d0b12c2bcd654a87db3"
+    },
+    {
+      "path": "review/screenshots/06_provenance_drawer_1440.png",
+      "size_bytes": 270256,
+      "sha256": "d9420f6c36b81056884e04ad759cf053f68bd937a4dea56bf4c12846b4cd80b5"
+    },
+    {
+      "path": "review/screenshots/07_uppsala_plans_1440.png",
+      "size_bytes": 177068,
+      "sha256": "9acdf73b1c92fb8310708a758460fe878fab7a11b9644033ebef14c91c8b9570"
+    },
+    {
+      "path": "review/screenshots/08_uppsala_climate_1440.png",
+      "size_bytes": 204779,
+      "sha256": "ea0c89b9e49efafb5e22b8a1852049d8a9843e5bf93cfaf3f1dbb3523c126ae7"
+    },
+    {
+      "path": "review/screenshots/09_uppsala_reports_1440.png",
+      "size_bytes": 186620,
+      "sha256": "e701879dc6270981a57af9be8d2ccc893543aa29b9c48a683e6efb10b4201c04"
+    },
+    {
+      "path": "review/screenshots/10_kenya_isolation_blocked_1440.png",
+      "size_bytes": 176761,
+      "sha256": "716f3410676b4d9e180405cc358a5f0b59b3b714d8b6987c10190763e1208d38"
+    },
+    {
+      "path": "review/screenshots/11_unknown_site_not_found_1440.png",
+      "size_bytes": 164843,
+      "sha256": "027312f7ac079ebf7ce6e13612134c6b3138a8eec608c37c1cb6e2c486ad2696"
+    },
+    {
+      "path": "review/screenshots/12_landing_mobile_390.png",
+      "size_bytes": 337831,
+      "sha256": "b62fa424b9e5c119f051460f9ff339015d7c3b43ce9fa6ccb6977f25e20b93df"
+    },
+    {
+      "path": "review/screenshots/13_explore_globe_mobile_390.png",
+      "size_bytes": 205377,
+      "sha256": "71143d2d7638f01cd386a83ea7c8b98185ffa027a1d0d84803609ae52e744856"
+    },
+    {
+      "path": "review/screenshots/14_uppsala_results_mobile_390.png",
+      "size_bytes": 129625,
+      "sha256": "0a4671a79199ccc1610eeec1f1876a5a9d587dd3556233fdbebef3e4f39fe84b"
+    },
+    {
+      "path": "review/screenshots/15_explore_landscape_844x390.png",
+      "size_bytes": 141072,
+      "sha256": "c3a8ad6ce43bc951987901ad6dc10181419fc2d7c9e7391fb19ae2b6e5174b40"
+    },
+    {
+      "path": "review/screenshots/16_custom_uppsala_fork_blocked_1440.png",
+      "size_bytes": 181787,
+      "sha256": "5799fa2c18bf3d865d920caf356c95db6cd0a6dab8eb1f034da2bf4425f09c21"
+    },
+    {
+      "path": "review/screenshots/17_webgl_tile_outage_natural_earth_3d_1440.png",
+      "size_bytes": 186358,
+      "sha256": "8ae486d20c37c0beeb5b8b3b56cdc33efc1cf4a90b6cafb501d281130c9ab370"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_1440.png",
+      "size_bytes": 1166333,
+      "sha256": "893f90cc342082037c485ceacf09a24272621b223ac6004db68b4b5a64f9a495"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_390.png",
+      "size_bytes": 336815,
+      "sha256": "fab9a09b9747b83a86abaa820737a7b2e06a657eef8b3fdd56117906a0352bc3"
+    },
+    {
+      "path": "review/screenshots/ab_default_hero_820.png",
+      "size_bytes": 869256,
+      "sha256": "08a4f26cbb45a618043f6d25d44481248ec5c1844e640ad4b24094bb15849256"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_1440.png",
+      "size_bytes": 1169716,
+      "sha256": "aeeaa90a291769508816e1eac3fd36be621305f96cd76ffa96f553af678f1d0e"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_390.png",
+      "size_bytes": 250137,
+      "sha256": "17fb5f4919cfc683e0415d1d6e06252f6453b37ad30277905bb86fc436e0373c"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_820.png",
+      "size_bytes": 824091,
+      "sha256": "b45ce981bb37e1a8acd79fd47968dcae9545e26861a3bfcaa5fd537cfdaaa288"
+    },
+    {
+      "path": "review/screenshots/ab_orbit3d_fallback.png",
+      "size_bytes": 1178306,
+      "sha256": "81a6f02d8643ed25383e02f62f13c8131d62d321166eba95fa0ccab95b2163d3"
+    },
+    {
+      "path": "review/screenshots/orbit-ab-benchmark.json",
+      "size_bytes": 1755,
+      "sha256": "5a6da201098ac43df58f5bbb4d608f6dda8b34c069aa2f77f0c5f4bb4c7b250e"
+    },
+    {
+      "path": "review/screenshots/responsive-overflow-matrix.json",
+      "size_bytes": 3921,
+      "sha256": "ecf4ef46e13ed26238050d5cfcaa61a8c45daee5fcaf0905ec2bdd562fc0367a"
+    },
+    {
+      "path": "review/screenshots/tile-network-proof.json",
+      "size_bytes": 2022,
+      "sha256": "29b164f325e9e60169c57d93000ba9b7a570d26bcebf16438245b236cecf55bb"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_nyeri_1280.png",
+      "size_bytes": 163598,
+      "sha256": "4405a9584eee48b0a5ea498fdfc428d8c17b2b6474d3eca3f74e5b58f6c6a83d"
+    },
+    {
+      "path": "review/screenshots/v42_coverage_uppsala_1280.png",
+      "size_bytes": 156780,
+      "sha256": "a064be9c4c5a79bb42d84e266c74aa15f9f81ce224d07e38cb2b81d1f424118a"
+    },
+    {
+      "path": "review/screenshots/v42_explore_403_recovery_1280.png",
+      "size_bytes": 256555,
+      "sha256": "3d68005e810e87cadbfdd491374c59104e8931f425cd093c3a9e4fee37e7fa3f"
+    },
+    {
+      "path": "review/screenshots/v42_header_1024.png",
+      "size_bytes": 745506,
+      "sha256": "30f387ddc9ef09a850175dc088a34b74bfa4e143bd839e6cb359be7974e674a1"
+    },
+    {
+      "path": "review/screenshots/v42_plans_compare_mobile_390.png",
+      "size_bytes": 69975,
+      "sha256": "e26b53ff6147665584b4ca292587720537e95bedf3589e4f28d49ae5decd3ab6"
+    },
+    {
+      "path": "review/screenshots/v42_reports_320.png",
+      "size_bytes": 51698,
+      "sha256": "13ecad2c9615e004f9d3925ba2593a32703c26384ca2bf2fc7f9f84657f62166"
+    },
+    {
+      "path": "review/screenshots_v3_before/01_landing_desktop_1440.png",
+      "size_bytes": 1150145,
+      "sha256": "a96a2d718f32d8332acd7fe13bd88b97d0d275ba2b7bf7965d91f72a42b35811"
+    },
+    {
+      "path": "review/screenshots_v3_before/02_explore_globe_orbital_1440.png",
+      "size_bytes": 586828,
+      "sha256": "9a60585c632bc938eb0daa501ceaee4a8a0e1d50576b626e478be6dc29bad7ae"
+    },
+    {
+      "path": "review/screenshots_v3_before/02b_explore_satellite_uppsala_1440.png",
+      "size_bytes": 983230,
+      "sha256": "2cb0f1503212d3298138432b42ae799e81cc5373df6a13b26051384e9e56a346"
+    },
+    {
+      "path": "review/screenshots_v3_before/02c_explore_webgl_fallback_2d.png",
+      "size_bytes": 236366,
+      "sha256": "23e2a49975e110ba4bcf4483cced862ba603bf4d00b0d07420c0f2bb8f7effc5"
+    },
+    {
+      "path": "review/screenshots_v3_before/03_explore_boundary_layers_1440.png",
+      "size_bytes": 1007003,
+      "sha256": "f35d5f0757f8aba3e104699d4c994b8f6b68819195cc4a826eed21cced5a0fdb"
+    },
+    {
+      "path": "review/screenshots_v3_before/04_farm_wizard_1440.png",
+      "size_bytes": 121601,
+      "sha256": "77544479be4096d880114003a40434703b6866b61f35f58a7cce07d9cdddf774"
+    },
+    {
+      "path": "review/screenshots_v3_before/05_uppsala_results_1440.png",
+      "size_bytes": 276604,
+      "sha256": "ab3c89ddef6af1562aeaf87564e8a01ab8951604fcf68dafeb1d4d8122cee9ba"
+    },
+    {
+      "path": "review/screenshots_v3_before/06_provenance_drawer_1440.png",
+      "size_bytes": 279707,
+      "sha256": "b6ee0c172b0f916df26123fc0b44ab86c69f8dfad039e163838916cf8dfb59ed"
+    },
+    {
+      "path": "review/screenshots_v3_before/07_uppsala_plans_1440.png",
+      "size_bytes": 193603,
+      "sha256": "eec273302f517e7f876203a175f573e02837615935930d5068d06d2e0a2cef6f"
+    },
+    {
+      "path": "review/screenshots_v3_before/08_uppsala_climate_1440.png",
+      "size_bytes": 217859,
+      "sha256": "4f2ce19c904cf93b8da89fd9b79163eda2216da29b87a9281232f9271fe360b1"
+    },
+    {
+      "path": "review/screenshots_v3_before/09_uppsala_reports_1440.png",
+      "size_bytes": 199738,
+      "sha256": "f67f715038b7180cb47d2da43a2e6c347c7773cfcee161dc2cb77f7403a71d33"
+    },
+    {
+      "path": "review/screenshots_v3_before/10_kenya_isolation_blocked_1440.png",
+      "size_bytes": 188756,
+      "sha256": "d526194496e14af041c568e0101dfafa63057d98ff89145ebfd2d5d0e9f5db38"
+    },
+    {
+      "path": "review/screenshots_v3_before/11_unknown_site_not_found_1440.png",
+      "size_bytes": 176996,
+      "sha256": "94112df7b9f5edffdeb1b2977130ce5c88600bb951d6b13143f91d6b29d414a4"
+    },
+    {
+      "path": "review/screenshots_v3_before/12_landing_mobile_390.png",
+      "size_bytes": 326414,
+      "sha256": "3ac93154f3af529852e0a85a007be25bbbc9b0de4a93cb28b6c03e3839023b34"
+    },
+    {
+      "path": "review/screenshots_v3_before/13_explore_globe_mobile_390.png",
+      "size_bytes": 206491,
+      "sha256": "3c87294214e133d30aa514f9b909e4ca642e77649553928b72ceffba49ec0e07"
+    },
+    {
+      "path": "review/screenshots_v3_before/14_uppsala_results_mobile_390.png",
+      "size_bytes": 76171,
+      "sha256": "531d1c84543243be9d7c9e5baa92583fb48d4d286292f36598588c909fb563b4"
+    },
+    {
+      "path": "review/screenshots_v3_before/15_explore_landscape_844x390.png",
+      "size_bytes": 150365,
+      "sha256": "6557e030d8a362bf5fc0e41d6be54b2b815614350e9c1c75f4fdfcb2b190ce75"
+    },
+    {
+      "path": "review/V3_BASELINE_MANIFEST_SNAPSHOT.json",
+      "size_bytes": 21459,
+      "sha256": "fcd1ace9ab53cfc0da955db09266c83b503078d9df162f437d35f24c74eb0944"
+    },
+    {
+      "path": "review/videos/01_desktop_earth_to_field_journey.webm",
+      "size_bytes": 5312158,
+      "sha256": "fbb830783768b5d7b558bd1ee2c7de4dbd6314b161d32fcc82f458168a9f7eaf"
+    },
+    {
+      "path": "review/videos/02_mobile_390_earth_to_results.webm",
+      "size_bytes": 4577729,
+      "sha256": "bb5962584df20164c4d8e9f4bf73e6bc816e2ad8408cfb33d376be7abdab3843"
+    },
+    {
+      "path": "review/videos/03_custom_fork_and_outage.webm",
+      "size_bytes": 1674754,
+      "sha256": "06385e88c045efda6183aeeb4841dd82ffde8538cbf01d246f10aae4d06d9be9"
+    },
+    {
+      "path": "review/videos/04_orbit_ab_3d_benchmark.webm",
+      "size_bytes": 5181411,
+      "sha256": "63a521e14169831e35ac8bd95106108392ff10474e5c71f2e7628ee1a00e688b"
+    },
+    {
+      "path": "scripts/generate-manifest.mjs",
+      "size_bytes": 2605,
+      "sha256": "99af24dac19ecd34f18c419963d09b04791cf16618548a5517cba140375025e3"
+    },
+    {
+      "path": "scripts/mobile-ux-offline-gates.mjs",
+      "size_bytes": 3134,
+      "sha256": "75e4b2ee97ca14a221ab08049255394f1fed4dde2a5b562ec30dcccf433bef33"
+    },
+    {
+      "path": "scripts/review-regression.mjs",
+      "size_bytes": 4483,
+      "sha256": "70faf4460e48e94c4de3e2851ea9c01fde4f4f483cd327f67bba73cd238e92a9"
+    },
+    {
+      "path": "scripts/verify-manifest.d.mts",
+      "size_bytes": 316,
+      "sha256": "9b77a9f6c54531daca524b169c06487a68e9d1332bdf7e24bbd5c6cfc60c3886"
+    },
+    {
+      "path": "scripts/verify-manifest.mjs",
+      "size_bytes": 5409,
+      "sha256": "71adf1488869d6a08cec5c23a27c4e61373783984220b4bda422c52f3f50d40d"
+    },
+    {
+      "path": "src/adapters/repositories.ts",
+      "size_bytes": 50502,
+      "sha256": "e9bf70347f409f72c43c808e81161aaec9917cbd887698acd7b9387082d27262"
+    },
+    {
+      "path": "src/components/charts/climate-echarts.tsx",
+      "size_bytes": 10167,
+      "sha256": "691d4ddd2a9801046b0ef4ccb2c386867401131ae3e4635e9b0db3871d7aae13"
+    },
+    {
+      "path": "src/components/design-system/primitives.tsx",
+      "size_bytes": 18369,
+      "sha256": "092156ebffa83db7b535e5cf8648d67adb748d4ba070ecc9696e48c603e146e5"
+    },
+    {
+      "path": "src/components/evidence/provenance-drawer.tsx",
+      "size_bytes": 16398,
+      "sha256": "b0fedd9e40900bd1fa3835a06d0d67510e3a2250dc3cbbaf2e7d49edf3de7d49"
+    },
+    {
+      "path": "src/components/forms/farm-setup-wizard.tsx",
+      "size_bytes": 46506,
+      "sha256": "57d620fd84908e0bed0f1af14c87c8c95d90978ebcb92c57a9c74985f15b199f"
+    },
+    {
+      "path": "src/components/hero/cinematic-landing.tsx",
+      "size_bytes": 26325,
+      "sha256": "e1adad2f68b2a8e871f6e1f057d19f75854eb15d83a1861166879c6d3e333196"
+    },
+    {
+      "path": "src/components/maps/earth-explorer-client.tsx",
+      "size_bytes": 54958,
+      "sha256": "68927d202c16b15998d319a402179f3218c0d4c3f156e830a6e2441a23971af0"
+    },
+    {
+      "path": "src/components/maps/map-providers.ts",
+      "size_bytes": 17844,
+      "sha256": "01578dc8122f6d30cb576b2bc9a368354d4d18969e8416a5b7595d12ce6fac2d"
+    },
+    {
+      "path": "src/components/maps/maplibre-globe-canvas.tsx",
+      "size_bytes": 43923,
+      "sha256": "d3e1d155664415aa71d2ca34c9fda250cf23acf030d0fd4d0b51803e79828f5f"
+    },
+    {
+      "path": "src/components/navigation/app-chrome.tsx",
+      "size_bytes": 26240,
+      "sha256": "8e40621c65958a3287eee70efee284c5b55ab384a95d62e87d2d8a49d6fdb9d7"
+    },
+    {
+      "path": "src/components/orbital/orbit-ab-stage.tsx",
+      "size_bytes": 23092,
+      "sha256": "958df64067df2481cbd8ac67ac710542c02d589aecdd226a1f9bfb4647ac8693"
+    },
+    {
+      "path": "src/domain/contracts.ts",
+      "size_bytes": 11579,
+      "sha256": "6e929135bca5367911840b602ca4537da9491d894e60b054cf2b37f37e54c461"
+    },
+    {
+      "path": "src/domain/schemas.ts",
+      "size_bytes": 32554,
+      "sha256": "5c8da5464d17310f9fdf193f14fbe99083eacd594059e43eba2173f9e7724756"
+    },
+    {
+      "path": "src/fixtures/climate-water-fixture.ts",
+      "size_bytes": 7303,
+      "sha256": "fe51cfca03cda81b73ffefb85615a9634738cd7e882640cd5311834383fd7d7a"
+    },
+    {
+      "path": "src/fixtures/m14-decision-fixture.ts",
+      "size_bytes": 25797,
+      "sha256": "f55aa3c8317e8a7530496539fd5764504d4df6873ef58c325d92fa9c2fb80586"
+    },
+    {
+      "path": "src/fixtures/natural-earth-world.ts",
+      "size_bytes": 10428,
+      "sha256": "fd5519c5131fb9ae8819d0039e2cab92bd79d08bf9c4c09185b33b220ea99faa"
+    },
+    {
+      "path": "src/fixtures/sites-and-coverage.ts",
+      "size_bytes": 49631,
+      "sha256": "0ec979af55d315580709d6e74d68e1efc0fb716cb058e9e92ac20663d03f4df9"
+    },
+    {
+      "path": "src/hooks/use-astragron-store.tsx",
+      "size_bytes": 18013,
+      "sha256": "72066592878028248fd7b80d158664938d9a034d9874e2904b79c63a37509c31"
+    },
+    {
+      "path": "src/lib/i18n.ts",
+      "size_bytes": 2589,
+      "sha256": "84097a0cfe452fbb06658d3eb2f0cc3021fe6e3cc5ba5da31aa8a5f9287a5e85"
+    },
+    {
+      "path": "src/messages/en/index.ts",
+      "size_bytes": 12349,
+      "sha256": "557f91f41fc6132dd0cabc1eadff34011eaa86f88b6f0ca1c0a0dab585d6363c"
+    },
+    {
+      "path": "src/styles/globals.css",
+      "size_bytes": 5638,
+      "sha256": "17cfcdf9b467898ecee4ae3f0eb0fc55411d90f967a9e11ab347c6f28010d97d"
+    },
+    {
+      "path": "tests/contracts-and-adapters.test.ts",
+      "size_bytes": 23367,
+      "sha256": "ff6e59f1c93baa774eaa7cfb73d83799b27426c33dbe01dea820016b9a28e250"
+    },
+    {
+      "path": "tests/remediation-gates.test.ts",
+      "size_bytes": 6900,
+      "sha256": "15df0a72906bf04adf5c03f7d4a66a952e0378e825b371267e6c34c7a4b0ef97"
+    },
+    {
+      "path": "tests/v4-precision-gates.test.ts",
+      "size_bytes": 11644,
+      "sha256": "aa47f702fcf55b407a20bf37882983e5ce4a5e540f75eb63158d86b73e8ec664"
+    },
+    {
+      "path": "tsconfig.json",
+      "size_bytes": 813,
+      "sha256": "a4c3b4bdb2115aca4d2a0ce7050bcabec457e5384b90c1c18ca1edc524cc5fa6"
+    },
+    {
+      "path": "vitest.config.ts",
+      "size_bytes": 373,
+      "sha256": "fcc06776be395579d3944a90fd59911dd15a60b850f8178df1167c4633cf451f"
+    }
+  ]
+}

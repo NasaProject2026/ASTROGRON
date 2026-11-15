@@ -1,0 +1,992 @@
+{
+  "schema": "astragron.gate3.worldwide-12site-matrix.v1",
+  "summary_counts": {
+    "total_locations_evaluated": 12,
+    "live_nasa_fetch_and_cached_count": 8,
+    "upstream_cached_nasa_receipt_count": 4,
+    "soilgrids_live_or_cached_count": 11,
+    "screening_only_output_count": 8,
+    "true_conditional_5y_planning_count": 3,
+    "climate_ready_soil_or_crop_blocked_count": 1,
+    "blocked_or_unsupported_count": 0,
+    "missing_or_failed_count": 0
+  },
+  "locations": [
+    {
+      "site_id": "SE_UPPSALA",
+      "country": "Sweden",
+      "continent": "Europe",
+      "name": "Uppsala Research Farm, Sweden",
+      "point_lon_lat": [
+        17.65,
+        59.82
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 3855.7,
+      "nasa_climate_status": "CACHED_RECEIPT",
+      "nasa_raw_payload_sha256": "f231ad6a31fa88721202747c7bccf0b62db12247128dac1a532b660bb5926639",
+      "mean_annual_precipitation_mm": 628.15,
+      "mean_temperature_c": 7.05,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "TRUE_5Y_RESEARCH_PLAN",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C6",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C7",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "KE_NYERI",
+      "country": "Kenya",
+      "continent": "Africa",
+      "name": "Nyeri / Central Highlands, Kenya",
+      "point_lon_lat": [
+        36.95,
+        -0.42
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 56042.5,
+      "nasa_climate_status": "CACHED_RECEIPT",
+      "nasa_raw_payload_sha256": "35f16af65183cef20635038e349c234b148b41a42ccc46130a4d10cfbd4ac0b5",
+      "mean_annual_precipitation_mm": 1196.12,
+      "mean_temperature_c": 16.48,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "TRUE_5Y_RESEARCH_PLAN",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C6",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C7",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "AU_WAGGA",
+      "country": "Australia",
+      "continent": "Oceania",
+      "name": "Wagga Wagga, New South Wales, Australia",
+      "point_lon_lat": [
+        147.35,
+        -35.05
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 104652.4,
+      "nasa_climate_status": "CACHED_RECEIPT",
+      "nasa_raw_payload_sha256": "999dded2420fa6674cade6dc67d4169c2e1bb4040d987058483d6b4246b733e2",
+      "mean_annual_precipitation_mm": 525.24,
+      "mean_temperature_c": 16.3,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "TRUE_5Y_RESEARCH_PLAN",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C6",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C7",
+          "missing_reason": "unsupported_crop_profile"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "DE_HEILBRONN",
+      "country": "Germany",
+      "continent": "Europe",
+      "name": "Heilbronn, Baden-Wuerttemberg, Germany",
+      "point_lon_lat": [
+        9.22,
+        49.14
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 147566.0,
+      "nasa_climate_status": "CACHED_RECEIPT",
+      "nasa_raw_payload_sha256": "d2d376cde07081fb88c0720283f28f0c3a64b09b10abdafd72e5cf2eac0122ae",
+      "mean_annual_precipitation_mm": 789.38,
+      "mean_temperature_c": 10.35,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "BR_BRASILIA_CERRADO",
+      "country": "Brazil",
+      "continent": "South America",
+      "name": "Brasilia Cerrado Agricultural Plateau, Brazil",
+      "point_lon_lat": [
+        -47.9,
+        -15.8
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 260743.4,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "6a5c4b527c7b3a40c513cb1f08b544bb86ee65f68c9525cb2b0e14ee4a116476",
+      "mean_annual_precipitation_mm": 1191.0,
+      "mean_temperature_c": 22.72,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "AR_PERGAMINO_PAMPAS",
+      "country": "Argentina",
+      "continent": "South America",
+      "name": "Pergamino, Buenos Aires Pampas, Argentina",
+      "point_lon_lat": [
+        -60.52,
+        -33.89
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 183643.1,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "26149e075d460ab6ddd08843cc36c556b9b8d9fdcf272ec90533275a56a902e0",
+      "mean_annual_precipitation_mm": 1099.72,
+      "mean_temperature_c": 16.82,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "IN_PUNJAB_LUDHIANA",
+      "country": "India",
+      "continent": "Asia",
+      "name": "Ludhiana Indo-Gangetic Plain, Punjab, India",
+      "point_lon_lat": [
+        75.85,
+        30.9
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 80403.7,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "69b5b63e8f1d32eff79fbc28a92135cfee7c9404d39d3546b299961c4f1bb130",
+      "mean_annual_precipitation_mm": 829.34,
+      "mean_temperature_c": 24.85,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "JP_TSUKUBA_KANTO",
+      "country": "Japan",
+      "continent": "Asia",
+      "name": "Tsukuba, Ibaraki (Kanto Plain), Japan",
+      "point_lon_lat": [
+        140.12,
+        36.08
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 47275.2,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "1af7d4ce2fcbed0f3c6d20828fa89c2e20ee112d11d30d60ab1fef7e7374dbe3",
+      "mean_annual_precipitation_mm": 1530.86,
+      "mean_temperature_c": 15.19,
+      "soil_status": "BLOCKED",
+      "crop_or_planning_status": "BLOCKED",
+      "status_outcome": "CLIMATE_READY_SOIL_PARTIAL",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C3",
+          "missing_reason": "source_outage"
+        },
+        {
+          "capability_id": "C4",
+          "missing_reason": "source_outage"
+        },
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C6",
+          "missing_reason": "source_outage"
+        },
+        {
+          "capability_id": "C7",
+          "missing_reason": "source_outage"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "ID_WEST_JAVA_BANDUNG",
+      "country": "Indonesia",
+      "continent": "Asia",
+      "name": "Bandung Highland Basin, West Java, Indonesia",
+      "point_lon_lat": [
+        107.61,
+        -6.91
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 68404.3,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "cc13c839f203610fe7c624ddd7b6cf130e5120a25f566fd20c0b2037e785018d",
+      "mean_annual_precipitation_mm": 3448.57,
+      "mean_temperature_c": 21.61,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "EG_NILE_DELTA_TANTA",
+      "country": "Egypt",
+      "continent": "Africa",
+      "name": "Tanta, Central Nile Delta, Egypt",
+      "point_lon_lat": [
+        31.01,
+        30.79
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 70644.6,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "e52246e2bb7b390c943d298fe4851b93aa017d2be301073d229d6a6fb1763485",
+      "mean_annual_precipitation_mm": 140.35,
+      "mean_temperature_c": 22.21,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "US_IOWA_AMES",
+      "country": "USA",
+      "continent": "North America",
+      "name": "Ames, Story County, Iowa, USA",
+      "point_lon_lat": [
+        -93.62,
+        42.03
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 359582.9,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "d6604b3ea294af6dd3ce0284e7ae16c3080c1d18069db4b95989c0bb4759bcb2",
+      "mean_annual_precipitation_mm": 856.73,
+      "mean_temperature_c": 9.68,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    {
+      "site_id": "ZA_SWARTLAND_CAPE",
+      "country": "South Africa",
+      "continent": "Africa",
+      "name": "Swartland / Malmesbury, Western Cape, South Africa",
+      "point_lon_lat": [
+        18.86,
+        -33.93
+      ],
+      "land_status": "LAND",
+      "distance_to_coast_m": 18541.7,
+      "nasa_climate_status": "LIVE_FETCHED_AND_CACHED",
+      "nasa_raw_payload_sha256": "23800bde9cc591166ee137fef3b32a48950a1750337e94a908a13661bd3c681f",
+      "mean_annual_precipitation_mm": 818.68,
+      "mean_temperature_c": 16.48,
+      "soil_status": "SOILGRIDS_LIVE_OR_CACHED",
+      "crop_or_planning_status": "CONDITIONAL_SCREENING",
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "CONDITIONAL",
+        "C7": "CONDITIONAL",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "blocked_capabilities": [
+        {
+          "capability_id": "C5",
+          "missing_reason": "license_unverified"
+        },
+        {
+          "capability_id": "C8",
+          "missing_reason": "unsupported_region"
+        },
+        {
+          "capability_id": "C9",
+          "missing_reason": "insufficient_parameters"
+        },
+        {
+          "capability_id": "C10",
+          "missing_reason": "official_verification_required"
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    }
+  ]
+}

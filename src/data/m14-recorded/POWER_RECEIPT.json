@@ -1,0 +1,14 @@
+{
+  "source_id": "NASA_POWER_UPPSALA_2006_2025_UTC",
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR%2CT2M%2CT2M_MIN%2CT2M_MAX&community=AG&latitude=59.82&longitude=17.65&start=20060101&end=20251231&format=JSON&time-standard=UTC",
+  "started_at": "2026-11-06T21:03:31.165264+00:00",
+  "authentication_used": false,
+  "requests": 1,
+  "protocol_sha256": "7243e5969a756311e1af08ab9b7197041542eaed3005319b7e064b5ae285d8d9",
+  "status": "ACQUIRED",
+  "http_status": 200,
+  "bytes": 479741,
+  "sha256": "f231ad6a31fa88721202747c7bccf0b62db12247128dac1a532b660bb5926639",
+  "content_type": "application/json",
+  "retrieved_at": "2026-11-06T21:03:33.648665+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "mode": null,
+  "schema": "astragron.m14.research-preference.v1",
+  "allowed_modes": [
+    "STRICT_ALL_SCENARIOS_SERVICE",
+    "MINIMIZE_WORST_ET_SHORTFALL",
+    "MINIMAX_REGRET",
+    "PARETO_FRONTIER"
+  ],
+  "objective_units": {
+    "ET_shortfall": "m3 equivalent",
+    "regret": "m3 equivalent",
+    "withdrawal": "m3 source",
+    "service": "mm per field harvest year"
+  },
+  "weights": null,
+  "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+  "missingness": "No zero filling; incomplete domain blocks universal claims",
+  "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+  "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+  "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+  "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+}

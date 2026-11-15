@@ -1,0 +1,161 @@
+{
+  "manifest_version": "2.0.0",
+  "generated_at": "2026-11-12T23:12:00Z",
+  "project": "ASTRAGRON-FRONTEND (Final Remediated Independent Review Package)",
+  "assets": [
+    {
+      "path": "public/assets/orbital-earth-horizon-wide.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1376x768",
+      "origin": "Bespoke desktop editorial Low Earth Orbit Earth-horizon + observation spacecraft visual generated for ASTRAGRON landing hero",
+      "license": "Proprietary Project Commissioned Artwork (Not CC0 Public Domain — Commercial & Non-Commercial Reuse Rights Reserved to Project Owner)",
+      "scientific_classification": "ILLUSTRATIVE_ORBITAL_ARTWORK (Visual Scene Only — Not a Live Satellite Observation or NASA Photograph)"
+    },
+    {
+      "path": "public/assets/orbital-earth-horizon-mobile.jpg",
+      "type": "image/jpeg",
+      "dimensions": "896x1200",
+      "origin": "Bespoke mobile portrait Low Earth Orbit Earth-horizon + spacecraft visual for 360px/390px viewports",
+      "license": "Proprietary Project Commissioned Artwork (Not CC0 Public Domain — Commercial & Non-Commercial Reuse Rights Reserved to Project Owner)",
+      "scientific_classification": "ILLUSTRATIVE_ORBITAL_ARTWORK (Visual Scene Only — Not a Live Satellite Observation or NASA Photograph)"
+    },
+    {
+      "path": "public/assets/agricultural-watershed-swath.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1376x768",
+      "origin": "Bespoke high-altitude editorial farmland watershed & pivot-field swath illustration",
+      "license": "Proprietary Project Commissioned Artwork (Not CC0 Public Domain — Commercial & Non-Commercial Reuse Rights Reserved to Project Owner)",
+      "scientific_classification": "ILLUSTRATIVE_ORBITAL_ARTWORK (Editorial Section Context Only)"
+    },
+    {
+      "path": "public/geodata/ne_110m_admin_0_countries.geojson",
+      "type": "application/geo+json",
+      "origin": "Natural Earth 1:110m Cultural Vectors Admin 0 Countries (177 sovereign polygons, WGS84 EPSG:4326)",
+      "license": "Public Domain (CC0 1.0 Universal — naturalearthdata.com)",
+      "scientific_classification": "CARTOGRAPHIC_REFERENCE_BOUNDARIES_WGS84"
+    },
+    {
+      "path": "public/geodata/natural-earth-world.geojson",
+      "source_module": "src/fixtures/natural-earth-world.ts",
+      "type": "application/geo+json",
+      "origin": "Lightweight synchronous Natural Earth 1:110m vector hull subset used prior to async load of ne_110m_admin_0_countries.geojson",
+      "license": "Public Domain (CC0 1.0 Universal — naturalearthdata.com)",
+      "scientific_classification": "CARTOGRAPHIC_REFERENCE_BOUNDARIES_WGS84"
+    },
+    {
+      "path": "public/workers/maplibre-gl-worker.js",
+      "type": "application/javascript",
+      "origin": "Bundled Web Worker extracted from maplibre-gl@6.18.0 distribution",
+      "license": "BSD-3-Clause (MapLibre GL JS)",
+      "scientific_classification": "WEBGL_GLOBE_WEB_WORKER_RUNTIME"
+    },
+    {
+      "path": "app/icon.svg",
+      "fallback_path": "public/favicon.ico",
+      "type": "image/svg+xml",
+      "origin": "Original ASTRAGRON orbital vector emblem (unrelated to NASA insignia)",
+      "license": "Project-Owned Original Iconography",
+      "scientific_classification": "UI_ICONOGRAPHY"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_day_4096.jpg",
+      "type": "image/jpeg",
+      "dimensions": "4096x2048",
+      "origin": "NASA Blue Marble Next Generation equirectangular albedo texture distributed via mrdoob/three.js examples/textures/planets/earth_day_4096.jpg (isolated /orbit-ab evaluation only)",
+      "license": "NASA Public Domain base imagery / Three.js MIT License",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_ORBITAL_ASSET"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_night_4096.jpg",
+      "type": "image/jpeg",
+      "dimensions": "4096x2048",
+      "origin": "NASA Earth Observatory Black Marble city-lights equirectangular texture via mrdoob/three.js examples/textures/planets/earth_night_4096.jpg (isolated /orbit-ab evaluation only)",
+      "license": "NASA Public Domain base imagery / Three.js MIT License",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_ORBITAL_ASSET"
+    },
+    {
+      "path": "public/orbit-ab-assets/earth_bump_roughness_clouds_4096.jpg",
+      "type": "image/jpeg",
+      "dimensions": "4096x2048",
+      "origin": "Channel-packed planetary elevation (R), ocean/land roughness (G), and cloud cover (B) texture via mrdoob/three.js examples/textures/planets/earth_bump_roughness_clouds_4096.jpg (isolated /orbit-ab evaluation only)",
+      "license": "NASA Public Domain base imagery / Three.js MIT License",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_ORBITAL_ASSET"
+    },
+    {
+      "path": "public/orbit-ab-assets/landsat_8.glb",
+      "type": "model/gltf-binary",
+      "origin": "NASA 3D Resources official public-domain Landsat 8 spacecraft model (https://github.com/nasa/NASA-3D-Resources/tree/master/3D%20Models/Landsat%208)",
+      "license": "NASA U.S. Government Public Domain (free and without copyright; no NASA endorsement implied)",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_SPACECRAFT_CAD_ILLUSTRATIVE"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.js",
+      "type": "application/javascript",
+      "origin": "Local offline Google Draco glTF mesh decoder extracted from three@0.187.0 examples/jsm/libs/draco/gltf/",
+      "license": "Apache-2.0 (Draco) / MIT (Three.js)",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_DECODER_RUNTIME"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_decoder.wasm",
+      "type": "application/wasm",
+      "origin": "Local offline Google Draco glTF WASM decoder extracted from three@0.187.0 examples/jsm/libs/draco/gltf/",
+      "license": "Apache-2.0 (Draco) / MIT (Three.js)",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_DECODER_RUNTIME"
+    },
+    {
+      "path": "public/orbit-ab-assets/draco/draco_wasm_wrapper.js",
+      "type": "application/javascript",
+      "origin": "Local offline Google Draco glTF WASM wrapper extracted from three@0.187.0 examples/jsm/libs/draco/gltf/",
+      "license": "Apache-2.0 (Draco) / MIT (Three.js)",
+      "scientific_classification": "ISOLATED_AB_EVALUATION_DECODER_RUNTIME"
+    }
+  ],
+  "externalRuntimeMapProviders": [
+    {
+      "id": "openfreemap-vector",
+      "name": "OpenFreeMap Planet Vector Tiles",
+      "endpoint": "https://tiles.openfreemap.org/planet",
+      "license": "OpenFreeMap · OpenMapTiles schema · Data from OpenStreetMap contributors (ODbL)",
+      "attribution": "© OpenFreeMap © OpenMapTiles © OpenStreetMap contributors",
+      "keyRequired": false
+    },
+    {
+      "id": "eox-s2cloudless-2016",
+      "name": "EOxCloudless Sentinel-2 2016 Historical Mosaic (3857)",
+      "endpoint": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0 — confirmed in both EOX FAQ & WMTSCapabilities for 2016 s2cloudless_3857 release; no uptime SLA; 2018-2025 releases excluded due to CC BY-NC-SA 4.0 restrictions)",
+      "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016)",
+      "maxNativeZoom": 14,
+      "keyRequired": false
+    },
+    {
+      "id": "nasa-gibs-blue-marble",
+      "name": "NASA GIBS Blue Marble Next Generation",
+      "endpoint": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg",
+      "license": "NASA EOSDIS / Earth Science Data (Public Domain; non-endorsement acknowledgement required)",
+      "attribution": "Imagery courtesy NASA EOSDIS GIBS (no NASA endorsement implied)",
+      "maxNativeZoom": 8,
+      "keyRequired": false
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Space Grotesk",
+      "provider": "next/font/google",
+      "css_variable": "--font-display",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "family": "Plus Jakarta Sans",
+      "provider": "next/font/google",
+      "css_variable": "--font-sans",
+      "license": "SIL Open Font License 1.1"
+    },
+    {
+      "family": "JetBrains Mono",
+      "provider": "next/font/google",
+      "css_variable": "--font-mono",
+      "license": "SIL Open Font License 1.1"
+    }
+  ]
+}

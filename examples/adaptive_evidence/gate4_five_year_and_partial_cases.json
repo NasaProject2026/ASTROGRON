@@ -1,0 +1,1181 @@
+{
+  "schema": "astragron.gate4.five-year-and-partial-cases.v1",
+  "cases": {
+    "sweden_5y_research": {
+      "request_file": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/examples/sweden_planning.json",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "five_year_research_plan": {
+        "status": "RESEARCH_COMPARISON_COMPLETE",
+        "engine_status": "RESEARCH_COMPARISON_COMPLETE",
+        "decision_status": "CONDITIONAL_LEAST_VIOLATING",
+        "selected_policy_ids": [
+          "a27063ce2eca13f02e03"
+        ],
+        "decision": {
+          "status": "CONDITIONAL_LEAST_VIOLATING",
+          "preference": "minimize_worst_shortfall",
+          "selected_ids": [
+            "a27063ce2eca13f02e03"
+          ],
+          "common_comparison_ids": [
+            "204f160b78c5fc84e0a1",
+            "a27063ce2eca13f02e03"
+          ],
+          "pareto_ids": [
+            "a27063ce2eca13f02e03"
+          ],
+          "service_compliant_ids": [],
+          "minimize_worst_shortfall": {
+            "value": "45900.902431",
+            "policy_ids": [
+              "a27063ce2eca13f02e03"
+            ]
+          },
+          "minimax_regret": {
+            "value": "0.000000",
+            "policy_ids": [
+              "a27063ce2eca13f02e03"
+            ]
+          },
+          "objectives": [
+            {
+              "policy_id": "204f160b78c5fc84e0a1",
+              "worst_ET_m3_equivalent": "53060.915407",
+              "worst_regret_m3_equivalent": "7160.012976",
+              "service_all_requested_scenarios": false,
+              "worst_ET_scenarios": [
+                "BASE__DRY_ANCHOR_2018"
+              ]
+            },
+            {
+              "policy_id": "a27063ce2eca13f02e03",
+              "worst_ET_m3_equivalent": "45900.902431",
+              "worst_regret_m3_equivalent": "0.000000",
+              "service_all_requested_scenarios": false,
+              "worst_ET_scenarios": [
+                "BASE__DRY_ANCHOR_2018"
+              ]
+            }
+          ],
+          "regret": {
+            "reference_set": [
+              "204f160b78c5fc84e0a1",
+              "a27063ce2eca13f02e03"
+            ],
+            "same_scenario_best_m3": {
+              "BASE__DRY_ANCHOR_2018": "45900.902431",
+              "BASE__MEDIAN_ANCHOR_2006": "13519.958720",
+              "BASE__WET_ANCHOR_2012": "2182.132104"
+            },
+            "set_fixed_across_scenarios": true,
+            "service_constraint_relaxed_for_diagnostics_only": true
+          },
+          "weights": null,
+          "scenario_probabilities": null,
+          "complete_requested_candidate_domain": true,
+          "search_scope": "SEARCH_BOUNDED_NOT_GLOBAL_OPTIMUM",
+          "global_optimum": false,
+          "no_global_infeasibility_proof": true,
+          "field_recommendation": null,
+          "FIELD_RECOMMENDATION_ELIGIBILITY": "BLOCKED",
+          "N_effect_on_ranking": null,
+          "yield_response": null,
+          "new_profit": null,
+          "units": {
+            "ET": "m3 equivalent",
+            "regret": "m3 equivalent",
+            "withdrawal": "m3",
+            "service": "mm per field harvest year"
+          },
+          "precision": {
+            "ET_and_regret_m3": "0.000001",
+            "depth_mm": "0.00000001",
+            "physics_service_comparison_mm_tolerance": "0.00000001"
+          }
+        },
+        "report_dto": null,
+        "candidate_count": 2,
+        "scenario_case_count": 6,
+        "missing_requirements": [],
+        "field_recommendation": null,
+        "field_validated": false,
+        "candidates": [
+          {
+            "policy_id": "204f160b78c5fc84e0a1",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348"
+              ],
+              "F2": [
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348"
+              ],
+              "F3": [
+                "cropuse:agrovoc:c_7221:c_7370",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_7221:c_7370",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_7221:c_7370"
+              ]
+            }
+          },
+          {
+            "policy_id": "a27063ce2eca13f02e03",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512"
+              ],
+              "F2": [
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_6919:c_25512"
+              ],
+              "F3": [
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_6919:c_25512",
+                "cropuse:agrovoc:c_5933:c_3348"
+              ]
+            }
+          }
+        ],
+        "scenario_outcomes": [
+          {
+            "policy_id": "204f160b78c5fc84e0a1",
+            "scenario_id": "BASE__DRY_ANCHOR_2018",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 53060.91540660388,
+            "source_withdrawal_m3": 25001.262,
+            "max_field_harvest_deficit_mm": 165.47323956605408
+          },
+          {
+            "policy_id": "204f160b78c5fc84e0a1",
+            "scenario_id": "BASE__MEDIAN_ANCHOR_2006",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 14860.432193562128,
+            "source_withdrawal_m3": 11446.706,
+            "max_field_harvest_deficit_mm": 52.42381495831253
+          },
+          {
+            "policy_id": "204f160b78c5fc84e0a1",
+            "scenario_id": "BASE__WET_ANCHOR_2012",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 7073.083915732949,
+            "source_withdrawal_m3": 9901.481,
+            "max_field_harvest_deficit_mm": 34.24630566203303
+          },
+          {
+            "policy_id": "a27063ce2eca13f02e03",
+            "scenario_id": "BASE__DRY_ANCHOR_2018",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 45900.90243129316,
+            "source_withdrawal_m3": 15526.074,
+            "max_field_harvest_deficit_mm": 165.47323956605408
+          },
+          {
+            "policy_id": "a27063ce2eca13f02e03",
+            "scenario_id": "BASE__MEDIAN_ANCHOR_2006",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 13519.958719590648,
+            "source_withdrawal_m3": 9113.058,
+            "max_field_harvest_deficit_mm": 52.42381495831253
+          },
+          {
+            "policy_id": "a27063ce2eca13f02e03",
+            "scenario_id": "BASE__WET_ANCHOR_2012",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 2182.1321037155762,
+            "source_withdrawal_m3": 3370.162,
+            "max_field_harvest_deficit_mm": 12.257776337997036
+          }
+        ]
+      },
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "kenya_5y_research": {
+      "request_file": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/examples/kenya_research.json",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "five_year_research_plan": {
+        "status": "RESEARCH_COMPARISON_COMPLETE",
+        "engine_status": "RESEARCH_COMPARISON_COMPLETE",
+        "decision_status": "CONDITIONAL_LEAST_VIOLATING",
+        "selected_policy_ids": [
+          "11a17943dfad9696b9fc"
+        ],
+        "decision": {
+          "status": "CONDITIONAL_LEAST_VIOLATING",
+          "preference": "minimize_worst_shortfall",
+          "selected_ids": [
+            "11a17943dfad9696b9fc"
+          ],
+          "common_comparison_ids": [
+            "0d2a7bb1f3045e45dbfc",
+            "11a17943dfad9696b9fc",
+            "db82c1ce530fbd8fb3bb"
+          ],
+          "pareto_ids": [
+            "11a17943dfad9696b9fc",
+            "db82c1ce530fbd8fb3bb"
+          ],
+          "service_compliant_ids": [
+            "0d2a7bb1f3045e45dbfc",
+            "11a17943dfad9696b9fc",
+            "db82c1ce530fbd8fb3bb"
+          ],
+          "minimize_worst_shortfall": {
+            "value": "3134.689178",
+            "policy_ids": [
+              "11a17943dfad9696b9fc"
+            ]
+          },
+          "minimax_regret": {
+            "value": "0.000000",
+            "policy_ids": [
+              "11a17943dfad9696b9fc"
+            ]
+          },
+          "objectives": [
+            {
+              "policy_id": "0d2a7bb1f3045e45dbfc",
+              "worst_ET_m3_equivalent": "3432.650701",
+              "worst_regret_m3_equivalent": "337.883469",
+              "service_all_requested_scenarios": true,
+              "worst_ET_scenarios": [
+                "DRY_5Y_TOTAL_2011"
+              ]
+            },
+            {
+              "policy_id": "11a17943dfad9696b9fc",
+              "worst_ET_m3_equivalent": "3134.689178",
+              "worst_regret_m3_equivalent": "0.000000",
+              "service_all_requested_scenarios": true,
+              "worst_ET_scenarios": [
+                "WET_5Y_TOTAL_2021"
+              ]
+            },
+            {
+              "policy_id": "db82c1ce530fbd8fb3bb",
+              "worst_ET_m3_equivalent": "5005.900833",
+              "worst_regret_m3_equivalent": "1911.133601",
+              "service_all_requested_scenarios": true,
+              "worst_ET_scenarios": [
+                "DRY_5Y_TOTAL_2011"
+              ]
+            }
+          ],
+          "regret": {
+            "reference_set": [
+              "0d2a7bb1f3045e45dbfc",
+              "11a17943dfad9696b9fc",
+              "db82c1ce530fbd8fb3bb"
+            ],
+            "same_scenario_best_m3": {
+              "DRY_5Y_TOTAL_2011": "3094.767232",
+              "MEDIAN_5Y_TOTAL_2016": "843.835378",
+              "WET_5Y_TOTAL_2021": "3134.689178"
+            },
+            "set_fixed_across_scenarios": true,
+            "service_constraint_relaxed_for_diagnostics_only": true
+          },
+          "weights": null,
+          "scenario_probabilities": null,
+          "complete_requested_candidate_domain": true,
+          "search_scope": "SEARCH_BOUNDED_NOT_GLOBAL_OPTIMUM",
+          "global_optimum": false,
+          "no_global_infeasibility_proof": true,
+          "field_recommendation": null,
+          "FIELD_RECOMMENDATION_ELIGIBILITY": "BLOCKED",
+          "N_effect_on_ranking": null,
+          "yield_response": null,
+          "new_profit": null,
+          "units": {
+            "ET": "m3 equivalent",
+            "regret": "m3 equivalent",
+            "withdrawal": "m3",
+            "service": "mm per field harvest year"
+          },
+          "precision": {
+            "ET_and_regret_m3": "0.000001",
+            "depth_mm": "0.00000001",
+            "physics_service_comparison_mm_tolerance": "0.00000001"
+          }
+        },
+        "report_dto": null,
+        "candidate_count": 3,
+        "scenario_case_count": 9,
+        "missing_requirements": [],
+        "field_recommendation": null,
+        "field_validated": false,
+        "candidates": [
+          {
+            "policy_id": "11a17943dfad9696b9fc",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing"
+              ],
+              "F2": [
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing"
+              ]
+            }
+          },
+          {
+            "policy_id": "db82c1ce530fbd8fb3bb",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing"
+              ],
+              "F2": [
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing"
+              ]
+            }
+          },
+          {
+            "policy_id": "0d2a7bb1f3045e45dbfc",
+            "origin": "M10_BOUNDED_ONE_SLOT_NEIGHBOR",
+            "five_year_choices": {
+              "F1": [
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing"
+              ],
+              "F2": [
+                "research:KE:earlier_sowing",
+                "research:KE:later_sowing",
+                "research:KE:later_sowing",
+                "research:KE:later_sowing",
+                "research:KE:earlier_sowing"
+              ]
+            }
+          }
+        ],
+        "scenario_outcomes": [
+          {
+            "policy_id": "11a17943dfad9696b9fc",
+            "scenario_id": "DRY_5Y_TOTAL_2011",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 3094.7672324930045,
+            "source_withdrawal_m3": 4049.171,
+            "max_field_harvest_deficit_mm": 52.34447736216888
+          },
+          {
+            "policy_id": "11a17943dfad9696b9fc",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2016",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 843.8353781945327,
+            "source_withdrawal_m3": 2492.348,
+            "max_field_harvest_deficit_mm": 19.0386518031371
+          },
+          {
+            "policy_id": "11a17943dfad9696b9fc",
+            "scenario_id": "WET_5Y_TOTAL_2021",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 3134.6891782372395,
+            "source_withdrawal_m3": 4127.568,
+            "max_field_harvest_deficit_mm": 47.781721280827796
+          },
+          {
+            "policy_id": "db82c1ce530fbd8fb3bb",
+            "scenario_id": "DRY_5Y_TOTAL_2011",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 5005.900832563318,
+            "source_withdrawal_m3": 5128.719,
+            "max_field_harvest_deficit_mm": 39.28979120777878
+          },
+          {
+            "policy_id": "db82c1ce530fbd8fb3bb",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2016",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 2117.085048697893,
+            "source_withdrawal_m3": 3120.073,
+            "max_field_harvest_deficit_mm": 39.20134878491255
+          },
+          {
+            "policy_id": "db82c1ce530fbd8fb3bb",
+            "scenario_id": "WET_5Y_TOTAL_2021",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 3811.618798209945,
+            "source_withdrawal_m3": 4832.028,
+            "max_field_harvest_deficit_mm": 45.199307406505554
+          },
+          {
+            "policy_id": "0d2a7bb1f3045e45dbfc",
+            "scenario_id": "DRY_5Y_TOTAL_2011",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 3432.6507005414596,
+            "source_withdrawal_m3": 4203.681,
+            "max_field_harvest_deficit_mm": 52.34447736216888
+          },
+          {
+            "policy_id": "0d2a7bb1f3045e45dbfc",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2016",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 843.8353781945327,
+            "source_withdrawal_m3": 2492.348,
+            "max_field_harvest_deficit_mm": 19.0386518031371
+          },
+          {
+            "policy_id": "0d2a7bb1f3045e45dbfc",
+            "scenario_id": "WET_5Y_TOTAL_2021",
+            "status": "valid_research_comparison",
+            "service_pass": true,
+            "ET_shortfall_m3_equivalent": 3134.6891782372395,
+            "source_withdrawal_m3": 4127.568,
+            "max_field_harvest_deficit_mm": 47.781721280827796
+          }
+        ]
+      },
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "australia_5y_research": {
+      "request_file": "SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/release/water_core/examples/australia_research.json",
+      "status_outcome": "CONDITIONAL_RESEARCH_COMPARISON",
+      "five_year_research_plan": {
+        "status": "RESEARCH_COMPARISON_COMPLETE",
+        "engine_status": "RESEARCH_COMPARISON_COMPLETE",
+        "decision_status": "CONDITIONAL_LEAST_VIOLATING",
+        "selected_policy_ids": [
+          "19e94636ec4bf45f5041"
+        ],
+        "decision": {
+          "status": "CONDITIONAL_LEAST_VIOLATING",
+          "preference": "minimize_worst_shortfall",
+          "selected_ids": [
+            "19e94636ec4bf45f5041"
+          ],
+          "common_comparison_ids": [
+            "19e94636ec4bf45f5041",
+            "26be618bdacd9af033a1",
+            "505a8c230ca3da1e30ac"
+          ],
+          "pareto_ids": [
+            "19e94636ec4bf45f5041",
+            "26be618bdacd9af033a1"
+          ],
+          "service_compliant_ids": [],
+          "minimize_worst_shortfall": {
+            "value": "19355.774156",
+            "policy_ids": [
+              "19e94636ec4bf45f5041"
+            ]
+          },
+          "minimax_regret": {
+            "value": "403.644477",
+            "policy_ids": [
+              "19e94636ec4bf45f5041"
+            ]
+          },
+          "objectives": [
+            {
+              "policy_id": "19e94636ec4bf45f5041",
+              "worst_ET_m3_equivalent": "19355.774156",
+              "worst_regret_m3_equivalent": "403.644477",
+              "service_all_requested_scenarios": false,
+              "worst_ET_scenarios": [
+                "DRY_5Y_TOTAL_2016"
+              ]
+            },
+            {
+              "policy_id": "26be618bdacd9af033a1",
+              "worst_ET_m3_equivalent": "27062.017958",
+              "worst_regret_m3_equivalent": "12219.284783",
+              "service_all_requested_scenarios": false,
+              "worst_ET_scenarios": [
+                "MEDIAN_5Y_TOTAL_2021"
+              ]
+            },
+            {
+              "policy_id": "505a8c230ca3da1e30ac",
+              "worst_ET_m3_equivalent": "22552.480916",
+              "worst_regret_m3_equivalent": "3600.351237",
+              "service_all_requested_scenarios": false,
+              "worst_ET_scenarios": [
+                "DRY_5Y_TOTAL_2016"
+              ]
+            }
+          ],
+          "regret": {
+            "reference_set": [
+              "19e94636ec4bf45f5041",
+              "26be618bdacd9af033a1",
+              "505a8c230ca3da1e30ac"
+            ],
+            "same_scenario_best_m3": {
+              "DRY_5Y_TOTAL_2016": "18952.129679",
+              "MEDIAN_5Y_TOTAL_2021": "14842.733175",
+              "WET_5Y_TOTAL_2011": "12687.669800"
+            },
+            "set_fixed_across_scenarios": true,
+            "service_constraint_relaxed_for_diagnostics_only": true
+          },
+          "weights": null,
+          "scenario_probabilities": null,
+          "complete_requested_candidate_domain": true,
+          "search_scope": "SEARCH_BOUNDED_NOT_GLOBAL_OPTIMUM",
+          "global_optimum": false,
+          "no_global_infeasibility_proof": true,
+          "field_recommendation": null,
+          "FIELD_RECOMMENDATION_ELIGIBILITY": "BLOCKED",
+          "N_effect_on_ranking": null,
+          "yield_response": null,
+          "new_profit": null,
+          "units": {
+            "ET": "m3 equivalent",
+            "regret": "m3 equivalent",
+            "withdrawal": "m3",
+            "service": "mm per field harvest year"
+          },
+          "precision": {
+            "ET_and_regret_m3": "0.000001",
+            "depth_mm": "0.00000001",
+            "physics_service_comparison_mm_tolerance": "0.00000001"
+          }
+        },
+        "report_dto": null,
+        "candidate_count": 3,
+        "scenario_case_count": 9,
+        "missing_requirements": [],
+        "field_recommendation": null,
+        "field_validated": false,
+        "candidates": [
+          {
+            "policy_id": "26be618bdacd9af033a1",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing"
+              ],
+              "F2": [
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing"
+              ]
+            }
+          },
+          {
+            "policy_id": "505a8c230ca3da1e30ac",
+            "origin": "USER_SUBMITTED",
+            "five_year_choices": {
+              "F1": [
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing"
+              ],
+              "F2": [
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing"
+              ]
+            }
+          },
+          {
+            "policy_id": "19e94636ec4bf45f5041",
+            "origin": "M10_BOUNDED_ONE_SLOT_NEIGHBOR",
+            "five_year_choices": {
+              "F1": [
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:earlier_sowing"
+              ],
+              "F2": [
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing",
+                "research:AU:later_sowing",
+                "research:AU:earlier_sowing"
+              ]
+            }
+          }
+        ],
+        "scenario_outcomes": [
+          {
+            "policy_id": "26be618bdacd9af033a1",
+            "scenario_id": "DRY_5Y_TOTAL_2016",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 18952.12967886493,
+            "source_withdrawal_m3": 9754.223,
+            "max_field_harvest_deficit_mm": 128.0777269517943
+          },
+          {
+            "policy_id": "26be618bdacd9af033a1",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2021",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 27062.017958361008,
+            "source_withdrawal_m3": 11882.923,
+            "max_field_harvest_deficit_mm": 153.4223476667871
+          },
+          {
+            "policy_id": "26be618bdacd9af033a1",
+            "scenario_id": "WET_5Y_TOTAL_2011",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 19907.424009766368,
+            "source_withdrawal_m3": 11066.026,
+            "max_field_harvest_deficit_mm": 85.27437294461498
+          },
+          {
+            "policy_id": "505a8c230ca3da1e30ac",
+            "scenario_id": "DRY_5Y_TOTAL_2016",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 22552.480916019736,
+            "source_withdrawal_m3": 9971.498,
+            "max_field_harvest_deficit_mm": 143.4286245929189
+          },
+          {
+            "policy_id": "505a8c230ca3da1e30ac",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2021",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 17954.7462024467,
+            "source_withdrawal_m3": 9901.533,
+            "max_field_harvest_deficit_mm": 117.95218215724724
+          },
+          {
+            "policy_id": "505a8c230ca3da1e30ac",
+            "scenario_id": "WET_5Y_TOTAL_2011",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 16013.545387241116,
+            "source_withdrawal_m3": 9179.62,
+            "max_field_harvest_deficit_mm": 112.50398966551177
+          },
+          {
+            "policy_id": "19e94636ec4bf45f5041",
+            "scenario_id": "DRY_5Y_TOTAL_2016",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 19355.774155599607,
+            "source_withdrawal_m3": 9971.498,
+            "max_field_harvest_deficit_mm": 109.9834887689095
+          },
+          {
+            "policy_id": "19e94636ec4bf45f5041",
+            "scenario_id": "MEDIAN_5Y_TOTAL_2021",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 14842.73317517773,
+            "source_withdrawal_m3": 9901.533,
+            "max_field_harvest_deficit_mm": 84.48812998837589
+          },
+          {
+            "policy_id": "19e94636ec4bf45f5041",
+            "scenario_id": "WET_5Y_TOTAL_2011",
+            "status": "evaluated_but_not_service_compliant",
+            "service_pass": false,
+            "ET_shortfall_m3_equivalent": 12687.66979985869,
+            "source_withdrawal_m3": 9179.62,
+            "max_field_harvest_deficit_mm": 83.21620769658968
+          }
+        ]
+      },
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "scientific_guardrails": {
+        "field_validated": false,
+        "marketable_yield": null,
+        "profit": null,
+        "prediction_accuracy": "NOT_MEASURED",
+        "false_qualification_upgrades": 0
+      }
+    },
+    "japan_climate_ready_soil_blocked": {
+      "status_outcome": "CLIMATE_READY_SOIL_PARTIAL",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "BLOCKED",
+        "C4": "BLOCKED",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "usable_outputs": {
+        "location_identity": {
+          "point_lon_lat": [
+            140.12,
+            36.08
+          ],
+          "crs": "EPSG:4326",
+          "hemisphere": "NORTHERN"
+        },
+        "historical_regional_climate": {
+          "period": [
+            "2016-01-01",
+            "2020-12-31"
+          ],
+          "days_verified": 1827,
+          "leap_days_verified": [
+            "20160229",
+            "20200229"
+          ],
+          "mean_annual_precipitation_mm": 1530.86,
+          "driest_year_precipitation_mm": 1378.22,
+          "wettest_year_precipitation_mm": 1684.34,
+          "mean_temperature_c": 15.19,
+          "q05_daily_tmin_c": -2.06,
+          "q95_daily_tmax_c": 33.59,
+          "frost_days_per_year": 55.8,
+          "heat_stress_days_per_year": 8.8,
+          "conditional_hs_et0_mm_year": 1082.02,
+          "aridity_ratio_p_over_et0": 1.415,
+          "future_forecast": false,
+          "field_station_measurement": false
+        }
+      },
+      "blocked_claims": [
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "No cached SoilGrids WCS receipt and neither live fetch nor offline reference fixture was enabled."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "Cannot derive C4 soil hydraulics because C3 soil properties are blocked (source_outage)."
+        },
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        },
+        {
+          "capability_id": "C6",
+          "name": "Historical water-demand/deficit research diagnostics with qualified inputs",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "Blocked because C4 soil hydraulic screening is unavailable (source_outage)."
+        },
+        {
+          "capability_id": "C7",
+          "name": "Regional crop water suitability screening (C7_SCREENING; not a 5-year rotation plan)",
+          "status": "BLOCKED",
+          "missing_reason": "source_outage",
+          "explanation": "Blocked because C6 water-balance screening is blocked (source_outage)."
+        },
+        {
+          "capability_id": "C8",
+          "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_region",
+          "explanation": "Native WOFOST/SNOMIN process simulation (brain/growth_decision.py) is locked to the pinned Wageningen research envelope [5.67, 51.97] and cannot be extrapolated globally without local cultivar calibration and measured initial mineral NO3/NH4."
+        },
+        {
+          "capability_id": "C9",
+          "name": "Optional conditional economics using user-supplied or licensed and dated price/cost/yield sources",
+          "status": "BLOCKED",
+          "missing_reason": "insufficient_parameters",
+          "explanation": "Economic cost screening requires user-supplied local input costs; net profit and marketable yield remain strictly null without field-validated yield calibration."
+        },
+        {
+          "capability_id": "C10",
+          "name": "Pesticide, water-right and legal clearance",
+          "status": "BLOCKED",
+          "missing_reason": "official_verification_required",
+          "explanation": "Water abstraction rights and pesticide registration compliance cannot be inferred from global environmental datasets; official local regulatory verification is required."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    },
+    "germany_climate_soil_ready_crop_blocked": {
+      "status_outcome": "REGIONAL_SCREENING_ONLY",
+      "capability_statuses": {
+        "C1": "READY",
+        "C2": "READY",
+        "C3": "CONDITIONAL",
+        "C4": "CONDITIONAL",
+        "C5": "BLOCKED",
+        "C6": "BLOCKED",
+        "C7": "BLOCKED",
+        "C8": "BLOCKED",
+        "C9": "BLOCKED",
+        "C10": "BLOCKED"
+      },
+      "usable_outputs": {
+        "location_identity": {
+          "point_lon_lat": [
+            9.22,
+            49.14
+          ],
+          "crs": "EPSG:4326",
+          "hemisphere": "NORTHERN"
+        },
+        "historical_regional_climate": {
+          "period": [
+            "2016-01-01",
+            "2020-12-31"
+          ],
+          "days_verified": 1827,
+          "leap_days_verified": [
+            "20160229",
+            "20200229"
+          ],
+          "mean_annual_precipitation_mm": 789.38,
+          "driest_year_precipitation_mm": 628.9,
+          "wettest_year_precipitation_mm": 902.48,
+          "mean_temperature_c": 10.35,
+          "q05_daily_tmin_c": -4.23,
+          "q95_daily_tmax_c": 29.55,
+          "frost_days_per_year": 86.0,
+          "heat_stress_days_per_year": 1.2,
+          "conditional_hs_et0_mm_year": 841.63,
+          "aridity_ratio_p_over_et0": 0.938,
+          "future_forecast": false,
+          "field_station_measurement": false
+        },
+        "regional_soil_properties_250m": {
+          "depth_interval_cm": [
+            0.0,
+            5.0
+          ],
+          "texture_mean_sum_pct": 100.0,
+          "properties_si": {
+            "clay": {
+              "q05": 0.5,
+              "q50": 14.9,
+              "mean": 25.0,
+              "q95": 76.3,
+              "unit": "%"
+            },
+            "silt": {
+              "q05": 3.2,
+              "q50": 47.0,
+              "mean": 49.8,
+              "q95": 94.5,
+              "unit": "%"
+            },
+            "sand": {
+              "q05": 3.3,
+              "q50": 20.0,
+              "mean": 25.2,
+              "q95": 70.5,
+              "unit": "%"
+            },
+            "bdod": {
+              "q05": 0.86,
+              "q50": 1.33,
+              "mean": 1.29,
+              "q95": 1.64,
+              "unit": "kg/dm3"
+            },
+            "cfvo": {
+              "q05": 0.0,
+              "q50": 8.0,
+              "mean": 10.8,
+              "q95": 34.2,
+              "unit": "vol%"
+            },
+            "soc": {
+              "q05": 7.2,
+              "q50": 27.9,
+              "mean": 43.1,
+              "q95": 97.3,
+              "unit": "g/kg"
+            },
+            "phh2o": {
+              "q05": 4.3,
+              "q50": 6.9,
+              "mean": 6.7,
+              "q95": 8.0,
+              "unit": "pH"
+            }
+          },
+          "on_farm_lab_sample": false,
+          "mineral_n_available_from_soilgrids": false,
+          "mineral_n_blocked_reason": "not_identifiable"
+        },
+        "soil_hydraulic_retention_scenarios": {
+          "root_depth_m": 0.05,
+          "physical_invariants_satisfied": true,
+          "invariant_check": "0 < theta_wp < theta_fc < theta_s < 1 and clay + silt + sand == 100.0%",
+          "scenarios": {
+            "LOW_WATER_HOLDING": {
+              "clay_pct": 2.64,
+              "silt_pct": 4.23,
+              "sand_pct": 93.13,
+              "om_pct": 1.24,
+              "bdod_kg_dm3": 1.64,
+              "cfvo_vol_pct": 34.2,
+              "theta_wp": 0.021,
+              "theta_fc": 0.0486,
+              "theta_s": 0.3811,
+              "awc_fine_mm_m": 27.61,
+              "awc_mm_m": 18.17,
+              "paw_root_mm": 0.91
+            },
+            "REFERENCE": {
+              "clay_pct": 25.0,
+              "silt_pct": 49.8,
+              "sand_pct": 25.2,
+              "om_pct": 4.81,
+              "bdod_kg_dm3": 1.33,
+              "cfvo_vol_pct": 8.0,
+              "theta_wp": 0.1741,
+              "theta_fc": 0.339,
+              "theta_s": 0.4981,
+              "awc_fine_mm_m": 164.9,
+              "awc_mm_m": 151.71,
+              "paw_root_mm": 7.59
+            },
+            "HIGH_WATER_HOLDING": {
+              "clay_pct": 39.22,
+              "silt_pct": 57.52,
+              "sand_pct": 3.26,
+              "om_pct": 8.0,
+              "bdod_kg_dm3": 0.9,
+              "cfvo_vol_pct": 0.0,
+              "theta_wp": 0.2429,
+              "theta_fc": 0.4106,
+              "theta_s": 0.6604,
+              "awc_fine_mm_m": 167.75,
+              "awc_mm_m": 167.75,
+              "paw_root_mm": 8.39
+            }
+          },
+          "secondary_ptf_wosten_1999_reference": {
+            "theta_wp": 0.2243,
+            "theta_fc": 0.3996,
+            "theta_s": 0.4396,
+            "awc_mm_m": 161.3,
+            "paw_root_mm": 8.07
+          },
+          "cross_ptf_awc_diff_mm_m": 9.59,
+          "qualification_downgrade": "CONDITIONAL"
+        }
+      },
+      "conditional_outputs": [
+        {
+          "capability_id": "C3",
+          "name": "Soil property screening with depth, spatial resolution and uncertainty",
+          "status": "CONDITIONAL",
+          "assumption_and_limitation": "Regional 250 m SoilGrids v2.0 properties evaluated."
+        },
+        {
+          "capability_id": "C4",
+          "name": "Derived hydrologic soil-property range, only if a qualified estimator applies",
+          "status": "CONDITIONAL",
+          "assumption_and_limitation": "Soil hydraulic water-holding scenarios evaluated."
+        }
+      ],
+      "blocked_claims": [
+        {
+          "capability_id": "C5",
+          "name": "Regional crop suitability screening from a licensed and accessible source, if actually obtained",
+          "status": "BLOCKED",
+          "missing_reason": "license_unverified",
+          "explanation": "SOURCE_UNAVAILABLE_OR_LICENSE_UNVERIFIED: No authenticated FAO GAEZ v4 raster receipt with verified redistribution license is present in the workspace; synthetic GAEZ tables disguised as real FAO data are prohibited."
+        },
+        {
+          "capability_id": "C6",
+          "name": "Historical water-demand/deficit research diagnostics with qualified inputs",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_crop_profile",
+          "explanation": "Unsupported crop profile(s) ['avocado_uncalibrated_cultivar']; generic uncalibrated Kc substitution is prohibited. Independent climate (C2) and soil hydraulic (C3/C4) analyses remain available."
+        },
+        {
+          "capability_id": "C7",
+          "name": "Regional crop water suitability screening (C7_SCREENING; not a 5-year rotation plan)",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_crop_profile",
+          "explanation": "Blocked because C6 water-balance screening is blocked (unsupported_crop_profile)."
+        },
+        {
+          "capability_id": "C8",
+          "name": "Native crop-growth and nutrient-response research only for validated model input coverage",
+          "status": "BLOCKED",
+          "missing_reason": "unsupported_region",
+          "explanation": "Native WOFOST/SNOMIN process simulation (brain/growth_decision.py) is locked to the pinned Wageningen research envelope [5.67, 51.97] and cannot be extrapolated globally without local cultivar calibration and measured initial mineral NO3/NH4."
+        },
+        {
+          "capability_id": "C9",
+          "name": "Optional conditional economics using user-supplied or licensed and dated price/cost/yield sources",
+          "status": "BLOCKED",
+          "missing_reason": "insufficient_parameters",
+          "explanation": "Economic cost screening requires user-supplied local input costs; net profit and marketable yield remain strictly null without field-validated yield calibration."
+        },
+        {
+          "capability_id": "C10",
+          "name": "Pesticide, water-right and legal clearance",
+          "status": "BLOCKED",
+          "missing_reason": "official_verification_required",
+          "explanation": "Water abstraction rights and pesticide registration compliance cannot be inferred from global environmental datasets; official local regulatory verification is required."
+        }
+      ],
+      "minimal_next_measurements": [
+        {
+          "priority_rank": 1,
+          "parameter": "soil_hydraulics.theta_fc_and_theta_wp",
+          "measurement_action": "Collect a 0-30 cm topsoil core/jar texture + bulk density sample to narrow the regional SoilGrids 250 m available water capacity envelope.",
+          "upgrades_capabilities": [
+            "C3",
+            "C4",
+            "C6",
+            "C7"
+          ]
+        },
+        {
+          "priority_rank": 2,
+          "parameter": "legal.water_abstraction_permit_and_pesticide_label",
+          "measurement_action": "Verify local water-basin abstraction permit and national pesticide product registration.",
+          "upgrades_capabilities": [
+            "C10"
+          ]
+        },
+        {
+          "priority_rank": 3,
+          "parameter": "soil.mineral_n_kg_ha",
+          "measurement_action": "Measure pre-sowing 0-60 cm soil mineral nitrogen (NO3-N + NH4-N in kg/ha); cannot be derived from regional SoilGrids total N.",
+          "upgrades_capabilities": [
+            "C8"
+          ]
+        }
+      ]
+    }
+  }
+}

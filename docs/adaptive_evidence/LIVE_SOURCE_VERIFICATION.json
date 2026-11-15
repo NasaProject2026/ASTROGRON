@@ -1,0 +1,2112 @@
+{
+  "environment": {
+    "cache_isolation": "fresh_temporary_directory_with_clean_offline_replay_switch",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.13.1"
+  },
+  "executed_at_utc": "2026-11-14T17:05:27.192245+00:00",
+  "nasa_power_live_retrievals": [
+    {
+      "continent": "Europe",
+      "country": "DE",
+      "days_verified": 62,
+      "elapsed_ms": 2863.29,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          11.875,
+          48.0
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            11.58,
+            48.14,
+            616.07
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "lst_comparison": {
+        "period_cumulative_precipitation_mm": 335.16,
+        "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=11.58&latitude=48.14&start=20230701&end=20230831&format=JSON&time-standard=LST",
+        "raw_source_sha256": "9a8d1ededcebe8e39482d07d5ef6240b580c6f116c2c6439400899d0fd41de79",
+        "status": "READY",
+        "time_standard": "LST"
+      },
+      "mean_temperature_c": 19.38,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 334.49,
+      "point_lon_lat": [
+        11.58,
+        48.14
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=11.58&latitude=48.14&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "c2f0b713fbedfcc02c986d293981da59ca7dcac4df6c51f8be29a308212ec9db",
+      "receipt_sha256": "8ff2619ca8b87259814f53e43676d461395eb6d5956b57bf4affada034ce2cde",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4836,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 838.06,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:56:52.257880+00:00",
+      "site_id": "DE_MUNICH_AGRI",
+      "status": "READY",
+      "time_standard": "UTC"
+    },
+    {
+      "continent": "Europe",
+      "country": "DE",
+      "days_verified": 62,
+      "elapsed_ms": 1454.66,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          9.375,
+          49.0
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            9.22,
+            49.14,
+            353.1
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "mean_temperature_c": 20.8,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 209.67,
+      "point_lon_lat": [
+        9.22,
+        49.14
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=9.22&latitude=49.14&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "4a0d699e278502c771a958bcbe09983c1bdaa39e1514cf4df48e15bf517dbd2b",
+      "receipt_sha256": "83034772504ffae051e02be06af7576dc43c025091890f1fabbbc19120b10ac0",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4839,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 788.25,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:56:55.156439+00:00",
+      "site_id": "DE_HEILBRONN",
+      "status": "READY",
+      "time_standard": "UTC"
+    },
+    {
+      "continent": "North America",
+      "country": "US",
+      "days_verified": 62,
+      "elapsed_ms": 1530.58,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          -93.75,
+          42.0
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            -93.62,
+            42.03,
+            310.22
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "mean_temperature_c": 24.5,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 137.35,
+      "point_lon_lat": [
+        -93.62,
+        42.03
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=-93.62&latitude=42.03&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "63be71b62e0f1131b52535efe44a61239921af0f30fad78ffe5e4e6e8dd8785b",
+      "receipt_sha256": "f728b18711ab40378ee4c1afc32400d1e160e4fcab8eaf9a8dc523c2caba38b8",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4841,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 880.49,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:56:56.701995+00:00",
+      "site_id": "US_AMES_IOWA",
+      "status": "READY",
+      "time_standard": "UTC"
+    },
+    {
+      "continent": "South America",
+      "country": "BR",
+      "days_verified": 62,
+      "elapsed_ms": 1565.89,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          -55.625,
+          -12.5
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            -55.72,
+            -12.55,
+            370.59
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "mean_temperature_c": 27.48,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 17.64,
+      "point_lon_lat": [
+        -55.72,
+        -12.55
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=-55.72&latitude=-12.55&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "77cb27367d0777981f344ff12979185cc1967b1c118b819c6bda7e0bf148b4bc",
+      "receipt_sha256": "03b6b68279e5337fdf570f25c3e1a8463de2840af407eb8a2e1652ab2463c4cf",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4801,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 929.72,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:56:58.272643+00:00",
+      "site_id": "BR_SORRISO",
+      "status": "READY",
+      "time_standard": "UTC"
+    },
+    {
+      "continent": "Africa",
+      "country": "KE",
+      "days_verified": 62,
+      "elapsed_ms": 1401.92,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          36.25,
+          -0.5
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            36.07,
+            -0.28,
+            2338.05
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "mean_temperature_c": 14.85,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 101.7,
+      "point_lon_lat": [
+        36.07,
+        -0.28
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=36.07&latitude=-0.28&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "a7f607ae2c447960feea85245767261e02edac5f56e9691e4e3adddca406b84c",
+      "receipt_sha256": "79b1831c4d951c2de15a5c4c6842614fdfeb27e5dfa7e5c29d9489e714ddb2e6",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4820,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 785.12,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:56:59.671100+00:00",
+      "site_id": "KE_NAKURU",
+      "status": "READY",
+      "time_standard": "UTC"
+    },
+    {
+      "continent": "Oceania",
+      "country": "AU",
+      "days_verified": 62,
+      "elapsed_ms": 1570.39,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "grid": {
+        "api_version": "v2.10.3",
+        "nominal_center_lon_lat": [
+          151.875,
+          -27.5
+        ],
+        "provider_response_geometry": {
+          "coordinates": [
+            151.95,
+            -27.56,
+            442.77
+          ],
+          "type": "Point"
+        },
+        "resolution_lon_lat_degrees": [
+          0.625,
+          0.5
+        ],
+        "source": "MERRA2",
+        "units": {
+          "PRECTOTCORR": "mm/day",
+          "T2M": "C",
+          "T2M_MAX": "C",
+          "T2M_MIN": "C"
+        }
+      },
+      "mean_temperature_c": 14.35,
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "READY",
+      "period": [
+        "2023-07-01",
+        "2023-08-31"
+      ],
+      "period_cumulative_precipitation_mm": 23.37,
+      "point_lon_lat": [
+        151.95,
+        -27.56
+      ],
+      "query_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=151.95&latitude=-27.56&start=20230701&end=20230831&format=JSON&time-standard=UTC",
+      "raw_source_sha256": "a90ee43a84a0b1a279e0222dc43f820d7a1a08fe4e0400483ec2660ca9f385d4",
+      "receipt_sha256": "3a46d90356878136676b2da906a63bca4b4aa07a9e4495611bdd68b1d440b804",
+      "request_telemetry": {
+        "attempts_total": 1,
+        "bytes_downloaded": 4768,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 811.82,
+        "errors": [],
+        "http_statuses": [
+          200
+        ],
+        "live_success_count": 1,
+        "provider": "NASA_POWER",
+        "rate_limit_retries": 0,
+        "request_count": 1
+      },
+      "retrieved_at": "2026-11-14T16:57:01.249292+00:00",
+      "site_id": "AU_TOOWOOMBA",
+      "status": "READY",
+      "time_standard": "UTC"
+    }
+  ],
+  "schema": "astragron.adaptive-evidence.live-source-verification.v1",
+  "soilgrids_live_retrievals": [
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 8.417,
+        "q05": 0.867,
+        "q50": 6.0,
+        "q95": 24.283,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 32.25,
+        "q05": 0.917,
+        "q50": 24.417,
+        "q95": 78.733,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "%"
+      },
+      "continent": "Europe",
+      "country": "DE",
+      "depth_interval_cm": [
+        0,
+        30
+      ],
+      "elapsed_ms": 97668.85,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "0-5cm": 0.166667,
+        "15-30cm": 0.5,
+        "5-15cm": 0.333333
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "abstained_scalar": true,
+        "aggregation_mode": "ABSTAINED_NON_LINEAR_PH_MULTI_LAYER",
+        "layer_mean_max": 7.1,
+        "layer_mean_min": 6.6,
+        "note": "Abstained from scalar linear thickness-averaging of soil pH (phh2o) across multiple horizons because pH is logarithmic and horizon buffering capacity (CEC/carbonates) is unknown; native per-layer values and min/max range are preserved.",
+        "q05": 3.9,
+        "q95": 8.1,
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        9.12,
+        49.16
+      ],
+      "raw_source_sha256": "da70984ca7014b4f625b7ef7ad47aa0ebf5c4000e025bf98ddaacf80d48d90ce",
+      "receipt_sha256": "fa50fd9bf24248407a5d81fe4b8c266a2254d732a2d26d336581ac6360d8c0d1",
+      "request_telemetry": {
+        "attempts_total": 96,
+        "bytes_downloaded": 58147,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 35060.07,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 96,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 96
+      },
+      "resolved_native_layers": [
+        "0-5cm",
+        "5-15cm",
+        "15-30cm"
+      ],
+      "retrieved_at": "2026-11-14T16:57:35.560183+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(9.1175,9.1225)&SUBSET=lat(49.1575,49.1625)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "DE_KRAICHGAU_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 20.833,
+        "q05": 4.983,
+        "q50": 15.2,
+        "q95": 50.3,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 0,
+        "crs": "EPSG:4326",
+        "distance_m": 166.25,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          9.11875,
+          49.15875
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999995026,
+          0.0025000000000048317
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 99.95
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 10.2,
+        "q05": 0.0,
+        "q50": 6.0,
+        "q95": 34.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 31.3,
+        "q05": 0.5,
+        "q50": 23.4,
+        "q95": 79.1,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "%"
+      },
+      "continent": "Europe",
+      "country": "DE",
+      "depth_interval_cm": [
+        30,
+        60
+      ],
+      "elapsed_ms": 31388.25,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "30-60cm": 1.0
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 6.9,
+        "q05": 4.7,
+        "q50": 7.3,
+        "q95": 8.1,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        9.12,
+        49.16
+      ],
+      "raw_source_sha256": "3f524f0b393a48a56c8ae8e9d1e22091cb363d6ff616e3aafb77c6510a03530d",
+      "receipt_sha256": "79d60178d4c0076117d24a14340949516694543aa30913f198ee828669a4cb53",
+      "request_telemetry": {
+        "attempts_total": 32,
+        "bytes_downloaded": 19388,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 10890.75,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 32,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 32
+      },
+      "resolved_native_layers": [
+        "30-60cm"
+      ],
+      "retrieved_at": "2026-11-14T16:59:10.306886+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_30-60cm_mean&FORMAT=image/tiff&SUBSET=long(9.1175,9.1225)&SUBSET=lat(49.1575,49.1625)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "DE_KRAICHGAU_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 5.6,
+        "q05": 1.3,
+        "q50": 4.5,
+        "q95": 14.4,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 0,
+        "crs": "EPSG:4326",
+        "distance_m": 166.25,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          9.11875,
+          49.15875
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999995026,
+          0.0025000000000048317
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.0
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 0.917,
+        "q05": 0.0,
+        "q50": 0.0,
+        "q95": 5.0,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 31.683,
+        "q05": 3.35,
+        "q50": 29.35,
+        "q95": 77.55,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "%"
+      },
+      "continent": "North America",
+      "country": "US",
+      "depth_interval_cm": [
+        0,
+        30
+      ],
+      "elapsed_ms": 92086.57,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "0-5cm": 0.166667,
+        "15-30cm": 0.5,
+        "5-15cm": 0.333333
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "abstained_scalar": true,
+        "aggregation_mode": "ABSTAINED_NON_LINEAR_PH_MULTI_LAYER",
+        "layer_mean_max": 6.6,
+        "layer_mean_min": 6.6,
+        "note": "Abstained from scalar linear thickness-averaging of soil pH (phh2o) across multiple horizons because pH is logarithmic and horizon buffering capacity (CEC/carbonates) is unknown; native per-layer values and min/max range are preserved.",
+        "q05": 5.5,
+        "q95": 7.8,
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        -93.775,
+        42.015
+      ],
+      "raw_source_sha256": "df7008e8a503b4fffb890284a87e352cd0c16bb822c4ebdec2ee55a0670e4dd0",
+      "receipt_sha256": "149482c99f73ac24296505c801ffef7b3450cb2ce1a77b9076437186c6a713e4",
+      "request_telemetry": {
+        "attempts_total": 96,
+        "bytes_downloaded": 58032,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 30433.15,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 96,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 96
+      },
+      "resolved_native_layers": [
+        "0-5cm",
+        "5-15cm",
+        "15-30cm"
+      ],
+      "retrieved_at": "2026-11-14T16:59:40.514165+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(-93.7775,-93.7725)&SUBSET=lat(42.0125,42.0175)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "US_AGRONOMY_AMES",
+      "soc_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 22.033,
+        "q05": 7.25,
+        "q50": 18.033,
+        "q95": 46.917,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 173.2,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          -93.77375,
+          42.01375
+        ],
+        "pixel_scale_deg": [
+          0.002500000000011937,
+          0.0024999999999977263
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.05
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 1.0,
+        "q05": 0.0,
+        "q50": 0.0,
+        "q95": 5.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 30.9,
+        "q05": 3.1,
+        "q50": 28.8,
+        "q95": 79.8,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "%"
+      },
+      "continent": "North America",
+      "country": "US",
+      "depth_interval_cm": [
+        30,
+        60
+      ],
+      "elapsed_ms": 29729.0,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "30-60cm": 1.0
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 6.8,
+        "q05": 5.6,
+        "q50": 6.9,
+        "q95": 8.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        -93.775,
+        42.015
+      ],
+      "raw_source_sha256": "17d4af75de0e90bf072ac67b8e77588a9e26258634b54d078e0b02d91d9ecaf1",
+      "receipt_sha256": "8e176dba7891b35ef46eabfdb56360c57bc8e8550f3dd235e1f8087bcf95e159",
+      "request_telemetry": {
+        "attempts_total": 32,
+        "bytes_downloaded": 19332,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 11557.82,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 32,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 32
+      },
+      "resolved_native_layers": [
+        "30-60cm"
+      ],
+      "retrieved_at": "2026-11-14T17:01:12.129480+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_30-60cm_mean&FORMAT=image/tiff&SUBSET=long(-93.7775,-93.7725)&SUBSET=lat(42.0125,42.0175)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "US_AGRONOMY_AMES",
+      "soc_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 9.1,
+        "q05": 2.9,
+        "q50": 8.3,
+        "q95": 20.7,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 173.2,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          -93.77375,
+          42.01375
+        ],
+        "pixel_scale_deg": [
+          0.002500000000011937,
+          0.0024999999999977263
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.0
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 0.8,
+        "q05": 0.0,
+        "q50": 0.0,
+        "q95": 3.633,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 26.283,
+        "q05": 3.05,
+        "q50": 24.717,
+        "q95": 64.067,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "%"
+      },
+      "continent": "South America",
+      "country": "BR",
+      "depth_interval_cm": [
+        0,
+        30
+      ],
+      "elapsed_ms": 91117.18,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "0-5cm": 0.166667,
+        "15-30cm": 0.5,
+        "5-15cm": 0.333333
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "abstained_scalar": true,
+        "aggregation_mode": "ABSTAINED_NON_LINEAR_PH_MULTI_LAYER",
+        "layer_mean_max": 5.0,
+        "layer_mean_min": 4.9,
+        "note": "Abstained from scalar linear thickness-averaging of soil pH (phh2o) across multiple horizons because pH is logarithmic and horizon buffering capacity (CEC/carbonates) is unknown; native per-layer values and min/max range are preserved.",
+        "q05": 4.0,
+        "q95": 6.0,
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        -55.82,
+        -12.52
+      ],
+      "raw_source_sha256": "602779baa74db7fe73808275277ce3dcf40d6ee0e963f17c3efe7c8a71c19090",
+      "receipt_sha256": "3779f108e8110f6f91fb8574f0734c3ce45fd5a4bc439002fb58b41aae8fb5c1",
+      "request_telemetry": {
+        "attempts_total": 96,
+        "bytes_downloaded": 58028,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 33010.89,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 96,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 96
+      },
+      "resolved_native_layers": [
+        "0-5cm",
+        "5-15cm",
+        "15-30cm"
+      ],
+      "retrieved_at": "2026-11-14T17:01:40.794540+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(-55.8225,-55.8175)&SUBSET=lat(-12.5225,-12.5175)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "BR_SORRISO_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 16.283,
+        "q05": 4.833,
+        "q50": 13.183,
+        "q95": 31.883,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 193.86,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          -55.81875,
+          -12.52125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.0024999999999995026
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.03
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 1.5,
+        "q05": 0.0,
+        "q50": 0.0,
+        "q95": 5.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 29.8,
+        "q05": 3.5,
+        "q50": 27.5,
+        "q95": 78.6,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "%"
+      },
+      "continent": "South America",
+      "country": "BR",
+      "depth_interval_cm": [
+        30,
+        60
+      ],
+      "elapsed_ms": 22433.65,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "30-60cm": 1.0
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 5.1,
+        "q05": 4.2,
+        "q50": 5.1,
+        "q95": 6.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        -55.82,
+        -12.52
+      ],
+      "raw_source_sha256": "e8acfef60e3be115cabab99aae4c7de7fc13c3e5bbab250e6d1a84378dd9ac47",
+      "receipt_sha256": "78829e9d4af7390ce203eabeca1620aa06374224f3ba60e5039ec33e798ab2a2",
+      "request_telemetry": {
+        "attempts_total": 32,
+        "bytes_downloaded": 19338,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 9112.33,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 32,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 32
+      },
+      "resolved_native_layers": [
+        "30-60cm"
+      ],
+      "retrieved_at": "2026-11-14T17:03:05.684446+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_30-60cm_mean&FORMAT=image/tiff&SUBSET=long(-55.8225,-55.8175)&SUBSET=lat(-12.5225,-12.5175)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "BR_SORRISO_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 7.9,
+        "q05": 2.0,
+        "q50": 7.0,
+        "q95": 15.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 193.86,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          -55.81875,
+          -12.52125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.0024999999999995026
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.0
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 10.7,
+        "q05": 0.0,
+        "q50": 2.5,
+        "q95": 61.05,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 42.1,
+        "q05": 9.183,
+        "q50": 42.517,
+        "q95": 78.817,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "%"
+      },
+      "continent": "Africa",
+      "country": "KE",
+      "depth_interval_cm": [
+        0,
+        30
+      ],
+      "elapsed_ms": 45303.73,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "0-5cm": 0.166667,
+        "15-30cm": 0.5,
+        "5-15cm": 0.333333
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "abstained_scalar": true,
+        "aggregation_mode": "ABSTAINED_NON_LINEAR_PH_MULTI_LAYER",
+        "layer_mean_max": 6.3,
+        "layer_mean_min": 6.2,
+        "note": "Abstained from scalar linear thickness-averaging of soil pH (phh2o) across multiple horizons because pH is logarithmic and horizon buffering capacity (CEC/carbonates) is unknown; native per-layer values and min/max range are preserved.",
+        "q05": 4.8,
+        "q95": 7.9,
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        36.07,
+        -0.28
+      ],
+      "raw_source_sha256": "bf261c806e0adf22ec7783f90fee07b2a4310ed5c2addbb611c235a0c5cc2314",
+      "receipt_sha256": "530005e94d6dab8103f79f254f3afa4a66d89c356ca40eb18aa162357627d582",
+      "request_telemetry": {
+        "attempts_total": 96,
+        "bytes_downloaded": 58088,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 22547.47,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 96,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 96
+      },
+      "resolved_native_layers": [
+        "0-5cm",
+        "5-15cm",
+        "15-30cm"
+      ],
+      "retrieved_at": "2026-11-14T17:03:23.255804+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(36.0675,36.0725)&SUBSET=lat(-0.2825,-0.2775)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "KE_NAKURU",
+      "soc_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 22.567,
+        "q05": 3.967,
+        "q50": 16.033,
+        "q95": 60.467,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 196.13,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          36.07125,
+          -0.28125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.0025000000000000022
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.0
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 14.9,
+        "q05": 0.0,
+        "q50": 3.8,
+        "q95": 64.1,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 43.6,
+        "q05": 10.6,
+        "q50": 41.2,
+        "q95": 80.3,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "%"
+      },
+      "continent": "Africa",
+      "country": "KE",
+      "depth_interval_cm": [
+        30,
+        60
+      ],
+      "elapsed_ms": 15707.9,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "30-60cm": 1.0
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 6.4,
+        "q05": 5.1,
+        "q50": 6.3,
+        "q95": 8.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        36.07,
+        -0.28
+      ],
+      "raw_source_sha256": "12df11614d6cfdd535e0517dd7a4feda9da0fb5280517bb3092a17168eec40ad",
+      "receipt_sha256": "152afd1c5cc47b6088aafa5136a5c2cc33951a2d67a3160bc2d123e6753079f9",
+      "request_telemetry": {
+        "attempts_total": 32,
+        "bytes_downloaded": 19373,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 8064.47,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 32,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 32
+      },
+      "resolved_native_layers": [
+        "30-60cm"
+      ],
+      "retrieved_at": "2026-11-14T17:04:06.691941+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_30-60cm_mean&FORMAT=image/tiff&SUBSET=long(36.0675,36.0725)&SUBSET=lat(-0.2825,-0.2775)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "KE_NAKURU",
+      "soc_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 11.7,
+        "q05": 2.0,
+        "q50": 8.0,
+        "q95": 26.7,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 196.13,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          36.07125,
+          -0.28125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.0025000000000000022
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.1
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 7.75,
+        "q05": 0.0,
+        "q50": 1.033,
+        "q95": 41.667,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 58.05,
+        "q05": 25.633,
+        "q50": 60.233,
+        "q95": 80.283,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "%"
+      },
+      "continent": "Oceania",
+      "country": "AU",
+      "depth_interval_cm": [
+        0,
+        30
+      ],
+      "elapsed_ms": 48960.67,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "0-5cm": 0.166667,
+        "15-30cm": 0.5,
+        "5-15cm": 0.333333
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "abstained_scalar": true,
+        "aggregation_mode": "ABSTAINED_NON_LINEAR_PH_MULTI_LAYER",
+        "layer_mean_max": 7.5,
+        "layer_mean_min": 7.3,
+        "note": "Abstained from scalar linear thickness-averaging of soil pH (phh2o) across multiple horizons because pH is logarithmic and horizon buffering capacity (CEC/carbonates) is unknown; native per-layer values and min/max range are preserved.",
+        "q05": 6.1,
+        "q95": 8.8,
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        151.8,
+        -27.55
+      ],
+      "raw_source_sha256": "c93d6a6a5d722830f1039f27551b7327a01c6f9ac8d2d6430855b19c36e99737",
+      "receipt_sha256": "0f2477eebf4c63916c95890e543cad3b0efa5cb12224aca7d811dc5b4a0a9fad",
+      "request_telemetry": {
+        "attempts_total": 96,
+        "bytes_downloaded": 58100,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 25896.72,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 96,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 96
+      },
+      "resolved_native_layers": [
+        "0-5cm",
+        "5-15cm",
+        "15-30cm"
+      ],
+      "retrieved_at": "2026-11-14T17:04:24.101442+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_0-5cm_mean&FORMAT=image/tiff&SUBSET=long(151.7975,151.8025)&SUBSET=lat(-27.5525,-27.5475)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "AU_TOOWOOMBA_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "THICKNESS_WEIGHTED_INTENSIVE_MEAN",
+        "mean": 40.7,
+        "q05": 6.733,
+        "q50": 35.65,
+        "q95": 102.25,
+        "quantile_basis": "THICKNESS_WEIGHTED_SCENARIO_BOUNDS_NOT_CALIBRATED_90PCT_PI",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 185.55,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          151.80125,
+          -27.55125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.002500000000001279
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 99.95
+    },
+    {
+      "cfvo_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 10.1,
+        "q05": 0.0,
+        "q50": 1.2,
+        "q95": 60.0,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "vol%"
+      },
+      "clay_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 52.0,
+        "q05": 24.9,
+        "q50": 45.7,
+        "q95": 81.8,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "%"
+      },
+      "continent": "Oceania",
+      "country": "AU",
+      "depth_interval_cm": [
+        30,
+        60
+      ],
+      "elapsed_ms": 24857.24,
+      "evidence_level": "AUTHENTIC_LIVE",
+      "layer_weights": {
+        "30-60cm": 1.0
+      },
+      "mineral_n_blocked_reason": "not_identifiable",
+      "missing_reason": null,
+      "offline_replay_bit_for_bit_parity": true,
+      "offline_replay_evidence_level": "AUTHENTIC_VERIFIED_CACHE",
+      "offline_replay_status": "CONDITIONAL",
+      "phh2o_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 8.0,
+        "q05": 6.1,
+        "q50": 8.1,
+        "q95": 9.3,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "pH"
+      },
+      "point_lon_lat": [
+        151.8,
+        -27.55
+      ],
+      "raw_source_sha256": "0579e4ba6a51ba6303f97d62eda46d2934b3a4f5236e22a5e830208c63ba351c",
+      "receipt_sha256": "bcfd158cdd6a2a0ee34c2f4bb7a6719e92a0bc3a917fcaac1f6a4b0a7afc39ef",
+      "request_telemetry": {
+        "attempts_total": 32,
+        "bytes_downloaded": 19381,
+        "cache_hit_count": 0,
+        "elapsed_ms_total": 16747.11,
+        "errors": [],
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "live_success_count": 32,
+        "provider": "ISRIC_SOILGRIDS_WCS",
+        "rate_limit_retries": 0,
+        "request_count": 32
+      },
+      "resolved_native_layers": [
+        "30-60cm"
+      ],
+      "retrieved_at": "2026-11-14T17:05:20.510936+00:00",
+      "sample_access_url": "https://maps.isric.org/mapserv?map=/map/clay.map&SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=clay_30-60cm_mean&FORMAT=image/tiff&SUBSET=long(151.7975,151.8025)&SUBSET=lat(-27.5525,-27.5475)&SUBSETTINGCRS=http://www.opengis.net/def/crs/EPSG/0/4326&OUTPUTCRS=http://www.opengis.net/def/crs/EPSG/0/4326",
+      "site_id": "AU_TOOWOOMBA_AGRI",
+      "soc_summary": {
+        "aggregation_mode": "NATIVE_SINGLE_LAYER",
+        "mean": 40.9,
+        "q05": 2.2,
+        "q50": 28.5,
+        "q95": 103.2,
+        "quantile_basis": "SOILGRIDS_NATIVE_LAYER_PREDICTIVE_QUANTILES",
+        "unit": "g/kg"
+      },
+      "spatial_support": {
+        "col": 1,
+        "crs": "EPSG:4326",
+        "distance_m": 185.55,
+        "exact_cell_match": true,
+        "geotransform_verified": true,
+        "nodata": null,
+        "pixel_center_lon_lat": [
+          151.80125,
+          -27.55125
+        ],
+        "pixel_scale_deg": [
+          0.0024999999999977263,
+          0.002500000000001279
+        ],
+        "row": 1,
+        "spatial_flags": []
+      },
+      "status": "CONDITIONAL",
+      "texture_mean_sum_pct": 100.0
+    }
+  ],
+  "summary": {
+    "authentic_live_provider_success_fraction": {
+      "nasa_power": "6/6",
+      "soilgrids_sites": "5/5"
+    },
+    "nasa_power_authentic_live_success": 6,
+    "nasa_power_offline_replay_parity_success": 6,
+    "nasa_power_sites_attempted": 6,
+    "nasa_power_utc_vs_lst_separated": true,
+    "overall_status": "PASS",
+    "scope_disclaimer": "Sampling demonstration across selected continental agricultural sites on live endpoints; not a claim of 100% global Earth land coverage or field-station calibration.",
+    "soilgrids_offline_replay_parity_success": 10,
+    "soilgrids_queries_attempted": 10,
+    "soilgrids_queries_authentic_live_success": 10,
+    "soilgrids_sites_attempted": 5,
+    "soilgrids_sites_authentic_live_success": 5
+  },
+  "urban_or_water_mask_fail_closed_probes": [
+    {
+      "detail": "SoilGrids live WCS fetch failed for layer '0-5cm': POINT_PIXEL_MISSING: Exact SoilGrids pixel returned zero across clay, silt, and sand (urban/water/ice mask).",
+      "missing_reason": "point_pixel_missing",
+      "point_lon_lat": [
+        9.22,
+        49.14
+      ],
+      "site_id": "DE_HEILBRONN_URBAN_CENTER",
+      "status": "BLOCKED"
+    }
+  ]
+}

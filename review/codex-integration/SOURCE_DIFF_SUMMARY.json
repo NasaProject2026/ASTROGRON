@@ -1,0 +1,73 @@
+{
+  "baselineBranch": "feat/v7-final-release-closure",
+  "baselineCommit": "21b8bfa",
+  "integrationBranch": "feat/v7-codex-safe-integration",
+  "protectedFilesVerified": "28/28 PASS",
+  "modifiedFiles": [
+    {
+      "path": "src/server/capability-overlay-service.ts",
+      "gate": "G2",
+      "summary": "Removed BENCHMARK_EXACT_COORD_TOLERANCE_DEG = 0.0005 and replaced it with isRegisteredUnmodifiedBenchmarkMatch requiring explicit registered benchmark farmId, exact coordinate equality (zero spatial tolerance), unmodified draft state, no polygon input, and UPPSALA_REFERENCE_INPUT_REVISION for Uppsala."
+    },
+    {
+      "path": "app/api/capabilities/site-check/route.ts",
+      "gate": "G2",
+      "summary": "Extended SiteCheckRequestSchema and evaluateSiteCapabilityCheck call to accept and forward inputRevision and isUserCreatedDraft."
+    },
+    {
+      "path": "src/components/forms/farm-setup-wizard.tsx",
+      "gate": "G2",
+      "summary": "Forwarded inputRevision, isUserModifiedDraft, and isUserCreatedDraft in /api/capabilities/site-check requests."
+    },
+    {
+      "path": "app/farm/[id]/analysis/page.tsx",
+      "gate": "G2",
+      "summary": "Forwarded inputRevision, isUserModifiedDraft, and isUserCreatedDraft in /api/capabilities/site-check requests."
+    },
+    {
+      "path": "src/server/analysis-job-store.ts",
+      "gate": "G3",
+      "summary": "Required UPPSALA_REFERENCE_INPUT_REVISION, exact [17.6389, 59.8586] coordinates, fieldCount === 3, and unmodified state before unlocking Uppsala M14 archive; added active-job idempotency (findActiveJobForRevision); enforced bound farmId, inputRevision, reportId, and evidenceVerified === true on upstream COMPLETED_VERIFIED responses."
+    },
+    {
+      "path": "src/server/chat-gateway-service.ts",
+      "gate": "G4",
+      "summary": "Added report-grounded AI chat gateway service enforcing fail-closed default, HTTPS + ASTRAGRON_CHAT_ALLOWED_HOSTS allowlist, redirect: 'error', bounded timeout, sliding-window rate limiting, server-side report ownership and inputRevision verification, conversation-thread binding, and strict Zod output/citation verification against server-resolved evidence IDs."
+    },
+    {
+      "path": "app/api/reports/[reportId]/chat/route.ts",
+      "gate": "G4",
+      "summary": "Routed POST /api/reports/[reportId]/chat through handleReportGroundedChatRequest with owner identity and client rate-limit key extraction."
+    },
+    {
+      "path": "src/server/capabilities-service.ts",
+      "gate": "G4",
+      "summary": "Updated reportGroundedChat capability readiness to use evaluateChatGatewayReadiness() so chat remains NOT_CONNECTED unless HTTPS endpoint, host allowlist, and ASTRAGRON_CHAT_ENABLE_VERIFIED_GATEWAY=1 are valid."
+    },
+    {
+      "path": "tests/smart-fields-and-coverage.test.ts",
+      "gate": "G2/G6",
+      "summary": "Updated benchmark site-check unit tests to pass registered benchmark farmId and UPPSALA_REFERENCE_INPUT_REVISION and verified custom-user-uppsala returns UNKNOWN_UNASSESSED."
+    },
+    {
+      "path": "tests/codex-v7-safe-integration.test.ts",
+      "gate": "G2/G3/G4/G6",
+      "summary": "Added dedicated integration test suite covering Gate G2 zero-leakage benchmark checks, Gate G3 job store anti-spoofing/idempotency/upstream provenance checks, and Gate G4 chat gateway security/ownership/citation checks."
+    },
+    {
+      "path": "e2e/smart-fields-coverage.spec.ts",
+      "gate": "G2/G6",
+      "summary": "Added live E2E assertion in SF-3 proving custom farm at Svalbard coordinates returns UNKNOWN_UNASSESSED before testing the registered SJ_SVALBARD_POLAR unsupported toast and non-blocking save flow."
+    },
+    {
+      "path": "review/CODEX_ACTUAL_API_CONTRACT.md",
+      "gate": "G1",
+      "summary": "Added source-derived API contract correcting all route, env var, persistence, and live FTW proof documentation drift."
+    },
+    {
+      "path": "review/FINAL_CODEX_FRONTEND_HANDOFF.md",
+      "gate": "G1",
+      "summary": "Synchronized final handoff documentation with CODEX_ACTUAL_API_CONTRACT.md."
+    }
+  ]
+}

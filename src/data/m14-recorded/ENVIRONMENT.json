@@ -1,0 +1,13 @@
+{
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26320-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "ortools": "9.15.6755",
+    "pandas": "3.1.0",
+    "rasterio": "1.5.2",
+    "shapely": "2.2.0"
+  },
+  "new_dependencies": false,
+  "kernel_dependencies": "M14 and portable daily replay use Python standard library; historical classifier tests retain original installed packages"
+}

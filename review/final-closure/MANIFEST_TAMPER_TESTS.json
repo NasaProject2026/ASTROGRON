@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-11-14T16:20:40.615Z",
+  "allTamperChecksPassed": true,
+  "tests": {
+    "modifiedByte": {
+      "expectedFailure": "SHA256_MISMATCH",
+      "ok": false,
+      "failedCount": 1,
+      "errors": [
+        "SHA256_MISMATCH: src/a.ts expected=c92732c3bcd21dcf4a4ce043ee853e39cb69443a3bd5a6aebf9d1fba9126039f actual=a9161e5263663dfe102febdeb68cb73d9513ed2c4eb0020a011670a277992030"
+      ]
+    },
+    "deletedFile": {
+      "expectedFailure": "MISSING",
+      "ok": false,
+      "failedCount": 1,
+      "errors": [
+        "MISSING: src/b.ts"
+      ]
+    },
+    "unsafeRelativePath": {
+      "expectedFailure": "INVALID_PATH",
+      "ok": false,
+      "failedCount": 1,
+      "errors": [
+        "INVALID_PATH: Path traversal or empty segment rejected: ../escape.txt"
+      ]
+    }
+  }
+}

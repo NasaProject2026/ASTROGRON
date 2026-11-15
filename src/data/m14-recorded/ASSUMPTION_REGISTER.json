@@ -1,0 +1,220 @@
+{
+  "schema": "astragron.m8.assumed-five-year.v1",
+  "classification": "ASSUMPTION_CONDITIONAL",
+  "strict_branch": "QUALIFIED_SWEDISH_5Y_BRIDGE_BLOCKED",
+  "version": "M8_V1",
+  "declared_at": "2026-11-08T10:25:47.269908+00:00",
+  "context": {
+    "site_id": "SE_UPPSALA",
+    "country": "SE",
+    "region": "Uppsala representative meteorological point",
+    "point_lon_lat": [
+      17.65,
+      59.82
+    ],
+    "crs": "EPSG:4326",
+    "polygon": null,
+    "hemisphere": "NORTH",
+    "cultivar": null,
+    "source_spatial_support": "MERRA2 regional meteorological grid .625x.5deg; fields have assumed areas and no surveyed boundaries",
+    "permission_license": "NASA public access with attribution; factual reference metadata only; hypothetical management has no legal-right claim"
+  },
+  "fields": [
+    {
+      "field_id": "F1",
+      "area_ha": 6.0,
+      "irrigation_access": false,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    },
+    {
+      "field_id": "F2",
+      "area_ha": 8.0,
+      "irrigation_access": false,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    },
+    {
+      "field_id": "F3",
+      "area_ha": 10.0,
+      "irrigation_access": true,
+      "area_basis": "ORIGINAL_RESEARCH_ASSUMPTION"
+    }
+  ],
+  "crop_profiles": {
+    "cropuse:agrovoc:c_5933:c_3348": {
+      "crop_use_id": "cropuse:agrovoc:c_5933:c_3348",
+      "phenology": "SPRING",
+      "planting_mm_dd": "05-01",
+      "stage_days": [
+        15,
+        25,
+        35,
+        15
+      ],
+      "kc": [
+        0.5,
+        1.15,
+        0.3
+      ],
+      "root_start_m": 0.2,
+      "root_max_m": 0.8,
+      "p": 0.4,
+      "evidence_tier": "PRIOR_PUBLISHED_SCOPED_PARAMETERS_PLUS_ASSUMED_TRANSFER; no authorization upgrade of M6",
+      "parent_parameter_sha256": "c53bcca6a57ac57f48ebfa1665516f17d6aa42dd98d1ecc0f3f2dffd34e83c6b"
+    },
+    "cropuse:agrovoc:c_7221:c_7370": {
+      "crop_use_id": "cropuse:agrovoc:c_7221:c_7370",
+      "phenology": "SPRING",
+      "planting_mm_dd": "05-15",
+      "stage_days": [
+        25,
+        30,
+        45,
+        30
+      ],
+      "kc": [
+        0.5,
+        1.15,
+        0.75
+      ],
+      "root_start_m": 0.2,
+      "root_max_m": 0.5,
+      "p": 0.35,
+      "evidence_tier": "PRIOR_PUBLISHED_SCOPED_PARAMETERS_PLUS_ASSUMED_TRANSFER; no authorization upgrade of M6",
+      "parent_parameter_sha256": "078c54577314149085c1f4c4723db2a23d22fd350ef5016ec9b0b807111bba70"
+    },
+    "cropuse:agrovoc:c_6919:c_25512": {
+      "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+      "phenology": "WINTER",
+      "sowing_mm_dd": "09-10",
+      "harvest_mm_dd": "08-08",
+      "Kc_autumn": 0.4,
+      "Kc_mid": 1.15,
+      "Kc_end": 0.25,
+      "spring_growth_start": "03-01",
+      "mid_start": "06-01",
+      "late_start": "07-01",
+      "root_start_m": 0.3,
+      "root_autumn_m": 0.6,
+      "root_max_m": 1.5,
+      "p": 0.55,
+      "evidence_tier": "UNQUALIFIED_GRAIN_RYE_EXPLORATORY_WHEAT_PROXY",
+      "parent_sources": [
+        "RYE_SJV",
+        "FAO_KC_PROXY",
+        "FAO_ROOT_PROXY"
+      ],
+      "stage_dates_status": "ASSUMED_NOT_OBSERVED"
+    }
+  },
+  "economic_years": [
+    2027,
+    2028,
+    2029,
+    2030,
+    2031
+  ],
+  "historical_windows": {
+    "DRY_ANCHOR_2018": [
+      "2018-01-01",
+      "2022-12-31"
+    ],
+    "MEDIAN_ANCHOR_2006": [
+      "2006-01-01",
+      "2010-12-31"
+    ],
+    "WET_ANCHOR_2012": [
+      "2012-01-01",
+      "2016-12-31"
+    ]
+  },
+  "soil": {
+    "layer_thickness_m": [
+      0.3,
+      1.5
+    ],
+    "scenarios": {
+      "LOW": [
+        0.23,
+        0.15
+      ],
+      "MED": [
+        0.3,
+        0.15
+      ],
+      "HIGH": [
+        0.35,
+        0.12
+      ]
+    },
+    "initial_available_fraction": 0.5,
+    "bare_Kc": 0.2,
+    "bare_extraction_depth_m": 0.3,
+    "runoff_fraction": 0.1,
+    "capillary_rise_mm_day": 0,
+    "initial_state_measured": false,
+    "warmup": "NONE; unknown carry-in explicitly assumed; sensitivity required",
+    "profile_meaning": "Available-water-equivalent above WP; no energy/soil ice phase solution",
+    "residues": "NONE_ASSUMED; exposed bare soil outside named crop periods"
+  },
+  "winter": {
+    "mode": "HYPOTHETICAL_TEMPERATURE_PARTITION_DEGREE_DAY_V1",
+    "snowfall_Tmean_threshold_C": 0,
+    "melt_mm_per_C_day": 3,
+    "frozen_infiltration_fraction": 0.25,
+    "snow_sublimation_mm_day": 0.2,
+    "initial_snow_mm": 0,
+    "freeze_flag": "Tmin<=0; coarse assumed whole-day flag, not measured soil freeze",
+    "ET_when_snow_or_freeze": "No soil ET; bounded snow sublimation. Explicit method assumption, not HS estimate",
+    "not_verified_snow_or_frozen_soil": true
+  },
+  "supply": {
+    "annual_farm_source_m3": 8000,
+    "source_daily_m3": 80,
+    "pump_daily_m3": 80,
+    "field_delivered_cap_mm_day": 10,
+    "conveyance_efficiency": 0.9,
+    "application_efficiency": 0.8,
+    "storage_mode": "DIRECT_NO_RESERVOIR",
+    "storage_capacity_m3": 0,
+    "initial_storage_m3": 0,
+    "rights_basis": "ASSUMED_NOT_VERIFIED",
+    "service_limit_crop_ET_deficit_mm_per_harvest_year": 100,
+    "service_optional_not_crop_viability": true
+  },
+  "calendar": {
+    "carry_in": "Rye assigned to first harvest year has prior-autumn phenology at Jan1; water/snow starts are assumed, not reconstructed",
+    "terminal": "No unselected year6 sowing; bare after final harvest",
+    "overlap": "REJECT; never shift dates to rescue a sequence",
+    "economic_time": "Frozen model season accounting retained separately; actual prior-autumn seed payment timing not established"
+  },
+  "experiments": {
+    "base": "Every preregistered policy x3 historical windows at MED/default",
+    "positive": "Same policies x3windows with precipitation multiplied by0, all other parameters fixed",
+    "sensitivity_focus": "full_horizon alias only x3windows",
+    "sensitivity_variants": [
+      "SOIL_LOW",
+      "SOIL_HIGH",
+      "INITIAL_LOW",
+      "INITIAL_HIGH",
+      "WATER_LOW",
+      "WATER_HIGH",
+      "WINTER_ALTERNATIVE",
+      "RYE_PROXY_LOW",
+      "RYE_PROXY_HIGH"
+    ],
+    "max_unique_policy_plans": 8,
+    "max_runs": 75,
+    "max_wall_seconds_per_run": 30,
+    "max_total_wall_seconds": 1800,
+    "new_optimizer": "NONE; finite portfolio evaluation only",
+    "objective": "MIN_ACTIVE_CROP_ET_SHORTFALL_M3_EQUIVALENT; equal score retains ties; EUR reference separate",
+    "no_tuning_after_water_results": true
+  },
+  "authorization": {
+    "numeric_use": "ASSUMED_FIXTURE_ONLY",
+    "qualified_crops": false,
+    "field_calibrated": false,
+    "yield_N_profit_response": false,
+    "original_solver_injection": false
+  }
+}

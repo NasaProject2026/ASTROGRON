@@ -1,0 +1,63 @@
+{
+  "capturedAt": "2026-11-14T22:30:23.186Z",
+  "mode": "DETERMINISTIC_MOCK_FIXTURE",
+  "totalCapturedTileResponses": 96,
+  "http200Count": 96,
+  "byProvider": {
+    "openfreemap": 12,
+    "eoxS2Cloudless2016": 29,
+    "nasaGibsBlueMarble": 55
+  },
+  "sampleUrls": [
+    {
+      "provider": "openfreemap",
+      "url": "https://tiles.openfreemap.org/planet",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/1/2.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/0/2.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/1/1.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/0/1.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/1/3.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/2/2.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/0/3.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/2/1.jpeg",
+      "status": 200
+    },
+    {
+      "provider": "nasa-gibs-blue-marble",
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/2/1/0.jpeg",
+      "status": 200
+    }
+  ]
+}

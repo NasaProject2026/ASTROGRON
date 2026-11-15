@@ -1,0 +1,36 @@
+{
+  "schema": "astragron.research-decision.request.v1",
+  "location": {
+    "site_id": "AU_WAGGA_REGION",
+    "name": "Wagga Wagga, New South Wales, Australia",
+    "point_lon_lat": [147.35, -35.05],
+    "crs": "EPSG:4326"
+  },
+  "horizon_years": 5,
+  "scenarios": [
+    {"scenario_id": "DRY_5Y_TOTAL_2016", "start": "2016-01-01", "end": "2020-12-31"},
+    {"scenario_id": "MEDIAN_5Y_TOTAL_2021", "start": "2016-01-01", "end": "2020-12-31"},
+    {"scenario_id": "WET_5Y_TOTAL_2011", "start": "2011-01-01", "end": "2015-12-31"}
+  ],
+  "fields": [
+    {
+      "field_id": "F1",
+      "area_ha": 15.0,
+      "irrigation_access": true,
+      "crop_candidates": ["research:AU:earlier_sowing", "research:AU:later_sowing"],
+      "soil": {"theta_fc": 0.31, "theta_wp": 0.17, "initial_available_fraction": 0.50}
+    },
+    {
+      "field_id": "F2",
+      "area_ha": 12.0,
+      "irrigation_access": true,
+      "crop_candidates": ["research:AU:earlier_sowing", "research:AU:later_sowing"],
+      "soil": {"theta_fc": 0.31, "theta_wp": 0.17, "initial_available_fraction": 0.50}
+    }
+  ],
+  "supply": {
+    "regime": "supplemental",
+    "annual_farm_source_m3": 12000.0,
+    "service_limit_crop_ET_deficit_mm_per_harvest_year": 75.0
+  }
+}

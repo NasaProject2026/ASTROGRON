@@ -1,0 +1,142 @@
+{
+  "schema": "astragron.m8.eligibility.v1",
+  "sources": {
+    "RYE_SJV": {
+      "url": "https://www2.jordbruksverket.se/webdav/files/SJV/trycksaker/Pdf_ovrigt/ovr277.pdf",
+      "record": "HÖSTRÅG,4pages; section1.7 PDFpage1 zero-based",
+      "facts": "Regional sowing: southern Gotaland Sep10-20; northern Gotaland/Svealand Sep5-15. Winter-rye guidance, not stage/Kc/root/p measurements.",
+      "raw_source_sha256": null,
+      "license": "No whole-document redistribution permission inferred; factual extract only",
+      "factual_extract_sha256": "a0d4a3d58d4e172e9799f06f9ba3b0b65b5451b688f94f3ac66ab36888a61e0d"
+    },
+    "SOWING_2025": {
+      "url": "https://jordbruksverket.se/vaxter/odling/vaxtskydd/vaxtskyddscentralerna/radgivande-artiklar-fran-vaxtskyddscentralerna/arkiv/2025-09-12-minska-risken-for-angrepp-i-hostsaden-genom-att-anpassa-satidpunkten",
+      "record": "2025-09-12 advisory",
+      "facts": "Risk depends on emergence and autumn conditions, not a universal calendar date. No local rye hydraulic coefficient.",
+      "raw_source_sha256": null,
+      "license": "Factual metadata only",
+      "factual_extract_sha256": "7844d7039f435c2fed74a73418cdc95dac765d794f662709665dd0f4e57bc772"
+    },
+    "FAO_KC_PROXY": {
+      "url": "https://www.fao.org/4/X0490E/x0490e0b.htm",
+      "record": "FAO56 Table12 winter WHEAT frozen-soil category",
+      "facts": "WHEAT .4/1.15/.25-.4; not evidence for Secale cereale. Only explicit exploratory proxy parent.",
+      "raw_source_sha256": null,
+      "license": "Existing source access retained; no full publication redistribution",
+      "factual_extract_sha256": "a021e14c34a65ab7b2bba1ed8ad5f21d93c8bcf1e2fbec9d2613d605dcc5c7b1"
+    },
+    "FAO_ROOT_PROXY": {
+      "url": "https://www.fao.org/4/X0490E/x0490e0e.htm",
+      "record": "FAO56 Table22 winter WHEAT",
+      "facts": "WHEAT root1.5-1.8m,p.55; not grain-rye field qualification.",
+      "raw_source_sha256": null,
+      "license": "Factual metadata only",
+      "factual_extract_sha256": "1257da33995820e1b64f3ace0464a6a5353e5860d4e0c6a0bc3e6e538861be33"
+    },
+    "FAO_WINTER": {
+      "url": "https://www.fao.org/4/X0490E/x0490e0h.htm",
+      "record": "Chapter11 frozen/snow surfaces",
+      "facts": "Winter ET0 has limited physical validity. Bare/live/dead/snow surfaces differ. Does not validate this assumed degree-day module.",
+      "raw_source_sha256": null,
+      "license": "Factual metadata only",
+      "factual_extract_sha256": "ff933af5ace7abacb6f70a3b750627f6f0fad4edf78a406e7a21a9aea2388a0d"
+    },
+    "SLU_DSMS2025": {
+      "url": "https://www.slu.se/en/environment/statistics-and-environmental-data/environmental-data-catalogue/digital-soil-map-of-arable-land-in-sweden/",
+      "record": "March2026metadata;2025product update",
+      "facts": "CC-BY per SLU metadata;20m grid,top20cm,regional predicted texture/SOM. Much southern arable Sweden; no field geometry or root hydraulics validated here.",
+      "raw_source_sha256": null,
+      "license": "CC-BY stated; exact version not specified by inspected page",
+      "factual_extract_sha256": "cc93336849499f9692db5c3ce9b375e456d26d99bf582ddddf0bf8b00041263d"
+    },
+    "SGU_DSMS": {
+      "url": "https://www.sgu.se/samhallsplanering/planering-och-markanvandning/markanvandning/jordbruk-skog-och-fiske/lerhaltskartan-digital-akermarkskarta/",
+      "record": "Reviewed2026-01-30;GeoTIFF ZIP distribution link",
+      "facts": "Distribution/extractability route found. No bounded point raster extraction or field polygon available; no large ZIP downloaded.",
+      "raw_source_sha256": null,
+      "license": "SLU metadata license; no map bytes redistributed",
+      "factual_extract_sha256": "fd132b31dc7c92ff4be6d28b64d1b9d365674e7ffaad9fa01ab67cac90f76305"
+    },
+    "NASA": {
+      "url": "https://power.larc.nasa.gov/docs/methodology/data/sources_hydrology/",
+      "record": "Existing immutable M2 four-variable meteorological snapshot",
+      "facts": "Regional model weather, not farmer rights, root-zone soil measurements or current field water. No new NASA request.",
+      "raw_source_sha256": "f231ad6a31fa88721202747c7bccf0b62db12247128dac1a532b660bb5926639",
+      "license": "NASA POWER public-access attribution/no endorsement",
+      "factual_extract_sha256": "fca9e7b5893de1f21d14c5efebbc768ed45be2055fca89c97c8a2839a5342989"
+    }
+  },
+  "bounded_routes": {
+    "rye_calendar": [
+      "RYE_SJV",
+      "SOWING_2025"
+    ],
+    "rye_Kc": [
+      "RYE_SJV",
+      "FAO_KC_PROXY"
+    ],
+    "rye_root_p": [
+      "RYE_SJV",
+      "FAO_ROOT_PROXY"
+    ],
+    "DSMS": [
+      "SLU_DSMS2025",
+      "SGU_DSMS"
+    ],
+    "winter": [
+      "FAO_WINTER"
+    ]
+  },
+  "grain_rye": {
+    "taxon": "Secale cereale",
+    "use": "grain",
+    "ecotype": "WINTER_ASSUMED; cultivar UNKNOWN",
+    "catalog_id": "cropuse:agrovoc:c_6919:c_25512",
+    "strict_status": "RYE_UNQUALIFIED",
+    "allowed_numeric_use": "ASSUMPTION_CONDITIONAL_FIXTURE_ONLY_WITH_ACK; not qualified production input",
+    "proxy_is_wheat_not_verified_rye": true,
+    "local_stage_observations": null
+  },
+  "soil": {
+    "SoilGrids_status": "CONFLICT_WITH_SOILGRIDS_PROPERTY_DOCUMENTATION",
+    "SoilGrids_reported_unit": "W.m-2.Sr-1",
+    "raster_requests_after_unit_conflict": 0,
+    "DSMS_status": "METADATA_VERIFIED_REGIONALLY_MODELLED_TOPSOIL; FIELD_EXTRACTION_UNKNOWN",
+    "field_geometry": null,
+    "theta_fc": null,
+    "theta_wp": null,
+    "measured_initial_state": null,
+    "allowed_numeric_use": "No DSMS or SoilGrids numeric hydraulics. Separate LOW/MED/HIGH assumed profiles only"
+  },
+  "winter": {
+    "strict_status": "WINTER_SNOW_SOIL_PHYSICS_UNQUALIFIED",
+    "snow_phase_measurement": null,
+    "soil_temperature_measurement": null,
+    "allowed_numeric_use": "EXPLICIT_HYPOTHETICAL_SNOW_FREEZE_SENSITIVITY_ONLY"
+  },
+  "supply": {
+    "actual_legal_right": null,
+    "actual_delivery_schedule": null,
+    "strict_status": "UNKNOWN",
+    "allowed_numeric_use": "SHARED_ASSUMED_CONTRACT_ONLY",
+    "original_farm_annual_assumed_m3": 8000,
+    "original_access": {
+      "F1": false,
+      "F2": false,
+      "F3": true
+    }
+  },
+  "strict_bridge": {
+    "status": "QUALIFIED_SWEDISH_5Y_BRIDGE_BLOCKED",
+    "numeric_effect": null,
+    "field_calibrated_sets": 0,
+    "new_qualified_named_crop_sets": 0
+  },
+  "tiers": [
+    "SOURCE_VERIFIED",
+    "MODEL_INTERNALLY_CHECKED",
+    "ASSUMPTION_CONDITIONAL",
+    "FIELD_CALIBRATED",
+    "UNKNOWN_OR_OUT_OF_COVERAGE"
+  ]
+}

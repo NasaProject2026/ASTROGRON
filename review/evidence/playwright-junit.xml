@@ -1,0 +1,510 @@
+<testsuites id="" name="" tests="56" failures="0" skipped="1" errors="0" time="847.286847">
+<testsuite name="astragron-journey.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="5" failures="0" skipped="0" time="81.28" errors="0">
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 1. Desktop 1440x900: Full-Bleed Orbital Hero -&gt; Live 3D Globe -&gt; Uppsala Results -&gt; Kenya Isolation" classname="astragron-journey.spec.ts" time="27.03">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-437f3-a-Results---Kenya-Isolation-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 2. Simulated WebGL Failure (?mapFallback=1): Fail-Closed 2D Natural Earth Fallback" classname="astragron-journey.spec.ts" time="2.217">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-704f2-d-2D-Natural-Earth-Fallback-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 3. Mobile 390x844, Landscape 844x390, Reduced Motion &amp; 11-Width Zero-Overflow Matrix" classname="astragron-journey.spec.ts" time="28.662">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-480a2--Width-Zero-Overflow-Matrix-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 4. Immutable Uppsala Fork, Signed DMS Sync, Multi-Route Fail-Closed &amp; Escape Focus Return" classname="astragron-journey.spec.ts" time="14.409">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-ab71e--Closed-Escape-Focus-Return-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 5. Real WebGL 3D Tile Outage Fallback &amp; Non-Overlapping Attribution Bar at 1024px" classname="astragron-journey.spec.ts" time="8.962">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-07fc0-g-Attribution-Bar-at-1024px-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="farmer-first-ux.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="3" failures="0" skipped="0" time="30.865" errors="0">
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F1/F2: Simplified nav chrome, empty My Farms state, storage disclosure, and protected research examples" classname="farmer-first-ux.spec.ts" time="1.646">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--bf50b-protected-research-examples-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F3/F4/F5: 3-stage Add Farm -&gt; truthful analysis -&gt; Report PDF download -&gt; Ask ASTRAGRON -&gt; Lifecycle &amp; Backup" classname="farmer-first-ux.spec.ts" time="10.048">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--e9c68-STRAGRON---Lifecycle-Backup-desktop-chrome\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--e9c68-STRAGRON---Lifecycle-Backup-desktop-chrome\video-1.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F4/F5/F6: Recorded Uppsala Report + Ask ASTRAGRON + Axe WCAG AA + Responsive After Screenshots" classname="farmer-first-ux.spec.ts" time="19.171">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-desktop-chrome\video-2.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="g6-integration-gates.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="2" failures="0" skipped="0" time="42.928" errors="0">
+<testcase name="Gate G6: End-to-End Recorded M14/M4, Geocoder, API &amp; Responsive Verification › verifies Recorded M14 corpus switching, M4 Kenya coverage, geocoder fail-closed state, and live API routes" classname="g6-integration-gates.spec.ts" time="31.598">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-2.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-7.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-desktop-chrome\video-6.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Gate G6: End-to-End Recorded M14/M4, Geocoder, API &amp; Responsive Verification › responsive matrix check (1920, 1024, 820, 390, 360, 320px) with zero horizontal overflow and After screenshots" classname="g6-integration-gates.spec.ts" time="11.33">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--3f6ae-rflow-and-After-screenshots-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="orbit-ab-benchmark.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="1" failures="0" skipped="0" time="84.604" errors="0">
+<testcase name="P2 + P3 Genuine PerformanceObserver Benchmark &amp; Multi-Viewport Visual A/B Capture" classname="orbit-ab-benchmark.spec.ts" time="84.604">
+</testcase>
+</testsuite>
+<testsuite name="smart-fields-coverage.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="3" failures="0" skipped="0" time="49.419" errors="0">
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-1: Neutral start on Add Farm, worldwide mocked geocoding, direct coordinates, and Explorer capability toggle" classname="smart-fields-coverage.spec.ts" time="22.569">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-2ae13--Explorer-capability-toggle-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-2: FTW boundary suggestion preview/accept, manual draw/undo/redo, KML/GPX/XXE import, and GPS walk" classname="smart-fields-coverage.spec.ts" time="10.615">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-1aba2-GPX-XXE-import-and-GPS-walk-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-3: Confirmed-unsupported region red toast with [Why?], non-blocking save, reload, and 390px mobile responsiveness" classname="smart-fields-coverage.spec.ts" time="16.235">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-f1604-390px-mobile-responsiveness-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-f1604-390px-mobile-responsiveness-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="unified-live-integration.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="1" failures="0" skipped="0" time="7.949" errors="0">
+<testcase name="ASTRAGRON Live Next.js + Python E2E Scientific Integration › Capabilities endpoint, custom field analysis with real Python C1-C10 output, persistence across storage reset, and PDF export" classname="unified-live-integration.spec.ts" time="7.949">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\unified-live-integration-A-344ab-torage-reset-and-PDF-export-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\unified-live-integration-A-344ab-torage-reset-and-PDF-export-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="v4-review-regressions.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="10" failures="0" skipped="0" time="91.827" errors="0">
+<testcase name="hero stays cinematic and does not display an experimental motion control" classname="v4-review-regressions.spec.ts" time="2.781">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-hero-ef3a1-experimental-motion-control-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px workspace opens its navigation on demand, without clipped labels" classname="v4-review-regressions.spec.ts" time="1.239">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-04ce9-mand-without-clipped-labels-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="tablet 820px has an accessible navigation menu and Explore link" classname="v4-review-regressions.spec.ts" time="1.815">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-tabl-f6a19-ation-menu-and-Explore-link-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="coverage preview is selectable using one labelled control" classname="v4-review-regressions.spec.ts" time="2.272">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-cove-be3e0--using-one-labelled-control-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px Explorer keeps presets and basemap options accessible without default clutter" classname="v4-review-regressions.spec.ts" time="1.758">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-f5378-ble-without-default-clutter-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="restored /coverage route reachable from Overview, FailClosedStatusCard, and Wizard Step 5" classname="v4-review-regressions.spec.ts" time="4.261">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-rest-44ad7-tatusCard-and-Wizard-Step-5-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px Plans Compare Two Policies parity renders comparison strip inside mobile cards" classname="v4-review-regressions.spec.ts" time="1.133">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-81526-n-strip-inside-mobile-cards-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="HTTP 403 imagery tile block fails closed transparently and VECTOR_MAP recovers via OpenFreeMap" classname="v4-review-regressions.spec.ts" time="5.814">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-HTTP-e4284-AP-recovers-via-OpenFreeMap-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="responsive zero-overflow across phone widths (320, 360, 375, 390, 430, 844x390)" classname="v4-review-regressions.spec.ts" time="33.106">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-resp-662d5-20-360-375-390-430-844x390--desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="responsive zero-overflow and crisp header layout across tablet &amp; desktop (768, 820, 1024, 1440, 1920)" classname="v4-review-regressions.spec.ts" time="37.648">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-resp-51752-top-768-820-1024-1440-1920--desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="v5-acceptance-gates.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="desktop-chrome" tests="3" failures="0" skipped="0" time="33.112" errors="0">
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P1: Wizard input-revision invalidation persists across navigation/reload, CSV preserves revision &amp; ocean M4 fails closed" classname="v5-acceptance-gates.spec.ts" time="5.688">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-23576-ision-ocean-M4-fails-closed-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-23576-ision-ocean-M4-fails-closed-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P4: Explorer GeoJSON file upload, negative DMS, browser geolocation, retry recovery &amp; historical disclosure" classname="v5-acceptance-gates.spec.ts" time="6.699">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-42257-overy-historical-disclosure-desktop-chrome\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P4 + P5: Simple View progressive disclosure, reduced-motion fallback &amp; @axe-core/playwright WCAG AA across core routes" classname="v5-acceptance-gates.spec.ts" time="20.725">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-2.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-7.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-6.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-desktop-chrome\video-8.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="astragron-journey.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="5" failures="0" skipped="0" time="113.355" errors="0">
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 1. Desktop 1440x900: Full-Bleed Orbital Hero -&gt; Live 3D Globe -&gt; Uppsala Results -&gt; Kenya Isolation" classname="astragron-journey.spec.ts" time="36.37">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-437f3-a-Results---Kenya-Isolation-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 2. Simulated WebGL Failure (?mapFallback=1): Fail-Closed 2D Natural Earth Fallback" classname="astragron-journey.spec.ts" time="2.677">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-704f2-d-2D-Natural-Earth-Fallback-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 3. Mobile 390x844, Landscape 844x390, Reduced Motion &amp; 11-Width Zero-Overflow Matrix" classname="astragron-journey.spec.ts" time="33.327">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-480a2--Width-Zero-Overflow-Matrix-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 4. Immutable Uppsala Fork, Signed DMS Sync, Multi-Route Fail-Closed &amp; Escape Focus Return" classname="astragron-journey.spec.ts" time="23.486">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-ab71e--Closed-Escape-Focus-Return-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Real Production Browser Verification Suite (G2–G6) › 5. Real WebGL 3D Tile Outage Fallback &amp; Non-Overlapping Attribution Bar at 1024px" classname="astragron-journey.spec.ts" time="17.495">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\astragron-journey-ASTRAGRO-07fc0-g-Attribution-Bar-at-1024px-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="farmer-first-ux.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="3" failures="0" skipped="0" time="42.992" errors="0">
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F1/F2: Simplified nav chrome, empty My Farms state, storage disclosure, and protected research examples" classname="farmer-first-ux.spec.ts" time="3.065">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--bf50b-protected-research-examples-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F3/F4/F5: 3-stage Add Farm -&gt; truthful analysis -&gt; Report PDF download -&gt; Ask ASTRAGRON -&gt; Lifecycle &amp; Backup" classname="farmer-first-ux.spec.ts" time="18.845">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--e9c68-STRAGRON---Lifecycle-Backup-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Farmer-First UX Acceptance Suite › F4/F5/F6: Recorded Uppsala Report + Ask ASTRAGRON + Axe WCAG AA + Responsive After Screenshots" classname="farmer-first-ux.spec.ts" time="21.082">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\farmer-first-ux-ASTRAGRON--7d0a3-esponsive-After-Screenshots-webkit-desktop\video-2.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="g6-integration-gates.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="2" failures="0" skipped="0" time="46.047" errors="0">
+<testcase name="Gate G6: End-to-End Recorded M14/M4, Geocoder, API &amp; Responsive Verification › verifies Recorded M14 corpus switching, M4 Kenya coverage, geocoder fail-closed state, and live API routes" classname="g6-integration-gates.spec.ts" time="40.011">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-6.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--956e2-d-state-and-live-API-routes-webkit-desktop\video-2.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Gate G6: End-to-End Recorded M14/M4, Geocoder, API &amp; Responsive Verification › responsive matrix check (1920, 1024, 820, 390, 360, 320px) with zero horizontal overflow and After screenshots" classname="g6-integration-gates.spec.ts" time="6.036">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\g6-integration-gates-Gate--3f6ae-rflow-and-After-screenshots-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="orbit-ab-benchmark.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="1" failures="0" skipped="1" time="0.003" errors="0">
+<testcase name="P2 + P3 Genuine PerformanceObserver Benchmark &amp; Multi-Viewport Visual A/B Capture" classname="orbit-ab-benchmark.spec.ts">
+<properties>
+<property name="skip" value="4x CPU throttle + full benchmark runs on Chromium engine">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smart-fields-coverage.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="3" failures="0" skipped="0" time="53.205" errors="0">
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-1: Neutral start on Add Farm, worldwide mocked geocoding, direct coordinates, and Explorer capability toggle" classname="smart-fields-coverage.spec.ts" time="17.417">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-2ae13--Explorer-capability-toggle-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-2: FTW boundary suggestion preview/accept, manual draw/undo/redo, KML/GPX/XXE import, and GPS walk" classname="smart-fields-coverage.spec.ts" time="15.327">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-1aba2-GPX-XXE-import-and-GPS-walk-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="ASTRAGRON Smart Fields &amp; Globe Coverage Acceptance Suite › SF-3: Confirmed-unsupported region red toast with [Why?], non-blocking save, reload, and 390px mobile responsiveness" classname="smart-fields-coverage.spec.ts" time="20.461">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-f1604-390px-mobile-responsiveness-webkit-desktop\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\smart-fields-coverage-ASTR-f1604-390px-mobile-responsiveness-webkit-desktop\video-1.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="unified-live-integration.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="1" failures="0" skipped="0" time="13.038" errors="0">
+<testcase name="ASTRAGRON Live Next.js + Python E2E Scientific Integration › Capabilities endpoint, custom field analysis with real Python C1-C10 output, persistence across storage reset, and PDF export" classname="unified-live-integration.spec.ts" time="13.038">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\unified-live-integration-A-344ab-torage-reset-and-PDF-export-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="v4-review-regressions.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="10" failures="0" skipped="0" time="99.014" errors="0">
+<testcase name="hero stays cinematic and does not display an experimental motion control" classname="v4-review-regressions.spec.ts" time="2.699">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-hero-ef3a1-experimental-motion-control-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px workspace opens its navigation on demand, without clipped labels" classname="v4-review-regressions.spec.ts" time="3.204">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-04ce9-mand-without-clipped-labels-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="tablet 820px has an accessible navigation menu and Explore link" classname="v4-review-regressions.spec.ts" time="3.235">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-tabl-f6a19-ation-menu-and-Explore-link-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="coverage preview is selectable using one labelled control" classname="v4-review-regressions.spec.ts" time="2.811">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-cove-be3e0--using-one-labelled-control-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px Explorer keeps presets and basemap options accessible without default clutter" classname="v4-review-regressions.spec.ts" time="4.605">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-f5378-ble-without-default-clutter-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="restored /coverage route reachable from Overview, FailClosedStatusCard, and Wizard Step 5" classname="v4-review-regressions.spec.ts" time="7.687">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-rest-44ad7-tatusCard-and-Wizard-Step-5-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="390px Plans Compare Two Policies parity renders comparison strip inside mobile cards" classname="v4-review-regressions.spec.ts" time="2.981">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-390p-81526-n-strip-inside-mobile-cards-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="HTTP 403 imagery tile block fails closed transparently and VECTOR_MAP recovers via OpenFreeMap" classname="v4-review-regressions.spec.ts" time="7.897">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-HTTP-e4284-AP-recovers-via-OpenFreeMap-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="responsive zero-overflow across phone widths (320, 360, 375, 390, 430, 844x390)" classname="v4-review-regressions.spec.ts" time="27.662">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-resp-662d5-20-360-375-390-430-844x390--webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="responsive zero-overflow and crisp header layout across tablet &amp; desktop (768, 820, 1024, 1440, 1920)" classname="v4-review-regressions.spec.ts" time="36.233">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v4-review-regressions-resp-51752-top-768-820-1024-1440-1920--webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="v5-acceptance-gates.spec.ts" timestamp="2026-11-14T22:23:03.595Z" hostname="webkit-desktop" tests="3" failures="0" skipped="0" time="49.448" errors="0">
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P1: Wizard input-revision invalidation persists across navigation/reload, CSV preserves revision &amp; ocean M4 fails closed" classname="v5-acceptance-gates.spec.ts" time="8.097">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-23576-ision-ocean-M4-fails-closed-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P4: Explorer GeoJSON file upload, negative DMS, browser geolocation, retry recovery &amp; historical disclosure" classname="v5-acceptance-gates.spec.ts" time="11.578">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-42257-overy-historical-disclosure-webkit-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="V5 Acceptance Gates: Scientific Truth, Explorer Inputs, Simple View &amp; WCAG AA › P4 + P5: Simple View progressive disclosure, reduced-motion fallback &amp; @axe-core/playwright WCAG AA across core routes" classname="v5-acceptance-gates.spec.ts" time="29.773">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-1.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-2.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-4.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-5.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-3.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-6.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-7.webm]]
+
+[[ATTACHMENT|..\..\test-results\v5-acceptance-gates-V5-Acc-010e5--WCAG-AA-across-core-routes-webkit-desktop\video-8.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

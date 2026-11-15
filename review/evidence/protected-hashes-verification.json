@@ -1,0 +1,232 @@
+{
+  "verifiedAt": "2026-11-14T11:46:51.381Z",
+  "totalProtectedFiles": 28,
+  "matchedCount": 28,
+  "allUnchanged": true,
+  "files": [
+    {
+      "file": "src/adapters/repositories.ts",
+      "expectedBytes": 81579,
+      "actualBytes": 81579,
+      "expectedSha256": "50fb671a209c2382898db4fff600259c5e1525682a494683bf6c0a4f1bc031ae",
+      "actualSha256": "50fb671a209c2382898db4fff600259c5e1525682a494683bf6c0a4f1bc031ae",
+      "match": true
+    },
+    {
+      "file": "src/server/corpus-integrity.ts",
+      "expectedBytes": 7590,
+      "actualBytes": 7590,
+      "expectedSha256": "4a96ef6615c70a588e6c2edcd2ab06dc469c0beb0dfbe9f37f19d1cbb5332d80",
+      "actualSha256": "4a96ef6615c70a588e6c2edcd2ab06dc469c0beb0dfbe9f37f19d1cbb5332d80",
+      "match": true
+    },
+    {
+      "file": "src/data/generated/verified-m14-m4-snapshot.json",
+      "expectedBytes": 457313,
+      "actualBytes": 457313,
+      "expectedSha256": "754e58a069df1e7fb3d61767b351af812814474bd0f2ea096e24f0d0ff097f41",
+      "actualSha256": "754e58a069df1e7fb3d61767b351af812814474bd0f2ea096e24f0d0ff097f41",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/ASSUMPTION_REGISTER.json",
+      "expectedBytes": 6582,
+      "actualBytes": 6582,
+      "expectedSha256": "3f84729c9d2d9e555d641ac9ef49e3d9fc29ca393744ebd86e2a0d1714c69d2b",
+      "actualSha256": "3f84729c9d2d9e555d641ac9ef49e3d9fc29ca393744ebd86e2a0d1714c69d2b",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/COMPARISON_DOMAIN.json",
+      "expectedBytes": 82571,
+      "actualBytes": 82571,
+      "expectedSha256": "5bd02acc67a56003acd1994cc1dd50b597dc3f9c7681b07548c278d0081a669b",
+      "actualSha256": "5bd02acc67a56003acd1994cc1dd50b597dc3f9c7681b07548c278d0081a669b",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/ENVIRONMENT.json",
+      "expectedBytes": 462,
+      "actualBytes": 462,
+      "expectedSha256": "d565a697c8955145942a239f37806deb0b04b07735e5020a19c2061b965cc76f",
+      "actualSha256": "d565a697c8955145942a239f37806deb0b04b07735e5020a19c2061b965cc76f",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/EVIDENCE_ELIGIBILITY_LEDGER.json",
+      "expectedBytes": 6485,
+      "actualBytes": 6485,
+      "expectedSha256": "66ea77cbdcbf63dc6d35596bcdfce01f2a790bd269cb259ed3eec88a043fee56",
+      "actualSha256": "66ea77cbdcbf63dc6d35596bcdfce01f2a790bd269cb259ed3eec88a043fee56",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/GLOBAL_SMOKE.json",
+      "expectedBytes": 8658,
+      "actualBytes": 8658,
+      "expectedSha256": "a4d89c648be508963df19cd571201d1bb1e4c527552d1ae26a2ccc10c00d54d2",
+      "actualSha256": "a4d89c648be508963df19cd571201d1bb1e4c527552d1ae26a2ccc10c00d54d2",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/NASA_SOURCE_CATALOG.json",
+      "expectedBytes": 5084,
+      "actualBytes": 5084,
+      "expectedSha256": "8bf9240dd5e883b0382e60dd84df4331dbda05139a538acb2fa691285a3361c1",
+      "actualSha256": "8bf9240dd5e883b0382e60dd84df4331dbda05139a538acb2fa691285a3361c1",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/OUTPUT_RECEIPT.json",
+      "expectedBytes": 986,
+      "actualBytes": 986,
+      "expectedSha256": "bad1ae1e381727a7a53bd78249c1e6c69ab3dd682cc09e44a357110626712be1",
+      "actualSha256": "bad1ae1e381727a7a53bd78249c1e6c69ab3dd682cc09e44a357110626712be1",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/POWER_2006_2025.json",
+      "expectedBytes": 479741,
+      "actualBytes": 479741,
+      "expectedSha256": "f231ad6a31fa88721202747c7bccf0b62db12247128dac1a532b660bb5926639",
+      "actualSha256": "f231ad6a31fa88721202747c7bccf0b62db12247128dac1a532b660bb5926639",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/POWER_RECEIPT.json",
+      "expectedBytes": 709,
+      "actualBytes": 709,
+      "expectedSha256": "c62017cde58b5b2a609d3b1c0912139370cbd25f913408c1f590685c0c006881",
+      "actualSha256": "c62017cde58b5b2a609d3b1c0912139370cbd25f913408c1f590685c0c006881",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/SCIENTIFIC_ACCEPTANCE.json",
+      "expectedBytes": 835,
+      "actualBytes": 835,
+      "expectedSha256": "d8f938f23d5e46e0d3520cd3d8be91c043d537bf1ff7329c9d933ba35871c6ef",
+      "actualSha256": "d8f938f23d5e46e0d3520cd3d8be91c043d537bf1ff7329c9d933ba35871c6ef",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/candidate_audit.csv",
+      "expectedBytes": 1531535,
+      "actualBytes": 1531535,
+      "expectedSha256": "a717e1aedf2d1524be9d3f5c84903f6bb7baff14843fb7598bab991c6034a247",
+      "actualSha256": "a717e1aedf2d1524be9d3f5c84903f6bb7baff14843fb7598bab991c6034a247",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/candidate_audit.json",
+      "expectedBytes": 2896927,
+      "actualBytes": 2896927,
+      "expectedSha256": "544fb08cadf9c3b5e2bed6b84663e9ce548bcd9eee981053436ed198a6888a03",
+      "actualSha256": "544fb08cadf9c3b5e2bed6b84663e9ce548bcd9eee981053436ed198a6888a03",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/policy_summary.csv",
+      "expectedBytes": 220411,
+      "actualBytes": 220411,
+      "expectedSha256": "a209e4a45aaee891c21f9eee29e7a1ca4eb9db626d870c4fbfd2db33433af56a",
+      "actualSha256": "a209e4a45aaee891c21f9eee29e7a1ca4eb9db626d870c4fbfd2db33433af56a",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/preference_contract.json",
+      "expectedBytes": 1069,
+      "actualBytes": 1069,
+      "expectedSha256": "41778b7c7a910e35caaad9413ce985f7bae415acffae831bc7665abbe6a847a8",
+      "actualSha256": "41778b7c7a910e35caaad9413ce985f7bae415acffae831bc7665abbe6a847a8",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/preference_decisions.json",
+      "expectedBytes": 91627,
+      "actualBytes": 91627,
+      "expectedSha256": "15693d4f8f82b64b61e19309615f1f1926bc6ce99b3c0e7c5b601a5bc5106e55",
+      "actualSha256": "15693d4f8f82b64b61e19309615f1f1926bc6ce99b3c0e7c5b601a5bc5106e55",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/resource_frontiers.csv",
+      "expectedBytes": 27044,
+      "actualBytes": 27044,
+      "expectedSha256": "b689c72617a5b71eaa2746105613f213230229a18280519dbb2b87e6b7828b31",
+      "actualSha256": "b689c72617a5b71eaa2746105613f213230229a18280519dbb2b87e6b7828b31",
+      "match": true
+    },
+    {
+      "file": "src/data/m14-recorded/resource_frontiers.json",
+      "expectedBytes": 935775,
+      "actualBytes": 935775,
+      "expectedSha256": "84216c09d0787c2d603d7e41c8a48c2aa56292f8d6a6ddc20cc9843ae4f4926f",
+      "actualSha256": "84216c09d0787c2d603d7e41c8a48c2aa56292f8d6a6ddc20cc9843ae4f4926f",
+      "match": true
+    },
+    {
+      "file": "src/data/m4-global/DELIVERY_MANIFEST.json",
+      "expectedBytes": 21121,
+      "actualBytes": 21121,
+      "expectedSha256": "83055a3aa8b5bd0cf6accdffe919a9c99c6f4b7a839dead62bcab5a7b1a71ed6",
+      "actualSha256": "83055a3aa8b5bd0cf6accdffe919a9c99c6f4b7a839dead62bcab5a7b1a71ed6",
+      "match": true
+    },
+    {
+      "file": "src/data/m4-global/GLOBAL_CONTRACTS.json",
+      "expectedBytes": 3064,
+      "actualBytes": 3064,
+      "expectedSha256": "c9b3d40647b490b5153d6346208ace97ae9655bd6c85fd73ad1ea3f9b93765d4",
+      "actualSha256": "c9b3d40647b490b5153d6346208ace97ae9655bd6c85fd73ad1ea3f9b93765d4",
+      "match": true
+    },
+    {
+      "file": "src/data/m4-global/GLOBAL_COVERAGE_MANIFEST.json",
+      "expectedBytes": 1168556,
+      "actualBytes": 1168556,
+      "expectedSha256": "af59499efd213d06ec0655f0ba5fe972003924e6158200d232cac4d599bb25dc",
+      "actualSha256": "af59499efd213d06ec0655f0ba5fe972003924e6158200d232cac4d599bb25dc",
+      "match": true
+    },
+    {
+      "file": "src/data/m4-global/GLOBAL_SCHEMAS.json",
+      "expectedBytes": 7195,
+      "actualBytes": 7195,
+      "expectedSha256": "c3179ce74e75fce88fb0d65b48c361da8c937f6dca295a80f5887894c645b74a",
+      "actualSha256": "c3179ce74e75fce88fb0d65b48c361da8c937f6dca295a80f5887894c645b74a",
+      "match": true
+    },
+    {
+      "file": "src/data/m4-global/analysis/GEO_QUANTITATIVE_RESULTS.json",
+      "expectedBytes": 44124,
+      "actualBytes": 44124,
+      "expectedSha256": "d75d2d1bbff4d73b6fcd44750ccc9967dffa08e89f60b69fa20d22df8f55a8bc",
+      "actualSha256": "d75d2d1bbff4d73b6fcd44750ccc9967dffa08e89f60b69fa20d22df8f55a8bc",
+      "match": true
+    },
+    {
+      "file": "public/assets/agricultural-watershed-swath.jpg",
+      "expectedBytes": 283228,
+      "actualBytes": 283228,
+      "expectedSha256": "651c869caf8e7fddc5e93d017e183143ff0719bf3537ec7524808b2bb9597e88",
+      "actualSha256": "651c869caf8e7fddc5e93d017e183143ff0719bf3537ec7524808b2bb9597e88",
+      "match": true
+    },
+    {
+      "file": "public/assets/orbital-earth-horizon-mobile.jpg",
+      "expectedBytes": 155325,
+      "actualBytes": 155325,
+      "expectedSha256": "ca83dac7f609646c0d66785d909e3a256411d1a03727ff9f33cf1341e57b15bf",
+      "actualSha256": "ca83dac7f609646c0d66785d909e3a256411d1a03727ff9f33cf1341e57b15bf",
+      "match": true
+    },
+    {
+      "file": "public/assets/orbital-earth-horizon-wide.jpg",
+      "expectedBytes": 133739,
+      "actualBytes": 133739,
+      "expectedSha256": "4849ff378362000bc1c434e91055d8f6d026521f5b3b4e6374109dab0afc1522",
+      "actualSha256": "4849ff378362000bc1c434e91055d8f6d026521f5b3b4e6374109dab0afc1522",
+      "match": true
+    }
+  ]
+}

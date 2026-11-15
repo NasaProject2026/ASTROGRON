@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTRAGRON Global Adaptive Evidence &amp; 5-Year Research Workbench</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%2314532d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/unified-style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <h1>ASTRAGRON Global Adaptive Evidence &amp; 5-Year Research Workbench</h1>
+        <p class="topbar-sub">API Endpoint: <code>POST /api/v1/adaptive-evidence</code> | Qualification: Research &amp; Regional Screening Only (Non-Validated)</p>
+      </div>
+      <nav class="topbar-links" aria-label="Workbench links">
+        <a href="/research">Classic 5-Year Water Research (/research)</a>
+        <a href="/api/v1/adaptive-evidence/capabilities">Capabilities JSON</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="preset-bar" aria-label="Reference Presets">
+      <p class="preset-title">Quick Load Presets (Global Screening, Canonical Codex A 5-Year, &amp; Failure-Mode Verification)</p>
+      <div id="preset-buttons" class="preset-buttons"></div>
+    </section>
+
+    <div class="layout-grid">
+      <section aria-label="Location and Inputs">
+        <div class="card">
+          <h2>1. Global Site Selection (Natural Earth 1:10m Public Domain Map)</h2>
+          <div class="map-toolbar">
+            <span class="muted">Click the map or enter WGS84 (EPSG:4326) coordinates below.</span>
+            <div class="map-zoom-controls">
+              <button type="button" id="pan-left-btn" class="btn btn-small" title="Pan West">&larr;</button>
+              <button type="button" id="pan-right-btn" class="btn btn-small" title="Pan East">&rarr;</button>
+              <button type="button" id="zoom-in-btn" class="btn btn-small" title="Zoom In">+</button>
+              <button type="button" id="zoom-out-btn" class="btn btn-small" title="Zoom Out">-</button>
+              <button type="button" id="reset-map-btn" class="btn btn-small" title="Reset Global View">Reset</button>
+            </div>
+          </div>
+          <div class="map-frame">
+            <svg id="world-map-svg" viewBox="-180 -90 360 180" role="img" aria-label="Clickable world land map in EPSG:4326">
+              <g id="map-graticule-layer"></g>
+              <g id="map-land-layer"></g>
+              <g id="map-polygon-layer"></g>
+              <g id="map-presets-layer"></g>
+              <g id="map-marker-layer"></g>
+            </svg>
+          </div>
+          <p id="map-source-caption" class="map-caption">Loading Natural Earth ne_10m_land Public Domain vector coastline layer...</p>
+        </div>
+
+        <div class="card">
+          <h2>2. Site Coordinates, Polygon &amp; Agronomic Inputs</h2>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="lon-input">Longitude (deg, -180 to 180)</label>
+              <input id="lon-input" type="number" step="0.0001" value="17.65">
+            </div>
+            <div class="form-field">
+              <label for="lat-input">Latitude (deg, -90 to 90)</label>
+              <input id="lat-input" type="number" step="0.0001" value="59.82">
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="site-id">Site ID (optional)</label>
+              <input id="site-id" type="text" value="SE_UPPSALA">
+            </div>
+            <div class="form-field">
+              <label for="crs-select">Coordinate Reference System</label>
+              <select id="crs-select">
+                <option value="EPSG:4326" selected>EPSG:4326 (WGS84 lon/lat)</option>
+                <option value="EPSG:3857">EPSG:3857 (Test explicit rejection)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="site-name">Farm / Site Label (optional)</label>
+            <input id="site-name" type="text" value="Uppsala Research Farm, Sweden">
+          </div>
+
+          <div class="form-field">
+            <label for="geojson-input">Optional Field GeoJSON Polygon / MultiPolygon (EPSG:4326)</label>
+            <textarea id="geojson-input" rows="3" placeholder='{"type":"Polygon","coordinates":[[[...]]]}'></textarea>
+            <div class="action-row">
+              <input id="geojson-file" type="file" accept=".json,.geojson,application/json">
+              <button type="button" id="clear-geojson-btn" class="btn btn-small">Clear Polygon</button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <span class="field-label">Candidate Crops (optional; uncalibrated crops remain honestly blocked)</span>
+            <div class="crop-grid">
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="wheat" checked> wheat</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="barley" checked> barley</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="oats"> oats</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="faba_bean"> faba_bean</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="rapeseed"> rapeseed</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="potato"> potato</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="maize"> maize</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="soybean"> soybean</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="sorghum"> sorghum</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="chickpea"> chickpea</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="sunflower"> sunflower</label>
+              <label class="crop-pill"><input class="crop-checkbox" type="checkbox" value="rice"> rice</label>
+            </div>
+            <label for="custom-crops">Custom Crop IDs (comma-separated, never substituted)</label>
+            <input id="custom-crops" type="text" placeholder="e.g. spelt, teff">
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="water-regime">Water Supply Regime</label>
+              <select id="water-regime">
+                <option value="unknown" selected>Unknown / Not Declared (default — no silent rainfed assumption)</option>
+                <option value="rainfed">Rainfed only</option>
+                <option value="irrigated">Irrigated (surface/groundwater)</option>
+                <option value="supplemental">Supplemental deficit irrigation</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="seasonal-supply">Optional Irrigation Allocation (m3/ha)</label>
+              <input id="seasonal-supply" type="number" step="10" placeholder="Optional numeric cap">
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="period-start">Climate Start Date</label>
+              <input id="period-start" type="text" value="2016-01-01">
+            </div>
+            <div class="form-field">
+              <label for="period-end">Climate End Date</label>
+              <input id="period-end" type="text" value="2020-12-31">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="depth-intervals">Soil Depth Intervals JSON (cm)</label>
+            <input id="depth-intervals" type="text" value="[[0,5],[5,15],[15,30]]">
+          </div>
+
+          <details>
+            <summary>Optional Local Field / Lab Measurements (Leave blank for descriptive C1-C4 partial run)</summary>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="mineral-n">Soil Mineral N (NO3+NH4 kg/ha)</label>
+                <input id="mineral-n" type="number" step="1" placeholder="Unprovided (blocks C8)">
+              </div>
+              <div class="form-field">
+                <label for="theta-fc">Field Capacity theta_fc (m3/m3)</label>
+                <input id="theta-fc" type="number" step="0.01" placeholder="Optional">
+              </div>
+              <div class="form-field">
+                <label for="theta-wp">Wilting Point theta_wp (m3/m3)</label>
+                <input id="theta-wp" type="number" step="0.01" placeholder="Optional">
+              </div>
+            </div>
+          </details>
+
+          <div class="acq-box">
+            <span class="field-label">Data Acquisition Mode</span>
+            <label class="acq-option">
+              <input type="radio" name="acquisition" value="CACHE_ONLY" checked>
+              <span><strong>CACHE_ONLY (Default Offline Reproducible):</strong> Only verified local SHA-256 cached receipts are used. New uncached coordinates return honest <code>BLOCKED</code> capabilities without fabricating data.</span>
+            </label>
+            <label class="acq-option">
+              <input type="radio" name="acquisition" value="FETCH_ALLOWED">
+              <span><strong>FETCH_ALLOWED (Live Global Telemetry):</strong> Explicitly fetches daily MERRA-2 meteorology from NASA POWER &amp; 250 m soil properties from ISRIC SoilGrids v2.0 WCS for any land coordinate worldwide.</span>
+            </label>
+          </div>
+
+          <details id="raw-json-details">
+            <summary>Advanced: Raw JSON Payload / ClientDecisionService &amp; Cross-Location Tests</summary>
+            <label class="acq-option">
+              <input id="use-raw-json" type="checkbox">
+              <span>Submit Raw JSON directly to <code>POST /api/v1/adaptive-evidence</code> (used automatically for ClientDecision 5-Year &amp; Mismatch presets)</span>
+            </label>
+            <textarea id="raw-json-input" rows="8" placeholder="Click 'Sync Form to JSON' or choose a preset..."></textarea>
+            <div class="action-row">
+              <button type="button" id="sync-raw-json-btn" class="btn btn-small">Sync Form to JSON</button>
+            </div>
+          </details>
+
+          <div class="action-row">
+            <button type="button" id="run-analysis-btn" class="btn btn-primary" data-endpoint="/api/v1/adaptive-evidence">Run Analysis (/api/v1/adaptive-evidence)</button>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Results and Reports">
+        <div class="card">
+          <h2>3. Evaluation Results, Provenance &amp; Exports</h2>
+
+          <div id="ui-loading-box" class="loading-box hidden" role="status">
+            Running evaluation via POST /api/v1/adaptive-evidence ... Live FETCH_ALLOWED requests contact NASA POWER &amp; ISRIC SoilGrids WCS and may take up to 30 seconds.
+          </div>
+          <div id="ui-error-box" class="error-box hidden" role="alert"></div>
+
+          <div id="results-empty">
+            <p>Click any point on the Natural Earth map, pick a reference preset above, or enter farm coordinates and click <strong>Run Analysis</strong>.</p>
+            <p class="muted">Partial results work immediately even without farm N, irrigation caps, or local lab hydraulics: geographic gating (C1), historical climate (C2), and SoilGrids soil characterization (C3) run independently of missing inputs.</p>
+          </div>
+
+          <div id="results-panel" class="hidden">
+            <div id="result-status-banner" class="status-banner"></div>
+
+            <div class="guardrail-strip">
+              <div><strong>Coordinates:</strong> <code id="guardrail-coords"></code></div>
+              <div><strong>Land / Surface:</strong> <code id="guardrail-land"></code></div>
+              <div><strong>Field Validated:</strong> <code id="guardrail-validated"></code></div>
+              <div><strong>Result ID:</strong> <code id="guardrail-reqid"></code></div>
+            </div>
+
+            <p id="climate-soil-summary" class="notice-box"></p>
+
+            <h3>Capability Readiness (C1-C10)</h3>
+            <div id="capability-grid" class="cap-grid"></div>
+
+            <section id="five-year-section" class="hidden">
+              <h3>Authoritative 5-Year Multi-Field Decision (Codex A / WaterCore)</h3>
+              <p id="five-year-summary-note" class="notice-box"></p>
+              <div class="data-table-wrap">
+                <table>
+                  <thead><tr><th>Policy ID</th><th>Origin</th><th>5-Year Crop Sequence</th></tr></thead>
+                  <tbody id="five-year-candidates-tbody"></tbody>
+                </table>
+              </div>
+              <div class="data-table-wrap">
+                <table>
+                  <thead><tr><th>Policy ID</th><th>Scenario</th><th>Status</th><th>Service Pass</th><th>ET Shortfall</th><th>Withdrawal</th></tr></thead>
+                  <tbody id="five-year-scenarios-tbody"></tbody>
+                </table>
+              </div>
+              <div id="codex-dto-wrap" class="hidden">
+                <h4>Canonical Codex A <code>report_dto.summary</code></h4>
+                <pre id="codex-dto-pre" class="json-pre"></pre>
+              </div>
+            </section>
+
+            <section id="c7-screening-section" class="hidden">
+              <h3>Regional Seasonal Crop Water Suitability Screening (C7_SCREENING)</h3>
+              <p class="notice-box"><strong>Qualification Warning:</strong> This C7 screening ranking is a single-season regional water-balance screen — <strong>NOT a 5-year multi-field rotation plan or WOFOST/CP-SAT optimization</strong>.</p>
+              <div class="data-table-wrap">
+                <table>
+                  <thead><tr><th>Crop</th><th>Botanical Family</th><th>Adequacy Score</th><th>Ref Deficit</th><th>Worst Deficit</th></tr></thead>
+                  <tbody id="c7-ranking-tbody"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <h3>Blocked Claims &amp; Missing Evidence</h3>
+            <div class="data-table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Capability</th><th>Missing Reason</th><th>Explanation</th></tr></thead>
+                <tbody id="blocked-claims-tbody"></tbody>
+              </table>
+            </div>
+
+            <h3>Minimal Next Measurements Needed</h3>
+            <div class="data-table-wrap">
+              <table>
+                <thead><tr><th>Rank</th><th>Parameter</th><th>Required Action</th><th>Upgrades</th></tr></thead>
+                <tbody id="next-meas-tbody"></tbody>
+              </table>
+            </div>
+
+            <h3>Source &amp; Receipt Provenance Ledger</h3>
+            <div class="data-table-wrap">
+              <table>
+                <thead><tr><th>Parameter</th><th>Provider</th><th>Origin Class</th><th>SI Value</th><th>SHA-256</th><th>Retrieved At</th></tr></thead>
+                <tbody id="provenance-tbody"></tbody>
+              </table>
+            </div>
+
+            <h3>Exports &amp; Reports</h3>
+            <div class="action-row">
+              <a id="export-html-link" class="btn btn-primary" href="#" target="_blank" rel="noopener">Open Printable HTML Report</a>
+              <a id="export-json-link" class="btn" href="#" download>Download JSON Envelope</a>
+              <a id="export-csv-link" class="btn" href="#" download>Download CSV Summary</a>
+              <button type="button" class="btn" disabled title="Codex B per-farm customer PDF renderer was not supplied in this workspace">Customer PDF (Unavailable — No Codex B Renderer)</button>
+            </div>
+            <p class="muted">Per-farm customer PDF export requires the Codex B customer PDF renderer, which was not supplied in this workspace. Open the Printable HTML Report and use your browser Print &rarr; Save as PDF instead.</p>
+
+            <details>
+              <summary>Inspect Raw JSON Response &amp; Session History</summary>
+              <p class="field-label">Recent Session Evaluations</p>
+              <div id="session-history-list" class="action-row"></div>
+              <pre id="raw-response-pre" class="json-pre"></pre>
+            </details>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/unified-app.js" defer></script>
+</body>
+</html>

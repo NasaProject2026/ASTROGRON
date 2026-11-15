@@ -1,0 +1,2317 @@
+{
+  "UNSPECIFIED": {
+    "schema": "astragron.m14.decision.v1",
+    "preference_contract": {
+      "mode": null,
+      "schema": "astragron.m14.research-preference.v1",
+      "allowed_modes": [
+        "STRICT_ALL_SCENARIOS_SERVICE",
+        "MINIMIZE_WORST_ET_SHORTFALL",
+        "MINIMAX_REGRET",
+        "PARETO_FRONTIER"
+      ],
+      "objective_units": {
+        "ET_shortfall": "m3 equivalent",
+        "regret": "m3 equivalent",
+        "withdrawal": "m3 source",
+        "service": "mm per field harvest year"
+      },
+      "weights": null,
+      "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+      "missingness": "No zero filling; incomplete domain blocks universal claims",
+      "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+      "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+      "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+      "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+    },
+    "RESEARCH_PORTFOLIO_ORDER": {
+      "status": "NO_UNIQUE_WINNER",
+      "selected_ids": [
+        "a27063ce2eca13f02e03",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "complete_domain": true,
+      "conditional_only": true,
+      "all_admissible_objectives": [
+        {
+          "policy_id": "19cfb902282a48e86984",
+          "worst_ET_m3_equivalent": "56951.614446",
+          "worst_regret_m3_equivalent": "4901.642821",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "204f160b78c5fc84e0a1",
+          "worst_ET_m3_equivalent": "65723.281798",
+          "worst_regret_m3_equivalent": "13620.834977",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2bd5c84ad41ee5d6e9b4",
+          "worst_ET_m3_equivalent": "69810.156513",
+          "worst_regret_m3_equivalent": "17707.709692",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2d5edfe0e4b8edd47b04",
+          "worst_ET_m3_equivalent": "57512.130104",
+          "worst_regret_m3_equivalent": "5409.683283",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "354214201a2c0b4a1ec9",
+          "worst_ET_m3_equivalent": "65420.500394",
+          "worst_regret_m3_equivalent": "13318.053573",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4cd1e3a29a9a096383a3",
+          "worst_ET_m3_equivalent": "66206.947700",
+          "worst_regret_m3_equivalent": "14104.500879",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4e14889665fbcf722573",
+          "worst_ET_m3_equivalent": "62107.856285",
+          "worst_regret_m3_equivalent": "10005.409464",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "5503fb8f0cc983e5385e",
+          "worst_ET_m3_equivalent": "58274.423014",
+          "worst_regret_m3_equivalent": "6171.976193",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "656882191cc0e9d8dfa7",
+          "worst_ET_m3_equivalent": "57258.688659",
+          "worst_regret_m3_equivalent": "5156.241838",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "6fcc29ebffe3b418671e",
+          "worst_ET_m3_equivalent": "65319.573260",
+          "worst_regret_m3_equivalent": "13217.126439",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "a27063ce2eca13f02e03",
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "bc098ae90f90e3460bce",
+          "worst_ET_m3_equivalent": "66368.169667",
+          "worst_regret_m3_equivalent": "14265.722846",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "e8678a534b4b0022fd68",
+          "worst_ET_m3_equivalent": "62361.297729",
+          "worst_regret_m3_equivalent": "10258.850908",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "f2d7914fba1005bb5584",
+          "worst_ET_m3_equivalent": "58020.981570",
+          "worst_regret_m3_equivalent": "5918.534749",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "fa0e548ed3a7ccbcad4e",
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        }
+      ],
+      "selected_objective_witnesses": {
+        "a27063ce2eca13f02e03": {
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "c705e537d5f56c8df7a982b91b1eef4ca285c4335129a5fd47b3b5ccb04410dd"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 960000,
+                  "annual_end_litres": 980000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "4ce60e4e41b917943d313cc9a0dc5f0c106a8c9fd51b92c70e073046d91d3ee9",
+                    "ee1dd9533397608d797ca198f078167ae73c7fcce6071dc705922f544200cad9",
+                    "a2794075d6fe83a6add7ff582d2439b0fb50401b4bd780783b235dd061f63571"
+                  ],
+                  "evidence_id": "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-22",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 483575,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "8eb0abb3c68d4900b8c1ffe355ccebb68487f1b4a44e35095f2218945605eab4"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "a27063ce2eca13f02e03",
+              "variant": "WATER_HIGH",
+              "window": "MEDIAN_ANCHOR_2006",
+              "ET_deficit_m3_equivalent": "11104.524464",
+              "same_state_best_ET_m3_equivalent": "9561.398594",
+              "regret_m3_equivalent": "1543.125870"
+            }
+          ]
+        },
+        "fa0e548ed3a7ccbcad4e": {
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "27fa7ebabfbebc75b1ea1b6700cf4efca00d099fca331a818ad0a39fb42eeaf6"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 1020000,
+                  "annual_end_litres": 1040000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6c94a56bbac5813ded852acc6a307dc8fa9e238ffebc098d84a355c62271b72e",
+                    "51e1c7e4563b292beb13876f18dabdf8c04260ff1f172d67730df1b6e781a917",
+                    "566cb16b5954d2f73d23b7c8630d4abb0a1ec3d79476c33f6473861f85ee390c"
+                  ],
+                  "evidence_id": "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-18",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 72378,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "f59026f438a2189fba30d0c78b77f8b41365e7770ce848f61f9f506cd288fa4a"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "fa0e548ed3a7ccbcad4e",
+              "variant": "WATER_HIGH",
+              "window": "DRY_ANCHOR_2018",
+              "ET_deficit_m3_equivalent": "45243.448029",
+              "same_state_best_ET_m3_equivalent": "44428.679923",
+              "regret_m3_equivalent": "814.768106"
+            }
+          ]
+        }
+      },
+      "regret_reference_ids": [
+        "19cfb902282a48e86984",
+        "204f160b78c5fc84e0a1",
+        "2bd5c84ad41ee5d6e9b4",
+        "2d5edfe0e4b8edd47b04",
+        "354214201a2c0b4a1ec9",
+        "4cd1e3a29a9a096383a3",
+        "4e14889665fbcf722573",
+        "5503fb8f0cc983e5385e",
+        "656882191cc0e9d8dfa7",
+        "6fcc29ebffe3b418671e",
+        "a27063ce2eca13f02e03",
+        "bc098ae90f90e3460bce",
+        "e8678a534b4b0022fd68",
+        "f2d7914fba1005bb5584",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "invalid_calendar_ids": [],
+      "tradeoff": "Absolute worst ET and same-scenario maximum regret answer distinct questions; no arbitrary weights, no single agronomic winner",
+      "global_optimum": false
+    },
+    "SERVICE_CRITERION_FEASIBILITY": {
+      "status": "NO_FEASIBLE_POLICY_IN_TESTED_SET",
+      "feasible_ids": [],
+      "threshold_mm": "100",
+      "field_harvest_tolerance_mm": "0.00000001",
+      "candidate_count": 16,
+      "common_comparable_count": 15,
+      "proof_over_all_crop_sequences": false
+    },
+    "FIELD_RECOMMENDATION_ELIGIBILITY": {
+      "status": "BLOCKED",
+      "reason": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "recommendation": null,
+      "rights_law": "UNQUALIFIED",
+      "soil_crop_winter_calibration": "UNQUALIFIED",
+      "N_field_coupling": null,
+      "yield_response": null,
+      "new_profit": null
+    },
+    "alternatives": {
+      "10e4f587b144b38bae9d": {
+        "status": "CALENDAR_INVALID",
+        "reason_codes": [
+          "CALENDAR_INVALID"
+        ],
+        "scenarios_complete": 0,
+        "selection_eligible": false
+      },
+      "19cfb902282a48e86984": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "204f160b78c5fc84e0a1": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2bd5c84ad41ee5d6e9b4": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2d5edfe0e4b8edd47b04": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "354214201a2c0b4a1ec9": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4cd1e3a29a9a096383a3": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4e14889665fbcf722573": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "5503fb8f0cc983e5385e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "656882191cc0e9d8dfa7": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "6fcc29ebffe3b418671e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "a27063ce2eca13f02e03": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "bc098ae90f90e3460bce": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "e8678a534b4b0022fd68": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "f2d7914fba1005bb5584": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "fa0e548ed3a7ccbcad4e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      }
+    },
+    "original_M12_worst_choice": {
+      "value": "52102.446821",
+      "policy_ids": [
+        "a27063ce2eca13f02e03"
+      ]
+    },
+    "original_M12_regret_choice": {
+      "value": "814.768106",
+      "policy_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ]
+    },
+    "original_M12_Pareto": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e"
+    ],
+    "in_sample": true,
+    "held_out_validation": false
+  },
+  "STRICT_ALL_SCENARIOS_SERVICE": {
+    "schema": "astragron.m14.decision.v1",
+    "preference_contract": {
+      "mode": "STRICT_ALL_SCENARIOS_SERVICE",
+      "schema": "astragron.m14.research-preference.v1",
+      "allowed_modes": [
+        "STRICT_ALL_SCENARIOS_SERVICE",
+        "MINIMIZE_WORST_ET_SHORTFALL",
+        "MINIMAX_REGRET",
+        "PARETO_FRONTIER"
+      ],
+      "objective_units": {
+        "ET_shortfall": "m3 equivalent",
+        "regret": "m3 equivalent",
+        "withdrawal": "m3 source",
+        "service": "mm per field harvest year"
+      },
+      "weights": null,
+      "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+      "missingness": "No zero filling; incomplete domain blocks universal claims",
+      "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+      "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+      "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+      "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+    },
+    "RESEARCH_PORTFOLIO_ORDER": {
+      "status": "ABSTAIN_NO_FEASIBLE_PLAN",
+      "selected_ids": [],
+      "complete_domain": true,
+      "conditional_only": true,
+      "all_admissible_objectives": [
+        {
+          "policy_id": "19cfb902282a48e86984",
+          "worst_ET_m3_equivalent": "56951.614446",
+          "worst_regret_m3_equivalent": "4901.642821",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "204f160b78c5fc84e0a1",
+          "worst_ET_m3_equivalent": "65723.281798",
+          "worst_regret_m3_equivalent": "13620.834977",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2bd5c84ad41ee5d6e9b4",
+          "worst_ET_m3_equivalent": "69810.156513",
+          "worst_regret_m3_equivalent": "17707.709692",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2d5edfe0e4b8edd47b04",
+          "worst_ET_m3_equivalent": "57512.130104",
+          "worst_regret_m3_equivalent": "5409.683283",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "354214201a2c0b4a1ec9",
+          "worst_ET_m3_equivalent": "65420.500394",
+          "worst_regret_m3_equivalent": "13318.053573",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4cd1e3a29a9a096383a3",
+          "worst_ET_m3_equivalent": "66206.947700",
+          "worst_regret_m3_equivalent": "14104.500879",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4e14889665fbcf722573",
+          "worst_ET_m3_equivalent": "62107.856285",
+          "worst_regret_m3_equivalent": "10005.409464",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "5503fb8f0cc983e5385e",
+          "worst_ET_m3_equivalent": "58274.423014",
+          "worst_regret_m3_equivalent": "6171.976193",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "656882191cc0e9d8dfa7",
+          "worst_ET_m3_equivalent": "57258.688659",
+          "worst_regret_m3_equivalent": "5156.241838",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "6fcc29ebffe3b418671e",
+          "worst_ET_m3_equivalent": "65319.573260",
+          "worst_regret_m3_equivalent": "13217.126439",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "a27063ce2eca13f02e03",
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "bc098ae90f90e3460bce",
+          "worst_ET_m3_equivalent": "66368.169667",
+          "worst_regret_m3_equivalent": "14265.722846",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "e8678a534b4b0022fd68",
+          "worst_ET_m3_equivalent": "62361.297729",
+          "worst_regret_m3_equivalent": "10258.850908",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "f2d7914fba1005bb5584",
+          "worst_ET_m3_equivalent": "58020.981570",
+          "worst_regret_m3_equivalent": "5918.534749",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "fa0e548ed3a7ccbcad4e",
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        }
+      ],
+      "selected_objective_witnesses": {},
+      "regret_reference_ids": [
+        "19cfb902282a48e86984",
+        "204f160b78c5fc84e0a1",
+        "2bd5c84ad41ee5d6e9b4",
+        "2d5edfe0e4b8edd47b04",
+        "354214201a2c0b4a1ec9",
+        "4cd1e3a29a9a096383a3",
+        "4e14889665fbcf722573",
+        "5503fb8f0cc983e5385e",
+        "656882191cc0e9d8dfa7",
+        "6fcc29ebffe3b418671e",
+        "a27063ce2eca13f02e03",
+        "bc098ae90f90e3460bce",
+        "e8678a534b4b0022fd68",
+        "f2d7914fba1005bb5584",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "invalid_calendar_ids": [],
+      "tradeoff": "Absolute worst ET and same-scenario maximum regret answer distinct questions; no arbitrary weights, no single agronomic winner",
+      "global_optimum": false
+    },
+    "SERVICE_CRITERION_FEASIBILITY": {
+      "status": "NO_FEASIBLE_POLICY_IN_TESTED_SET",
+      "feasible_ids": [],
+      "threshold_mm": "100",
+      "field_harvest_tolerance_mm": "0.00000001",
+      "candidate_count": 16,
+      "common_comparable_count": 15,
+      "proof_over_all_crop_sequences": false
+    },
+    "FIELD_RECOMMENDATION_ELIGIBILITY": {
+      "status": "BLOCKED",
+      "reason": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "recommendation": null,
+      "rights_law": "UNQUALIFIED",
+      "soil_crop_winter_calibration": "UNQUALIFIED",
+      "N_field_coupling": null,
+      "yield_response": null,
+      "new_profit": null
+    },
+    "alternatives": {
+      "10e4f587b144b38bae9d": {
+        "status": "CALENDAR_INVALID",
+        "reason_codes": [
+          "CALENDAR_INVALID"
+        ],
+        "scenarios_complete": 0,
+        "selection_eligible": false
+      },
+      "19cfb902282a48e86984": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "204f160b78c5fc84e0a1": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2bd5c84ad41ee5d6e9b4": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2d5edfe0e4b8edd47b04": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "354214201a2c0b4a1ec9": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4cd1e3a29a9a096383a3": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4e14889665fbcf722573": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "5503fb8f0cc983e5385e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "656882191cc0e9d8dfa7": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "6fcc29ebffe3b418671e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "a27063ce2eca13f02e03": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "bc098ae90f90e3460bce": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "e8678a534b4b0022fd68": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "f2d7914fba1005bb5584": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "fa0e548ed3a7ccbcad4e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      }
+    },
+    "original_M12_worst_choice": {
+      "value": "52102.446821",
+      "policy_ids": [
+        "a27063ce2eca13f02e03"
+      ]
+    },
+    "original_M12_regret_choice": {
+      "value": "814.768106",
+      "policy_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ]
+    },
+    "original_M12_Pareto": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e"
+    ],
+    "in_sample": true,
+    "held_out_validation": false
+  },
+  "MINIMIZE_WORST_ET_SHORTFALL": {
+    "schema": "astragron.m14.decision.v1",
+    "preference_contract": {
+      "mode": "MINIMIZE_WORST_ET_SHORTFALL",
+      "schema": "astragron.m14.research-preference.v1",
+      "allowed_modes": [
+        "STRICT_ALL_SCENARIOS_SERVICE",
+        "MINIMIZE_WORST_ET_SHORTFALL",
+        "MINIMAX_REGRET",
+        "PARETO_FRONTIER"
+      ],
+      "objective_units": {
+        "ET_shortfall": "m3 equivalent",
+        "regret": "m3 equivalent",
+        "withdrawal": "m3 source",
+        "service": "mm per field harvest year"
+      },
+      "weights": null,
+      "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+      "missingness": "No zero filling; incomplete domain blocks universal claims",
+      "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+      "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+      "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+      "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+    },
+    "RESEARCH_PORTFOLIO_ORDER": {
+      "status": "CONDITIONAL_LEAST_VIOLATING",
+      "selected_ids": [
+        "a27063ce2eca13f02e03"
+      ],
+      "complete_domain": true,
+      "conditional_only": true,
+      "all_admissible_objectives": [
+        {
+          "policy_id": "19cfb902282a48e86984",
+          "worst_ET_m3_equivalent": "56951.614446",
+          "worst_regret_m3_equivalent": "4901.642821",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "204f160b78c5fc84e0a1",
+          "worst_ET_m3_equivalent": "65723.281798",
+          "worst_regret_m3_equivalent": "13620.834977",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2bd5c84ad41ee5d6e9b4",
+          "worst_ET_m3_equivalent": "69810.156513",
+          "worst_regret_m3_equivalent": "17707.709692",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2d5edfe0e4b8edd47b04",
+          "worst_ET_m3_equivalent": "57512.130104",
+          "worst_regret_m3_equivalent": "5409.683283",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "354214201a2c0b4a1ec9",
+          "worst_ET_m3_equivalent": "65420.500394",
+          "worst_regret_m3_equivalent": "13318.053573",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4cd1e3a29a9a096383a3",
+          "worst_ET_m3_equivalent": "66206.947700",
+          "worst_regret_m3_equivalent": "14104.500879",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4e14889665fbcf722573",
+          "worst_ET_m3_equivalent": "62107.856285",
+          "worst_regret_m3_equivalent": "10005.409464",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "5503fb8f0cc983e5385e",
+          "worst_ET_m3_equivalent": "58274.423014",
+          "worst_regret_m3_equivalent": "6171.976193",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "656882191cc0e9d8dfa7",
+          "worst_ET_m3_equivalent": "57258.688659",
+          "worst_regret_m3_equivalent": "5156.241838",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "6fcc29ebffe3b418671e",
+          "worst_ET_m3_equivalent": "65319.573260",
+          "worst_regret_m3_equivalent": "13217.126439",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "a27063ce2eca13f02e03",
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "bc098ae90f90e3460bce",
+          "worst_ET_m3_equivalent": "66368.169667",
+          "worst_regret_m3_equivalent": "14265.722846",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "e8678a534b4b0022fd68",
+          "worst_ET_m3_equivalent": "62361.297729",
+          "worst_regret_m3_equivalent": "10258.850908",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "f2d7914fba1005bb5584",
+          "worst_ET_m3_equivalent": "58020.981570",
+          "worst_regret_m3_equivalent": "5918.534749",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "fa0e548ed3a7ccbcad4e",
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        }
+      ],
+      "selected_objective_witnesses": {
+        "a27063ce2eca13f02e03": {
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "c705e537d5f56c8df7a982b91b1eef4ca285c4335129a5fd47b3b5ccb04410dd"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 960000,
+                  "annual_end_litres": 980000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "4ce60e4e41b917943d313cc9a0dc5f0c106a8c9fd51b92c70e073046d91d3ee9",
+                    "ee1dd9533397608d797ca198f078167ae73c7fcce6071dc705922f544200cad9",
+                    "a2794075d6fe83a6add7ff582d2439b0fb50401b4bd780783b235dd061f63571"
+                  ],
+                  "evidence_id": "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-22",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 483575,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "8eb0abb3c68d4900b8c1ffe355ccebb68487f1b4a44e35095f2218945605eab4"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "a27063ce2eca13f02e03",
+              "variant": "WATER_HIGH",
+              "window": "MEDIAN_ANCHOR_2006",
+              "ET_deficit_m3_equivalent": "11104.524464",
+              "same_state_best_ET_m3_equivalent": "9561.398594",
+              "regret_m3_equivalent": "1543.125870"
+            }
+          ]
+        }
+      },
+      "regret_reference_ids": [
+        "19cfb902282a48e86984",
+        "204f160b78c5fc84e0a1",
+        "2bd5c84ad41ee5d6e9b4",
+        "2d5edfe0e4b8edd47b04",
+        "354214201a2c0b4a1ec9",
+        "4cd1e3a29a9a096383a3",
+        "4e14889665fbcf722573",
+        "5503fb8f0cc983e5385e",
+        "656882191cc0e9d8dfa7",
+        "6fcc29ebffe3b418671e",
+        "a27063ce2eca13f02e03",
+        "bc098ae90f90e3460bce",
+        "e8678a534b4b0022fd68",
+        "f2d7914fba1005bb5584",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "invalid_calendar_ids": [],
+      "tradeoff": "Absolute worst ET and same-scenario maximum regret answer distinct questions; no arbitrary weights, no single agronomic winner",
+      "global_optimum": false
+    },
+    "SERVICE_CRITERION_FEASIBILITY": {
+      "status": "NO_FEASIBLE_POLICY_IN_TESTED_SET",
+      "feasible_ids": [],
+      "threshold_mm": "100",
+      "field_harvest_tolerance_mm": "0.00000001",
+      "candidate_count": 16,
+      "common_comparable_count": 15,
+      "proof_over_all_crop_sequences": false
+    },
+    "FIELD_RECOMMENDATION_ELIGIBILITY": {
+      "status": "BLOCKED",
+      "reason": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "recommendation": null,
+      "rights_law": "UNQUALIFIED",
+      "soil_crop_winter_calibration": "UNQUALIFIED",
+      "N_field_coupling": null,
+      "yield_response": null,
+      "new_profit": null
+    },
+    "alternatives": {
+      "10e4f587b144b38bae9d": {
+        "status": "CALENDAR_INVALID",
+        "reason_codes": [
+          "CALENDAR_INVALID"
+        ],
+        "scenarios_complete": 0,
+        "selection_eligible": false
+      },
+      "19cfb902282a48e86984": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "204f160b78c5fc84e0a1": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2bd5c84ad41ee5d6e9b4": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2d5edfe0e4b8edd47b04": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "354214201a2c0b4a1ec9": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4cd1e3a29a9a096383a3": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4e14889665fbcf722573": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "5503fb8f0cc983e5385e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "656882191cc0e9d8dfa7": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "6fcc29ebffe3b418671e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "a27063ce2eca13f02e03": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "bc098ae90f90e3460bce": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "e8678a534b4b0022fd68": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "f2d7914fba1005bb5584": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "fa0e548ed3a7ccbcad4e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      }
+    },
+    "original_M12_worst_choice": {
+      "value": "52102.446821",
+      "policy_ids": [
+        "a27063ce2eca13f02e03"
+      ]
+    },
+    "original_M12_regret_choice": {
+      "value": "814.768106",
+      "policy_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ]
+    },
+    "original_M12_Pareto": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e"
+    ],
+    "in_sample": true,
+    "held_out_validation": false
+  },
+  "MINIMAX_REGRET": {
+    "schema": "astragron.m14.decision.v1",
+    "preference_contract": {
+      "mode": "MINIMAX_REGRET",
+      "schema": "astragron.m14.research-preference.v1",
+      "allowed_modes": [
+        "STRICT_ALL_SCENARIOS_SERVICE",
+        "MINIMIZE_WORST_ET_SHORTFALL",
+        "MINIMAX_REGRET",
+        "PARETO_FRONTIER"
+      ],
+      "objective_units": {
+        "ET_shortfall": "m3 equivalent",
+        "regret": "m3 equivalent",
+        "withdrawal": "m3 source",
+        "service": "mm per field harvest year"
+      },
+      "weights": null,
+      "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+      "missingness": "No zero filling; incomplete domain blocks universal claims",
+      "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+      "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+      "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+      "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+    },
+    "RESEARCH_PORTFOLIO_ORDER": {
+      "status": "CONDITIONAL_LEAST_VIOLATING",
+      "selected_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "complete_domain": true,
+      "conditional_only": true,
+      "all_admissible_objectives": [
+        {
+          "policy_id": "19cfb902282a48e86984",
+          "worst_ET_m3_equivalent": "56951.614446",
+          "worst_regret_m3_equivalent": "4901.642821",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "204f160b78c5fc84e0a1",
+          "worst_ET_m3_equivalent": "65723.281798",
+          "worst_regret_m3_equivalent": "13620.834977",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2bd5c84ad41ee5d6e9b4",
+          "worst_ET_m3_equivalent": "69810.156513",
+          "worst_regret_m3_equivalent": "17707.709692",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2d5edfe0e4b8edd47b04",
+          "worst_ET_m3_equivalent": "57512.130104",
+          "worst_regret_m3_equivalent": "5409.683283",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "354214201a2c0b4a1ec9",
+          "worst_ET_m3_equivalent": "65420.500394",
+          "worst_regret_m3_equivalent": "13318.053573",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4cd1e3a29a9a096383a3",
+          "worst_ET_m3_equivalent": "66206.947700",
+          "worst_regret_m3_equivalent": "14104.500879",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4e14889665fbcf722573",
+          "worst_ET_m3_equivalent": "62107.856285",
+          "worst_regret_m3_equivalent": "10005.409464",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "5503fb8f0cc983e5385e",
+          "worst_ET_m3_equivalent": "58274.423014",
+          "worst_regret_m3_equivalent": "6171.976193",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "656882191cc0e9d8dfa7",
+          "worst_ET_m3_equivalent": "57258.688659",
+          "worst_regret_m3_equivalent": "5156.241838",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "6fcc29ebffe3b418671e",
+          "worst_ET_m3_equivalent": "65319.573260",
+          "worst_regret_m3_equivalent": "13217.126439",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "a27063ce2eca13f02e03",
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "bc098ae90f90e3460bce",
+          "worst_ET_m3_equivalent": "66368.169667",
+          "worst_regret_m3_equivalent": "14265.722846",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "e8678a534b4b0022fd68",
+          "worst_ET_m3_equivalent": "62361.297729",
+          "worst_regret_m3_equivalent": "10258.850908",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "f2d7914fba1005bb5584",
+          "worst_ET_m3_equivalent": "58020.981570",
+          "worst_regret_m3_equivalent": "5918.534749",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "fa0e548ed3a7ccbcad4e",
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        }
+      ],
+      "selected_objective_witnesses": {
+        "fa0e548ed3a7ccbcad4e": {
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "27fa7ebabfbebc75b1ea1b6700cf4efca00d099fca331a818ad0a39fb42eeaf6"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 1020000,
+                  "annual_end_litres": 1040000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6c94a56bbac5813ded852acc6a307dc8fa9e238ffebc098d84a355c62271b72e",
+                    "51e1c7e4563b292beb13876f18dabdf8c04260ff1f172d67730df1b6e781a917",
+                    "566cb16b5954d2f73d23b7c8630d4abb0a1ec3d79476c33f6473861f85ee390c"
+                  ],
+                  "evidence_id": "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-18",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 72378,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "f59026f438a2189fba30d0c78b77f8b41365e7770ce848f61f9f506cd288fa4a"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "fa0e548ed3a7ccbcad4e",
+              "variant": "WATER_HIGH",
+              "window": "DRY_ANCHOR_2018",
+              "ET_deficit_m3_equivalent": "45243.448029",
+              "same_state_best_ET_m3_equivalent": "44428.679923",
+              "regret_m3_equivalent": "814.768106"
+            }
+          ]
+        }
+      },
+      "regret_reference_ids": [
+        "19cfb902282a48e86984",
+        "204f160b78c5fc84e0a1",
+        "2bd5c84ad41ee5d6e9b4",
+        "2d5edfe0e4b8edd47b04",
+        "354214201a2c0b4a1ec9",
+        "4cd1e3a29a9a096383a3",
+        "4e14889665fbcf722573",
+        "5503fb8f0cc983e5385e",
+        "656882191cc0e9d8dfa7",
+        "6fcc29ebffe3b418671e",
+        "a27063ce2eca13f02e03",
+        "bc098ae90f90e3460bce",
+        "e8678a534b4b0022fd68",
+        "f2d7914fba1005bb5584",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "invalid_calendar_ids": [],
+      "tradeoff": "Absolute worst ET and same-scenario maximum regret answer distinct questions; no arbitrary weights, no single agronomic winner",
+      "global_optimum": false
+    },
+    "SERVICE_CRITERION_FEASIBILITY": {
+      "status": "NO_FEASIBLE_POLICY_IN_TESTED_SET",
+      "feasible_ids": [],
+      "threshold_mm": "100",
+      "field_harvest_tolerance_mm": "0.00000001",
+      "candidate_count": 16,
+      "common_comparable_count": 15,
+      "proof_over_all_crop_sequences": false
+    },
+    "FIELD_RECOMMENDATION_ELIGIBILITY": {
+      "status": "BLOCKED",
+      "reason": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "recommendation": null,
+      "rights_law": "UNQUALIFIED",
+      "soil_crop_winter_calibration": "UNQUALIFIED",
+      "N_field_coupling": null,
+      "yield_response": null,
+      "new_profit": null
+    },
+    "alternatives": {
+      "10e4f587b144b38bae9d": {
+        "status": "CALENDAR_INVALID",
+        "reason_codes": [
+          "CALENDAR_INVALID"
+        ],
+        "scenarios_complete": 0,
+        "selection_eligible": false
+      },
+      "19cfb902282a48e86984": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "204f160b78c5fc84e0a1": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2bd5c84ad41ee5d6e9b4": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2d5edfe0e4b8edd47b04": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "354214201a2c0b4a1ec9": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4cd1e3a29a9a096383a3": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4e14889665fbcf722573": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "5503fb8f0cc983e5385e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "656882191cc0e9d8dfa7": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "6fcc29ebffe3b418671e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "a27063ce2eca13f02e03": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "bc098ae90f90e3460bce": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "e8678a534b4b0022fd68": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "f2d7914fba1005bb5584": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "fa0e548ed3a7ccbcad4e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      }
+    },
+    "original_M12_worst_choice": {
+      "value": "52102.446821",
+      "policy_ids": [
+        "a27063ce2eca13f02e03"
+      ]
+    },
+    "original_M12_regret_choice": {
+      "value": "814.768106",
+      "policy_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ]
+    },
+    "original_M12_Pareto": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e"
+    ],
+    "in_sample": true,
+    "held_out_validation": false
+  },
+  "PARETO_FRONTIER": {
+    "schema": "astragron.m14.decision.v1",
+    "preference_contract": {
+      "mode": "PARETO_FRONTIER",
+      "schema": "astragron.m14.research-preference.v1",
+      "allowed_modes": [
+        "STRICT_ALL_SCENARIOS_SERVICE",
+        "MINIMIZE_WORST_ET_SHORTFALL",
+        "MINIMAX_REGRET",
+        "PARETO_FRONTIER"
+      ],
+      "objective_units": {
+        "ET_shortfall": "m3 equivalent",
+        "regret": "m3 equivalent",
+        "withdrawal": "m3 source",
+        "service": "mm per field harvest year"
+      },
+      "weights": null,
+      "regret_comparators": "same fixed complete hard-admissible policies across all9 states",
+      "missingness": "No zero filling; incomplete domain blocks universal claims",
+      "precision": "Original M12 half-even 1e-6m3 objective grid; unrounded physics for service comparison with1e-8mm model tolerance",
+      "Pareto": "Original M12 concatenated per-state vectors: breach-field-year count, ET shortfall, source withdrawal, max field-year depth, no scalar weights",
+      "field_eligibility": "BLOCKED; no independent field/rights/response qualification",
+      "selection_bias": "Same3 historical windows already used in M10 tuning; in-sample analysis, not independent validation"
+    },
+    "RESEARCH_PORTFOLIO_ORDER": {
+      "status": "CONDITIONAL_PARETO_FRONTIER",
+      "selected_ids": [
+        "a27063ce2eca13f02e03",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "complete_domain": true,
+      "conditional_only": true,
+      "all_admissible_objectives": [
+        {
+          "policy_id": "19cfb902282a48e86984",
+          "worst_ET_m3_equivalent": "56951.614446",
+          "worst_regret_m3_equivalent": "4901.642821",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "204f160b78c5fc84e0a1",
+          "worst_ET_m3_equivalent": "65723.281798",
+          "worst_regret_m3_equivalent": "13620.834977",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2bd5c84ad41ee5d6e9b4",
+          "worst_ET_m3_equivalent": "69810.156513",
+          "worst_regret_m3_equivalent": "17707.709692",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "2d5edfe0e4b8edd47b04",
+          "worst_ET_m3_equivalent": "57512.130104",
+          "worst_regret_m3_equivalent": "5409.683283",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "354214201a2c0b4a1ec9",
+          "worst_ET_m3_equivalent": "65420.500394",
+          "worst_regret_m3_equivalent": "13318.053573",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4cd1e3a29a9a096383a3",
+          "worst_ET_m3_equivalent": "66206.947700",
+          "worst_regret_m3_equivalent": "14104.500879",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "4e14889665fbcf722573",
+          "worst_ET_m3_equivalent": "62107.856285",
+          "worst_regret_m3_equivalent": "10005.409464",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "5503fb8f0cc983e5385e",
+          "worst_ET_m3_equivalent": "58274.423014",
+          "worst_regret_m3_equivalent": "6171.976193",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "656882191cc0e9d8dfa7",
+          "worst_ET_m3_equivalent": "57258.688659",
+          "worst_regret_m3_equivalent": "5156.241838",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "6fcc29ebffe3b418671e",
+          "worst_ET_m3_equivalent": "65319.573260",
+          "worst_regret_m3_equivalent": "13217.126439",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "a27063ce2eca13f02e03",
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "bc098ae90f90e3460bce",
+          "worst_ET_m3_equivalent": "66368.169667",
+          "worst_regret_m3_equivalent": "14265.722846",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "e8678a534b4b0022fd68",
+          "worst_ET_m3_equivalent": "62361.297729",
+          "worst_regret_m3_equivalent": "10258.850908",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "f2d7914fba1005bb5584",
+          "worst_ET_m3_equivalent": "58020.981570",
+          "worst_regret_m3_equivalent": "5918.534749",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        },
+        {
+          "policy_id": "fa0e548ed3a7ccbcad4e",
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_breach_field_year_count": 3,
+          "robust_service_pass": false
+        }
+      ],
+      "selected_objective_witnesses": {
+        "a27063ce2eca13f02e03": {
+          "worst_ET_m3_equivalent": "52102.446821",
+          "worst_regret_m3_equivalent": "1543.125870",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "e85d806c1f8fc201215f9b92fbd68910fd37a14261ce8991992293928c6dc89e",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "c705e537d5f56c8df7a982b91b1eef4ca285c4335129a5fd47b3b5ccb04410dd"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 960000,
+                  "annual_end_litres": 980000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "23a097f07e8b702dd560c90c172ba0dea9f4d7641fc6eedcca9294023a37c55f",
+                    "4ce60e4e41b917943d313cc9a0dc5f0c106a8c9fd51b92c70e073046d91d3ee9",
+                    "ee1dd9533397608d797ca198f078167ae73c7fcce6071dc705922f544200cad9",
+                    "a2794075d6fe83a6add7ff582d2439b0fb50401b4bd780783b235dd061f63571"
+                  ],
+                  "evidence_id": "e2ae04a94b4f444d52d1f48325dbddd92326047eac1c85f780dd817951b4d20f"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-22",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 483575,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "8eb0abb3c68d4900b8c1ffe355ccebb68487f1b4a44e35095f2218945605eab4"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "a27063ce2eca13f02e03",
+              "variant": "WATER_HIGH",
+              "window": "MEDIAN_ANCHOR_2006",
+              "ET_deficit_m3_equivalent": "11104.524464",
+              "same_state_best_ET_m3_equivalent": "9561.398594",
+              "regret_m3_equivalent": "1543.125870"
+            }
+          ]
+        },
+        "fa0e548ed3a7ccbcad4e": {
+          "worst_ET_m3_equivalent": "52864.739731",
+          "worst_regret_m3_equivalent": "814.768106",
+          "worst_ET_scenarios": [
+            {
+              "variant": "WATER_LOW",
+              "window": "DRY_ANCHOR_2018",
+              "first_failure_witness": {
+                "field_id": "F1",
+                "date": "2018-07-09",
+                "harvest_source_year": 2018,
+                "crop_use_id": "cropuse:agrovoc:c_6919:c_25512",
+                "irrigation_access": false,
+                "cumulative_before_mm": 98.41723739368105,
+                "cumulative_after_mm": 100.61392134638886,
+                "native_weather_id": "bf973b2cb966baa6b33061f6eb5c99787c24aaee3b20e1fe0832b44463bc1cfa",
+                "base_transition": {
+                  "schema": "astragron.m7.continuous-water.v1",
+                  "field_id": "F1",
+                  "date": "2018-07-09",
+                  "state_start_mm": [
+                    24.85133276532604,
+                    15.274589552627333
+                  ],
+                  "state_end_mm": [
+                    24.35211298638608,
+                    14.853922596701567
+                  ],
+                  "extraction_depth_m": 1.5,
+                  "phase": "ACTIVE_CROP",
+                  "ET0_mm": 3.6288133185697053,
+                  "Kc": 0.9605263157894737,
+                  "Ks_active_only": 0.3697778213079299,
+                  "ET_potential_mm": 3.485570687573533,
+                  "ET_actual_mm": 1.2888867348657242,
+                  "crop_ET_deficit_mm": 2.196683952707809,
+                  "bare_ET_unmet_mm": 0,
+                  "rain_mm": 0.41,
+                  "runoff_mm": 0.04099999999999999,
+                  "capillary_rise_mm": 0,
+                  "source_withdrawal_litres": 0,
+                  "source_withdrawal_m3": 0.0,
+                  "gross_source_mm": 0.0,
+                  "field_delivered_m3": 0.0,
+                  "net_irrigation_mm": 0.0,
+                  "conveyance_and_application_loss_mm": 0.0,
+                  "drainage_mm": 0,
+                  "layer_ET_withdrawal_mm": [
+                    0.8682197789399583,
+                    0.42066695592576586
+                  ],
+                  "layer_downward_flux_mm": [
+                    0,
+                    0
+                  ],
+                  "profile_mass_residual_mm": -3.9968028886505635e-15,
+                  "area_ha": 6.0,
+                  "reset_applied": false,
+                  "bare_soil_method": null,
+                  "source_evidence_id": "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                  "parameter_capsule_id": "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "7bf7da63c27153ff03f00cf0be601555886d4d4761b74ee8c06c71ba510882e3",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                  ],
+                  "evidence_class": "DERIVED",
+                  "units": "mm unless suffix _m3 or _litres; layer state is available water above WP",
+                  "FIELD_CALIBRATED": false,
+                  "evidence_id": "27fa7ebabfbebc75b1ea1b6700cf4efca00d099fca331a818ad0a39fb42eeaf6"
+                },
+                "winter": {
+                  "snow_start_mm": 0.0,
+                  "snow_end_mm": 0.0,
+                  "snowfall_mm": 0,
+                  "liquid_rain_mm": 0.41,
+                  "melt_mm": 0.0,
+                  "sublimation_mm": 0.0,
+                  "liquid_to_surface_mm": 0.41,
+                  "frozen_flag_assumed": false,
+                  "soil_ET_suppressed_assumed": false,
+                  "infiltration_fraction": 1,
+                  "snow_mass_residual_mm": 0.0,
+                  "Tmean_partition_C": 17.11
+                },
+                "farm_allocation": {
+                  "date": "2018-07-09",
+                  "source_requested_litres": 2666665,
+                  "source_withdrawal_litres": 20000,
+                  "field_allocations_litres": {
+                    "F1": 0,
+                    "F2": 0,
+                    "F3": 20000
+                  },
+                  "annual_start_litres": 1020000,
+                  "annual_end_litres": 1040000,
+                  "annual_cap_litres": 4000000,
+                  "pump_limit_litres_day": 20000,
+                  "source_available_litres_day": 20000,
+                  "supply_id": "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                  "parent_evidence_ids": [
+                    "27cb30b3eeb17acfdf68e73db5b49f5491f421a8475e92c232d1c00d2eb4f62c",
+                    "646af42ec9d4bf630948b5e093b39fdb8a935bed46a4928c12f955cf87e00719",
+                    "33d18f97eb1ef61b4952734a244abd0eee3d0d5dd38f5b0ced79b6c1efbab4cf",
+                    "6c94a56bbac5813ded852acc6a307dc8fa9e238ffebc098d84a355c62271b72e",
+                    "51e1c7e4563b292beb13876f18dabdf8c04260ff1f172d67730df1b6e781a917",
+                    "566cb16b5954d2f73d23b7c8630d4abb0a1ec3d79476c33f6473861f85ee390c"
+                  ],
+                  "evidence_id": "6a0f823af780f18cb6af3502d32f54c3a997d1d54abeda325fc4ef802e58b495"
+                }
+              },
+              "first_binding_resource": {
+                "date": "2018-05-18",
+                "groups": [
+                  "PUMP_DAILY_CAP",
+                  "SOURCE_DAILY_CAP"
+                ],
+                "eligible_requested_litres": 72378,
+                "allocated_litres": 20000,
+                "annual_remaining_before_litres": 4000000,
+                "allocation_evidence_id": "f59026f438a2189fba30d0c78b77f8b41365e7770ce848f61f9f506cd288fa4a"
+              }
+            }
+          ],
+          "worst_regret_scenarios": [
+            {
+              "policy_id": "fa0e548ed3a7ccbcad4e",
+              "variant": "WATER_HIGH",
+              "window": "DRY_ANCHOR_2018",
+              "ET_deficit_m3_equivalent": "45243.448029",
+              "same_state_best_ET_m3_equivalent": "44428.679923",
+              "regret_m3_equivalent": "814.768106"
+            }
+          ]
+        }
+      },
+      "regret_reference_ids": [
+        "19cfb902282a48e86984",
+        "204f160b78c5fc84e0a1",
+        "2bd5c84ad41ee5d6e9b4",
+        "2d5edfe0e4b8edd47b04",
+        "354214201a2c0b4a1ec9",
+        "4cd1e3a29a9a096383a3",
+        "4e14889665fbcf722573",
+        "5503fb8f0cc983e5385e",
+        "656882191cc0e9d8dfa7",
+        "6fcc29ebffe3b418671e",
+        "a27063ce2eca13f02e03",
+        "bc098ae90f90e3460bce",
+        "e8678a534b4b0022fd68",
+        "f2d7914fba1005bb5584",
+        "fa0e548ed3a7ccbcad4e"
+      ],
+      "invalid_calendar_ids": [],
+      "tradeoff": "Absolute worst ET and same-scenario maximum regret answer distinct questions; no arbitrary weights, no single agronomic winner",
+      "global_optimum": false
+    },
+    "SERVICE_CRITERION_FEASIBILITY": {
+      "status": "NO_FEASIBLE_POLICY_IN_TESTED_SET",
+      "feasible_ids": [],
+      "threshold_mm": "100",
+      "field_harvest_tolerance_mm": "0.00000001",
+      "candidate_count": 16,
+      "common_comparable_count": 15,
+      "proof_over_all_crop_sequences": false
+    },
+    "FIELD_RECOMMENDATION_ELIGIBILITY": {
+      "status": "BLOCKED",
+      "reason": "ABSTAIN_NO_FIELD_RECOMMENDATION",
+      "recommendation": null,
+      "rights_law": "UNQUALIFIED",
+      "soil_crop_winter_calibration": "UNQUALIFIED",
+      "N_field_coupling": null,
+      "yield_response": null,
+      "new_profit": null
+    },
+    "alternatives": {
+      "10e4f587b144b38bae9d": {
+        "status": "CALENDAR_INVALID",
+        "reason_codes": [
+          "CALENDAR_INVALID"
+        ],
+        "scenarios_complete": 0,
+        "selection_eligible": false
+      },
+      "19cfb902282a48e86984": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "204f160b78c5fc84e0a1": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2bd5c84ad41ee5d6e9b4": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "2d5edfe0e4b8edd47b04": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "354214201a2c0b4a1ec9": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4cd1e3a29a9a096383a3": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "4e14889665fbcf722573": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "5503fb8f0cc983e5385e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "656882191cc0e9d8dfa7": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "6fcc29ebffe3b418671e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "a27063ce2eca13f02e03": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "bc098ae90f90e3460bce": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "e8678a534b4b0022fd68": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "f2d7914fba1005bb5584": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      },
+      "fa0e548ed3a7ccbcad4e": {
+        "status": "CONDITIONAL_LEAST_VIOLATING",
+        "selection_eligible": true,
+        "scenarios_complete": 9,
+        "universal_research_service_pass": false
+      }
+    },
+    "original_M12_worst_choice": {
+      "value": "52102.446821",
+      "policy_ids": [
+        "a27063ce2eca13f02e03"
+      ]
+    },
+    "original_M12_regret_choice": {
+      "value": "814.768106",
+      "policy_ids": [
+        "fa0e548ed3a7ccbcad4e"
+      ]
+    },
+    "original_M12_Pareto": [
+      "a27063ce2eca13f02e03",
+      "fa0e548ed3a7ccbcad4e"
+    ],
+    "in_sample": true,
+    "held_out_validation": false
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "astragron.nasa-global-receipt.v1",
+  "status": "QUALIFIED_HISTORICAL",
+  "request_key": "8eded6173f3fcd2659ed4a5239924d5c2d6a724d84cb58018a1a611ff8558b89",
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CT2M%2CPRECTOTCORR&community=AG&longitude=-47.9&latitude=-15.8&start=20160101&end=20201231&format=JSON&time-standard=UTC",
+  "point_lon_lat": [
+    -47.9,
+    -15.8
+  ],
+  "period": [
+    "2016-01-01",
+    "2020-12-31"
+  ],
+  "started_at": "2026-11-14T13:54:21.982541+00:00",
+  "retrieved_at": "2026-11-14T13:54:23.548119+00:00",
+  "http_status": 200,
+  "response_headers": {
+    "Date": "Sat, 14 Nov 2026 13:54:22 GMT",
+    "Last-Modified": null,
+    "ETag": null,
+    "Content-Type": "application/json"
+  },
+  "attempts": 1,
+  "authentication_used": false,
+  "sha256": "6a5c4b527c7b3a40c513cb1f08b544bb86ee65f68c9525cb2b0e14ee4a116476",
+  "bytes": 121981,
+  "qualification": {
+    "days": 1827,
+    "missingness": {
+      "T2M_MIN": {
+        "missing_or_invalid": 0,
+        "expected_days": 1827,
+        "fraction": 0.0
+      },
+      "T2M_MAX": {
+        "missing_or_invalid": 0,
+        "expected_days": 1827,
+        "fraction": 0.0
+      },
+      "T2M": {
+        "missing_or_invalid": 0,
+        "expected_days": 1827,
+        "fraction": 0.0
+      },
+      "PRECTOTCORR": {
+        "missing_or_invalid": 0,
+        "expected_days": 1827,
+        "fraction": 0.0
+      }
+    },
+    "grid": {
+      "source": "MERRA2",
+      "resolution_lon_lat_degrees": [
+        0.625,
+        0.5
+      ],
+      "nominal_center_lon_lat": [
+        -48.125,
+        -16.0
+      ],
+      "center_method": "Derived nearest nominal native-grid index; not an independently returned cell footprint",
+      "provider_response_geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.9,
+          -15.8,
+          984.96
+        ]
+      },
+      "extraction": "Official POWER point API; no client interpolation/downscaling",
+      "independent_field_measurement": false,
+      "all_variables_same_source": true,
+      "reference": "https://power.larc.nasa.gov/docs/methodology/data/sources_meteorology/"
+    },
+    "variables": {
+      "T2M_MIN": {
+        "unit": "C",
+        "time_standard": "UTC",
+        "source": "MERRA2"
+      },
+      "T2M_MAX": {
+        "unit": "C",
+        "time_standard": "UTC",
+        "source": "MERRA2"
+      },
+      "T2M": {
+        "unit": "C",
+        "time_standard": "UTC",
+        "source": "MERRA2"
+      },
+      "PRECTOTCORR": {
+        "unit": "mm/day",
+        "time_standard": "UTC",
+        "source": "MERRA2"
+      }
+    },
+    "api": {
+      "version": "v2.10.3",
+      "name": "POWER Daily API"
+    },
+    "provider_issue_header": {
+      "api": {
+        "version": "v2.10.3",
+        "name": "POWER Daily API"
+      },
+      "sources": [
+        "MERRA2",
+        "POWER"
+      ],
+      "fill_value": -999.0,
+      "time_standard": "UTC",
+      "start": "20160101",
+      "end": "20201231"
+    },
+    "period": [
+      "2016-01-01",
+      "2020-12-31"
+    ]
+  },
+  "license": {
+    "identifier": "NASA_POWER_PUBLIC_DATA_WITH_ATTRIBUTION",
+    "references": {
+      "api": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+      "meteorology": "https://power.larc.nasa.gov/docs/methodology/data/sources_meteorology/",
+      "attribution": "https://power.larc.nasa.gov/docs/referencing/",
+      "rights": "https://power.larc.nasa.gov/docs/faqs/data/"
+    },
+    "attribution": "NASA Langley Research Center POWER project / MERRA-2; no NASA endorsement; retain service version and access date"
+  },
+  "authenticity": "Fetched over verified HTTPS from approved host; hashes ensure replay integrity, not a NASA digital signature",
+  "receipt_sha256": "bd4ad25ab1808e44ec17084b623372655de36d1cd30f4dd29f38e97a29b21210"
+}
