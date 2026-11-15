@@ -1,7 +1,12 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import {
+  buildResearchDemoHref,
+  saveExplorerSelection,
+} from '@/lib/explorer-selection';
 import {
   Search,
   MapPin,
@@ -143,6 +148,18 @@ export function EarthExplorerClient() {
   const [capabilityGeoJson, setCapabilityGeoJson] = useState<GeoJSON.FeatureCollection | null>(null);
   const [capabilityCheck, setCapabilityCheck] = useState<SiteCapabilityCheckResult | null>(null);
   const [capabilityToast, setCapabilityToast] = useState<CapabilityToastNotice | null>(null);
+
+  useEffect(() => {
+    saveExplorerSelection({
+      siteKey: selectedSiteKey,
+      label: siteTitle,
+      countryCode,
+      regionName,
+      lon: selectedCoords[0],
+      lat: selectedCoords[1],
+      updatedAt: new Date().toISOString(),
+    });
+  }, [selectedSiteKey, siteTitle, countryCode, regionName, selectedCoords]);
 
   const runSiteCapabilityCheck = async (
     coords: [number, number],
@@ -1482,6 +1499,22 @@ export function EarthExplorerClient() {
                 >
                   <span>Edit 5-Step Field Setup</span>
                 </button>
+                <Link
+                  href={buildResearchDemoHref({
+                    siteKey: selectedSiteKey,
+                    label: siteTitle,
+                    countryCode,
+                    regionName,
+                    lon: selectedCoords[0],
+                    lat: selectedCoords[1],
+                  })}
+                  prefetch={false}
+                  data-testid="explorer-open-research-link"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/35 bg-cyan-500/10 px-4 py-2 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-500/20"
+                >
+                  <span>Compare Selected Location vs. Public Research Demo</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
           </aside>

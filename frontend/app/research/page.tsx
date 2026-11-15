@@ -2,8 +2,14 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Database, FileDown, FlaskConical, Lock, MessageSquareText, RefreshCw, ShieldCheck } from 'lucide-react';
+import { AlertTriangle, ArrowRight, Database, FileDown, FlaskConical, Lock, MapPin, MessageSquareText, RefreshCw, ShieldCheck } from 'lucide-react';
 import type { CoreChatReply, CoreResult, CoreState } from '@/domain/core-contracts';
+import { ResearchChartsPanel } from '@/components/research/research-charts-panel';
+import {
+  loadExplorerSelection,
+  parseResearchSelectionFromUrl,
+  type ExplorerRegionSelection,
+} from '@/lib/explorer-selection';
 
 const card = 'rounded-2xl border border-[#29455A] bg-[#0D2031] p-5 sm:p-7';
 const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#548299] px-4 py-2 text-sm font-semibold text-[#F1F7FD] hover:bg-[#17374A] disabled:opacity-50 disabled:cursor-wait';
@@ -15,13 +21,20 @@ interface PublicDemoPayload {
   readOnly: boolean;
   scope: string;
   notice: string;
+  customLocationAnalysisSupported?: boolean;
+  customLocationStatusReason?: string;
   serviceStatus: {
     scientificStatus: string;
     protectedBaselineFiles: number | null;
     pinnedNativeRuntimeVerified: boolean;
     sourceSnapshotPresent: boolean;
     adaptiveEvidence: { enabled: boolean; reason: string };
-    chat: { available: boolean; liveInferenceVerified: boolean; mode: string };
+    chat: {
+      available: boolean;
+      publicReadOnlyEnabled?: boolean;
+      liveInferenceVerified: boolean;
+      mode: string;
+    };
   };
   researchExample: {
     demo_case: string;
@@ -32,6 +45,22 @@ interface PublicDemoPayload {
     scientific_status: string;
     report_available: boolean;
     pdfDownloadUrl: string;
+    cachedCaseIdentity?: {
+      bannerLabel: string;
+      farmId: string;
+      siteId: string;
+      locationLabel: string;
+      country: string;
+      coordinatesLonLat: number[] | null;
+      period: string;
+      sourceProvider: string;
+      acquisitionMode: string;
+      analysisId: string;
+      runId: string;
+      requestSha256: string | null;
+      scientificResultSha256: string | null;
+      freshScientificJobs: number;
+    };
     result: CoreResult;
   };
   blockedExample: {
@@ -42,10 +71,25 @@ interface PublicDemoPayload {
     scientific_status: string;
     status: string;
     farm_id: string;
+    siteId?: string;
+    coordinatesLonLat?: number[] | null;
+    analysisId?: string;
     summary: string | null;
     missing_requirements: { path?: string; reason?: string; action?: string }[];
     warnings: string[];
   } | null;
+}
+
+interface PublicChatReply {
+  ok: boolean;
+  readOnly: boolean;
+  scope: string;
+  scenario: string;
+  cachedCaseReference: string;
+  mode: string;
+  reason_code?: string | null;
+  answer: string;
+  claims?: { evidence_id: string; pointer: string; value: unknown; unit: string | null }[];
 }
 
 async function api<T>(path: string, body?: unknown, method?: string): Promise<T> {
@@ -114,13 +158,14 @@ function ScientificResultView({
         </div>
       )}
       {scenarios.length > 0 && (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <label className="block text-sm">
             Scenario
             <select aria-label="Comparison scenario" className={`${input} mt-2`} value={scenario} onChange={e => onScenarioChange(e.target.value)}>
               {scenarios.map(s => <option key={s}>{s}</option>)}
             </select>
           </label>
+          <ResearchChartsPanel result={result} scenario={scenario} />
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <caption className="pb-3 text-left text-xs text-[#90A8BA]">Five-year crop storage dry matter (kg DM/field); crop components remain separate. Not marketable yield.</caption>
@@ -181,10 +226,25 @@ export default function ResearchPage() {
   const [publicDemo, setPublicDemo] = useState<PublicDemoPayload | null>(null);
   const [publicDemoError, setPublicDemoError] = useState('');
   const [publicDemoLoading, setPublicDemoLoading] = useState(false);
+  const [selectedExplorerRegion, setSelectedExplorerRegion] = useState<ExplorerRegionSelection | null>(null);
+  const [publicQuestion, setPublicQuestion] = useState('Explain water');
+  const [publicChatAnswers, setPublicChatAnswers] = useState<{ question: string; reply: PublicChatReply }[]>([]);
+  const [publicChatSending, setPublicChatSending] = useState(false);
+  const [publicChatError, setPublicChatError] = useState('');
   const [conversation, setConversation] = useState('');
   const [question, setQuestion] = useState('Explain water');
   const [answers, setAnswers] = useState<{ question: string; reply: CoreChatReply }[]>([]);
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    const fromUrl = parseResearchSelectionFromUrl(window.location.search);
+    if (fromUrl) {
+      setSelectedExplorerRegion(fromUrl);
+      return;
+    }
+    const stored = loadExplorerSelection();
+    if (stored) setSelectedExplorerRegion(stored);
+  }, []);
 
   const loadServices = useCallback(async () => {
     const [catalogData, status] = await Promise.all([
@@ -279,18 +339,158 @@ export default function ResearchPage() {
     } finally { setSending(false); }
   }
 
+  async function submitPublicQuestion(rawText: string) {
+    const trimmed = rawText.trim();
+    if (!trimmed || publicChatSending) return;
+    setPublicChatSending(true);
+    setPublicChatError('');
+    try {
+      const res = await fetch('/api/public-demo', {
+        method: 'POST',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: trimmed, scenario: publicScenario }),
+      });
+      const payload = (await res.json()) as PublicChatReply & { error?: string };
+      if (!res.ok || !payload.ok) {
+        throw new Error(payload.error || `HTTP_${res.status}`);
+      }
+      setPublicChatAnswers((previous) => [...previous, { question: trimmed, reply: payload }]);
+      setPublicQuestion('');
+    } catch (e) {
+      setPublicChatError((e as Error).message || 'PUBLIC_CHAT_UNAVAILABLE');
+    } finally {
+      setPublicChatSending(false);
+    }
+  }
+
+  async function askPublic(event: React.FormEvent) {
+    event.preventDefault();
+    await submitPublicQuestion(publicQuestion);
+  }
+
+  const cachedCase = publicDemo?.researchExample?.cachedCaseIdentity;
   const isCached = job?.execution_kind === 'VERIFIED_CACHED_REPLAY';
   return <main className="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6 sm:py-12">
     <div className="flex flex-wrap items-start justify-between gap-4">
       <div className="max-w-3xl space-y-3">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#72E4F1]">Connected research workspace</p>
-        <h1 className="font-display text-3xl font-bold sm:text-4xl">Your field, the evidence, the alternatives.</h1>
-        <p className="text-[#AEC4D3]">Inspect an accepted five-year teaching example, run a scientific request, and ask about that same analysis. Research only; field qualification is required before farm decisions.</p>
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#72E4F1]">
+          {authenticated ? 'Connected research workspace' : 'Public Read-Only Scientific Demonstration'}
+        </p>
+        <h1 className="font-display text-3xl font-bold sm:text-4xl">
+          {authenticated ? 'Your field, the evidence, the alternatives.' : 'Verified Cached Research Example (Wageningen, NL)'}
+        </h1>
+        <p className="text-[#AEC4D3]">
+          {authenticated
+            ? 'Inspect an accepted five-year teaching example, run a scientific request, and ask about that same analysis. Research only; field qualification is required before farm decisions.'
+            : 'Inspect the fixed cached five-year Wageningen, Netherlands research demonstration, interactive scenario charts, PDF report, and offline evidence-grounded Q&A. Selecting a region in Earth Explorer does NOT run a custom analysis here.'}
+        </p>
       </div>
       {authenticated && <button className={button} onClick={async () => { await api('session', undefined, 'DELETE'); setAuthenticated(false); setJob(null); setResult(null); setCatalog([]); }}>Lock workspace</button>}
     </div>
     {error && <div role="alert" className="rounded-xl border border-[#FF9299]/50 bg-[#FF9299]/10 p-4 text-sm text-[#FF9299] break-words">{error}</div>}
     {!authenticated ? <div className="space-y-6" data-testid="public-judging-demo">
+      {/* Unmistakable Field-vs-Cache Scientific Truthfulness Notice */}
+      <section
+        data-testid="public-cached-notice-banner"
+        aria-labelledby="public-cached-banner-heading"
+        className="rounded-2xl border-2 border-[#FFCE7B]/70 bg-[#251E10]/90 p-5 sm:p-6 space-y-4"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <AlertTriangle className="h-6 w-6 shrink-0 text-[#FFCE7B]" />
+            <h2 id="public-cached-banner-heading" className="text-lg sm:text-xl font-bold text-[#FFCE7B]">
+              Verified Cached Research Example — Not an Analysis of Your Selected Field.
+            </h2>
+          </div>
+          <span className="rounded-full border border-[#57D9A7]/50 bg-[#0D2B2A] px-3 py-1 font-mono text-xs text-[#57D9A7]">
+            VERIFIED_CACHED_REPLAY · fresh_scientific_jobs = 0
+          </span>
+        </div>
+        <p className="text-sm text-[#F1F7FD]">
+          {publicDemo?.customLocationStatusReason ||
+            'Custom per-location scientific simulation is not available in the public demonstration. Selected Earth Explorer coordinates are kept strictly separate and are NEVER submitted to or computed by this cached endpoint.'}
+        </p>
+
+        <div
+          data-testid="field-vs-cache-identity"
+          className="grid grid-cols-1 gap-4 md:grid-cols-2 text-xs"
+        >
+          <div className="rounded-xl border border-[#548299]/60 bg-[#07111F] p-4 space-y-2">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-mono uppercase tracking-wider text-[#90A8BA]">
+                Your Selected Earth Explorer Location
+              </span>
+              <span className="rounded bg-[#2A1F12] border border-[#FFCE7B]/50 px-2 py-0.5 font-mono text-[10px] text-[#FFCE7B]">
+                NOT ANALYZED HERE
+              </span>
+            </div>
+            {selectedExplorerRegion ? (
+              <div data-testid="selected-explorer-summary" className="space-y-1 text-[#AEC4D3]">
+                <p className="font-semibold text-sm text-[#F1F7FD]">{selectedExplorerRegion.label}</p>
+                <p className="font-mono text-[#72E4F1]">
+                  Site ID: {selectedExplorerRegion.siteKey} · lon {selectedExplorerRegion.lon.toFixed(4)}°, lat {selectedExplorerRegion.lat.toFixed(4)}°
+                </p>
+                <p>
+                  These coordinates were selected only for map/coverage browsing in Earth Explorer. They were <strong className="text-[#F1F7FD]">NOT</strong> used as inputs to the Wageningen crop rotation below.
+                </p>
+              </div>
+            ) : (
+              <div data-testid="selected-explorer-summary" className="space-y-1 text-[#AEC4D3]">
+                <p className="font-semibold text-sm text-[#F1F7FD]">No custom Earth Explorer field active</p>
+                <p>
+                  Even if you select another location in Earth Explorer, public demonstration results remain bound strictly to the fixed Wageningen cached dataset on the right.
+                </p>
+              </div>
+            )}
+            <div className="pt-1">
+              <Link href="/explore" prefetch={false} className="inline-flex items-center gap-1.5 text-[#72E4F1] underline hover:text-[#a5f1f8]">
+                <MapPin className="h-3.5 w-3.5" />
+                <span>Inspect or change location in 3D Earth Explorer</span>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            data-testid="cached-case-identity-card"
+            className="rounded-xl border border-[#57D9A7]/50 bg-[#07111F] p-4 space-y-1.5 text-[#AEC4D3]"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-mono uppercase tracking-wider text-[#57D9A7]">
+                Actual Cached Dataset Shown Below
+              </span>
+              <span className="rounded bg-[#0D2B2A] border border-[#57D9A7]/50 px-2 py-0.5 font-mono text-[10px] text-[#57D9A7]">
+                CACHE_ONLY · FIXED LOCATION
+              </span>
+            </div>
+            <p className="font-semibold text-sm text-[#F1F7FD]">
+              {cachedCase?.locationLabel || 'Wageningen, Netherlands'} ({cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'})
+            </p>
+            <p className="font-mono text-[#72E4F1]">
+              lon {cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°, lat {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}° · {cachedCase?.period || '2016–2020'}
+            </p>
+            <p className="break-all font-mono text-[11px]">
+              Farm ID: <span className="text-[#F1F7FD]">{cachedCase?.farmId || 'NL_THREE_CROP_PRODUCING_RESEARCH'}</span>
+            </p>
+            {cachedCase?.analysisId && (
+              <p className="break-all font-mono text-[11px]">
+                Analysis ID: <span className="text-[#F1F7FD]">{cachedCase.analysisId}</span>
+              </p>
+            )}
+            {cachedCase?.runId && (
+              <p className="break-all font-mono text-[11px]">
+                Run ID: <span className="text-[#F1F7FD]">{cachedCase.runId}</span>
+              </p>
+            )}
+            {cachedCase?.scientificResultSha256 && (
+              <p className="break-all font-mono text-[11px]">
+                Output SHA-256: <span className="text-[#F1F7FD]">{cachedCase.scientificResultSha256}</span>
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
       <section className={`${card} space-y-4`} aria-labelledby="public-demo-intro-heading">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
@@ -302,7 +502,7 @@ export default function ResearchPage() {
           </span>
         </div>
         <p className="text-sm text-[#AEC4D3]">
-          Judges and reviewers can inspect verified cached five-year scientific outputs and download the genuine sample scientific PDF directly below without authentication. Private farm drafts, unrestricted compute job submission, and operator credentials remain protected.
+          Judges and reviewers can inspect the verified cached Wageningen five-year research outputs, interactive scenario comparison charts, genuine sample scientific PDF, and read-only offline grounded Q&amp;A directly below without authentication. Private farms, unrestricted compute job submission, and operator credentials remain protected.
         </p>
         {publicDemo?.serviceStatus && (
           <div className="flex flex-wrap gap-2.5 text-xs" aria-label="Public service verification status">
@@ -313,8 +513,8 @@ export default function ResearchPage() {
             <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#FFCE7B]">
               Adaptive Evidence: disabled · {publicDemo.serviceStatus.adaptiveEvidence.reason.toLowerCase().replaceAll('_', ' ')}
             </span>
-            <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#AEC4D3]">
-              Live Gemini: unverified · offline evidence fallback in operator mode
+            <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#72E4F1]">
+              Evidence Q&amp;A: offline deterministic fallback active · Live Gemini unverified
             </span>
           </div>
         )}
@@ -332,14 +532,14 @@ export default function ResearchPage() {
           <section className={`${card} space-y-3`} aria-labelledby="public-case-scope-heading">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h2 id="public-case-scope-heading" className="text-lg font-semibold text-[#72E4F1]">
-                Wageningen teaching field · 1 ha · potato, spring barley, sugar beet (2016–2020)
+                Cached Scope: {cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'} (Wageningen, NL · {cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°E, {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}°N) · 1 ha · potato, spring barley, sugar beet (2016–2020)
               </h2>
               <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 font-mono text-xs text-[#72E4F1]">
                 {publicDemo.researchExample.execution_kind}
               </span>
             </div>
             <p className="text-sm text-[#AEC4D3]">
-              Uses public NASA POWER historical daily weather (2016–2020) with unmeasured teaching soil and declared initial nutrient states across three paired weather/nitrogen scenarios. Historical research scenarios are NOT field-validated farming recommendations.
+              Uses public NASA POWER historical daily weather ({cachedCase?.acquisitionMode || 'CACHE_ONLY'}, 2016–2020) specifically at Wageningen with unmeasured teaching soil and declared initial nutrient states across three paired weather/nitrogen scenarios. Historical research scenarios are NOT field-validated farming recommendations.
             </p>
           </section>
 
@@ -350,9 +550,106 @@ export default function ResearchPage() {
             reportAvailable={publicDemo.researchExample.report_available}
             pdfHref={publicDemo.researchExample.pdfDownloadUrl}
             pdfLabel="Download sample scientific PDF"
-            headingText="Verified five-year Pareto alternatives, scenario metrics & sample PDF"
+            headingText="Verified Cached Five-Year Pareto Alternatives (Wageningen, NL), Interactive Charts & Sample PDF"
             headingId="public-comparison-heading"
           />
+
+          <section
+            data-testid="public-demo-chat"
+            className={`${card} space-y-5`}
+            aria-labelledby="public-chat-heading"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-3">
+                <MessageSquareText className="h-6 w-6 text-[#72E4F1]" />
+                <h2 id="public-chat-heading" className="text-xl font-semibold">
+                  Ask about this cached Wageningen example (Read-Only Offline Q&amp;A)
+                </h2>
+              </div>
+              <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 font-mono text-[11px] text-[#72E4F1]">
+                Scoped strictly to {cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'} ({cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°E, {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}°N)
+              </span>
+            </div>
+            <p className="text-sm text-[#AEC4D3]">
+              Answers use the genuine offline deterministic evidence engine bound strictly to the cached Wageningen five-year analysis (and retain evidence citations). Live Gemini is unverified; new simulations cannot be triggered publicly.
+              {selectedExplorerRegion && selectedExplorerRegion.siteKey !== 'nl-wageningen-growth'
+                ? ` Note: Q&A explains ONLY the cached Wageningen case below — not your Explorer selection (${selectedExplorerRegion.label}).`
+                : ''}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                'Explain water',
+                'Why is there no winner?',
+                'Compare both alternatives',
+                'Explain nitrogen',
+                'What evidence is missing?',
+                'Does this apply to my selected location?',
+              ].map((q) => (
+                <button
+                  key={q}
+                  type="button"
+                  data-testid="public-chat-chip"
+                  disabled={publicChatSending}
+                  onClick={() => {
+                    setPublicQuestion(q);
+                    void submitPublicQuestion(q);
+                  }}
+                  className={button}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+            <form className="flex flex-col gap-3 sm:flex-row" onSubmit={askPublic}>
+              <label className="sr-only" htmlFor="public-demo-question">
+                Question about cached Wageningen analysis
+              </label>
+              <input
+                id="public-demo-question"
+                className={input}
+                value={publicQuestion}
+                onChange={(e) => setPublicQuestion(e.target.value)}
+                maxLength={500}
+                placeholder="Ask about Wageningen water, nitrogen, crop DM, or missing evidence..."
+                required
+              />
+              <button
+                type="submit"
+                data-testid="public-chat-submit"
+                className={primary}
+                disabled={publicChatSending || !publicQuestion.trim()}
+              >
+                {publicChatSending ? 'Reading evidence…' : 'Ask'}
+              </button>
+            </form>
+            {publicChatError && (
+              <div role="alert" className="rounded-xl border border-[#FF9299]/50 bg-[#FF9299]/10 p-3 text-xs text-[#FF9299]">
+                {publicChatError}
+              </div>
+            )}
+            <div className="space-y-4" data-testid="public-demo-answers">
+              {publicChatAnswers.map((item, idx) => (
+                <article
+                  key={idx}
+                  className="space-y-3 rounded-xl border border-[#29455A] bg-[#07111F] p-4"
+                >
+                  <p className="font-semibold text-[#F1F7FD]">{item.question}</p>
+                  <p className="whitespace-pre-wrap text-sm text-[#AEC4D3]">
+                    {item.reply.answer || 'No textual response returned.'}
+                  </p>
+                  <p className="font-mono text-[11px] text-[#72E4F1]">
+                    {item.reply.mode} · Scenario {item.reply.scenario} · Cached case: {item.reply.cachedCaseReference}
+                  </p>
+                  {item.reply.claims?.length ? (
+                    <JsonDetails
+                      title={`${item.reply.claims.length} evidence citations`}
+                      value={item.reply.claims}
+                    />
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </section>
         </>
       )}
 
@@ -360,7 +657,7 @@ export default function ResearchPage() {
         <section className={`${card} space-y-4`} aria-labelledby="public-blocked-heading">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 id="public-blocked-heading" className="text-lg font-semibold text-[#FFCE7B]">
-              Fail-Closed Abstention Example · Missing Local Evidence ({publicDemo.blockedExample.farm_id})
+              Fail-Closed Abstention Example · Missing Local Evidence ({publicDemo.blockedExample.farm_id} · {publicDemo.blockedExample.siteId || 'AU_WAGGA_REGION'})
             </h2>
             <span className="rounded-full border border-[#FFCE7B]/50 bg-[#2B2212] px-3 py-1 font-mono text-xs text-[#FFCE7B]">
               {publicDemo.blockedExample.status}
@@ -386,7 +683,7 @@ export default function ResearchPage() {
           </span>
         </div>
         <h2 id="local-access-heading" className="text-xl font-semibold">Open the local demonstration</h2>
-        <p className="text-sm text-[#AEC4D3]">Judges do not need an access code for the public scientific demonstration above. Enter the private local access code only to unlock operator job submission, custom requests, private farms, and evidence-grounded Q&amp;A.</p>
+        <p className="text-sm text-[#AEC4D3]">Judges do not need an access code for the public scientific demonstration above. Enter the private local access code only to unlock operator job submission, custom canonical requests, private farms, and interactive scenario what-if tools.</p>
         <form onSubmit={unlock} className="space-y-4"><label className="block text-sm" htmlFor="access-code">Local access code</label>
           <input id="access-code" className={input} type="password" autoComplete="off" value={code} onChange={e => setCode(e.target.value)} required maxLength={200} />
           <button className={primary} disabled={busy || !checked}>Open workspace <ArrowRight className="h-4 w-4" /></button></form>
