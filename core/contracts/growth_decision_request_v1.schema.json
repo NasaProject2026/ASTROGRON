@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "profile_id",
+    "objective",
+    "scenarios",
+    "constraints",
+    "pk_scope"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.growth-decision.request.v1"
+    },
+    "profile_id": {
+      "const": "wageningen-pcse81-nasa-research-v1"
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "criterion",
+        "target_years",
+        "acknowledgment"
+      ],
+      "properties": {
+        "version": {
+          "const": "FOLLOW_ON_POTATO_STORAGE_DM_V1"
+        },
+        "criterion": {
+          "enum": [
+            "maximin",
+            "minimax_regret"
+          ]
+        },
+        "target_years": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 2017,
+            "maximum": 2020
+          }
+        },
+        "acknowledgment": {
+          "const": "MODELED_DRY_MATTER_NOT_MARKETABLE_YIELD_OR_PROFIT"
+        }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenario_id",
+          "initial_mineral_N_factor"
+        ],
+        "properties": {
+          "scenario_id": {
+            "type": "string"
+          },
+          "initial_mineral_N_factor": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_modeled_N_leaching"
+      ],
+      "properties": {
+        "max_modeled_N_leaching": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "value",
+                "unit",
+                "basis"
+              ],
+              "properties": {
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10000
+                },
+                "unit": {
+                  "const": "kg N/ha"
+                },
+                "basis": {
+                  "const": "EXPLICIT_RESEARCH_CONSTRAINT_NOT_REGULATION"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pk_scope": {
+      "const": "DECLARED_P_K_ONLY_NATIVE_N_FROM_PCSE"
+    }
+  }
+}

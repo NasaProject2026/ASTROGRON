@@ -1,121 +1,137 @@
-# ASTROGRON — Orbital Intelligence for Agricultural Research & Decision Support
+# ASTROGRON — Unified Competition Release (NASA Space Apps Challenge 2026)
 
-**Standalone Frontend Application (`ASTROGRON-FRONTEND`)**  
-**Edition:** 2026-11-12 · **UI Locale:** English (`en`) · **Contracts:** `astrogron.global-evidence.v1` (M4) & `astrogron.m14.response.v1` (M14)
+> **Live NASA Judging Demonstration (Temporary Cloudflare Quick Tunnel):**  
+> **https://nevertheless-ventures-disk-right.trycloudflare.com**  
+> *(Serves the Next.js V7 UI on top of the loopback Python scientific engine; temporary demo URL hosted during active competition judging — not permanent hosting.)*
 
----
-
-> **Independent follow-up review (13 November 2026):** See
-> [`review/13_INDEPENDENT_V4_AUDIT_AND_ORBIT_DESIGN_AR.md`](review/13_INDEPENDENT_V4_AUDIT_AND_ORBIT_DESIGN_AR.md).
-> The original V4 Chromium/Vitest evidence remains historical. The experimental independently moving
-> 2D Canvas prototype is available at `/orbit-lab.html` for direct comparison only. The public landing
-> page intentionally retains the original cinematic image until a photorealistic 3D alternative passes
-> mobile/desktop visual quality and performance gates. This illustration is not NASA telemetry.
-
-
-**Mobile-first UX refinement (13 November 2026):** See
-[`review/14_MOBILE_FIRST_UX_AND_3D_DECISION_AR.md`](review/14_MOBILE_FIRST_UX_AND_3D_DECISION_AR.md).
-Tablet navigation remains available through the `lg` breakpoint, research navigation uses progressive disclosure,
-mobile Earth Explorer sites use a single selection control, and the map settings are opened only when needed.
-Use `node scripts/mobile-ux-offline-gates.mjs` for additional static source checks; these are **not** a replacement for `npm run test:e2e`.
-
-## 1. Overview & Scientific Integrity Boundaries
-
-`ASTROGRON-FRONTEND` is a standalone, backend-ready Next.js 16 + React 19 + TypeScript application pairing interactive orbital 3D Earth mapping with transparent multi-scenario agricultural research exploration.
-
-### Key Architectural & Scientific Guarantees
-- **Strict Separation from Protected Backend:** Built as an isolated standalone frontend workspace (`ASTROGRON-FRONTEND`). Contains zero Python optimization solver code, zero browser-side crop physiology calculation, and zero concealed backend secrets or M1–M14 identifiers.
-- **Explicit Research-Conditional & Demo Provenance:** Every screen, data mode switcher, table, chart, and exported JSON/CSV displays explicit `SYNTHETIC INTERFACE DEMONSTRATION — NOT RECORDED SCIENTIFIC RESULTS` and `FIELD_RECOMMENDATION_ELIGIBILITY: BLOCKED` disclosures.
-- **Three Strictly Isolated Operating Modes:**
-  1. `SYNTHETIC_UI_DEMO` (active default): Evaluates a self-contained **12 synthetic policies (`SYNTH-POL-01`..`SYNTH-POL-12`) × 9 scenario states = 108 state evaluations** (11 comparable policies + 1 calendar-invalid exclusion = 99 numeric-valid evaluations; 66 passes in wet/median analogues, 33 failures in dry analogues; `0 of 12` pass all 9 states because rainfed Fields `F1` [6.0 ha] and `F2` [8.0 ha] breach the assumed 100.0 mm deficit ceiling with `F1` reaching 142.50 mm). `FIELD_RECOMMENDATION_ELIGIBILITY` is strictly `BLOCKED`.
-  2. `RECORDED_M14_RESEARCH`: Fails closed with `SOURCE_NOT_PROVIDED` unless an authorized frozen raw M14 corpus is explicitly supplied.
-  3. `REAL_SCIENTIFIC_BACKEND`: Fails closed with `BACKEND_NOT_CONNECTED` while the live protected scientific backend is offline.
-- **Strict Cross-Site Isolation:** Reference fixtures for Nyeri (Kenya) and Wagga Wagga (Australia) inspect M4 source coverage metadata only (`OK_COVERAGE_ONLY`) and strictly fail closed (`MODEL_UNQUALIFIED`) on decision, five-year plan, and daily climate routes. Custom user drafts never inherit Uppsala coordinates (`[17.64, 59.86]`) or Uppsala crop matrices.
-- **No NASA Endorsement Implied:** Uses original illustrative orbital artwork for the hero banner (explicitly labeled as conceptual visual framing) and credits NASA GIBS / NASA POWER / GPM IMERG / SMAP L4 / HLS cleanly without using NASA insignia or implying endorsement.
+**Competition Release Version:** `astrogron-competition-2026.11.15+95a19217e4ce`  
+**Previous `main` Snapshot Preserved At:** branch `backup/v5-initial-fe4df14` / tag `backup-v5-fe4df14` (`fe4df14`, history preserved with zero force-pushes)
 
 ---
 
-## 2. Runtime & Technical Requirements
+## 1. For NASA Judges — Immediate No-Login Walkthrough
 
-- **Node.js:** `>= 20.9.0` (verified on **Node.js v22.14.0 LTS**)
-- **Package Manager:** `npm >= 10.x`
-- **Framework Stack:**
-  - Next.js 16 (App Router) + React 19 + TypeScript 5.7 (`strict: true`)
-  - Tailwind CSS 4 (`@tailwindcss/postcss`)
-  - MapLibre GL JS v6 (`6.18.0`) 3D WebGL Globe + `@turf/turf` (`7.4.0`) geodesic area/validation
-  - OpenFreeMap (`openmaptiles` vector schema) + EOX Sentinel-2 Cloudless 2016 historical mosaic (`CC BY 4.0`, tiles z0–z14; confirmed in both EOX FAQ & WMTSCapabilities, no uptime SLA) + NASA GIBS Blue Marble Next Generation (`z0–z8`) + bundled Natural Earth `1:110m` Countries GeoJSON (`177` sovereign boundaries, Public Domain `CC0`)
-  - Apache ECharts 5 (`echarts`) + accessible HTML companion data tables
-  - Zod (`zod`) for coordinate, GeoJSON topology, and M4/M14 contract schema validation
-  - Vitest (`vitest`) + Playwright (`@playwright/test`)
+NASA judges can evaluate ASTROGRON directly from the public URL without entering any operator access code:
+
+1. **Original Homepage (`/`):** Explains the problem, evidence-first methodology, Earth observation layers, and links directly to **"Public scientific demo & PDF (no login)"** (`/research`) and **"Explore 3D Globe"** (`/explore`).
+2. **Interactive 3D Earth Explorer (`/explore`):** Public WebGL globe (`maplibre-gl`) with regional agricultural presets, Earth observation source provenance metadata, and honest coverage/capability status disclosures.
+3. **Public Read-Only Scientific Demonstration (`/research`):**
+   - Loads verified, non-sensitive cached outputs directly from the real loopback D backend (`GET /api/public-demo`, server-filtered to `VERIFIED_CACHED_REPLAY` demo fixtures only).
+   - Displays the **Wageningen 1 ha 5-Year Research Replay** with two Pareto management alternatives (`Alternative 1` and `Alternative 2`, explicitly showing **no single declared winner**), scenario switcher (`REFERENCE`, `HALF_RAIN`, `LOW_INITIAL_MINERAL_N`), storage dry matter vs. nitrogen leaching table, live system readiness badges (`Adaptive Evidence: Disabled`, `Gemini Live LLM: Unverified`), **downloadable Sample Scientific PDF** (`GET /api/public-demo?download=pdf`), and an **Honest Fail-Closed Abstention Example** (`EVIDENCE_BLOCKED`, Australian scenario where missing local agronomic evidence blocks fabricated output).
+4. **Protected Operator Endpoints Remain Fail-Closed:** `/farms`, `/farm/new`, `/settings`, `/api/core/*`, `/api/farms`, `/api/analyses/*`, `/api/capabilities`, raw Python backend `:8790` (`/v1/*`, `/ready`), and `runtime/frontend-access.txt` remain authentication-gated (`307` / `401` when unauthenticated).
 
 ---
 
-## 3. Setup, Development, Build & Test Commands
+## 2. Unified System Architecture
 
-```bash
-# 1. Install dependencies from lockfile
-npm ci
-
-# 2. Start local development server on http://localhost:3000
-npm run dev
-
-# 3. Run strict TypeScript typecheck
-npm run typecheck
-
-# 4. Run ESLint
-npm run lint
-
-# 5. Run Vitest unit, contract, and adversarial suite
-npm run test
-
-# 6. Build production application
-npm run build
-
-# 7. Start production server on http://localhost:3000
-npm run start
-
-# 8. Run Playwright real-browser verification (3D WebGL globe, 2D failure fallback, responsive matrix)
-npm run test:e2e
+```text
+Public HTTPS (Cloudflare Quick Tunnel -> 127.0.0.1:3000 ONLY)
+        │
+        ▼
+┌────────────────────────────────────────────────────────────────┐
+│ frontend/  — Original V7 Next.js 16.4.6 UI & Fail-Closed Proxy │
+│  • Public Routes: /, /explore, /research (read-only demo),     │
+│    /help, /methodology, /api/public-demo (PDF + cached replay) │
+│  • Operator Session Routes (HttpOnly cookie + CSRF/Origin):    │
+│    /farms, /farm/*, /settings, /api/core/*                     │
+└───────────────────────────┬────────────────────────────────────┘
+                            │ Loopback-only HTTP + Server Bearer Token
+                            ▼
+┌────────────────────────────────────────────────────────────────┐
+│ core/ — Protected Scientific Backend (A + B + C + D, :8790)    │
+│  • D (system_integration / brain): Wofost81_NWLP_MLWB_SNOMIN   │
+│    (PCSE 6.0.13) + single-worker persistent job queue          │
+│  • B (customer_reports): Provenance manifests & PDF synthesis  │
+│  • C (assistant_brain): Offline evidence-grounded chat         │
+│  • A (baseline / verification): Protected manifests & checks   │
+└───────────────────────────┬────────────────────────────────────┘
+                            │ DISABLED BY DEFAULT (version/compat gate)
+                            ▼
+┌────────────────────────────────────────────────────────────────┐
+│ adaptive/ — Adaptive Evidence Sidecar (Disabled in Release)    │
+│  • Preserved under Apache-2.0 source; intentionally off until  │
+│    upstream 398-file compatibility review is completed.        │
+└────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 4. Environment Configuration & No-Key Resilient Fallback
+## 3. Repository Contents & Excluded Assets
 
-Copy `.env.example` to `.env.local` only if wiring server-side geocoding, FTW field boundary suggestions, capability footprint feeds, live agronomic analysis, or the report-grounded assistant (`ASTROGRON_GEOCODER_*`, `ASTROGRON_FTW_*`, `ASTROGRON_BACKEND_URL`, `ASTROGRON_CAPABILITY_*`, `ASTROGRON_CHAT_ENDPOINT`). All `NEXT_PUBLIC_` variables are bundled client-side and MUST NOT hold private credentials:
+This public competition repository includes:
+- **`frontend/`**: Complete original V7 Next.js TypeScript application, MIT `frontend/LICENSE`, public judging routes (`app/api/public-demo/route.ts`, `proxy.ts`, `app/research/page.tsx`, `src/components/hero/cinematic-landing.tsx`), fixtures (`src/fixtures/`), and open-licensed static web assets (`public/geodata/*` CC0, `public/workers/maplibre-gl-worker.js` BSD-3-Clause, `public/orbit-ab-assets/*` NASA Public Domain / Three.js MIT / Draco Apache-2.0, `public/orbit-lab.html`, `public/favicon.ico`).
+- **`core/`**: Permitted original ASTROGRON Python source (`brain/`, `assistant_brain/`, `customer_reports/`, `system_integration/`, `contracts/`, `integration/`, `standalone/`, `coordination/`, `tests/`).
+- **`adaptive/`**: Permitted original Adaptive Evidence sidecar Python source (`adaptive_evidence/`, `contracts/`, `tests/`), **disabled by default**.
+- **`handoff/` & Root Tools**: `START_UNIFIED.ps1`, `START_QUICK_TUNNEL.ps1`, `BACKEND_PORTABILITY.md`, `CONFIGURATION.example`, `RELEASE_VERSION.json`, `PRIVATE_BASE_EXCLUSIONS.json`, `handoff/{HYDRATE_PRIVATE_BASE,RESTORE_PRIVATE_STATE,SMOKE_HANDOFF,VERIFY_HANDOFF}.py`, `verify_public_access.py`, `verify_unified.py`.
 
-- **Default Zero-Key Earth Explorer:** When custom keys are unset, `/explore` launches a genuine interactive **MapLibre GL JS v6 3D WebGL globe** (`projection: 'globe'`) pairing **OpenFreeMap** global borders/roads/place names (`© OpenFreeMap © OpenMapTiles © OpenStreetMap contributors`), **EOxCloudless Sentinel-2 2016 historical mosaic** (`CC BY 4.0`, historical cloudless satellite composite down to z14), and **NASA GIBS Blue Marble** (`z0–z8`).
-- **Honest Resilience & Fallbacks:** If external tile hosts are blocked/offline (`IMAGERY_PROVIDER_BLOCKED`), the globe switches cleanly to the bundled **Natural Earth 1:110m (`177` countries, CC0)** vector globe with explicit attribution. If WebGL initialization genuinely fails (`?mapFallback=1` or headless software GPU absence), the UI switches explicitly to the 2D Natural Earth SVG Fallback (`FALLBACK_ONLY`).
-- **No Unlicensed Scraping & Honest Capability Boundaries:** Public OpenStreetMap Nominatim autocomplete is explicitly blocked by `src/server/ssrf-guard.ts`. When `ASTROGRON_GEOCODER_ENDPOINT` or `ASTROGRON_FTW_SUGGEST_ENDPOINT` are unset, search uses the built-in 16-site reference gazetteer plus instant decimal/DMS coordinate jump and browser GPS, while remote FTW outline suggestion fails closed (`UNAVAILABLE`) without fabricating AI boundaries.
+**Intentionally Excluded Assets (Never Published to Public Git):**
+- Commissioned hero/editorial artwork (`frontend/public/assets/*.jpg` — proprietary artist rights)
+- Protected engine inputs, crop YAML tables, R&D pack, and integrity-sealed test isolation files (`301` protected files / `59` growth pins, bundled Python wheels incl. `pcse==6.0.13`)
+- Raw cached NASA POWER / SoilGrids / Natural Earth 10m shapefile downloads (`adaptive/adaptive_evidence/data/`, `adaptive/examples/`, `adaptive/docs/`)
+- `.env` credentials, access codes (`frontend-access.txt`, `operator-access.txt`), `runtime/` state, `core/.venv/`, `node_modules/`, `.next/`
 
----
-
-## 5. Route Architecture
-
-| Path | Screen | Purpose |
-|---|---|---|
-| `/` | Cinematic Landing | Full-bleed Low Earth Orbit hero, editorial Earth-to-evidence narrative, coverage & 5-year matrix previews |
-| `/explore` | Earth Explorer | Real 3D MapLibre globe, satellite/vector/thematic layers, worldwide search proxy + offline gazetteer, optional Analysis Availability overlay, decimal/DMS entry, vertex editor, GeoJSON validation |
-| `/farms` | My Farms Portfolio | Saved local-device farms with polygon outlines, checksum JSON backup export/import, and archive lifecycle |
-| `/farm/new` | Farm Setup Wizard | 3-stage farmer-first setup (Location -> Smart Field Boundary via manual draw, FTW suggestion when configured, GPS walk, or GeoJSON/KML/GPX import -> Review & Save) |
-| `/farm/[id]` | Farm Overview | Parcel inventory, area provenance (`GEOMETRY_DERIVED_ESTIMATE` vs `USER_DECLARED_NOT_SURVEYED`), KPIs |
-| `/farm/[id]/coverage` | Evidence Readiness | M4 per-source & per-capability status matrix (`AVAILABLE`, `CONDITIONAL`, `INSUFFICIENT_EVIDENCE`, `OUT_OF_COVERAGE`) |
-| `/farm/[id]/analysis` | Analysis Setup | M14 4-preference selector and fail-closed backend gate |
-| `/farm/[id]/results` | Decision Overview | Abstention banner, 12×9=108 feasibility audit, least-worst shortfall vs minimax regret vs Pareto trade-offs |
-| `/farm/[id]/plans` | Five-Year Plan | Interactive Field × Year (H1–H5) crop matrix, comparison view, mobile year switcher |
-| `/farm/[id]/climate` | Climate & Water | ECharts plots + accessible companion HTML tables for 2018 dry, 2006 median (null gap preserved), and 2012 wet analogues |
-| `/farm/[id]/decisions` | Decision Explorer | Pareto frontier (`NO_UNIQUE_WINNER`), full 12-policy synthetic ranking, and 9-state witness audit |
-| `/farm/[id]/evidence` | Provenance Center | Site-bound M4/M14 `EvidenceRecord` catalog with provenance disclosures and extraction metadata |
-| `/farm/[id]/reports` | Reports & Exports | Watermarked JSON/CSV export and neutral-light printable report |
-| `/methodology` | How It Works | Plain-language overview + M4/M14 technical notes |
-| `/help` | Help & FAQ | Glossary of agronomic/decision terms, qualification rules, and privacy policy |
-| `/settings` | Settings | Simple/Scientific view default, metric/acre units, reduced motion override, local storage reset |
-| `/design-system` | Design System | Live orbital design tokens, badges, and accessibility specification |
+See **[`EXCLUDED_ASSETS_AND_RIGHTS.md`](EXCLUDED_ASSETS_AND_RIGHTS.md)** for the full boundary ledger and **[`NASA_AND_DATA_ATTRIBUTIONS.md`](NASA_AND_DATA_ATTRIBUTIONS.md)** for all data source citations.
 
 ---
 
-## Open-Source License (NASA Space Apps Challenge)
+## 4. Reproducible Installation & Local Launch (Windows x64)
 
-This project is Open Source under the **MIT License** for the **NASA Space Apps Challenge**.
-See [`LICENSE`](./LICENSE) for the full license text (`Copyright (c) 2026 ASTROGRON Team - NASA Space Apps Challenge`).
+### Prerequisites
+- **CPython 3.14.3 (x64)**
+- **Node.js 24.14.1 (x64)** & **npm**
+- **Microsoft Edge**
+- **Git for Windows**
+- **cloudflared** (optional, for temporary HTTPS Quick Tunnel demonstration)
 
+### Full Authorized Operator Setup (With Private Operational Base Archive)
+Authorized operators holding the frozen baseline archive (`ASTROGRON_COMPETITION_RELEASE_20261115_95a19217e4ce.zip`, SHA-256 `95a19217e4ce7abb75823f2d3b415e645e06ba90369b38a35ec7acaaad5ebe9e`):
+
+```powershell
+# 1. Hydrate withheld wheels, 301 protected files, and open/commissioned runtime assets
+python handoff\HYDRATE_PRIVATE_BASE.py C:\path\to\ASTROGRON_COMPETITION_RELEASE_20261115_95a19217e4ce.zip
+
+# 2. Verify release manifest and CORE integrity
+python handoff\VERIFY_HANDOFF.py
+
+# 3. Reconstruct Python .venv + Node modules + build Next.js and launch loopback services
+powershell -NoProfile -ExecutionPolicy Bypass -File .\START_UNIFIED.ps1
+
+# 4. Run smoke suite in a second terminal (uses cached replays; submits 0 live jobs)
+core\.venv\Scripts\python.exe -B -X utf8 handoff\SMOKE_HANDOFF.py
+
+# 5. (Optional) Expose Next.js ONLY via Cloudflare Quick Tunnel
+powershell -NoProfile -ExecutionPolicy Bypass -File .\START_QUICK_TUNNEL.ps1
+```
+
+Full step-by-step teammate deployment instructions are in [`TEAM_HANDOFF_START_HERE.md`](TEAM_HANDOFF_START_HERE.md).
+
+### Frontend-Only Typecheck / Build Inspection (Public Repo Standalone)
+Without the private Python operational base, reviewers can inspect and typecheck the V7 Next.js frontend:
+
+```powershell
+cd frontend
+npm ci
+npx tsc --noEmit
+```
+
+*(Note: proprietary editorial JPGs under `frontend/public/assets/` are omitted from this public repo per [`EXCLUDED_ASSETS_AND_RIGHTS.md`](EXCLUDED_ASSETS_AND_RIGHTS.md).)*
+
+---
+
+## 5. Scientific Status & Honest Limitations
+
+- **Not Field-Validated Agronomic Advice:** `field_validated` is `false`, `marketable_yield` is `null`, and `profit` is `null`. Historical Wageningen 5-year research scenarios (`REFERENCE`, `HALF_RAIN`, `LOW_INITIAL_MINERAL_N`) represent deterministic model outputs under bounded assumptions — **not** field-calibrated farm prescriptions, economic winners, or legal water permits.
+- **No Single Declared Winner:** Pareto policy comparison refuses to collapse agronomic trade-offs (crop storage dry matter vs. mineral N leaching) into an arbitrary single best score.
+- **Adaptive Evidence Disabled:** `adaptive/` remains turned off in the unified release due to an upstream dependency alignment difference (`390/398` files match core; `6` source/contract files differ; `2` historical receipts absent). Core `A+B+C+D` remains the sole scientific authority.
+- **Offline Chat Fallback:** Evidence-grounded AI chat responses use the deterministic C backend renderer bounded to cited analysis fields. Live external Gemini/Groq LLM connectivity is **not** verified or claimed.
+- **Public URL Hosting Notice:** `https://nevertheless-ventures-disk-right.trycloudflare.com` is a temporary Cloudflare Quick Tunnel for competition evaluation and will close when the host process stops.
+
+---
+
+## 6. Licenses & Attributions
+
+- **Web Frontend (`frontend/`):** MIT License — [`frontend/LICENSE`](frontend/LICENSE)
+- **Adaptive Sidecar (`adaptive/` original code):** Apache-2.0
+- **Combined Licensing Summary:** [`LICENSE`](LICENSE)
+- **NASA & Geospatial Attributions:** [`NASA_AND_DATA_ATTRIBUTIONS.md`](NASA_AND_DATA_ATTRIBUTIONS.md)
+- **Excluded Assets & Rights:** [`EXCLUDED_ASSETS_AND_RIGHTS.md`](EXCLUDED_ASSETS_AND_RIGHTS.md)

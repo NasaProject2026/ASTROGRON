@@ -1,0 +1,18 @@
+# Excluded Assets & Redistribution Boundaries
+
+To comply strictly with third-party data licenses, commissioned artwork rights, credentials hygiene, and competition integrity, this public repository publishes the verified ASTROGRON source tree (`frontend/`, permitted `core/` source, `adaptive/` source, `handoff/` verifiers, and integration scripts) while **explicitly excluding** restricted, proprietary, credentialed, or unverified-redistribution items.
+
+## Summary of Excluded Assets
+
+| Category | Paths / Count | Why Excluded from Public GitHub | How Authorized Operators Restore Locally |
+|---|---|---|---|
+| **Commissioned Editorial / Hero Artwork** | `frontend/public/assets/*.jpg` (`3` files: `orbital-earth-horizon-wide.jpg`, `orbital-earth-horizon-mobile.jpg`, `agricultural-watershed-swath.jpg`) | `assets-manifest.json` designates these as **Proprietary Project Commissioned Artwork** without general public redistribution clearance. | Served dynamically on the authorized competition host; omitted from public Git redistribution. |
+| **Protected Scientific Baseline, Crop Parameter & R&D Files** | `core/SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/**`, `core/ASTRAGRON_COMPLETE_RND_PACK_2026-10-20/**` (`301` protected files / `59` growth input pins itemized in `PRIVATE_BASE_EXCLUSIONS.json`) | Contains pinned third-party PCSE crop parameter tables, notebook/R&D packs, and integrity-sealed test isolation fixtures that require owner-controlled private distribution. | Run `python handoff/HYDRATE_PRIVATE_BASE.py <path-to-ASTROGRON_COMPETITION_RELEASE_20261115_95a19217e4ce.zip>` on an authorized local machine. |
+| **Bundled Python Wheels & Playwright Tooling** | `core/dependencies/**` (`36` hash-pinned Python wheels incl. `pcse==6.0.13`, `shapely==2.2.0` / `GEOS`, etc.) | Large prebuilt binary distributions with transitive native library obligations (`LGPL-2.1-or-later` GEOS, etc.). | Reconstructed into `core/.venv` by `START_UNIFIED.ps1` after private hydration, or installed from locked requirements. |
+| **Cached Provider Extracts, Natural Earth 10m Shapefiles & Adaptive Docs** | `adaptive/adaptive_evidence/data/**`, `adaptive/examples/**`, `adaptive/docs/**` | Conservative exclusion of cached NASA POWER / SoilGrids extracts, binary shapefiles, and pre-existing license-discrepancy documentation. | Hydrated from owner-controlled operational archive via `handoff/HYDRATE_PRIVATE_BASE.py`; Adaptive remains **disabled by default**. |
+| **Secrets, Credentials, Access Codes & Runtime State** | `.env`, `.env.*` (except `.env.example`), `runtime/**`, `core/runtime/**`, `frontend-access.txt`, `operator-access.txt` | Security boundary: never commit operator passwords, session secrets, backend bearer tokens, API keys, or private farm analyses. | Freshly generated at local runtime by `START_UNIFIED.ps1` or restored privately from an encrypted state checkpoint (`save_private_state.py` / `handoff/RESTORE_PRIVATE_STATE.py`). |
+| **Local Build & Environment Artifacts** | `core/.venv/`, `frontend/node_modules/`, `frontend/.next*/`, `integration_acceptance/`, `*.zip`, `*.bundle` | Platform-specific build caches and verification logs. | Rebuilt on target machine via `START_UNIFIED.ps1` and `npm ci`. |
+
+The complete SHA-256 inventory of withheld operational archive files is recorded in [`PRIVATE_BASE_EXCLUSIONS.json`](PRIVATE_BASE_EXCLUSIONS.json) (`operational_archive_sha256`: `95a19217e4ce7abb75823f2d3b415e645e06ba90369b38a35ec7acaaad5ebe9e`).
+
+Note: The pre-replacement v5 UI snapshot (`fe4df14`) has been preserved without rewriting history on branch `backup/v5-initial-fe4df14` and tag `backup-v5-fe4df14`.

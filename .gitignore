@@ -1,40 +1,24 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# Testing
-/coverage
-/playwright-report
-/test-results
-
-# Next.js
-/.next/
-/out/
-
-# Production
-/build
-
-# Misc
-.DS_Store
-*.pem
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local env files
-.env*.local
-.env
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Python & Local Runtime Stores
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-/data/runtime/
+.git/
+**/.venv/
+**/node_modules/
+**/.next*/
+**/.npm-cache/
+**/__pycache__/
+**/*.pyc
+**/*.tsbuildinfo
+**/runtime/
+**/.runtime/
+integration_acceptance/
+**/.env
+**/.env.*
+!**/.env.example
+*.zip
+*.bundle
+frontend/next-env.d.ts
+frontend/public/assets/
+core/dependencies/
+core/SOIL_MEMORY_FINAL_TEST_ISOLATION_20261109/
+core/ASTRAGRON_COMPLETE_RND_PACK_2026-10-20/
+adaptive/adaptive_evidence/data/
+adaptive/examples/
+adaptive/docs/

@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "profile_id",
+    "point_lon_lat",
+    "period",
+    "research_acknowledged",
+    "acquisition",
+    "variants"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.growth-experiment.request.v1"
+    },
+    "profile_id": {
+      "enum": [
+        "wageningen-pcse81-nasa-research-v1",
+        "wageningen-pcse81-two-crop-fallow-research-v1",
+        "wageningen-three-crop-producing-research-v1"
+      ]
+    },
+    "point_lon_lat": {
+      "const": [
+        5.67,
+        51.97
+      ]
+    },
+    "period": {
+      "const": [
+        "2016-01-01",
+        "2020-12-31"
+      ]
+    },
+    "research_acknowledged": {
+      "const": true
+    },
+    "acquisition": {
+      "enum": [
+        "FETCH_ALLOWED",
+        "CACHE_ONLY"
+      ]
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "initial_mineral_N_factor",
+          "rain_factor",
+          "crop_sequence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,40}$"
+          },
+          "initial_mineral_N_factor": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "rain_factor": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 1.5
+          },
+          "crop_sequence": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "items": {
+              "enum": [
+                "potato",
+                "sugarbeet",
+                "bare_fallow",
+                "barley"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "wageningen-pcse81-nasa-research-v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "variants": {
+            "items": {
+              "properties": {
+                "crop_sequence": {
+                  "items": {
+                    "enum": [
+                      "potato",
+                      "sugarbeet"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "wageningen-pcse81-two-crop-fallow-research-v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "variants": {
+            "items": {
+              "properties": {
+                "crop_sequence": {
+                  "items": {
+                    "enum": [
+                      "potato",
+                      "sugarbeet",
+                      "bare_fallow"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "wageningen-three-crop-producing-research-v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "variants": {
+            "items": {
+              "properties": {
+                "crop_sequence": {
+                  "items": {
+                    "enum": [
+                      "potato",
+                      "sugarbeet",
+                      "barley"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

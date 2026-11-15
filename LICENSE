@@ -1,5 +1,16 @@
-MIT License
+ASTROGRON Public Competition Release Licensing Summary
+======================================================
 
+This repository contains multiple software and data components from the
+ASTROGRON NASA Space Apps Challenge 2026 competition release
+(`astrogron-competition-2026.11.15+95a19217e4ce`). No single blanket open-source
+grant overrides third-party dependencies or excluded proprietary assets.
+
+1. ASTROGRON Web Frontend (`frontend/`)
+---------------------------------------
+Released under the MIT License (`frontend/LICENSE`):
+
+MIT License
 Copyright (c) 2026 ASTROGRON Team - NASA Space Apps Challenge
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,3 +30,37 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+2. Adaptive Evidence Sidecar Source (`adaptive/`)
+-------------------------------------------------
+Original ASTROGRON sidecar source (`adaptive/adaptive_evidence/`,
+`adaptive/contracts/`, `adaptive/tests/`) is licensed under the Apache License,
+Version 2.0 (Apache-2.0). The sidecar remains DISABLED BY DEFAULT in the
+competition build pending upstream dependency compatibility verification.
+Third-party runtime libraries (`shapely` BSD-3-Clause / GEOS LGPL-2.1-or-later,
+`pyproj` / PROJ MIT, `pyshp` MIT, `numpy` BSD-3-Clause, `certifi` MPL-2.0,
+`jsonschema` MIT) are NOT vendored in Git and retain their upstream licenses.
+
+3. Core Scientific & Integration Source (`core/`, `handoff/`, scripts)
+----------------------------------------------------------------------
+Copyright (c) 2026 ASTROGRON Team - NASA Space Apps Challenge.
+Original project integration, API, report, chat, and handoff orchestration
+code is published here for NASA Space Apps 2026 evaluation by authorization of
+the repository owner (`NasaProject2026`). External Python dependencies
+(including `pcse==6.0.13`) and restricted/third-party datasets are excluded
+from this repository; see `EXCLUDED_ASSETS_AND_RIGHTS.md` and
+`NASA_AND_DATA_ATTRIBUTIONS.md`.
+
+4. Public Static Web Assets & Data Notices (`frontend/public/`, `frontend/src/fixtures/`)
+-----------------------------------------------------------------------------------------
+- Natural Earth 1:110m (`frontend/public/geodata/*`, `frontend/src/fixtures/natural-earth-world.ts`):
+  Public Domain (`CC0-1.0`).
+- MapLibre GL JS Web Worker (`frontend/public/workers/maplibre-gl-worker.js`):
+  `BSD-3-Clause`.
+- NASA 3D Resources Landsat 8 (`frontend/public/orbit-ab-assets/landsat_8.glb`) & NASA Blue/Black Marble
+  earth textures (`frontend/public/orbit-ab-assets/earth_*.jpg`):
+  NASA U.S. Government Public Domain (no NASA endorsement implied) / Three.js `MIT`.
+- Google Draco glTF decoder (`frontend/public/orbit-ab-assets/draco/*`):
+  `Apache-2.0` (Draco) / `MIT` (Three.js).
+- Proprietary commissioned editorial hero artwork (`frontend/public/assets/*.jpg`):
+  EXCLUDED from this public repository (creator redistribution clearance not asserted).

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "candidate_audit.json": "544fb08cadf9c3b5e2bed6b84663e9ce548bcd9eee981053436ed198a6888a03",
+    "resource_frontiers.json": "84216c09d0787c2d603d7e41c8a48c2aa56292f8d6a6ddc20cc9843ae4f4926f",
+    "preference_contract.json": "41778b7c7a910e35caaad9413ce985f7bae415acffae831bc7665abbe6a847a8",
+    "preference_decisions.json": "15693d4f8f82b64b61e19309615f1f1926bc6ce99b3c0e7c5b601a5bc5106e55",
+    "GLOBAL_SMOKE.json": "a4d89c648be508963df19cd571201d1bb1e4c527552d1ae26a2ccc10c00d54d2",
+    "SCIENTIFIC_ACCEPTANCE.json": "d8f938f23d5e46e0d3520cd3d8be91c043d537bf1ff7329c9d933ba35871c6ef",
+    "candidate_audit.csv": "a717e1aedf2d1524be9d3f5c84903f6bb7baff14843fb7598bab991c6034a247",
+    "policy_summary.csv": "a209e4a45aaee891c21f9eee29e7a1ca4eb9db626d870c4fbfd2db33433af56a",
+    "resource_frontiers.csv": "b689c72617a5b71eaa2746105613f213230229a18280519dbb2b87e6b7828b31"
+  },
+  "protocol_sha256": "5bd02acc67a56003acd1994cc1dd50b597dc3f9c7681b07548c278d0081a669b"
+}

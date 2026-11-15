@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "variants",
+    "field_validated",
+    "planner_ranking_affected",
+    "marketable_yield",
+    "profit",
+    "limitations",
+    "missing_requirements"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.growth-experiment.response.v1"
+    },
+    "status": {
+      "enum": [
+        "UNVALIDATED_PROCESS_EXPERIMENT_COMPLETE",
+        "EVIDENCE_BLOCKED"
+      ]
+    },
+    "variants": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "crop_results",
+          "daily_process_trace",
+          "accounting",
+          "continuity",
+          "integrated_days"
+        ],
+        "properties": {
+          "crop_results": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5
+          },
+          "integrated_days": {
+            "const": 1826
+          }
+        }
+      }
+    },
+    "field_validated": {
+      "const": false
+    },
+    "planner_ranking_affected": {
+      "const": false
+    },
+    "marketable_yield": {
+      "type": "null"
+    },
+    "profit": {
+      "type": "null"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "missing_requirements": {
+      "type": "array"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "UNVALIDATED_PROCESS_EXPERIMENT_COMPLETE"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "run_id",
+          "request",
+          "coupling",
+          "provenance",
+          "scientific_result_sha256"
+        ],
+        "properties": {
+          "variants": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "EVIDENCE_BLOCKED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "variants": {
+            "maxItems": 0
+          },
+          "missing_requirements": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

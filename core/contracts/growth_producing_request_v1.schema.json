@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "profile_id",
+    "objective",
+    "scenarios",
+    "constraints",
+    "pk_scope",
+    "rotation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.growth-rotation-decision.request.v1"
+    },
+    "profile_id": {
+      "const": "wageningen-three-crop-producing-research-v1"
+    },
+    "objective": {
+      "const": {
+        "version": "FIVE_YEAR_THREE_CROP_SERVICE_N_LOSS_VECTOR_V1",
+        "criterion": "pareto",
+        "target_years": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020
+        ],
+        "acknowledgment": "SEPARATE_CROP_DRY_MATTER_SERVICES_AND_N_LOSS_NOT_OVERALL_FARM_VALUE"
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scenario_id",
+          "initial_mineral_N_factor"
+        ],
+        "properties": {
+          "scenario_id": {
+            "type": "string"
+          },
+          "initial_mineral_N_factor": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_modeled_N_leaching"
+      ],
+      "properties": {
+        "max_modeled_N_leaching": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "value",
+                "unit",
+                "basis"
+              ],
+              "properties": {
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10000
+                },
+                "unit": {
+                  "const": "kg N/ha"
+                },
+                "basis": {
+                  "const": "EXPLICIT_RESEARCH_CONSTRAINT_NOT_REGULATION"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pk_scope": {
+      "const": "DECLARED_P_K_ONLY_NATIVE_N_FROM_PCSE"
+    },
+    "rotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "mode",
+        "year_options",
+        "minimum_crop_slots",
+        "profile_acknowledgment"
+      ],
+      "properties": {
+        "version": {
+          "const": "BOUNDED_THREE_CROP_PRODUCTION_SCREEN_V1"
+        },
+        "mode": {
+          "enum": [
+            "GENERATE",
+            "SUBMITTED"
+          ]
+        },
+        "year_options": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "research:NL:potato_Fontane",
+                "research:NL:sugarbeet_601",
+                "research:NL:spring_barley_301"
+              ]
+            }
+          }
+        },
+        "minimum_crop_slots": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "research:NL:potato_Fontane",
+            "research:NL:sugarbeet_601",
+            "research:NL:spring_barley_301"
+          ],
+          "properties": {
+            "research:NL:potato_Fontane": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "research:NL:sugarbeet_601": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "research:NL:spring_barley_301": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            }
+          }
+        },
+        "profile_acknowledgment": {
+          "const": "SOURCE_PINNED_THREE_CROP_RESEARCH_NOT_FIELD_VALIDATION"
+        }
+      }
+    }
+  },
+  "$id": "astragron.growth-producing.request.v1"
+}

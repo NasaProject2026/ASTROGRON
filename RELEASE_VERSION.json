@@ -1,0 +1,10 @@
+{
+  "version": "astrogron-competition-2026.11.15+95a19217e4ce",
+  "operational_archive": "ASTROGRON_COMPETITION_RELEASE_20261115_95a19217e4ce.zip",
+  "operational_archive_sha256": "95a19217e4ce7abb75823f2d3b415e645e06ba90369b38a35ec7acaaad5ebe9e",
+  "operational_files": 1428,
+  "release_manifest_entries_verified": 1427,
+  "scientific_CORE_835_unchanged": true,
+  "adaptive_enabled": false,
+  "frozen_archive_unchanged": true
+}

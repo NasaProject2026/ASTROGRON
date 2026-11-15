@@ -1,0 +1,16 @@
+# Local integration only. START_UNIFIED.ps1 supplies these as server environment variables.
+# All paths below are generated locally; no actual credentials belong in this file.
+ASTRAGRON_BACKEND_PROTOCOL=D_V1
+ASTRAGRON_BACKEND_URL=http://127.0.0.1:8790
+# Future remote backend: HTTPS origin + exact hostname allowlist + private token file.
+# ASTRAGRON_BACKEND_URL=https://science-api.example.org
+# ASTRAGRON_BACKEND_ALLOWED_HOSTS=science-api.example.org
+ASTRAGRON_BACKEND_TOKEN_FILE=<release>/core/runtime/integration/release-demo/operator-access.txt
+ASTRAGRON_DEMO_ACCESS_FILE=<release>/runtime/frontend-access.txt
+ASTRAGRON_UNIFIED_STATE_DIR=<release>/runtime/frontend-sessions
+ASTRAGRON_PUBLIC_ORIGIN_FILE=<release>/runtime/tunnel/public-origin.txt
+ASTRAGRON_CHAT_PROVIDER=offline
+ASTRAGRON_CHAT_ADVANCED_ENABLED=false
+ASTRAGRON_APPROVED_PUBLIC_DEMO_CHAT_ENABLED=0
+ASTRAGRON_GLOBAL_EVIDENCE_ENABLED=0
+NEXT_TELEMETRY_DISABLED=1

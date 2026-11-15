@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astragron.client-decision.response.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "farm_id",
+    "status",
+    "run_id",
+    "qualification",
+    "decision",
+    "alternatives",
+    "assumptions",
+    "provenance",
+    "warnings",
+    "missing_requirements",
+    "nutrient_response",
+    "report_dto",
+    "engine_result"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.client-decision.response.v1"
+    },
+    "farm_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "CONDITIONAL_RESEARCH_COMPLETE",
+        "BOUNDED_PARTIAL",
+        "EVIDENCE_BLOCKED"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "object"
+    },
+    "decision": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "policy_id",
+          "choices",
+          "scenarios",
+          "baseline_comparison",
+          "important_uncertainty",
+          "decision_reversal_conditions"
+        ]
+      }
+    },
+    "assumptions": {
+      "type": "array"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_requirements": {
+      "type": "array"
+    },
+    "nutrient_response": {
+      "type": "object"
+    },
+    "report_dto": {
+      "type": "object",
+      "required": [
+        "schema",
+        "summary",
+        "five_year_rows",
+        "alternative_ids",
+        "limitations",
+        "result_pointers"
+      ]
+    },
+    "engine_result": {
+      "type": "object"
+    },
+    "growth_evaluation": {
+      "type": "object",
+      "required": [
+        "schema",
+        "scope",
+        "field_validated",
+        "marketable_yield",
+        "profit"
+      ],
+      "properties": {
+        "schema": {
+          "const": "astragron.growth-decision.response.v1"
+        },
+        "field_validated": {
+          "const": false
+        },
+        "marketable_yield": {
+          "type": "null"
+        },
+        "profit": {
+          "type": "null"
+        }
+      }
+    }
+  }
+}

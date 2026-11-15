@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astragron.client-decision.request.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "farm_id",
+    "engine_request",
+    "features"
+  ],
+  "properties": {
+    "schema": {
+      "const": "astragron.client-decision.request.v1"
+    },
+    "farm_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$"
+    },
+    "engine_request": {
+      "type": "object",
+      "description": "Existing research-decision request v1, with optional soil_memory extension. Validated by the unchanged normalize/scientific_gate and soil contracts.",
+      "required": [
+        "schema",
+        "mode",
+        "research_acknowledged",
+        "location",
+        "as_of",
+        "horizon_years",
+        "units",
+        "fields",
+        "scenarios"
+      ],
+      "properties": {
+        "schema": {
+          "const": "astragron.research-decision.request.v1"
+        },
+        "horizon_years": {
+          "const": 5
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8
+        },
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 9
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "soil_memory",
+        "nutrient_response"
+      ],
+      "properties": {
+        "soil_memory": {
+          "type": "boolean"
+        },
+        "nutrient_response": {
+          "type": "boolean"
+        }
+      }
+    },
+    "economics": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "basis",
+        "source_id",
+        "available_at",
+        "uncertainty",
+        "rows"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "basis": {
+          "const": "FARM_SUPPLIED_ASSUMPTION_UNVERIFIED"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "available_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "rows": {
+          "type": "array",
+          "maxItems": 4320,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "policy_id",
+              "scenario_id",
+              "field_id",
+              "source_year",
+              "yield_t_ha",
+              "price_per_t",
+              "cost_per_ha"
+            ],
+            "properties": {
+              "policy_id": {
+                "type": "string"
+              },
+              "scenario_id": {
+                "type": "string"
+              },
+              "field_id": {
+                "type": "string"
+              },
+              "source_year": {
+                "type": "integer"
+              },
+              "yield_t_ha": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000
+              },
+              "price_per_t": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000000000
+              },
+              "cost_per_ha": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000000000
+              }
+            }
+          }
+        }
+      }
+    },
+    "growth_decision": {
+      "type": "object",
+      "description": "Optional versioned native-growth research decision bridge; see growth_decision_request_v1.schema.json. Existing requests retain the legacy path."
+    }
+  }
+}
