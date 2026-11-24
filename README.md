@@ -1,8 +1,8 @@
 # ASTROGRON — Unified Competition Release (NASA Space Apps Challenge 2026)
 
-> **Live NASA Judging Demonstration (Temporary Cloudflare Quick Tunnel):**  
-> **https://nevertheless-ventures-disk-right.trycloudflare.com**  
-> *(Serves the Next.js V7 UI on top of the loopback Python scientific engine; temporary demo URL hosted during active competition judging — not permanent hosting.)*
+> **Live $0 Always-On Website (GitHub Pages — Runs 24/7 Without Any Laptop):**  
+> **https://nasaproject2026.github.io/ASTROGRON/**  
+> *(Static showcase exported via `npm run build:pages` and served directly from the `gh-pages` branch; includes the complete V7 Next.js UI, interactive 3D Earth Explorer, Wageningen 5-year Pareto charts, grounded Q&A, and Sample Scientific PDF — optional CI workflow template at [`frontend/scripts/github-pages-workflow.example.yml`](frontend/scripts/github-pages-workflow.example.yml).)*
 
 **Competition Release Version:** `astrogron-competition-2026.11.15+95a19217e4ce`  
 **Previous `main` Snapshot Preserved At:** branch `backup/v5-initial-fe4df14` / tag `backup-v5-fe4df14` (`fe4df14`, history preserved with zero force-pushes)
@@ -16,9 +16,9 @@ NASA judges can evaluate ASTROGRON directly from the public URL without entering
 1. **Original Homepage (`/`):** Explains the problem, evidence-first methodology, Earth observation layers, and links directly to **"Public scientific demo & PDF (no login)"** (`/research`) and **"Explore 3D Globe"** (`/explore`).
 2. **Interactive 3D Earth Explorer (`/explore`):** Public WebGL globe (`maplibre-gl`) with regional agricultural presets, Earth observation source provenance metadata, and honest coverage/capability status disclosures.
 3. **Public Read-Only Scientific Demonstration (`/research`):**
-   - Loads verified, non-sensitive cached outputs directly from the real loopback D backend (`GET /api/public-demo`, server-filtered to `VERIFIED_CACHED_REPLAY` demo fixtures only).
-   - Displays the **Wageningen 1 ha 5-Year Research Replay** with two Pareto management alternatives (`Alternative 1` and `Alternative 2`, explicitly showing **no single declared winner**), scenario switcher (`REFERENCE`, `HALF_RAIN`, `LOW_INITIAL_MINERAL_N`), storage dry matter vs. nitrogen leaching table, live system readiness badges (`Adaptive Evidence: Disabled`, `Gemini Live LLM: Unverified`), **downloadable Sample Scientific PDF** (`GET /api/public-demo?download=pdf`), and an **Honest Fail-Closed Abstention Example** (`EVIDENCE_BLOCKED`, Australian scenario where missing local agronomic evidence blocks fabricated output).
-4. **Protected Operator Endpoints Remain Fail-Closed:** `/farms`, `/farm/new`, `/settings`, `/api/core/*`, `/api/farms`, `/api/analyses/*`, `/api/capabilities`, raw Python backend `:8790` (`/v1/*`, `/ready`), and `runtime/frontend-access.txt` remain authentication-gated (`307` / `401` when unauthenticated).
+   - When connected to the local Python scientific engine, loads verified outputs via `GET /api/public-demo`; when hosted standalone at `$0` (GitHub Pages or serverless without `ASTRAGRON_BACKEND_URL`), automatically serves the same verified Wageningen 5-year snapshot (`frontend/src/data/generated/wageningen-public-snapshot.json`), static PDF report (`public/reports/ASTROGRON_Wageningen_Sample_Scientific_Report.pdf`), deterministic evidence-grounded Q&A fallback, and honest `Insufficient Regional Evidence` gating for uncalibrated coordinates.
+   - Displays the **Wageningen 1 ha 5-Year Research Replay** with two Pareto management alternatives (`Alternative 1` and `Alternative 2`, explicitly showing **no single declared winner**), scenario switcher (`REFERENCE`, `HALF_RAIN`, `LOW_INITIAL_MINERAL_N`), storage dry matter vs. nitrogen leaching table, downloadable Sample Scientific PDF, and an **Honest Fail-Closed Abstention Example** (Australia / uncalibrated regions where missing local agronomic evidence blocks fabricated output).
+4. **Optional Operator Authentication Guard (`ASTRAGRON_DEMO_ACCESS_FILE`):** In self-hosted private operator mode with `runtime/frontend-access.txt` configured, `/farms`, `/farm/new`, `/settings`, `/api/core/*`, `/api/farms`, `/api/analyses/*`, and raw Python `:8790` remain access-gated (`307` / `401` unauthenticated). On standalone public deployments (GitHub Pages / unconfigured Vercel), public demo farm routes remain browseable with honest standalone provenance labels.
 
 ---
 
@@ -105,16 +105,19 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\START_QUICK_TUNNEL.ps1
 
 Full step-by-step teammate deployment instructions are in [`TEAM_HANDOFF_START_HERE.md`](TEAM_HANDOFF_START_HERE.md).
 
-### Frontend-Only Typecheck / Build Inspection (Public Repo Standalone)
-Without the private Python operational base, reviewers can inspect and typecheck the V7 Next.js frontend:
+### Standalone $0 Static Showcase Build & Inspection (Public Repo)
+Without the private Python operational base, reviewers can test, inspect, or export the standalone V7 Next.js website at `$0` hosting cost:
 
 ```powershell
 cd frontend
 npm ci
 npx tsc --noEmit
+npm test
+npm run build        # Full Next.js server build (Vercel / Node standalone with /api/* fallbacks)
+npm run build:pages  # Pure static export to frontend/out for 24/7 $0 GitHub Pages
 ```
 
-*(Note: proprietary editorial JPGs under `frontend/public/assets/` are omitted from this public repo per [`EXCLUDED_ASSETS_AND_RIGHTS.md`](EXCLUDED_ASSETS_AND_RIGHTS.md).)*
+*(Note: proprietary editorial JPGs under `frontend/public/assets/` are omitted from this public repo per [`EXCLUDED_ASSETS_AND_RIGHTS.md`](EXCLUDED_ASSETS_AND_RIGHTS.md); the standalone hero uses NASA Blue Marble public-domain imagery.)*
 
 ---
 
@@ -123,8 +126,8 @@ npx tsc --noEmit
 - **Not Field-Validated Agronomic Advice:** `field_validated` is `false`, `marketable_yield` is `null`, and `profit` is `null`. Historical Wageningen 5-year research scenarios (`REFERENCE`, `HALF_RAIN`, `LOW_INITIAL_MINERAL_N`) represent deterministic model outputs under bounded assumptions — **not** field-calibrated farm prescriptions, economic winners, or legal water permits.
 - **No Single Declared Winner:** Pareto policy comparison refuses to collapse agronomic trade-offs (crop storage dry matter vs. mineral N leaching) into an arbitrary single best score.
 - **Adaptive Evidence Disabled:** `adaptive/` remains turned off in the unified release due to an upstream dependency alignment difference (`390/398` files match core; `6` source/contract files differ; `2` historical receipts absent). Core `A+B+C+D` remains the sole scientific authority.
-- **Offline Chat Fallback:** Evidence-grounded AI chat responses use the deterministic C backend renderer bounded to cited analysis fields. Live external Gemini/Groq LLM connectivity is **not** verified or claimed.
-- **Public URL Hosting Notice:** `https://nevertheless-ventures-disk-right.trycloudflare.com` is a temporary Cloudflare Quick Tunnel for competition evaluation and will close when the host process stops.
+- **Offline Chat Fallback:** Evidence-grounded AI chat responses use the deterministic evidence renderer bounded to cited analysis fields. Live external Gemini/Groq LLM connectivity is **not** verified or claimed.
+- **Always-On $0 Public Hosting:** `https://nasaproject2026.github.io/ASTROGRON/` runs 24/7 on GitHub Pages without keeping a local laptop online by serving verified standalone scientific snapshots, downloadable reports, and regional calibration gating. Temporary Cloudflare Quick Tunnels (such as the historical competition judging URL) are only needed when exposing a live local Python solver session.
 
 ---
 

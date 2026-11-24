@@ -440,10 +440,10 @@ export function FarmWorkspaceShell({
                         label:
                           datasetMode === 'RECORDED_M14_RESEARCH'
                             ? 'Uppsala (SE_UPPSALA · M14 Archive)'
-                            : 'Uppsala (Sweden · Synthetic Demo)',
+                            : 'Uppsala (Sweden · Research Preview)',
                       },
-                      { id: 'nyeri-kenya', label: 'Nyeri (Kenya · Coverage Only)' },
-                      { id: 'wagga-australia', label: 'Wagga (Australia · Coverage Only)' },
+                      { id: 'nyeri-kenya', label: 'Nyeri (Kenya · Regional Coverage)' },
+                      { id: 'wagga-australia', label: 'Wagga (Australia · Regional Coverage)' },
                     ].map((item) => {
                       const active = farmId === item.id;
                       const suffix = pathname.replace(`/farm/${farmId}`, '') || '';
@@ -478,10 +478,10 @@ export function FarmWorkspaceShell({
                         {
                           id: 'uppsala-demo',
                           label:
-                            datasetMode === 'RECORDED_M14_RESEARCH' ? 'Uppsala (M14)' : 'Uppsala (Demo)',
+                            datasetMode === 'RECORDED_M14_RESEARCH' ? 'Uppsala (M14)' : 'Uppsala (Preview)',
                         },
-                        { id: 'nyeri-kenya', label: 'Nyeri (Coverage Only)' },
-                        { id: 'wagga-australia', label: 'Wagga (Coverage Only)' },
+                        { id: 'nyeri-kenya', label: 'Nyeri (Coverage)' },
+                        { id: 'wagga-australia', label: 'Wagga (Coverage)' },
                       ].map((item) => {
                         const active = farmId === item.id;
                         const suffix = pathname.replace(`/farm/${farmId}`, '') || '';

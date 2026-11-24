@@ -5,7 +5,16 @@ import { configuredPublicOrigin, sessionId } from '@/server/core-backend';
 // the D gateway additionally enforces per-session ownership and same-origin POSTs.
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  if (['/', '/explore', '/research', '/help', '/methodology', '/api/core/session', '/api/public-demo', '/api/public-location-analysis'].includes(pathname)) return NextResponse.next();
+  const operatorAccessConfigured = Boolean(process.env.ASTRAGRON_DEMO_ACCESS_FILE?.trim());
+  const alwaysPublicPaths = ['/', '/explore', '/research', '/help', '/methodology', '/orbit-ab', '/api/core/session', '/api/public-demo', '/api/public-location-analysis'];
+  const standalonePublicPaths = ['/farms', '/farm', '/settings', '/api/capabilities', '/api/geocode', '/api/field-boundaries', '/api/research'];
+  if (
+    alwaysPublicPaths.includes(pathname) ||
+    (!operatorAccessConfigured &&
+      standalonePublicPaths.some((prefix) => pathname === prefix || pathname.startsWith(prefix + '/')))
+  ) {
+    return NextResponse.next();
+  }
   try {
     sessionId(request);
     if (process.env.ASTRAGRON_BACKEND_PROTOCOL === 'D_V1' &&

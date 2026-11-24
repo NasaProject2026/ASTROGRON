@@ -5,6 +5,7 @@ import {
   SystemCapabilitiesResponseSchema,
   type SystemCapabilitiesResponse,
 } from '@/domain/farmer-ux-contracts';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 
 const DEFAULT_OFFLINE_CAPABILITIES: SystemCapabilitiesResponse = {
   coverageLookup: {
@@ -15,12 +16,14 @@ const DEFAULT_OFFLINE_CAPABILITIES: SystemCapabilitiesResponse = {
   liveFarmAnalysis: {
     enabled: false,
     mode: 'RECORDED_OR_DEMO_ONLY',
-    reason: 'Checking server capabilities…',
+    reason: IS_STATIC_SHOWCASE
+      ? 'Standalone static showcase uses bundled Wageningen research and local coverage metadata.'
+      : 'Checking server capabilities…',
   },
   recordedM14: {
     enabled: true,
     mode: 'VERIFIED_READ_ONLY',
-    reason: 'Checking verified research archive…',
+    reason: IS_STATIC_SHOWCASE ? 'Verified read-only research snapshot active.' : 'Checking verified research archive…',
   },
   pdfExport: {
     enabled: true,
@@ -28,9 +31,11 @@ const DEFAULT_OFFLINE_CAPABILITIES: SystemCapabilitiesResponse = {
     reason: 'Client-side PDF report generation ready.',
   },
   reportGroundedChat: {
-    enabled: false,
-    mode: 'NOT_CONNECTED',
-    reason: 'Ask ASTRAGRON is unavailable until a report-grounded assistant backend is connected.',
+    enabled: IS_STATIC_SHOWCASE,
+    mode: IS_STATIC_SHOWCASE ? 'LOCAL_DETERMINISTIC' : 'NOT_CONNECTED',
+    reason: IS_STATIC_SHOWCASE
+      ? 'Evidence-grounded Q&A ready on the Wageningen study page.'
+      : 'Ask ASTRAGRON is unavailable until a report-grounded assistant backend is connected.',
   },
   cloudFarmStorage: {
     enabled: false,
@@ -40,7 +45,7 @@ const DEFAULT_OFFLINE_CAPABILITIES: SystemCapabilitiesResponse = {
   geocoding: {
     enabled: false,
     mode: 'LOCAL_GAZETTEER_ONLY',
-    reason: 'Checking geocoder status…',
+    reason: IS_STATIC_SHOWCASE ? 'Curated 16 research regions ready.' : 'Checking geocoder status…',
   },
   checkedAt: '',
 };
@@ -49,9 +54,10 @@ export function useSystemCapabilities() {
   const [capabilities, setCapabilities] = useState<SystemCapabilitiesResponse>(
     DEFAULT_OFFLINE_CAPABILITIES
   );
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(IS_STATIC_SHOWCASE);
 
   useEffect(() => {
+    if (IS_STATIC_SHOWCASE) return;
     let cancelled = false;
     const ac = new AbortController();
     const abort = () => {

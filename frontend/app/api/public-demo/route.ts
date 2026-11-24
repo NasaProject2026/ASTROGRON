@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { NextResponse } from 'next/server';
 import {
   CoreProblem,
@@ -7,6 +9,8 @@ import {
   requireSameOrigin,
 } from '@/server/core-backend';
 import type { CoreChatReply, CoreResult, CoreState } from '@/domain/core-contracts';
+import { getStandalonePublicDemoPayload } from '@/lib/public-demo-snapshot';
+import { answerStandalonePublicQuestion } from '@/lib/public-demo-offline-qa';
 
 export const dynamic = 'force-dynamic';
 
@@ -139,6 +143,37 @@ export async function GET(request: Request) {
         { error: 'INVALID_PUBLIC_DEMO_QUERY' },
         { status: 400, headers: publicHeaders() }
       );
+    }
+
+    if (!process.env.ASTRAGRON_BACKEND_URL?.trim()) {
+      if (download === 'pdf') {
+        const staticPdfPath = path.join(
+          process.cwd(),
+          'public',
+          'reports',
+          'ASTROGRON_Wageningen_Sample_Scientific_Report.pdf'
+        );
+        if (!fs.existsSync(staticPdfPath)) {
+          return NextResponse.json(
+            { error: 'SAMPLE_PDF_UNAVAILABLE' },
+            { status: 503, headers: publicHeaders() }
+          );
+        }
+        const bytes = fs.readFileSync(staticPdfPath);
+        return new NextResponse(bytes, {
+          status: 200,
+          headers: publicHeaders({
+            'Content-Type': 'application/pdf',
+            'Content-Disposition':
+              'attachment; filename="ASTROGRON_Wageningen_Sample_Scientific_Report.pdf"',
+            'Content-Security-Policy': "sandbox; default-src 'none'",
+          }),
+        });
+      }
+      return NextResponse.json(getStandalonePublicDemoPayload(), {
+        status: 200,
+        headers: publicHeaders(),
+      });
     }
 
     const catalog = (await coreJson('/v1/demo/catalog')) as {
@@ -397,6 +432,13 @@ export async function POST(request: Request) {
         },
         { status: 200, headers: publicHeaders() }
       );
+    }
+
+    if (!process.env.ASTRAGRON_BACKEND_URL?.trim()) {
+      return NextResponse.json(answerStandalonePublicQuestion(trimmedQuestion, safeScenario), {
+        status: 200,
+        headers: publicHeaders(),
+      });
     }
 
     const catalog = (await coreJson('/v1/demo/catalog')) as {

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use, useCallback, useEffect, useRef, useState } from 'react';
+import React, { Suspense, use, useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import {
@@ -20,10 +20,11 @@ import type { SiteCapabilityCheckResult } from '@/domain/capability-overlay';
 import { buildReportEnvelopeFromEvaluation } from '@/adapters/storage-adapters';
 import { useSystemCapabilities } from '@/lib/capabilities-client';
 import { buildReportPdfBytes } from '@/lib/pdf-report';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 import { useAstragron } from '@/hooks/use-astragron-store';
 import { useMessages } from '@/lib/i18n';
 
-export default function FarmAnalysisPage({
+function FarmAnalysisInner({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -68,7 +69,7 @@ export default function FarmAnalysisPage({
   const draftIsUserCreated = Boolean(draft?.isUserCreatedDraft);
 
   useEffect(() => {
-    if (!draftId || draftLon === null || draftLat === null) return;
+    if (IS_STATIC_SHOWCASE || !draftId || draftLon === null || draftLat === null) return;
     let active = true;
     void fetch('/api/capabilities/site-check', {
       method: 'POST',
@@ -97,7 +98,7 @@ export default function FarmAnalysisPage({
 
   // Restore last known job record across reload (UX-033)
   useEffect(() => {
-    if (typeof window === 'undefined' || job) return;
+    if (IS_STATIC_SHOWCASE || typeof window === 'undefined' || job) return;
     let active = true;
     try {
       const storedRaw = window.sessionStorage.getItem(`astragron_last_job_${id}`);
@@ -149,6 +150,22 @@ export default function FarmAnalysisPage({
     setRunning(true);
     setRunError(null);
     setSavedReport(null);
+
+    if (IS_STATIC_SHOWCASE) {
+      try {
+        const report = buildReportEnvelopeFromEvaluation({
+          farm: draft,
+          repository,
+          datasetMode,
+          jobId: 'standalone-eval',
+        });
+        recordReportSnapshot({ ...report });
+        setSavedReport(report);
+      } finally {
+        setRunning(false);
+      }
+      return;
+    }
 
     try {
       const inputRevision = computeDraftInputRevision(draft);
@@ -523,5 +540,17 @@ export default function FarmAnalysisPage({
         </div>
       </details>
     </div>
+  );
+}
+
+export default function FarmAnalysisPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  return (
+    <Suspense fallback={<div className="p-8 text-sm text-[#AEC4D3]">Loading farm analysis…</div>}>
+      <FarmAnalysisInner params={params} />
+    </Suspense>
   );
 }

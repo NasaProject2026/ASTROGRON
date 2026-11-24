@@ -24,7 +24,7 @@ interface TrackedPublicAnalysis {
 const RATE_WINDOW_MS = 10 * 60 * 1000;
 const RATE_MAX_REQUESTS = 12;
 const MAX_TRACKED_ANALYSES = 200;
-const MAX_PUBLIC_PENDING_QUEUE = 3;
+const MAX_PUBLIC_PENDING_QUEUE = 2;
 const ANALYSIS_ID_RE = /^[a-f0-9]{32}$/;
 
 const globalStore = globalThis as typeof globalThis & {
@@ -193,11 +193,11 @@ export async function POST(request: Request) {
 
   let mode: LocationAnalysisMode | undefined;
   if (body.mode !== undefined) {
-    if (body.mode !== 'conditional_water_counterfactual' && body.mode !== 'strict_uncalibrated') {
+    if (body.mode !== 'wageningen_native_growth' && body.mode !== 'strict_uncalibrated') {
       return jsonNoStore(
         {
           error: 'INVALID_ANALYSIS_MODE',
-          message: "mode must be 'conditional_water_counterfactual' or 'strict_uncalibrated'.",
+          message: "mode must be 'wageningen_native_growth' or 'strict_uncalibrated'.",
         },
         422
       );
@@ -208,15 +208,24 @@ export async function POST(request: Request) {
   const strOpt = (value: unknown, maxLen = 96): string | undefined =>
     typeof value === 'string' && value.trim() ? value.trim().slice(0, maxLen) : undefined;
 
-  const built = buildLocationAnalysisRequest({
-    siteKey: strOpt(body.siteKey, 64),
-    label: strOpt(body.label, 96),
-    countryCode: strOpt(body.countryCode, 16),
-    regionName: strOpt(body.regionName, 96),
-    lon,
-    lat,
-    mode,
-  });
+  let built: ReturnType<typeof buildLocationAnalysisRequest>;
+  try {
+    built = buildLocationAnalysisRequest({
+      siteKey: strOpt(body.siteKey, 64),
+      label: strOpt(body.label, 96),
+      countryCode: strOpt(body.countryCode, 16),
+      regionName: strOpt(body.regionName, 96),
+      lon,
+      lat,
+      mode,
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unable to construct location request.';
+    const code = msg.startsWith('UNSUPPORTED_CROP_ROTATION_LOCATION')
+      ? 'UNSUPPORTED_CROP_ROTATION_LOCATION'
+      : 'INVALID_LOCATION_REQUEST';
+    return jsonNoStore({ error: code, message: msg }, 422);
+  }
 
   try {
     const queue = (await coreJson('/v1/analyses', 'GET')) as { analyses?: Array<{ state?: string }> };
@@ -259,20 +268,36 @@ export async function POST(request: Request) {
         state,
         resolvedLocation: built.resolvedLocation,
         mode: built.mode,
-        submittedRequestSummary: {
-          farm_id: built.payload.farm_id,
-          site_id: built.resolvedLocation.siteId,
-          point_lon_lat: built.resolvedLocation.pointLonLat,
-          acquisition: 'CACHE_ONLY',
-          provider: 'NASA_POWER_GLOBAL',
-          historical_start: '2011-01-01',
-          historical_end: '2025-12-31',
-          scenario_id: 'MEDIAN_5Y_TOTAL_2021',
-          scenario_window: '2021-01-01..2025-12-31',
-          max_candidates: 2,
-          max_evaluations: 2,
-          max_wall_seconds: 60,
-        },
+        submittedRequestSummary:
+          built.mode === 'wageningen_native_growth'
+            ? {
+                farm_id: built.payload.farm_id,
+                site_id: built.resolvedLocation.siteId,
+                point_lon_lat: built.resolvedLocation.pointLonLat,
+                acquisition: 'CACHE_ONLY',
+                provider: 'NASA_POWER_GLOBAL',
+                historical_start: '2016-01-01',
+                historical_end: '2020-12-31',
+                scenario_id: 'REFERENCE + LOW_INITIAL_MINERAL_N + HALF_RAIN',
+                scenario_window: '2016-01-01..2020-12-31',
+                max_candidates: 2,
+                max_evaluations: 6,
+                max_wall_seconds: 240,
+              }
+            : {
+                farm_id: built.payload.farm_id,
+                site_id: built.resolvedLocation.siteId,
+                point_lon_lat: built.resolvedLocation.pointLonLat,
+                acquisition: 'CACHE_ONLY',
+                provider: 'NASA_POWER_GLOBAL',
+                historical_start: '2011-01-01',
+                historical_end: '2025-12-31',
+                scenario_id: 'MEDIAN_5Y_TOTAL_2021',
+                scenario_window: '2021-01-01..2025-12-31',
+                max_candidates: 2,
+                max_evaluations: 2,
+                max_wall_seconds: 60,
+              },
       },
       202
     );
@@ -341,6 +366,9 @@ export async function GET(request: Request) {
         const result = (await coreJson(`/v1/analyses/${analysisId}/result`, 'GET')) as Record<string, unknown>;
         const engineResult = (result.engine_result ?? {}) as Record<string, unknown>;
         const normalizedRequest = (engineResult.normalized_request ?? {}) as Record<string, unknown>;
+        const rawGrowthEval = (engineResult.growth_evaluation ?? result.growth_evaluation ?? null) as
+          | Record<string, unknown>
+          | null;
         const alts = Array.isArray(result.alternatives) ? result.alternatives : [];
         const reportDto = (result.report_dto ?? {}) as Record<string, unknown>;
 
@@ -357,38 +385,33 @@ export async function GET(request: Request) {
             policy_id?: string;
             choices?: unknown;
             important_uncertainty?: string;
-            scenarios?: Array<{
-              scenario_id?: string;
-              status?: string;
-              ET_shortfall_m3_equivalent?: string;
-              source_withdrawal_m3?: string;
-              worst_service_deficit_mm?: string;
-              service_pass?: boolean;
-              harvest_years?: number;
-            }>;
+            scenarios?: Array<Record<string, unknown>>;
           }) => ({
             policy_id: a.policy_id,
             choices: a.choices,
             important_uncertainty: a.important_uncertainty,
-            ...(Array.isArray(a.scenarios)
-              ? {
-                  scenarios: a.scenarios.map((s) => ({
-                    scenario_id: s.scenario_id,
-                    status: s.status,
-                    ET_shortfall_m3_equivalent: s.ET_shortfall_m3_equivalent,
-                    source_withdrawal_m3: s.source_withdrawal_m3,
-                    worst_service_deficit_mm: s.worst_service_deficit_mm,
-                    service_pass: s.service_pass,
-                    harvest_years: s.harvest_years,
-                  })),
-                }
-              : {}),
+            ...(Array.isArray(a.scenarios) ? { scenarios: a.scenarios } : {}),
           })),
           engine_result: {
             scientific_result_sha256: engineResult.scientific_result_sha256,
             location: normalizedRequest.location ?? null,
+            execution: engineResult.execution ?? null,
+            search: engineResult.search ?? null,
             scenario_sources: engineResult.scenario_sources ?? null,
             global_coverage: engineResult.global_coverage ?? null,
+            ...(rawGrowthEval
+              ? {
+                  growth_evaluation: {
+                    candidate_generation: rawGrowthEval.candidate_generation ?? null,
+                    objective: rawGrowthEval.objective ?? null,
+                    constraints: rawGrowthEval.constraints ?? null,
+                    scenarios: rawGrowthEval.scenarios ?? null,
+                    source_snapshot: rawGrowthEval.source_snapshot ?? null,
+                    model_runtime: rawGrowthEval.model_runtime ?? null,
+                    limitations: rawGrowthEval.limitations ?? null,
+                  },
+                }
+              : {}),
           },
           report_dto: {
             limitations: reportDto.limitations,

@@ -1,0 +1,322 @@
+{
+  "analysisId": "dcf873c423f24b5288cfc7420c6f7eac",
+  "runId": "b19df865f997d535390558c6d707be37c530d83171509dd73a2997c57305820e",
+  "requestSha256": "8ad475436e36dac49c3ffe1e7bd98f7d16452fdedac1d5279e29f7de7038ebdd",
+  "siteId": "NL_WAGENINGEN_GROWTH",
+  "country": "NL",
+  "coordinatesLonLat": [
+    5.67,
+    51.97
+  ],
+  "sourceProvider": "NASA_POWER_GLOBAL",
+  "acquisitionMode": "CACHE_ONLY",
+  "result": {
+    "status": "CONDITIONAL_RESEARCH_COMPLETE",
+    "farm_id": "NL_THREE_CROP_PRODUCING_RESEARCH",
+    "run_id": "b19df865f997d535390558c6d707be37c530d83171509dd73a2997c57305820e",
+    "decision": {
+      "pareto_ids": [
+        "131587186529ee37198e",
+        "af26d5393957e8a3e861"
+      ],
+      "selected_ids": [],
+      "field_recommendation": null,
+      "horizon_boundary": [
+        "2016-01-01",
+        "2020-12-31"
+      ],
+      "comparison_excludes": "No overall crop value, marketable yield, profit, opportunity-cost valuation or soil-terminal asset value. No sum across unlike crop DM components.",
+      "objectives": [
+        {
+          "policy_id": "131587186529ee37198e",
+          "scenarios": [
+            {
+              "scenario_id": "HALF_RAIN",
+              "N_leaching_kg_N_field": 38.89562910546273,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 6892.554949487255,
+                "research:NL:spring_barley_301": 9095.299744111633,
+                "research:NL:sugarbeet_601": 18108.611435544113
+              }
+            },
+            {
+              "scenario_id": "LOW_INITIAL_MINERAL_N",
+              "N_leaching_kg_N_field": 104.13102077013771,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 7757.870151607327,
+                "research:NL:spring_barley_301": 9910.227020439503,
+                "research:NL:sugarbeet_601": 21822.15039360519
+              }
+            },
+            {
+              "scenario_id": "REFERENCE",
+              "N_leaching_kg_N_field": 120.25942009630538,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 7757.870152740679,
+                "research:NL:spring_barley_301": 9910.464149586292,
+                "research:NL:sugarbeet_601": 23375.814231332024
+              }
+            }
+          ]
+        },
+        {
+          "policy_id": "af26d5393957e8a3e861",
+          "scenarios": [
+            {
+              "scenario_id": "HALF_RAIN",
+              "N_leaching_kg_N_field": 37.47786826114409,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 21769.143945706914,
+                "research:NL:spring_barley_301": 8174.947401499945,
+                "research:NL:sugarbeet_601": 7370.610889565583
+              }
+            },
+            {
+              "scenario_id": "LOW_INITIAL_MINERAL_N",
+              "N_leaching_kg_N_field": 105.22562311265693,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 26894.165889943753,
+                "research:NL:spring_barley_301": 9866.347379964842,
+                "research:NL:sugarbeet_601": 7993.557805849563
+              }
+            },
+            {
+              "scenario_id": "REFERENCE",
+              "N_leaching_kg_N_field": 129.11337245421115,
+              "crop_storage_DM_kg_field_by_crop": {
+                "research:NL:potato_Fontane": 28007.757120587048,
+                "research:NL:spring_barley_301": 9942.553265247512,
+                "research:NL:sugarbeet_601": 7993.564087599011
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "alternatives": [
+      {
+        "policy_id": "131587186529ee37198e",
+        "choices": {
+          "F1": [
+            "research:NL:sugarbeet_601",
+            "research:NL:spring_barley_301",
+            "research:NL:potato_Fontane",
+            "research:NL:spring_barley_301",
+            "research:NL:sugarbeet_601"
+          ]
+        },
+        "important_uncertainty": "Uncalibrated teaching soil/initial states, fixed CO2/calendar and explicit joint N/rain scenarios; no field-validation or probability claim."
+      },
+      {
+        "policy_id": "af26d5393957e8a3e861",
+        "choices": {
+          "F1": [
+            "research:NL:potato_Fontane",
+            "research:NL:spring_barley_301",
+            "research:NL:sugarbeet_601",
+            "research:NL:spring_barley_301",
+            "research:NL:potato_Fontane"
+          ]
+        },
+        "important_uncertainty": "Uncalibrated teaching soil/initial states, fixed CO2/calendar and explicit joint N/rain scenarios; no field-validation or probability claim."
+      }
+    ],
+    "qualification": {
+      "biological_uptake": "NATIVE_PROCESS_MODELED_UNVALIDATED",
+      "climate_ready": true,
+      "economic_ranking": "NOT_QUALIFIED",
+      "field_agronomy_qualified": false,
+      "market_demand_export": "NOT_VERIFIED",
+      "nutrient_response_status": "CONDITIONAL_PROCESS_RESEARCH_COMPLETE",
+      "plant_availability": "NOT_MODELED",
+      "plant_availability_N": "NATIVE_PROCESS_MODELED_UNVALIDATED",
+      "plant_availability_P_K": "NOT_MODELED_INVENTORY_ONLY",
+      "regulatory_pesticide": "NOT_VERIFIED",
+      "soil_accounting_status": "SOIL_MEMORY_CONDITIONAL_COMPLETE",
+      "water_rights": "NOT_VERIFIED",
+      "yield_response": "NOT_QUALIFIED"
+    },
+    "warnings": [
+      "NO_FIELD_VALIDATION",
+      "HISTORICAL_ANALOG_NOT_FORECAST",
+      "FINITE_SEARCH_NOT_GLOBAL_OPTIMUM",
+      "WATER_RIGHTS_NOT_VERIFIED",
+      "YIELD_RESPONSE_NOT_QUALIFIED",
+      "REGULATORY_PESTICIDE_NOT_VERIFIED",
+      "NUTRIENT_INVENTORY_IS_NOT_PLANT_AVAILABILITY",
+      "ECONOMICS_UNAVAILABLE"
+    ],
+    "missing_requirements": [],
+    "provenance": {
+      "baseline": {
+        "commit": "03be95432d6ee5b83f80b2e98b9575484b927025",
+        "files_verified": 301,
+        "lock_sha256": "5447e3eb907ebe1a70f5e8e63f8a63aacf140811cc04d6f95c8518abd4f92dfe"
+      },
+      "engine_provenance": {
+        "NO_FIELD_VALIDATION": true,
+        "growth_input_identity": {
+          "NASA": {
+            "raw_sha256": "aad4704746faa3a38c4b15638826ef8fe8a3dda45b02aa26775deb6f855dcc6b",
+            "receipt_sha256": "a1f8c229c4ffdf04ea9eb5341509586a91e6055663f74b55559d5ca059fb32a4"
+          },
+          "input_lock_sha256": "473df07aa704cc7459ff18f2f8fabb97f67521d5be04743eb6be62ef483915b4",
+          "model_source_sha256": "07c624736b91ba69ccba60004dc9581ce6a2bf13485f9f492e86fba69b3a985f",
+          "producing_parameters": {
+            "brain/parameters/barley_1ca91d7.yaml": "8acf3edf03990039ccc28aad44bf108b1eb5b569c27aa9b01785fb8ab9263a18"
+          },
+          "producing_sources": {
+            "producing_profiles.py": "6ee3df8b3e19c46f2b766cd097035c5a88175192df6a665533911d3c8362bab0",
+            "producing_worker.py": "2591e5f5c8667bb85bdc60adb2550ebd8ebc74d189c29c97f31c4df4c41a172f",
+            "root_depth_adapter.py": "ce74d10db4eab86a05acfb17d100a3b06a9be91d11869076a9db14d81c869436"
+          },
+          "profile_id": "wageningen-three-crop-producing-research-v1",
+          "provider_sources": {
+            "growth_experiment.py": "403a546f2ce18f7ddb28c55d4ec6d8dc66c0ad4d312b1717fd579b962280b251",
+            "growth_profiles.py": "b9e324cd9884e75de673d9932c8bacdd9c3c7bfff9defffa717bd0d3f78b40ec",
+            "growth_source.py": "1a288247bab94e1854e8c1c3658506f5d2f7f225b958ebc2e84258c23e03b063",
+            "growth_worker.py": "a3a157f0ca01a80d62e7e73fdb88dc365f33dda7e2bacadd21b688d27f793e17",
+            "runtime_paths.py": "d2fcdaf17218ab3b3b8c6cf360f1853f34568c59686975c707c536e5d22523e1"
+          }
+        },
+        "native_source": {
+          "authenticity": "Verified HTTPS retrieval; hashes verify replay integrity, not a NASA digital signature",
+          "http_status": 200,
+          "license": "NASA POWER public data with attribution to NASA Langley POWER and the named meteorology/radiation providers",
+          "qualification": {
+            "days": 1827,
+            "elevation_m": 15.29,
+            "fill_or_imputed_days": 0,
+            "period": [
+              "2016-01-01",
+              "2020-12-31"
+            ],
+            "point_lon_lat": [
+              5.67,
+              51.97
+            ],
+            "solar_source_reference": "https://power.larc.nasa.gov/docs/methodology/data/sources_fluxes/",
+            "sources": [
+              "MERRA2",
+              "SYN1DEG",
+              "POWER"
+            ],
+            "spatial_scope": "NASA POWER point extraction; MERRA2 meteorology (0.625 x 0.5 degree nominal grid) and CERES SYN1deg solar (1 x 1 degree nominal grid). No field measurement or downscaling.",
+            "time_standard": "UTC",
+            "variables": {
+              "ALLSKY_SFC_SW_DWN": "MJ/m^2/day",
+              "PRECTOTCORR": "mm/day",
+              "T2M": "C",
+              "T2MDEW": "C",
+              "T2M_MAX": "C",
+              "T2M_MIN": "C",
+              "TOA_SW_DWN": "MJ/m^2/day",
+              "WS2M": "m/s"
+            }
+          },
+          "raw_sha256": "aad4704746faa3a38c4b15638826ef8fe8a3dda45b02aa26775deb6f855dcc6b",
+          "receipt_sha256": "a1f8c229c4ffdf04ea9eb5341509586a91e6055663f74b55559d5ca059fb32a4",
+          "response_headers": {
+            "Content-Type": "application/json",
+            "Date": "Fri, 13 Nov 2026 21:21:41 GMT",
+            "ETag": null,
+            "Last-Modified": null
+          },
+          "retrieved_at": "2026-11-13T21:21:44.192708+00:00",
+          "schema": "astragron.pcse-nasa-source.v1",
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=TOA_SW_DWN%2CALLSKY_SFC_SW_DWN%2CT2M%2CT2M_MIN%2CT2M_MAX%2CT2MDEW%2CWS2M%2CPRECTOTCORR&community=AG&longitude=5.67&latitude=51.97&start=20160101&end=20201231&format=JSON&time-standard=UTC"
+        },
+        "scope": "CONDITIONAL_NATIVE_GROWTH_RESEARCH_NOT_FIELD_ADVICE"
+      },
+      "historical_research_provenance_preserved": true,
+      "implementation_sha256": {
+        "brain/__init__.py": "bed6db1b4fe60d75578a59a9bfbca231979d7037955c87515420bea4deeaed4b",
+        "brain/baseline.py": "84cef14e9637035fb47daf3f2e665729a300915f8fb6baa021fde748d245290c",
+        "brain/cli.py": "c227adb6a96ae28021528b10fb00c3b0d89b45df2c946be94dc364294dacbd43",
+        "brain/crop_diagnostics.py": "b759af518931c7b24508e5d347c7bdd4371da14230beaecbe50a1cfb73ec190f",
+        "brain/economics.py": "b6fddbf6fbc986ae6f2771d0c6c3991f40b1fb92e0da8101f12b3cab145cac56",
+        "brain/growth_decision.py": "0cfc23fbd1e2758c656083fd2ee4759d136165c9a1080775fc86c8349a3593bc",
+        "brain/growth_experiment.py": "403a546f2ce18f7ddb28c55d4ec6d8dc66c0ad4d312b1717fd579b962280b251",
+        "brain/growth_pk.py": "42dcdd344c0f23eb227c8a3da5e5db39c3f2cd3c8dd7c5e383d823b37f3a83e6",
+        "brain/growth_profiles.py": "b9e324cd9884e75de673d9932c8bacdd9c3c7bfff9defffa717bd0d3f78b40ec",
+        "brain/growth_rotation.py": "c81edbbfe8edf0529aa0433f73f27ce00bc74de02508b0fd013b03a2e27e5d79",
+        "brain/growth_scenario_economics.py": "be26a425ae41c2b8c95f2f9df7d097a8c8219dc540ce2b55edded2a8036a56af",
+        "brain/growth_source.py": "1a288247bab94e1854e8c1c3658506f5d2f7f225b958ebc2e84258c23e03b063",
+        "brain/growth_worker.py": "a3a157f0ca01a80d62e7e73fdb88dc365f33dda7e2bacadd21b688d27f793e17",
+        "brain/nutrient_response.py": "baccd3bc7667885c567d282d2a8311992ba8df32dfe66058e5527bd9c3f1f8a4",
+        "brain/producing_profiles.py": "6ee3df8b3e19c46f2b766cd097035c5a88175192df6a665533911d3c8362bab0",
+        "brain/producing_worker.py": "2591e5f5c8667bb85bdc60adb2550ebd8ebc74d189c29c97f31c4df4c41a172f",
+        "brain/root_depth_adapter.py": "ce74d10db4eab86a05acfb17d100a3b06a9be91d11869076a9db14d81c869436",
+        "brain/runtime_paths.py": "d2fcdaf17218ab3b3b8c6cf360f1853f34568c59686975c707c536e5d22523e1",
+        "brain/service.py": "f29476e97a461ae0e55fb0fb669efe172eeef2592fa33f593cb5719447e55471",
+        "brain/transport.py": "826132db02498f78cb5f0a026c367bffd0edcc67d4dc4e4e7f36959767a14045",
+        "brain/verify_new_location.py": "bc66c69152118c81d96d5d998328df9d6cc9e5e9bb714457019b2268133a6a91",
+        "brain/verify_release.py": "f1a45f47a90dc58266e9e32a576244e4d2d46a2e3183c35076a494b1c70e8450",
+        "brain/verify_transport.py": "cbcf609979326078c17ad9fddb3a6372cf213f7764822bfdf5dfbfb2b3b9c695",
+        "contracts/CLIENT_DECISION_API_V1.md": "fcbb5654f5b9a4413abceed7120cd552e961869e058b69dd10ada550466cfe51",
+        "contracts/GROWTH_DECISION_BRIDGE_V1.md": "ab4e1bd1b45aae5b1f2d94571103f7904fd28418c1f5630bbf7a31b09396ac7f",
+        "contracts/GROWTH_PROCESS_DIAGNOSTIC_V1.md": "eab57eddea13822cc97db412ded39425daa13e45a18b82868875daa2646e7b3d",
+        "contracts/GROWTH_ROTATION_RESEARCH_V1.md": "cd5366c80019ea9150d31c9aa8587c72ca3ae9993ad75873d8b4e4e267e0c6b8",
+        "contracts/PRODUCING_ROTATION_RESEARCH_V1.md": "574f0eb624054cbc166ba3180f54db14ffb323d297bc5e88cd20c97fbbf320d0",
+        "contracts/SCIENTIFIC_BRAIN_INTEGRATION_V1.json": "69210ec85704913d8c77ca73d1d392e423fb97093a1a65c63d982e185023efff",
+        "contracts/SCIENTIFIC_BRAIN_INTEGRATION_V1.md": "174a4ba25bf5bdbcce17143d47c854430018bdcd8f6f11400ecd127f46d8226e",
+        "contracts/client_decision_request_v1.schema.json": "cb0fc754d2a5972b25a210fd2489782a09927f9fa297c19998cb57db9fe77212",
+        "contracts/client_decision_response_v1.schema.json": "b4f70cd09683c50ffc46c4687fbebc18766dc8ef962f655bc6013986ae36b56b",
+        "contracts/growth_decision_request_v1.schema.json": "d36c65e2ee7842e6d838b4f9b02757b496720fd66f5d36491c75e6ca927079b2",
+        "contracts/growth_experiment_request_v1.schema.json": "c15d3c17b5ead813810acf747b4400603e806091f9817758aa4b7d43f46b5a40",
+        "contracts/growth_experiment_response_v1.schema.json": "0c64027ac5e2884b788edd39fc7e11b65209a42aed44fd4fea543cb56c40c8d7",
+        "contracts/growth_producing_request_v1.schema.json": "34061b545cb49c0acf90f3314fb036ce448ed575849d633e5f0e4102437197f6",
+        "contracts/growth_rotation_evidence_v1.json": "1f7d3e294f699a6f5f78648757cba6306a32378041543fdc3a39fc06cea43fdb",
+        "contracts/growth_rotation_request_v1.schema.json": "404aafe1776a638da5db0ade0c7f5335cf7744037f4fa523e76ef0d82d1b6b7f",
+        "contracts/producing_rotation_sources_v1.json": "4adb5732091211c671bd4ac5f955c067cc635b1814c87768a722059d04555745"
+      },
+      "request_sha256": "8ad475436e36dac49c3ffe1e7bd98f7d16452fdedac1d5279e29f7de7038ebdd",
+      "soil_ancestry_sha256": null,
+      "soil_parameter_id": "c0b5d4a67e48bdc6d8e3cb718147e2cec6f993aab10ce1e987aeb81312c4fae2",
+      "soil_scientific_result_sha256": null,
+      "soil_source_ledger": [
+        {
+          "available_at": "2026-11-13T22:00:27+00:00",
+          "crop_scope": [
+            "research:NL:potato_Fontane",
+            "research:NL:sugarbeet_601",
+            "research:NL:spring_barley_301"
+          ],
+          "cultivar_scope": "Fontane / Sugarbeet_601 / Spring_barley_301 labels; P/K biological response is not modeled",
+          "evidence_class": "RESEARCH_ASSUMPTION",
+          "factual_scope": "Synthetic operator-declared identical annual P/K inventory withdrawals for all three labels, solely an accounting control. These are not barley or root-crop uptake/removal coefficients or measurements. Auxiliary N placeholders never enter native N physiology.",
+          "geographic_scope": {
+            "country": "NL",
+            "point_lon_lat": [
+              5.67,
+              51.97
+            ],
+            "site_id": "NL_WAGENINGEN_GROWTH"
+          },
+          "id": "NL_DECLARED_PK_CONTROL",
+          "license": "Private authorized engineering scenario; no new public license or field-data rights asserted",
+          "parameter_version": "declared-pk-v1",
+          "source_sha256": "70195fc32025131f56d313dcf07d7c02578970b3775faca2481eda809cb8f805",
+          "source_uri": "operator-scenario:NL-three-crop-identical-PK-accounting-control",
+          "uncertainty": "Exact declared point inputs; no calibrated bounds"
+        }
+      ]
+    },
+    "engine_result": {
+      "scientific_result_sha256": "f812c32e72693cbf8b8da6e08f6f6a50d4a5de936133c85d999fa976edc44b08"
+    },
+    "report_dto": {
+      "limitations": [
+        "NO_FIELD_VALIDATION",
+        "HISTORICAL_ANALOG_NOT_FORECAST",
+        "FINITE_SEARCH_NOT_GLOBAL_OPTIMUM",
+        "WATER_RIGHTS_NOT_VERIFIED",
+        "YIELD_RESPONSE_NOT_QUALIFIED",
+        "REGULATORY_PESTICIDE_NOT_VERIFIED",
+        "NUTRIENT_INVENTORY_IS_NOT_PLANT_AVAILABILITY",
+        "ECONOMICS_UNAVAILABLE"
+      ],
+      "summary": "Five producing annual crop seasons compare potato, sugarbeet and source-pinned spring barley under a conditional research soil/calendar profile. Separate crop DM and N-loss vectors yield Pareto alternatives; field validation, marketable yield and overall economic value remain unqualified."
+    }
+  }
+}

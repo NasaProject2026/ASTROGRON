@@ -115,13 +115,15 @@ describe('G3 & G2 Remediation Gate Tests', () => {
 
     expect(Array.isArray(manifest.assets)).toBe(true);
     for (const asset of manifest.assets) {
+      if (typeof asset.path === 'string' && asset.path.startsWith('public/assets/')) {
+        // Commissioned public/assets/* JPGs are excluded from public Git per EXCLUDED_ASSETS_AND_RIGHTS.md
+        expect(String(asset.license).toUpperCase()).toContain('PROPRIETARY');
+        expect(String(asset.license).toUpperCase()).not.toContain('CC0 1.0');
+        continue;
+      }
       if (typeof asset.path === 'string' && asset.path.startsWith('public/')) {
         const absAssetPath = path.resolve(process.cwd(), asset.path);
         expect(fs.existsSync(absAssetPath)).toBe(true);
-      }
-      if (typeof asset.path === 'string' && asset.path.startsWith('public/assets/')) {
-        expect(String(asset.license).toUpperCase()).toContain('PROPRIETARY');
-        expect(String(asset.license).toUpperCase()).not.toContain('CC0 1.0');
       }
     }
 

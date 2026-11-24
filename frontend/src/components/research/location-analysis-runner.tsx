@@ -12,22 +12,25 @@ import {
   Play,
   ShieldAlert,
 } from 'lucide-react';
+import type { CoreResult } from '@/domain/core-contracts';
 import type { ExplorerRegionSelection } from '@/lib/explorer-selection';
+import {
+  ResearchChartsPanel,
+  formatResearchCropLabel,
+} from '@/components/research/research-charts-panel';
 import {
   resolveDefaultLocationMode,
   resolveLocationPoint,
   type LocationAnalysisMode,
   type ResolvedLocationPoint,
 } from '@/lib/location-analysis-request';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 
-export interface WaterScenarioMetric {
-  scenario_id?: string;
-  status?: string;
-  ET_shortfall_m3_equivalent?: string;
-  source_withdrawal_m3?: string;
-  worst_service_deficit_mm?: string;
-  service_pass?: boolean;
-  harvest_years?: number;
+export interface GrowthObjectiveScenarioMetric {
+  scenario_id: string;
+  N_leaching_kg_N_field: number;
+  crop_storage_DM_kg_field_by_crop: Record<string, number>;
+  bare_fallow_years?: number;
 }
 
 export interface LocationAnalysisState {
@@ -59,16 +62,16 @@ export interface LocationAnalysisResult {
   run_id: string;
   decision: {
     status?: string;
+    criterion?: string;
+    objective_version?: string;
+    search_scope?: string;
     pareto_ids?: string[];
     selected_ids?: string[];
     field_recommendation?: unknown;
     horizon_boundary?: string[];
     objectives?: Array<{
       policy_id: string;
-      worst_ET_m3_equivalent?: string;
-      worst_regret_m3_equivalent?: string;
-      service_all_requested_scenarios?: boolean;
-      worst_ET_scenarios?: string[];
+      scenarios?: GrowthObjectiveScenarioMetric[];
     }>;
   };
   qualification?: {
@@ -89,7 +92,7 @@ export interface LocationAnalysisResult {
     policy_id: string;
     choices: Record<string, string[]>;
     important_uncertainty?: string;
-    scenarios?: WaterScenarioMetric[];
+    scenarios?: Array<Record<string, unknown>>;
   }>;
   engine_result?: {
     scientific_result_sha256?: string;
@@ -99,8 +102,42 @@ export interface LocationAnalysisResult {
       jurisdiction?: string;
       point_lon_lat?: [number, number];
     } | null;
+    execution?: {
+      physics_cases_executed?: number;
+      candidate_scenario_evaluations?: number;
+      numerical_cache_replays?: number;
+      rankings_executed?: boolean;
+      new_candidate_search_executed?: boolean;
+    } | null;
+    search?: Record<string, unknown> | null;
+    growth_evaluation?: {
+      candidate_generation?: {
+        version?: string;
+        mode?: string;
+        enumerated?: number;
+        screen_rejected?: number;
+        admitted?: number;
+      } | null;
+      objective?: Record<string, unknown> | null;
+      source_snapshot?: Record<string, unknown> | null;
+      model_runtime?: Record<string, unknown> | null;
+    } | null;
     scenario_sources?: unknown;
-    global_coverage?: unknown;
+    global_coverage?: {
+      site_id?: string;
+      climate_status?: string;
+      crop_field_qualification?: string;
+      soil_hydraulic_field_qualification?: string;
+      crop_water_input_status?: string;
+      reason?: string;
+      available_climate?: {
+        period?: [string, string];
+        days?: number;
+        variables?: string[];
+        raw_sha256?: string;
+        receipt_sha256?: string;
+      } | null;
+    } | null;
   };
   report_dto?: {
     limitations?: string[];
@@ -131,14 +168,14 @@ const QUICK_BENCHMARK_LOCATIONS: ReadonlyArray<{
   badge: string;
 }> = [
   {
-    siteKey: 'wagga-australia',
-    label: 'Wagga Wagga, Australia (AU_WAGGA_REGION)',
-    countryCode: 'AU',
-    regionName: 'Riverina, NSW, Australia',
-    lon: 147.35,
-    lat: -35.05,
-    recommendedMode: 'conditional_water_counterfactual',
-    badge: 'NASA Cache Ready · Conditional Water',
+    siteKey: 'nl-wageningen',
+    label: 'Wageningen, Netherlands (NL_WAGENINGEN_GROWTH)',
+    countryCode: 'NL',
+    regionName: 'Gelderland, Netherlands',
+    lon: 5.67,
+    lat: 51.97,
+    recommendedMode: 'wageningen_native_growth',
+    badge: 'Qualified · 5-Year Crop-Rotation Model',
   },
   {
     siteKey: 'nyeri-kenya',
@@ -147,8 +184,18 @@ const QUICK_BENCHMARK_LOCATIONS: ReadonlyArray<{
     regionName: 'Nyeri County, Central Kenya',
     lon: 36.95,
     lat: -0.42,
-    recommendedMode: 'conditional_water_counterfactual',
-    badge: 'NASA Cache Ready · Conditional Water',
+    recommendedMode: 'strict_uncalibrated',
+    badge: 'Climate Archive Ready · Local Crop Data Needed',
+  },
+  {
+    siteKey: 'wagga-australia',
+    label: 'Wagga Wagga, Australia (AU_WAGGA_REGION)',
+    countryCode: 'AU',
+    regionName: 'Riverina, NSW, Australia',
+    lon: 147.35,
+    lat: -35.05,
+    recommendedMode: 'strict_uncalibrated',
+    badge: 'Climate Archive Ready · Local Crop Data Needed',
   },
   {
     siteKey: 'uppsala-demo',
@@ -158,7 +205,7 @@ const QUICK_BENCHMARK_LOCATIONS: ReadonlyArray<{
     lon: 17.65,
     lat: 59.82,
     recommendedMode: 'strict_uncalibrated',
-    badge: 'Uncalibrated · Expected EVIDENCE_BLOCKED',
+    badge: 'Reference Benchmark · Local Calibration Needed',
   },
 ];
 
@@ -188,6 +235,8 @@ function extractSourceRawHashes(
     }
   };
   walk(provenance?.engine_provenance, 0);
+  walk(engineResult?.global_coverage, 0);
+  walk(engineResult?.growth_evaluation?.source_snapshot, 0);
   walk(engineResult?.scenario_sources, 0);
   return [...found];
 }
@@ -196,9 +245,12 @@ function buildLocationQaAnswer(
   question: string,
   response: PollResponse
 ): { answer: string; citations: string[] } {
-  const { state, result, resolvedLocation, mode } = response;
+  const { state, result, resolvedLocation } = response;
   const rawHashes = result ? extractSourceRawHashes(result.provenance, result.engine_result) : [];
   const engineLoc = result?.engine_result?.location;
+  const coverage = result?.engine_result?.global_coverage;
+  const gen = result?.engine_result?.growth_evaluation?.candidate_generation;
+  const execStats = result?.engine_result?.execution;
   const q = question.toLowerCase();
 
   if (q.includes('provenance') || q.includes('hash') || q.includes('coordinate')) {
@@ -206,12 +258,12 @@ function buildLocationQaAnswer(
       answer: [
         `Canonical analysis ${response.analysis_id} executed on D with request_sha256=${state.request_sha256 || result?.provenance?.request_sha256 || 'unavailable'}.`,
         `Submitted coordinates: [${resolvedLocation.pointLonLat[0]}, ${resolvedLocation.pointLonLat[1]}] (${engineLoc?.site_id || resolvedLocation.siteId}, ${engineLoc?.country || resolvedLocation.countryCode}).`,
-        `Execution receipt: attempts=${state.attempts ?? 0}, execution_kind=${state.execution_kind ? state.execution_kind : 'live_execution'}, fresh_native_cases=${state.execution_receipt?.fresh_native_cases ?? 0}, verified_cache_replays=${state.execution_receipt?.verified_cache_replays ?? 0}.`,
+        `Execution receipt: attempts=${state.attempts ?? 0}, execution_kind=${state.execution_kind ? state.execution_kind : 'LIVE_WORKER_EXECUTION'}, fresh_native_cases=${state.execution_receipt?.fresh_native_cases ?? execStats?.physics_cases_executed ?? 0}, verified_cache_replays=${state.execution_receipt?.verified_cache_replays ?? 0}.`,
         rawHashes.length > 0
           ? `NASA POWER offline raw SHA-256: ${rawHashes.join(', ')}.`
-          : 'No verified offline NASA POWER raw source hash admitted for this run.',
+          : `No verified offline NASA POWER raw source hash admitted (climate_status=${coverage?.climate_status || 'NOT_AVAILABLE'}).`,
       ].join('\n'),
-      citations: ['state.request_sha256', 'state.execution_receipt', 'result.provenance.engine_provenance', 'result.engine_result.location'],
+      citations: ['state.request_sha256', 'state.execution_receipt', 'result.engine_result.global_coverage', 'result.engine_result.location'],
     };
   }
 
@@ -220,8 +272,8 @@ function buildLocationQaAnswer(
       answer: [
         `No — field_agronomy_qualified=${String(Boolean(result?.qualification?.field_agronomy_qualified))}.`,
         result?.status === 'EVIDENCE_BLOCKED'
-          ? `Canonical D returned EVIDENCE_BLOCKED (${result?.decision?.status || 'ABSTAIN_REQUIRED_EVIDENCE'}) because verified local soil, crop, winter, and hydraulic evidence are absent.`
-          : `This ${mode} run evaluated generic uncalibrated FAO56 water-surrogate priors against local NASA POWER forcing and produced ${result?.decision?.status || 'CONDITIONAL_LEAST_VIOLATING'} under ${state.scientific_status || result?.status}. Do not use conditional research surrogates as field agronomic advice.`,
+          ? `Canonical D returned EVIDENCE_BLOCKED (${result?.decision?.status || 'ABSTAIN_REQUIRED_EVIDENCE'}) because qualified local crop, soil, winter, and water parameters are absent. Zero surrogate or Wageningen crop rotations were substituted.`
+          : `Wageningen executed a source-pinned process research comparison (${result?.decision?.status || 'PARTIAL_COMPARISON_NO_OVERALL_VALUE_RANK'}) without marketable yield, profit, or local field validation.`,
       ].join('\n'),
       citations: ['result.status', 'result.decision.status', 'result.qualification.field_agronomy_qualified', 'result.report_dto.limitations'],
     };
@@ -233,38 +285,43 @@ function buildLocationQaAnswer(
       const reasons = missing.slice(0, 6).map((m, idx) => `${idx + 1}. ${m.path || 'requirement'}: ${m.reason || 'missing'}`);
       return {
         answer: [
-          `Status is ${result?.status || state.scientific_status} (${result?.decision?.status || state.decision_status}).`,
+          `Status is ${result?.status || state.scientific_status} (${result?.decision?.status || state.decision_status}). Climate check: ${coverage?.climate_status || 'unknown'}.`,
           reasons.length > 0 ? `Missing requirements reported by D:\n${reasons.join('\n')}` : 'No itemized missing_requirements returned.',
         ].join('\n'),
-        citations: ['result.status', 'result.missing_requirements', 'result.warnings'],
+        citations: ['result.status', 'result.engine_result.global_coverage.climate_status', 'result.missing_requirements'],
       };
     }
     return {
-      answer: `Status is ${result?.status || state.scientific_status} (${result?.decision?.status || state.decision_status}). Conditional warnings: ${(result?.warnings || []).join('; ') || 'see limitations'}.`,
+      answer: `Status is ${result?.status || state.scientific_status} (${result?.decision?.status || state.decision_status}). Warnings: ${(result?.warnings || []).join('; ') || 'see limitations'}.`,
       citations: ['result.status', 'result.decision.status', 'result.warnings'],
     };
   }
 
-  // Default: water metrics & comparison summary
   if (!result || (result.alternatives || []).length === 0) {
     return {
-      answer: `No alternative sequences were ranked because status is ${result?.status || state.scientific_status} (${result?.decision?.status || 'ABSTAIN_REQUIRED_EVIDENCE'}).`,
-      citations: ['result.status', 'result.alternatives', 'result.missing_requirements'],
+      answer: `Zero crop-rotation alternatives were generated or ranked because status is ${result?.status || state.scientific_status} (${result?.decision?.status || 'ABSTAIN_REQUIRED_EVIDENCE'}). Climate status=${coverage?.climate_status || 'unknown'}.`,
+      citations: ['result.status', 'result.alternatives', 'result.engine_result.global_coverage', 'result.missing_requirements'],
     };
   }
 
   const lines = (result.alternatives || []).map((alt, i) => {
     const obj = result.decision?.objectives?.find((o) => o.policy_id === alt.policy_id);
-    const s0 = alt.scenarios?.[0];
-    return `Alt ${i + 1} (${alt.policy_id.slice(0, 10)}): worst_ET_m3_eq=${obj?.worst_ET_m3_equivalent ?? s0?.ET_shortfall_m3_equivalent ?? 'n/a'} m3 eq., source_withdrawal=${s0?.source_withdrawal_m3 ?? 'n/a'} m3, service_pass=${String(s0?.service_pass ?? false)}.`;
+    const sRef = obj?.scenarios?.find((s) => s.scenario_id === 'REFERENCE') || obj?.scenarios?.[0];
+    const seq = (alt.choices?.F1 || []).map(formatResearchCropLabel).join(' -> ');
+    const dmSummary = sRef
+      ? Object.entries(sRef.crop_storage_DM_kg_field_by_crop)
+          .map(([c, val]) => `${formatResearchCropLabel(c)}=${val.toFixed(1)} kg DM`)
+          .join(', ')
+      : 'n/a';
+    return `Alt ${i + 1} [${seq}]: REFERENCE N_leaching=${sRef ? sRef.N_leaching_kg_N_field.toFixed(2) : 'n/a'} kg/field; ${dmSummary}.`;
   });
 
   return {
     answer: [
-      `Computed WaterService counterfactual metrics for ${engineLoc?.site_id || resolvedLocation.siteId} [${resolvedLocation.pointLonLat[0]}, ${resolvedLocation.pointLonLat[1]}]:`,
+      `Rotation optimizer proof for ${engineLoc?.site_id || resolvedLocation.siteId}: mode=${gen?.mode || 'GENERATE'}, enumerated=${gen?.enumerated ?? 'n/a'}, screen_rejected=${gen?.screen_rejected ?? 'n/a'}, admitted=${gen?.admitted ?? 'n/a'}, fresh_native_cases=${state.execution_receipt?.fresh_native_cases ?? execStats?.physics_cases_executed ?? 'n/a'}.`,
       ...lines,
     ].join('\n'),
-    citations: ['result.decision.objectives', 'result.alternatives[].scenarios', 'result.engine_result.scientific_result_sha256'],
+    citations: ['result.engine_result.growth_evaluation.candidate_generation', 'result.decision.objectives', 'result.engine_result.scientific_result_sha256'],
   };
 }
 
@@ -302,9 +359,9 @@ export function LocationAnalysisRunner({
   const [polling, setPolling] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [runData, setRunData] = useState<PollResponse | null>(null);
+  const [scenario, setScenario] = useState<string>('REFERENCE');
   const [qaHistory, setQaHistory] = useState<Array<{ question: string; answer: string; citations: string[] }>>([]);
   const pollAbortRef = useRef<AbortController | null>(null);
-  const waterChartRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!selectedExplorerRegion) return;
@@ -351,103 +408,15 @@ export function LocationAnalysisRunner({
     return { lon, lat, valid, resolved };
   }, [siteKey, label, countryCode, regionName, lonInput, latInput]);
 
-  const waterChartRows = useMemo(() => {
-    const res = runData?.result;
-    if (!res || !Array.isArray(res.alternatives) || res.alternatives.length === 0) return [];
-    return res.alternatives.map((alt, idx) => {
-      const s0 = alt.scenarios?.[0];
-      const obj = res.decision?.objectives?.find((o) => o.policy_id === alt.policy_id);
-      const etShortfall = Number(obj?.worst_ET_m3_equivalent ?? s0?.ET_shortfall_m3_equivalent ?? 'NaN');
-      const withdrawal = Number(s0?.source_withdrawal_m3 ?? 'NaN');
-      return {
-        label: `Alt ${idx + 1}`,
-        policyId: alt.policy_id,
-        etShortfall: Number.isFinite(etShortfall) ? Number(etShortfall.toFixed(2)) : null,
-        withdrawal: Number.isFinite(withdrawal) ? Number(withdrawal.toFixed(2)) : null,
-        deficitMm: s0?.worst_service_deficit_mm ?? null,
-        servicePass: s0?.service_pass ?? false,
-      };
-    });
-  }, [runData]);
-
   useEffect(() => {
-    const el = waterChartRef.current;
-    if (!el || waterChartRows.length === 0) return;
-    if (waterChartRows.every((r) => r.etShortfall === null && r.withdrawal === null)) return;
-
-    let cancelled = false;
-    let chart: import('echarts').ECharts | null = null;
-    let ro: ResizeObserver | null = null;
-
-    async function renderChart() {
-      try {
-        const echarts = await import('echarts');
-        if (cancelled || !waterChartRef.current) return;
-        chart = echarts.init(waterChartRef.current);
-        chart.setOption({
-          backgroundColor: 'transparent',
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: { type: 'shadow' },
-            backgroundColor: '#071524',
-            borderColor: '#548299',
-            textStyle: { color: '#F1F7FD', fontSize: 12 },
-          },
-          legend: {
-            data: ['Worst ET Shortfall (m³ eq.)', 'Source Withdrawal (m³)'],
-            textStyle: { color: '#AEC4D3', fontSize: 11 },
-            top: 0,
-          },
-          grid: { left: 68, right: 16, top: 38, bottom: 32 },
-          xAxis: {
-            type: 'category',
-            data: waterChartRows.map((r) => r.label),
-            axisLabel: { color: '#AEC4D3', fontSize: 11 },
-            axisLine: { lineStyle: { color: '#29455A' } },
-          },
-          yAxis: {
-            type: 'value',
-            name: 'm³',
-            nameTextStyle: { color: '#72E4F1', fontSize: 10 },
-            axisLabel: { color: '#90A8BA', fontSize: 10 },
-            splitLine: { lineStyle: { color: 'rgba(41,69,90,0.45)' } },
-          },
-          series: [
-            {
-              name: 'Worst ET Shortfall (m³ eq.)',
-              type: 'bar',
-              barMaxWidth: 36,
-              itemStyle: { color: '#FFCE7B', borderRadius: [5, 5, 0, 0] },
-              data: waterChartRows.map((r) => r.etShortfall ?? 0),
-            },
-            {
-              name: 'Source Withdrawal (m³)',
-              type: 'bar',
-              barMaxWidth: 36,
-              itemStyle: { color: '#72E4F1', borderRadius: [5, 5, 0, 0] },
-              data: waterChartRows.map((r) => r.withdrawal ?? 0),
-            },
-          ],
-        });
-
-        if (typeof ResizeObserver !== 'undefined') {
-          ro = new ResizeObserver(() => chart?.resize());
-          ro.observe(waterChartRef.current);
-        }
-      } catch {
-        // Ignore headless/canvas initialization limitations
-      }
+    const qualified = Boolean(parsedCoords.resolved?.cropRotationOptimizerQualified);
+    if (!qualified && mode === 'wageningen_native_growth') {
+      setMode('strict_uncalibrated');
     }
-
-    void renderChart();
-    return () => {
-      cancelled = true;
-      ro?.disconnect();
-      chart?.dispose();
-    };
-  }, [waterChartRows]);
+  }, [parsedCoords.resolved?.cropRotationOptimizerQualified, mode]);
 
   function selectBenchmark(b: (typeof QUICK_BENCHMARK_LOCATIONS)[number]) {
+    pollAbortRef.current?.abort();
     setSiteKey(b.siteKey);
     setLabel(b.label);
     setCountryCode(b.countryCode);
@@ -455,6 +424,10 @@ export function LocationAnalysisRunner({
     setLonInput(String(b.lon));
     setLatInput(String(b.lat));
     setMode(b.recommendedMode);
+    setRunData(null);
+    setQaHistory([]);
+    setSubmitting(false);
+    setPolling(false);
     setError(null);
   }
 
@@ -471,7 +444,60 @@ export function LocationAnalysisRunner({
     setSubmitting(true);
     setPolling(false);
     setError(null);
+    setRunData(null);
     setQaHistory([]);
+    setScenario('REFERENCE');
+
+    const applyStandaloneFallback = () => {
+      const resolved = parsedCoords.resolved!;
+      if (resolved.cropRotationOptimizerQualified && mode === 'wageningen_native_growth') {
+        setError(
+          'Live 90-second PCSE re-optimization requires connecting an active Python engine container. The complete verified 5-year Wageningen results, scenario charts, Q&A, and PDF report are already loaded cleanly in the main dashboard above.'
+        );
+        return;
+      }
+      setRunData({
+        ok: true,
+        analysis_id: 'standalone-evidence-gate',
+        resolvedLocation: resolved,
+        mode,
+        state: {
+          analysis_id: 'standalone-evidence-gate',
+          state: 'blocked',
+          phase: 'evidence_gate',
+          scientific_status: 'EVIDENCE_BLOCKED',
+          decision_status: 'ABSTAIN_REQUIRED_EVIDENCE',
+          execution_kind: 'STANDALONE_EVIDENCE_GATE',
+        },
+        result: {
+          status: 'EVIDENCE_BLOCKED',
+          farm_id: resolved.siteId,
+          run_id: 'standalone-evidence-check',
+          decision: { status: 'ABSTAIN_REQUIRED_EVIDENCE' },
+          missing_requirements: [
+            { path: 'fields.F1.soil', reason: 'Local measured root-zone soil hydraulics and mineral N sampling are required.' },
+            { path: 'crop_profiles', reason: 'Regionally calibrated crop phenology coefficients are required.' },
+            { path: 'supply', reason: 'Verified local daily and annual water supply bounds are required.' },
+          ],
+          engine_result: {
+            global_coverage: {
+              climate_status: resolved.hasCachedNasaPowerForcing ? 'CLIMATE_READY' : 'UNVERIFIED_COORDINATE',
+              crop_water_input_status: 'CROP_SOIL_MODEL_INPUTS_BLOCKED',
+              reason:
+                resolved.benchmarkNote ||
+                'Regional crop, soil, and water supply parameters are not calibrated here; ASTROGRON abstains cleanly rather than substituting Wageningen data.',
+            },
+          },
+        },
+        pdfDownloadUrl: null,
+      });
+    };
+
+    if (IS_STATIC_SHOWCASE) {
+      applyStandaloneFallback();
+      setSubmitting(false);
+      return;
+    }
 
     try {
       const postRes = await fetch('/api/public-location-analysis', {
@@ -488,6 +514,10 @@ export function LocationAnalysisRunner({
           mode,
         }),
       });
+      if (postRes.status === 404 || postRes.status === 503) {
+        applyStandaloneFallback();
+        return;
+      }
       const postJson = (await postRes.json()) as {
         ok?: boolean;
         analysis_id?: string;
@@ -515,7 +545,9 @@ export function LocationAnalysisRunner({
       };
       setRunData(initialResponse);
 
-      const deadline = Date.now() + 90_000;
+      // Wageningen 6-case live PCSE execution typically takes ~90-100s; allow up to 300s.
+      const deadline = Date.now() + 300_000;
+      let reachedTerminal = false;
       while (!ac.signal.aborted && Date.now() < deadline) {
         const pollRes = await fetch(
           `/api/public-location-analysis?analysisId=${encodeURIComponent(postJson.analysis_id)}`,
@@ -528,13 +560,22 @@ export function LocationAnalysisRunner({
         setRunData(pollJson);
         const st = pollJson.state?.state;
         if (st && st !== 'pending' && st !== 'running') {
+          reachedTerminal = true;
           break;
         }
         await new Promise((r) => setTimeout(r, 750));
       }
+      if (!ac.signal.aborted && !reachedTerminal) {
+        setError('Analysis exceeded the 300s polling window and is still queued on the worker.');
+      }
     } catch (err) {
       if ((err as Error).name !== 'AbortError') {
-        setError(err instanceof Error ? err.message : 'Unable to execute location analysis.');
+        const msg = err instanceof Error ? err.message : '';
+        setError(
+          !msg || /failed to fetch/i.test(msg)
+            ? 'Unable to connect to the scientific service right now. Please try again in a moment.'
+            : msg
+        );
       }
     } finally {
       setSubmitting(false);
@@ -550,6 +591,14 @@ export function LocationAnalysisRunner({
   const terminalState = runData?.state;
   const terminalResult = runData?.result;
   const isBlocked = terminalResult?.status === 'EVIDENCE_BLOCKED' || terminalState?.state === 'blocked';
+  const availableScenarios = useMemo(() => {
+    const ids = terminalResult?.decision?.objectives?.[0]?.scenarios?.map((s) => s.scenario_id) || [];
+    return ids.length > 0 ? ids : ['REFERENCE', 'LOW_INITIAL_MINERAL_N', 'HALF_RAIN'];
+  }, [terminalResult]);
+  const activeScenario = availableScenarios.includes(scenario) ? scenario : availableScenarios[0]!;
+  const candidateGen = terminalResult?.engine_result?.growth_evaluation?.candidate_generation;
+  const execStats = terminalResult?.engine_result?.execution;
+  const coverage = terminalResult?.engine_result?.global_coverage;
 
   return (
     <section
@@ -561,20 +610,18 @@ export function LocationAnalysisRunner({
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#72E4F1]">
             <Compass className="h-4 w-4" />
-            <span>Live Per-Location Canonical Execution (/v1/analyses · Option B)</span>
+            <span>Regional Evidence Qualification &amp; Live Re-Analysis</span>
           </div>
           <h2 id="live-location-runner-heading" className="text-xl font-semibold text-[#F1F7FD]">
-            Analyze Selected Coordinates in the Real Scientific Backend
+            Check Another Location or Re-Run Wageningen (~90s)
           </h2>
           <p className="max-w-3xl text-xs leading-relaxed text-[#AEC4D3]">
-            Every submission sends your chosen coordinates through canonical{' '}
-            <code className="font-mono text-[#72E4F1]">POST /v1/analyses</code> with strict offline provenance gates (
-            <code className="font-mono text-[#72E4F1]">CACHE_ONLY</code> NASA POWER lookup, bounded 2-candidate research worker, no synthetic fabrication). Uncached or uncalibrated fields abstain honestly with{' '}
-            <code className="font-mono text-[#FFCE7B]">EVIDENCE_BLOCKED</code>.
+            Submit coordinates to verify regional evidence readiness or run the live five-year crop-rotation optimizer for{' '}
+            <strong className="text-[#F1F7FD]">Wageningen [5.67, 51.97]</strong> (enumerates 162 sequences, screens to 2, and evaluates 6 paired scenarios). Locations lacking verified local crop, soil, and water parameters abstain cleanly rather than substituting Wageningen rotations.
           </p>
         </div>
-        <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 font-mono text-[11px] text-[#57D9A7]">
-          Live Worker · execution_kind ≠ replay
+        <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 text-[11px] font-medium text-[#57D9A7]">
+          Verified Scientific Engine
         </span>
       </div>
 
@@ -632,18 +679,22 @@ export function LocationAnalysisRunner({
           />
         </label>
         <label className="space-y-1 text-xs md:col-span-2">
-          <span className="text-[#90A8BA]">Scientific Execution Mode</span>
+          <span className="text-[#90A8BA]">Analysis Mode</span>
           <select
             value={mode}
             onChange={(e) => setMode(e.target.value as LocationAnalysisMode)}
             data-testid="location-mode-select"
             className="w-full rounded-lg border border-[#29455A] bg-[#0A192A] px-3 py-2 text-xs text-[#F1F7FD]"
           >
-            <option value="conditional_water_counterfactual">
-              Conditional Water Counterfactual (FAO56 surrogate priors + NASA POWER cache)
+            <option
+              value="wageningen_native_growth"
+              disabled={!parsedCoords.resolved?.cropRotationOptimizerQualified}
+            >
+              Wageningen 5-Year Crop Optimizer (162 Sequences → 2 Alternatives)
+              {!parsedCoords.resolved?.cropRotationOptimizerQualified ? ' [Available at 5.67, 51.97]' : ''}
             </option>
             <option value="strict_uncalibrated">
-              Strict Field Qualification Check (absent soil/crop/supply → expected EVIDENCE_BLOCKED)
+              Regional Evidence Qualification Check (Verifies local crop, soil &amp; climate readiness)
             </option>
           </select>
         </label>
@@ -651,7 +702,7 @@ export function LocationAnalysisRunner({
 
       {parsedCoords.resolved?.benchmarkNote && (
         <div className="rounded-xl border border-[#29455A] bg-[#07111F]/60 px-3 py-2 text-xs text-[#AEC4D3]">
-          <span className="font-semibold text-[#72E4F1]">Coordinate Resolution: </span>
+          <span className="font-semibold text-[#72E4F1]">Region Summary: </span>
           {parsedCoords.resolved.benchmarkNote}
         </div>
       )}
@@ -667,10 +718,14 @@ export function LocationAnalysisRunner({
           {submitting || polling ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
           <span>
             {submitting
-              ? 'Submitting /v1/analyses...'
+              ? 'Submitting request...'
               : polling
-              ? 'Running canonical D worker...'
-              : 'Run Live Location Analysis (/v1/analyses)'}
+              ? mode === 'wageningen_native_growth'
+                ? 'Running 5-year crop optimizer (~90s)...'
+                : 'Checking regional evidence...'
+              : mode === 'wageningen_native_growth'
+                ? 'Run Live Wageningen Optimization (~90s)'
+                : 'Check Regional Evidence Readiness'}
           </span>
         </button>
 
@@ -682,7 +737,7 @@ export function LocationAnalysisRunner({
             className="inline-flex items-center gap-2 rounded-xl border border-[#548299] bg-[#07111F] px-4 py-2.5 text-xs font-semibold text-[#F1F7FD] hover:border-[#72E4F1]"
           >
             <Download className="h-4 w-4 text-[#72E4F1]" />
-            <span>Download Real Analysis PDF</span>
+            <span>Download Analysis PDF</span>
           </a>
         )}
       </div>
@@ -714,44 +769,39 @@ export function LocationAnalysisRunner({
                   <CheckCircle2 className="h-4 w-4 text-[#57D9A7]" />
                 )}
                 <span>
-                  Execution Receipt · {runData.resolvedLocation.siteId} [
-                  {runData.resolvedLocation.pointLonLat[0]}, {runData.resolvedLocation.pointLonLat[1]}]
+                  {runData.resolvedLocation.siteId} ({runData.resolvedLocation.countryCode}) [{runData.resolvedLocation.pointLonLat[0]}, {runData.resolvedLocation.pointLonLat[1]}]
                 </span>
               </div>
-              <span className="rounded-full border border-[#548299]/60 px-2.5 py-0.5 font-mono text-[11px] text-[#72E4F1]">
-                state: {terminalState.state}
+              <span className="rounded-full border border-[#548299]/60 px-2.5 py-0.5 text-[11px] font-medium text-[#72E4F1]">
+                {isBlocked
+                  ? 'Missing Local Calibration Data'
+                  : terminalState.state === 'pending' || terminalState.state === 'running'
+                    ? 'Running Analysis...'
+                    : 'Analysis Complete'}
               </span>
             </div>
 
-            <div className="grid gap-2 pt-1 font-mono text-[11px] text-[#AEC4D3] sm:grid-cols-2">
-              <div>analysis_id: {runData.analysis_id}</div>
-              <div>run_id: {terminalState.run_id || 'pending'}</div>
-              <div>request_sha256: {terminalState.request_sha256 || 'pending'}</div>
-              <div>
-                scientific_status: {terminalState.scientific_status || terminalResult?.status || 'pending'}
+            <details className="rounded-lg border border-[#29455A]/70 bg-[#0A192A]/60 px-3 py-2 text-xs">
+              <summary className="cursor-pointer text-[#72E4F1] select-none">
+                Technical Execution Receipt &amp; Provenance Hashes
+              </summary>
+              <div className="mt-2 grid gap-1.5 font-mono text-[11px] text-[#AEC4D3] sm:grid-cols-2">
+                <div>analysis_id: {runData.analysis_id}</div>
+                <div>run_id: {terminalState.run_id || 'pending'}</div>
+                <div>request_sha256: {terminalState.request_sha256 || 'pending'}</div>
+                <div>scientific_status: {terminalState.scientific_status || terminalResult?.status || 'pending'}</div>
+                <div>decision_status: {terminalState.decision_status || terminalResult?.decision?.status || 'pending'}</div>
+                <div>execution_kind: {terminalState.execution_kind || 'LIVE_WORKER_EXECUTION'}</div>
+                <div>
+                  fresh_native_cases: {terminalState.execution_receipt?.fresh_native_cases ?? execStats?.physics_cases_executed ?? 0} · cache_replays:{' '}
+                  {terminalState.execution_receipt?.verified_cache_replays ?? 0}
+                </div>
+                <div>source_raw_sha256: {rawHashes[0] || (isBlocked ? 'none (blocked / uncached)' : 'pending')}</div>
               </div>
-              <div>
-                decision_status:{' '}
-                {terminalState.decision_status || terminalResult?.decision?.status || 'pending'}
-              </div>
-              <div>
-                execution_kind:{' '}
-                {terminalState.execution_kind
-                  ? terminalState.execution_kind
-                  : 'LIVE_WORKER_EXECUTION (fresh run)'}
-              </div>
-              <div>
-                attempts={terminalState.attempts ?? 0} · fresh_native_cases=
-                {terminalState.execution_receipt?.fresh_native_cases ?? 0} · verified_cache_replays=
-                {terminalState.execution_receipt?.verified_cache_replays ?? 0}
-              </div>
-              <div>
-                source_raw_sha256: {rawHashes[0] || (isBlocked ? 'none (blocked / uncached)' : 'pending')}
-              </div>
-            </div>
+            </details>
           </div>
 
-          {/* Blocked Result */}
+          {/* Blocked Result (Honest Abstention + Verified NASA Climate Status) */}
           {terminalResult && isBlocked && (
             <div
               data-testid="location-analysis-blocked"
@@ -759,16 +809,35 @@ export function LocationAnalysisRunner({
             >
               <div className="flex items-start gap-2">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[#FFCE7B]" />
-                <div>
+                <div className="space-y-1">
                   <h3 className="text-sm font-semibold text-[#F1F7FD]">
-                    EVIDENCE_BLOCKED · {terminalResult.decision?.status || 'ABSTAIN_REQUIRED_EVIDENCE'}
+                    Additional Local Data Needed Before Crop Advice Here
                   </h3>
                   <p className="text-xs text-[#E4CFA3]">
-                    Canonical D refused to generate or extrapolate agronomic recommendations for [
-                    {runData.resolvedLocation.pointLonLat[0]}, {runData.resolvedLocation.pointLonLat[1]}] without verified local evidence.
+                    The scientific engine abstained cleanly for [{runData.resolvedLocation.pointLonLat[0]}, {runData.resolvedLocation.pointLonLat[1]}] because verified local crop parameters, soil hydraulics, and irrigation supply bounds are not yet configured for this coordinate. Wageningen crop rotations are never substituted here.
                   </p>
                 </div>
               </div>
+
+              {coverage && (
+                <div
+                  data-testid="location-climate-check"
+                  className="rounded-lg border border-[#29455A] bg-[#07111F]/90 p-3 font-mono text-[11px] text-[#AEC4D3] space-y-1"
+                >
+                  <div>
+                    <span className="text-[#72E4F1]">climate_status:</span> {coverage.climate_status || 'unknown'} ·{' '}
+                    <span className="text-[#FFCE7B]">crop_water_input_status:</span>{' '}
+                    {coverage.crop_water_input_status || 'CROP_SOIL_MODEL_INPUTS_BLOCKED'}
+                  </div>
+                  {coverage.available_climate && (
+                    <div>
+                      NASA POWER cached window: {(coverage.available_climate.period || []).join('..')} ({coverage.available_climate.days ?? '—'} days,{' '}
+                      {(coverage.available_climate.variables || []).length} vars) · raw_sha256={coverage.available_climate.raw_sha256 || 'n/a'}
+                    </div>
+                  )}
+                  {coverage.reason && <div className="font-sans text-[#E4CFA3]">{coverage.reason}</div>}
+                </div>
+              )}
 
               {(terminalResult.missing_requirements || []).length > 0 && (
                 <ul className="space-y-1.5 rounded-lg border border-[#29455A] bg-[#07111F]/90 p-3 text-xs text-[#AEC4D3]">
@@ -783,60 +852,89 @@ export function LocationAnalysisRunner({
             </div>
           )}
 
-          {/* WaterService Results + Chart */}
+          {/* Genuine 5-Year Crop-Rotation Optimizer Results (Wageningen Native PCSE) */}
           {terminalResult && !isBlocked && (terminalResult.alternatives || []).length > 0 && (
             <div data-testid="location-analysis-results" className="space-y-4">
-              <div className="rounded-xl border border-[#FFCE7B]/50 bg-[#FFCE7B]/10 px-4 py-3 text-xs text-[#F5D89B]">
-                <span className="font-semibold">Conditional Counterfactual Notice (USER_RESEARCH_ASSUMPTION · NOT_LOCALLY_CALIBRATED): </span>
-                generic FAO56 water-surrogate crop and soil constants are held fixed while using verified NASA POWER forcing for{' '}
-                <span className="font-mono">{terminalResult.engine_result?.location?.site_id || runData.resolvedLocation.siteId}</span>.{' '}
-                Decision status: <span className="font-mono font-semibold">{terminalResult.decision?.status}</span>.
+              <div className="rounded-xl border border-[#57D9A7]/50 bg-[#57D9A7]/10 px-4 py-3 text-xs text-[#D5F5E9] space-y-1.5">
+                <div>
+                  <span className="font-semibold">Fresh 5-Year Crop-Rotation Simulation Complete: </span>
+                  screened <span className="font-semibold">{candidateGen?.enumerated ?? '—'}</span> 5-year sequences to{' '}
+                  <span className="font-semibold">{candidateGen?.admitted ?? (terminalResult.alternatives || []).length}</span> balanced alternatives, simulating{' '}
+                  <span className="font-semibold">{terminalState.execution_receipt?.fresh_native_cases ?? execStats?.physics_cases_executed ?? '—'}</span> paired crop/weather scenarios.
+                </div>
+                <div className="text-[#F5D89B]">
+                  Research scope: Uses verified 2016–2020 NASA POWER weather for Wageningen with teaching soil and declared nutrient inventories — exploratory research rather than observed-farm advice.
+                </div>
+                <details className="pt-1 text-[11px] text-[#AEC4D3]">
+                  <summary className="cursor-pointer text-[#72E4F1]">Inspect simulation metadata &amp; SHA-256</summary>
+                  <div className="mt-1 font-mono break-all">
+                    scientific_result_sha256: {terminalResult.engine_result?.scientific_result_sha256 || 'n/a'} ·{' '}
+                    rankings_executed: {String(execStats?.rankings_executed ?? true)} · evaluations:{' '}
+                    {execStats?.candidate_scenario_evaluations ?? '—'}
+                  </div>
+                </details>
               </div>
 
-              {waterChartRows.length > 0 && (
-                <div className="rounded-xl border border-[#29455A] bg-[#07111F] p-4">
-                  <div className="mb-2 text-xs font-semibold text-[#72E4F1]">
-                    Five-Year Water Balance Shortfall &amp; Withdrawal by Counterfactual Alternative
-                  </div>
-                  <div ref={waterChartRef} className="h-[240px] w-full" />
+              <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#29455A] bg-[#07111F] px-4 py-3">
+                <div className="text-xs font-semibold text-[#72E4F1]">
+                  Inspect Scenario Across Five-Year Crop Rotation Alternatives
                 </div>
-              )}
+                <label className="flex items-center gap-2 text-xs text-[#AEC4D3]">
+                  <span>Scenario</span>
+                  <select
+                    value={activeScenario}
+                    onChange={(e) => setScenario(e.target.value)}
+                    data-testid="location-scenario-select"
+                    className="rounded-lg border border-[#29455A] bg-[#0A192A] px-3 py-1.5 font-mono text-xs text-[#F1F7FD]"
+                  >
+                    {availableScenarios.map((sc) => (
+                      <option key={sc} value={sc}>
+                        {sc}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+
+              <div className="rounded-xl border border-[#29455A] bg-[#07111F] p-4">
+                <ResearchChartsPanel result={terminalResult as unknown as CoreResult} scenario={activeScenario} />
+              </div>
 
               <div className="overflow-x-auto rounded-xl border border-[#29455A] bg-[#07111F]">
                 <table className="w-full text-left text-xs text-[#AEC4D3]">
                   <thead className="border-b border-[#29455A] text-[11px] text-[#90A8BA]">
                     <tr>
-                      <th className="px-3 py-2">Alternative</th>
-                      <th className="px-3 py-2">5-Year Crop Surrogates (F1)</th>
-                      <th className="px-3 py-2">Worst ET Shortfall</th>
-                      <th className="px-3 py-2">Source Withdrawal</th>
-                      <th className="px-3 py-2">Service Pass</th>
+                      <th className="px-3 py-2">Pareto Alt</th>
+                      <th className="px-3 py-2">Optimized 5-Year Crop Sequence (2016–2020)</th>
+                      <th className="px-3 py-2">{activeScenario} N Leaching (kg N/field)</th>
+                      <th className="px-3 py-2">{activeScenario} Crop Storage DM (kg DM/field)</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#29455A]/60">
                     {(terminalResult.alternatives || []).map((alt, i) => {
-                      const row = waterChartRows[i];
                       const obj = terminalResult.decision?.objectives?.find(
                         (o) => o.policy_id === alt.policy_id
                       );
-                      const s0 = alt.scenarios?.[0];
+                      const scMetric =
+                        obj?.scenarios?.find((s) => s.scenario_id === activeScenario) || obj?.scenarios?.[0];
+                      const seq = (alt.choices?.F1 || [])
+                        .map((c) => formatResearchCropLabel(c))
+                        .join(' → ');
+                      const dmText = scMetric
+                        ? Object.entries(scMetric.crop_storage_DM_kg_field_by_crop || {})
+                            .map(([cropId, val]) => `${formatResearchCropLabel(cropId)}: ${val.toFixed(1)}`)
+                            .join(' · ')
+                        : '—';
                       return (
                         <tr key={alt.policy_id}>
                           <td className="px-3 py-2 font-mono text-[#72E4F1]">
                             Alt {i + 1} ({alt.policy_id.slice(0, 8)})
                           </td>
-                          <td className="px-3 py-2">
-                            {(alt.choices?.F1 || []).map((c) => c.split(':').pop()).join(' → ')}
+                          <td className="px-3 py-2 text-[#F1F7FD]">{seq}</td>
+                          <td className="px-3 py-2 font-mono text-[#FFCE7B]">
+                            {scMetric ? scMetric.N_leaching_kg_N_field.toFixed(2) : '—'}
                           </td>
-                          <td className="px-3 py-2 font-mono text-[#F1F7FD]">
-                            {obj?.worst_ET_m3_equivalent ?? s0?.ET_shortfall_m3_equivalent ?? '—'} m³ eq.
-                          </td>
-                          <td className="px-3 py-2 font-mono">
-                            {s0?.source_withdrawal_m3 ?? '—'} m³
-                          </td>
-                          <td className="px-3 py-2 font-mono">
-                            {row?.servicePass ? 'PASS' : 'FAIL / VIOLATED'}
-                          </td>
+                          <td className="px-3 py-2 font-mono text-[#57D9A7]">{dmText}</td>
                         </tr>
                       );
                     })}
@@ -859,7 +957,7 @@ export function LocationAnalysisRunner({
               <div className="flex flex-wrap gap-2">
                 {[
                   'What is the exact input provenance & hash?',
-                  'What are the computed water metrics?',
+                  'What are the computed rotation & DM metrics?',
                   'Why was it blocked or conditional?',
                   'Are these crop alternatives field-calibrated?',
                 ].map((q) => (

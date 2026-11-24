@@ -7,6 +7,7 @@ import {
   type GeoJSONSource,
 } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import { withBasePath } from '@/lib/base-path';
 import {
   Globe2,
   Map as MapIcon,
@@ -846,7 +847,7 @@ export function MapLibreGlobeCanvas({
     if (!container) return;
 
     try {
-      setWorkerUrl('/workers/maplibre-gl-worker.js');
+      setWorkerUrl(withBasePath('/workers/maplibre-gl-worker.js'));
     } catch {
       // Safe fallback if already configured
     }
@@ -1413,13 +1414,13 @@ export function MapLibreGlobeCanvas({
 
   const statusBadgeText =
     renderStatus === 'IMAGERY_PROVIDER_BLOCKED'
-      ? `${providerStatus} · Bundled Natural Earth 3D Globe (CC0)`
+      ? 'Bundled Natural Earth 3D Globe (CC0)'
       : renderStatus === 'REMOTE_LOADING'
-        ? 'LOADING · Awaiting verified remote Earth tiles'
+        ? 'Loading Earth Observation Layers…'
       : renderStatus === 'VECTOR_LOCAL_OFFLINE'
-        ? 'VECTOR_LOCAL_OFFLINE · Natural Earth 1:110m (CC0)'
+        ? 'Natural Earth 1:110m Vector Globe (CC0)'
         : renderStatus === 'FALLBACK_ONLY'
-          ? 'FALLBACK_ONLY · 2D Vector'
+          ? 'Interactive 2D Vector Atlas'
           : basemapMode === 'VECTOR_MAP'
             ? 'OpenFreeMap Vector Globe (OSM ODbL)'
             : 'Historical Satellite Mosaic · EOX S2Cloudless 2016 (CC BY 4.0) + NASA GIBS';
@@ -1519,8 +1520,7 @@ export function MapLibreGlobeCanvas({
           >
             <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-amber-300" />
             <span>
-              Remote satellite/vector tile endpoints blocked or offline. Interactive 3D globe uses bundled
-              Natural Earth 1:110m (CC0).
+              Using bundled Natural Earth 1:110m 3D globe while remote satellite tiles are unavailable.
             </span>
             <button
               type="button"

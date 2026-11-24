@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { withBasePath } from '@/lib/base-path';
 
 export type OrbitAbStatus =
   | 'INITIALIZING'
@@ -425,18 +426,18 @@ export function OrbitAbStage({
       }
     };
 
-    const dayTex = texLoader.load('/orbit-ab-assets/earth_day_4096.jpg', onTextureReady, undefined, onTextureReady);
+    const dayTex = texLoader.load(withBasePath('/orbit-ab-assets/earth_day_4096.jpg'), onTextureReady, undefined, onTextureReady);
     dayTex.colorSpace = THREE.SRGBColorSpace;
     dayTex.wrapS = THREE.RepeatWrapping;
     dayTex.anisotropy = maxAniso;
 
-    const nightTex = texLoader.load('/orbit-ab-assets/earth_night_4096.jpg', onTextureReady, undefined, onTextureReady);
+    const nightTex = texLoader.load(withBasePath('/orbit-ab-assets/earth_night_4096.jpg'), onTextureReady, undefined, onTextureReady);
     nightTex.colorSpace = THREE.SRGBColorSpace;
     nightTex.wrapS = THREE.RepeatWrapping;
     nightTex.anisotropy = maxAniso;
 
     const packedTex = texLoader.load(
-      '/orbit-ab-assets/earth_bump_roughness_clouds_4096.jpg',
+      withBasePath('/orbit-ab-assets/earth_bump_roughness_clouds_4096.jpg'),
       onTextureReady,
       undefined,
       onTextureReady
@@ -561,12 +562,12 @@ export function OrbitAbStage({
     let activeCraft: THREE.Object3D = placeholderSat;
 
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('/orbit-ab-assets/draco/');
+    dracoLoader.setDecoderPath(withBasePath('/orbit-ab-assets/draco/'));
     const gltfLoader = new GLTFLoader();
     gltfLoader.setDRACOLoader(dracoLoader);
 
     gltfLoader.load(
-      '/orbit-ab-assets/landsat_8.glb',
+      withBasePath('/orbit-ab-assets/landsat_8.glb'),
       (gltf) => {
         if (disposed) return;
         const model = gltf.scene;
@@ -838,17 +839,14 @@ export function OrbitAbStage({
       className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-[#02050B]"
     >
       {/* Instant LCP / Zero-CLS Static Poster Base Layer & Reduced-Motion / Save-Data Fallback */}
-      <picture className="block h-full w-full">
-        <source media="(min-width: 768px)" srcSet="/assets/orbital-earth-horizon-wide.jpg" />
-        <img
-          src="/assets/orbital-earth-horizon-mobile.jpg"
-          alt="Curved Earth horizon illuminated by sunlight along a blue atmospheric limb with an Earth-observation spacecraft in Low Earth Orbit"
-          loading="eager"
-          decoding="sync"
-          fetchPriority="high"
-          className="h-full w-full object-cover object-bottom md:object-[72%_center]"
-        />
-      </picture>
+      <img
+        src={withBasePath('/orbit-ab-assets/earth_day_4096.jpg')}
+        alt="Curved sunlit Earth horizon rendered from NASA Blue Marble Next Generation imagery"
+        loading="eager"
+        decoding="sync"
+        fetchPriority="high"
+        className="h-full w-full object-cover object-[28%_32%] opacity-80 brightness-90"
+      />
 
       {/* Real-Time Interactive 3D Three.js Earth + Cloud Shell + Landsat 8 Pass (Fades cleanly over poster on GPU ready) */}
       {!isFallback && (

@@ -22,6 +22,7 @@ import {
   getRepositoryForMode,
   type AstragronDataRepository,
 } from '@/adapters/repositories';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 import type {
   ChatMessageRecord,
   ChatThreadRecord,
@@ -180,7 +181,7 @@ function sanitizeStoredDrafts(
 }
 
 function syncFarmDraftToServer(draft: UserFarmDraft): void {
-  if (typeof window === 'undefined' || typeof fetch !== 'function') return;
+  if (IS_STATIC_SHOWCASE || typeof window === 'undefined' || typeof fetch !== 'function') return;
   if (isBuiltInResearchSite(draft.id)) return;
   void fetch('/api/farms', {
     method: 'POST',
@@ -192,7 +193,7 @@ function syncFarmDraftToServer(draft: UserFarmDraft): void {
 }
 
 function deleteFarmOnServer(farmId: string): void {
-  if (typeof window === 'undefined' || typeof fetch !== 'function') return;
+  if (IS_STATIC_SHOWCASE || typeof window === 'undefined' || typeof fetch !== 'function') return;
   if (isBuiltInResearchSite(farmId)) return;
   void fetch(`/api/farms?farmId=${encodeURIComponent(farmId)}`, {
     method: 'DELETE',
@@ -202,7 +203,7 @@ function deleteFarmOnServer(farmId: string): void {
 }
 
 function syncReportToServer(report: ReportEnvelope): void {
-  if (typeof window === 'undefined' || typeof fetch !== 'function') return;
+  if (IS_STATIC_SHOWCASE || typeof window === 'undefined' || typeof fetch !== 'function') return;
   void fetch('/api/reports', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -650,7 +651,7 @@ export function AstragronProvider({ children }: { children: React.ReactNode }) {
 
   const ensureFarmSyncedFromServer = useCallback(
     (farmId: string) => {
-      if (typeof window === 'undefined' || typeof fetch !== 'function') return;
+      if (IS_STATIC_SHOWCASE || typeof window === 'undefined' || typeof fetch !== 'function') return;
       if (!farmId || isBuiltInResearchSite(farmId)) return;
       if (syncedFarmsRef.current.has(farmId)) return;
       syncedFarmsRef.current.add(farmId);

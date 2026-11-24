@@ -16,7 +16,7 @@ export const enMessages = {
   nav: {
     exploreEarth: 'Explore Earth',
     howItWorks: 'How It Works',
-    researchDemo: 'Synthetic Demo',
+    researchDemo: 'Research Workspace',
     setupFarm: 'Set Up Farm Draft',
     designSystem: 'Design System',
     helpFaq: 'Help & Qualification',
@@ -45,7 +45,7 @@ export const enMessages = {
     subcopy:
       'Explore Earth observations, evaluate multi-year agricultural research scenarios, and inspect the evidence and uncertainty behind every result.',
     ctaPrimary: 'Explore Earth',
-    ctaSecondary: 'View Synthetic Demo',
+    ctaSecondary: 'Open Research Dashboard',
     ctaWizard: 'Start Guided Farm Setup',
     qualifierBadge: 'Research demonstration — not a field-validated agricultural recommendation',
     artDisclosure:

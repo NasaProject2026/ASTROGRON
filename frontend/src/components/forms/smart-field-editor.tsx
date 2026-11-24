@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import type { FieldGeometrySource, UserFieldDraft } from '@/domain/contracts';
 import type { SiteCapabilityCheckResult } from '@/domain/capability-overlay';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 import {
   computeGeodesicMetrics,
   evaluateGpsPerimeterSample,
@@ -387,6 +388,10 @@ export function SmartFieldEditor({
       setFtwMessage('Select your farm location on Step 1 first so we know where to search.');
       return;
     }
+    if (IS_STATIC_SHOWCASE) {
+      setFtwMessage('Automatic satellite boundary lookup requires a backend proxy — tap the map or draw field corners manually below.');
+      return;
+    }
     if (ftwAbortRef.current) {
       ftwAbortRef.current.abort();
     }
@@ -594,7 +599,7 @@ export function SmartFieldEditor({
             [
               { id: 'SATELLITE_HYBRID', label: 'Satellite' },
               { id: 'VECTOR_MAP', label: 'Vector' },
-              { id: 'OFFLINE_NATURAL_EARTH', label: 'Offline' },
+              { id: 'OFFLINE_NATURAL_EARTH', label: 'Natural Earth' },
             ] as const
           ).map((b) => (
             <button

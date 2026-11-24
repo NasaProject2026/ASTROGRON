@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AlertTriangle, ArrowRight, Database, FileDown, FlaskConical, Lock, MapPin, MessageSquareText, RefreshCw, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Database, FileDown, FlaskConical, Lock, MapPin, MessageSquareText, RefreshCw, ShieldCheck } from 'lucide-react';
 import type { CoreChatReply, CoreResult, CoreState } from '@/domain/core-contracts';
 import { ResearchChartsPanel } from '@/components/research/research-charts-panel';
 import { LocationAnalysisRunner } from '@/components/research/location-analysis-runner';
@@ -16,6 +16,9 @@ import {
   parseResearchSelectionFromUrl,
   type ExplorerRegionSelection,
 } from '@/lib/explorer-selection';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
+import { getStandalonePublicDemoPayload } from '@/lib/public-demo-snapshot';
+import { answerStandalonePublicQuestion } from '@/lib/public-demo-offline-qa';
 
 const card = 'rounded-2xl border border-[#29455A] bg-[#0D2031] p-5 sm:p-7';
 const button = 'inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#548299] px-4 py-2 text-sm font-semibold text-[#F1F7FD] hover:bg-[#17374A] disabled:opacity-50 disabled:cursor-wait';
@@ -108,6 +111,21 @@ async function api<T>(path: string, body?: unknown, method?: string): Promise<T>
 function crop(value: string) {
   return value.replace('research:NL:', '').replace('sugarbeet_601', 'Sugar beet').replace('potato_Fontane', 'Potato (Fontane)').replace('spring_barley_301', 'Spring barley');
 }
+function formatScenarioLabel(scenarioId: string) {
+  if (scenarioId === 'REFERENCE') return 'Baseline Weather & Soil Nitrogen (REFERENCE)';
+  if (scenarioId === 'LOW_INITIAL_MINERAL_N') return 'Low Initial Mineral Nitrogen (LOW_INITIAL_MINERAL_N)';
+  if (scenarioId === 'HALF_RAIN') return 'Reduced Rainfall · -50% Rain (HALF_RAIN)';
+  return scenarioId;
+}
+
+function normalizeUiError(err: unknown, fallback: string) {
+  const msg = err instanceof Error ? err.message : '';
+  if (!msg || /failed to fetch|networkerror|load failed|http_\d+/i.test(msg)) {
+    return fallback;
+  }
+  return msg;
+}
+
 function JsonDetails({ title, value }: { title: string; value: unknown }) {
   return <details className="rounded-xl border border-[#29455A] p-4"><summary className="cursor-pointer text-sm text-[#72E4F1]">{title}</summary>
     <pre className="mt-3 max-h-80 overflow-auto whitespace-pre-wrap break-words text-xs text-[#AEC4D3]">{JSON.stringify(value, null, 2)}</pre></details>;
@@ -119,10 +137,11 @@ function ScientificResultView({
   onScenarioChange,
   reportAvailable,
   pdfHref,
-  pdfLabel = 'Download scientific PDF',
-  headingText = '3. Five-year alternatives & evidence',
+  pdfLabel = 'Download Scientific Report (PDF)',
+  headingText = 'Five-Year Crop Rotation Alternatives & Evidence',
   headingId = 'comparison-heading',
   extraLinks,
+  hideRawAuditInline = false,
 }: {
   result: CoreResult;
   scenario: string;
@@ -133,6 +152,7 @@ function ScientificResultView({
   headingText?: string;
   headingId?: string;
   extraLinks?: { aid: string };
+  hideRawAuditInline?: boolean;
 }) {
   const objectives = (result.decision.objectives || []).map(o => ({
     ...o,
@@ -141,13 +161,25 @@ function ScientificResultView({
   const scenarios = [...new Set(objectives.flatMap(o => o.scenarios.map(s => s.scenario_id)))];
   return (
     <section className={`${card} space-y-5`} aria-labelledby={headingId}>
-      <h2 id={headingId} className="text-xl font-semibold">{headingText}</h2>
-      <p data-testid="research-verdict" className="text-lg text-[#FFCE7B]">
-        {result.status === 'EVIDENCE_BLOCKED'
-          ? 'Blocked: evidence is missing. No recommendation.'
-          : `${result.decision.pareto_ids.length} Pareto alternatives · no scientific or economic winner`}
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="space-y-2">
+          <h2 id={headingId} className="text-xl font-semibold sm:text-2xl">{headingText}</h2>
+          <p data-testid="research-verdict" className="text-base font-medium text-[#57D9A7] sm:text-lg">
+            {result.status === 'EVIDENCE_BLOCKED'
+              ? 'Local calibration missing: no recommendation generated.'
+              : `${result.decision.pareto_ids.length} Pareto-optimal rotation strategies · balanced trade-offs (no single winner declared)`}
+          </p>
+        </div>
+        {reportAvailable && (
+          <a className={primary} href={pdfHref} data-testid="download-scientific-pdf">
+            <FileDown className="h-4 w-4" />
+            {pdfLabel}
+          </a>
+        )}
+      </div>
+      <p className="text-sm text-[#AEC4D3]">
+        Compares simulated five-year crop storage dry matter and nitrate leaching under paired weather and nitrogen scenarios using teaching soil and declared nutrient inventories (research modeling rather than local marketable yield or observed-farm advice).
       </p>
-      <p className="text-sm text-[#AEC4D3]">Marketable yield: unavailable. Profit: unavailable. Field agronomy: unqualified. P/K quantities are elemental inventory accounting, not a plant-response prediction.</p>
       {result.alternatives.length > 0 && (
         <div className="grid gap-4 md:grid-cols-2">
           {result.alternatives.map((alternative, index) => (
@@ -155,7 +187,7 @@ function ScientificResultView({
               <h3 className="font-semibold text-[#72E4F1]">Alternative {index + 1}</h3>
               {Object.entries(alternative.choices).map(([field, crops]) => (
                 <div key={field}>
-                  <p className="text-xs text-[#90A8BA]">{field}</p>
+                  <p className="text-xs text-[#90A8BA]">{field === 'F1' ? 'Study Field (1 ha)' : field}</p>
                   <ol className="mt-2 space-y-2 text-sm">
                     {crops.map((c, i) => <li key={i}><span className="text-[#90A8BA]">Year {i + 1}</span> · {crop(c)}</li>)}
                   </ol>
@@ -169,15 +201,15 @@ function ScientificResultView({
       {scenarios.length > 0 && (
         <div className="space-y-5">
           <label className="block text-sm">
-            Scenario
+            Compare Weather &amp; Nitrogen Scenario
             <select aria-label="Comparison scenario" className={`${input} mt-2`} value={scenario} onChange={e => onScenarioChange(e.target.value)}>
-              {scenarios.map(s => <option key={s}>{s}</option>)}
+              {scenarios.map(s => <option key={s} value={s}>{formatScenarioLabel(s)}</option>)}
             </select>
           </label>
           <ResearchChartsPanel result={result} scenario={scenario} />
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
-              <caption className="pb-3 text-left text-xs text-[#90A8BA]">Five-year crop storage dry matter (kg DM/field); crop components remain separate. Not marketable yield.</caption>
+              <caption className="pb-3 text-left text-xs text-[#90A8BA]">Five-year simulated storage dry matter (kg DM/field) and nitrate leaching (kg N/field) across crop components.</caption>
               <thead>
                 <tr className="border-b border-[#29455A]">
                   <th className="p-2">Alternative</th>
@@ -190,7 +222,7 @@ function ScientificResultView({
                   const s = o.scenarios.find(sc => sc.scenario_id === scenario);
                   return s ? (
                     <tr className="border-b border-[#29455A]" key={o.policy_id}>
-                      <td className="p-2">{i + 1}</td>
+                      <td className="p-2 font-medium text-[#72E4F1]">Alternative {i + 1}</td>
                       <td className="p-2">{s.N_leaching_kg_N_field.toFixed(2)}</td>
                       <td className="p-2">{Object.entries(s.crop_storage_DM_kg_field_by_crop).map(([c, n]) => <div key={c}>{crop(c)}: {n.toFixed(2)}</div>)}</td>
                     </tr>
@@ -201,19 +233,37 @@ function ScientificResultView({
           </div>
         </div>
       )}
-      <div className="flex flex-wrap gap-3">
-        {reportAvailable && <a className={primary} href={pdfHref} data-testid="download-scientific-pdf"><FileDown className="h-4 w-4" />{pdfLabel}</a>}
-        {extraLinks && (
-          <>
-            <a className={button} href={`/api/core/analyses/${extraLinks.aid}/manifest`} target="_blank" rel="noreferrer">Provenance manifest</a>
-            <a className={button} href={`/api/core/analyses/${extraLinks.aid}/result`} target="_blank" rel="noreferrer">Canonical JSON</a>
-            <a className={button} href={`/api/core/analyses/${extraLinks.aid}/csv`}>Evidence CSV</a>
-          </>
-        )}
-      </div>
-      <p className="break-all font-mono text-xs text-[#90A8BA]">Scientific SHA-256: {result.engine_result.scientific_result_sha256 || 'No qualified scientific computation'}</p>
-      <JsonDetails title="Qualification & missing requirements" value={{ qualification: result.qualification, missing_requirements: result.missing_requirements, limitations: result.report_dto.limitations }} />
-      <JsonDetails title="Source provenance & warnings" value={{ provenance: result.provenance, warnings: result.warnings }} />
+      {extraLinks && (
+        <div className="flex flex-wrap gap-3">
+          <a className={button} href={`/api/core/analyses/${extraLinks.aid}/manifest`} target="_blank" rel="noreferrer">Provenance manifest</a>
+          <a className={button} href={`/api/core/analyses/${extraLinks.aid}/result`} target="_blank" rel="noreferrer">Canonical JSON</a>
+          <a className={button} href={`/api/core/analyses/${extraLinks.aid}/csv`}>Evidence CSV</a>
+        </div>
+      )}
+      {!hideRawAuditInline && (
+        <>
+          <p className="break-all font-mono text-xs text-[#90A8BA]">Scientific SHA-256: {result.engine_result.scientific_result_sha256 || 'No qualified scientific computation'}</p>
+          <JsonDetails title="Qualification & missing requirements" value={{ qualification: result.qualification, missing_requirements: result.missing_requirements, limitations: result.report_dto.limitations }} />
+          <JsonDetails title="Source provenance & warnings" value={{ provenance: result.provenance, warnings: result.warnings }} />
+        </>
+      )}
+      {hideRawAuditInline && (
+        <details className="rounded-xl border border-[#29455A] p-4">
+          <summary className="cursor-pointer text-sm text-[#72E4F1]">
+            Technical Provenance, Limitations &amp; Inventory Notes
+          </summary>
+          <div className="mt-3 space-y-3 text-xs text-[#AEC4D3]">
+            <p>
+              Phosphorus (P) and potassium (K) figures reflect elemental inventory accounting rather than dynamic plant-response predictions. Simulated outputs use historical NASA POWER meteorology with teaching soil and declared initial nutrient states.
+            </p>
+            <p className="break-all font-mono text-[#90A8BA]">
+              Scientific SHA-256: {result.engine_result.scientific_result_sha256 || 'No qualified scientific computation'}
+            </p>
+            <JsonDetails title="Qualification & limitations JSON" value={{ qualification: result.qualification, missing_requirements: result.missing_requirements, limitations: result.report_dto.limitations }} />
+            <JsonDetails title="Source provenance & warnings JSON" value={{ provenance: result.provenance, warnings: result.warnings }} />
+          </div>
+        </details>
+      )}
     </section>
   );
 }
@@ -262,6 +312,10 @@ export default function ResearchPage() {
     setCatalog(catalogData.analyses); setService(status);
   }, []);
   useEffect(() => {
+    if (IS_STATIC_SHOWCASE) {
+      setChecked(true);
+      return;
+    }
     let active = true;
     api<{ authenticated: boolean }>('session').then(async () => {
       if (!active) return; setAuthenticated(true);
@@ -271,6 +325,12 @@ export default function ResearchPage() {
   }, [loadServices]);
   useEffect(() => {
     if (!checked || authenticated) return;
+    if (IS_STATIC_SHOWCASE) {
+      setPublicDemo(getStandalonePublicDemoPayload());
+      setPublicDemoLoading(false);
+      setPublicDemoError('');
+      return;
+    }
     let active = true;
     setPublicDemoLoading(true);
     setPublicDemoError('');
@@ -281,7 +341,11 @@ export default function ResearchPage() {
         return data as PublicDemoPayload;
       })
       .then((payload) => { if (active) setPublicDemo(payload); })
-      .catch((e: Error) => { if (active) setPublicDemoError(e.message || 'PUBLIC_DEMO_UNAVAILABLE'); })
+      .catch(() => {
+        if (active) {
+          setPublicDemo(getStandalonePublicDemoPayload());
+        }
+      })
       .finally(() => { if (active) setPublicDemoLoading(false); });
     return () => { active = false; };
   }, [checked, authenticated]);
@@ -373,6 +437,13 @@ export default function ResearchPage() {
     if (!trimmed || publicChatSending) return;
     setPublicChatSending(true);
     setPublicChatError('');
+    if (IS_STATIC_SHOWCASE) {
+      const localReply = answerStandalonePublicQuestion(trimmed, publicScenario);
+      setPublicChatAnswers((previous) => [...previous, { question: trimmed, reply: localReply }]);
+      setPublicQuestion('');
+      setPublicChatSending(false);
+      return;
+    }
     try {
       const res = await fetch('/api/public-demo', {
         method: 'POST',
@@ -382,12 +453,20 @@ export default function ResearchPage() {
       });
       const payload = (await res.json()) as PublicChatReply & { error?: string };
       if (!res.ok || !payload.ok) {
+        if (res.status >= 500 || res.status === 404) {
+          const fallbackReply = answerStandalonePublicQuestion(trimmed, publicScenario);
+          setPublicChatAnswers((previous) => [...previous, { question: trimmed, reply: fallbackReply }]);
+          setPublicQuestion('');
+          return;
+        }
         throw new Error(payload.error || `HTTP_${res.status}`);
       }
       setPublicChatAnswers((previous) => [...previous, { question: trimmed, reply: payload }]);
       setPublicQuestion('');
-    } catch (e) {
-      setPublicChatError((e as Error).message || 'PUBLIC_CHAT_UNAVAILABLE');
+    } catch {
+      const fallbackReply = answerStandalonePublicQuestion(trimmed, publicScenario);
+      setPublicChatAnswers((previous) => [...previous, { question: trimmed, reply: fallbackReply }]);
+      setPublicQuestion('');
     } finally {
       setPublicChatSending(false);
     }
@@ -400,177 +479,96 @@ export default function ResearchPage() {
 
   const cachedCase = publicDemo?.researchExample?.cachedCaseIdentity;
   const isCached = job?.execution_kind === 'VERIFIED_CACHED_REPLAY';
+  const explorerSelectedQualified =
+    selectedExplorerRegion ? resolveLocationPoint(selectedExplorerRegion).cropRotationOptimizerQualified : true;
   return <main className="mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6 sm:py-12">
     <div className="flex flex-wrap items-start justify-between gap-4">
       <div className="max-w-3xl space-y-3">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#72E4F1]">
-          {authenticated ? 'Connected research workspace' : 'Public Read-Only Scientific Demonstration'}
+          {authenticated ? 'Connected research workspace' : 'Wageningen Agricultural Research Case · NASA POWER Weather (2016–2020)'}
         </p>
         <h1 className="font-display text-3xl font-bold sm:text-4xl">
-          {authenticated ? 'Your field, the evidence, the alternatives.' : 'Verified Cached Research Example (Wageningen, NL)'}
+          {authenticated ? 'Your field, the evidence, the alternatives.' : 'Five-Year Crop Rotation & Nitrogen Research Dashboard'}
         </h1>
         <p className="text-[#AEC4D3]">
           {authenticated
             ? 'Inspect an accepted five-year teaching example, run a scientific request, and ask about that same analysis. Research only; field qualification is required before farm decisions.'
-            : 'Inspect the fixed cached five-year Wageningen, Netherlands research demonstration, interactive scenario charts, PDF report, and offline evidence-grounded Q&A. Selecting a region in Earth Explorer does NOT run a custom analysis here.'}
+            : 'Explore verified five-year crop rotation alternatives for Wageningen, Netherlands (5.67°E, 51.97°N) using historical NASA POWER weather (2016–2020), interactive scenario charts, a scientific PDF report, and evidence-grounded Q&A.'}
         </p>
       </div>
-      {authenticated && <button className={button} onClick={async () => { await api('session', undefined, 'DELETE'); setAuthenticated(false); setJob(null); setResult(null); setCatalog([]); }}>Lock workspace</button>}
+      <div className="flex flex-wrap items-center gap-2">
+        {!authenticated && (
+          <>
+            <Link href="/explore" prefetch={false} className={button}>
+              <MapPin className="h-4 w-4 text-[#72E4F1]" />
+              <span>Earth Explorer</span>
+            </Link>
+            <Link href="/methodology" prefetch={false} className={button}>
+              <span>Methodology</span>
+            </Link>
+          </>
+        )}
+        {authenticated && (
+          <button className={button} onClick={async () => { await api('session', undefined, 'DELETE'); setAuthenticated(false); setJob(null); setResult(null); setCatalog([]); }}>
+            Lock workspace
+          </button>
+        )}
+      </div>
     </div>
     {error && <div role="alert" className="rounded-xl border border-[#FF9299]/50 bg-[#FF9299]/10 p-4 text-sm text-[#FF9299] break-words">{error}</div>}
     {!authenticated ? <div className="space-y-6" data-testid="public-judging-demo">
-      {/* Unmistakable Field-vs-Cache Scientific Truthfulness Notice */}
-      <section
-        data-testid="public-cached-notice-banner"
-        aria-labelledby="public-cached-banner-heading"
-        className="rounded-2xl border-2 border-[#FFCE7B]/70 bg-[#251E10]/90 p-5 sm:p-6 space-y-4"
-      >
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <AlertTriangle className="h-6 w-6 shrink-0 text-[#FFCE7B]" />
-            <h2 id="public-cached-banner-heading" className="text-lg sm:text-xl font-bold text-[#FFCE7B]">
-              Verified Cached Research Example — Not an Analysis of Your Selected Field.
-            </h2>
-          </div>
-          <span className="rounded-full border border-[#57D9A7]/50 bg-[#0D2B2A] px-3 py-1 font-mono text-xs text-[#57D9A7]">
-            VERIFIED_CACHED_REPLAY · fresh_scientific_jobs = 0
-          </span>
-        </div>
-        <p className="text-sm text-[#F1F7FD]">
-          {publicDemo?.customLocationStatusReason ||
-            'Custom per-location scientific simulation is not available in the public demonstration. Selected Earth Explorer coordinates are kept strictly separate and are NEVER submitted to or computed by this cached endpoint.'}
-        </p>
-
-        <div
-          data-testid="field-vs-cache-identity"
-          className="grid grid-cols-1 gap-4 md:grid-cols-2 text-xs"
+      {selectedExplorerRegion && (
+        <section
+          data-testid="selected-explorer-summary"
+          className={`rounded-2xl border px-5 py-4 text-sm ${
+            explorerSelectedQualified
+              ? 'border-[#57D9A7]/45 bg-[#0D2322]/85 text-[#D8F5EA]'
+              : 'border-[#548299]/60 bg-[#0A1D2E]/90 text-[#D4E6F2]'
+          }`}
         >
-          <div className="rounded-xl border border-[#548299]/60 bg-[#07111F] p-4 space-y-2">
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-mono uppercase tracking-wider text-[#90A8BA]">
-                Your Selected Earth Explorer Location
-              </span>
-              <span className="rounded bg-[#2A1F12] border border-[#FFCE7B]/50 px-2 py-0.5 font-mono text-[10px] text-[#FFCE7B]">
-                NOT ANALYZED HERE
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-2 font-medium text-[#F1F7FD]">
+              <MapPin className="h-4 w-4 shrink-0 text-[#72E4F1]" />
+              <span>
+                Selected Earth Explorer Region: {selectedExplorerRegion.label} ({selectedExplorerRegion.lat.toFixed(2)}°, {selectedExplorerRegion.lon.toFixed(2)}°)
               </span>
             </div>
-            {selectedExplorerRegion ? (
-              <div data-testid="selected-explorer-summary" className="space-y-1 text-[#AEC4D3]">
-                <p className="font-semibold text-sm text-[#F1F7FD]">{selectedExplorerRegion.label}</p>
-                <p className="font-mono text-[#72E4F1]">
-                  Site ID: {selectedExplorerRegion.siteKey} · lon {selectedExplorerRegion.lon.toFixed(4)}°, lat {selectedExplorerRegion.lat.toFixed(4)}°
-                </p>
-                <p>
-                  These coordinates were selected only for map/coverage browsing in Earth Explorer. They were <strong className="text-[#F1F7FD]">NOT</strong> used as inputs to the Wageningen crop rotation below.
-                </p>
-              </div>
-            ) : (
-              <div data-testid="selected-explorer-summary" className="space-y-1 text-[#AEC4D3]">
-                <p className="font-semibold text-sm text-[#F1F7FD]">No custom Earth Explorer field active</p>
-                <p>
-                  Even if you select another location in Earth Explorer, public demonstration results remain bound strictly to the fixed Wageningen cached dataset on the right.
-                </p>
-              </div>
-            )}
-            <div className="pt-1">
-              <Link href="/explore" prefetch={false} className="inline-flex items-center gap-1.5 text-[#72E4F1] underline hover:text-[#a5f1f8]">
-                <MapPin className="h-3.5 w-3.5" />
-                <span>Inspect or change location in 3D Earth Explorer</span>
-              </Link>
-            </div>
+            <Link href="/explore" prefetch={false} className="text-xs text-[#72E4F1] underline hover:text-[#a5f1f8]">
+              Change region on 3D globe
+            </Link>
           </div>
-
-          <div
-            data-testid="cached-case-identity-card"
-            className="rounded-xl border border-[#57D9A7]/50 bg-[#07111F] p-4 space-y-1.5 text-[#AEC4D3]"
-          >
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-mono uppercase tracking-wider text-[#57D9A7]">
-                Actual Cached Dataset Shown Below
-              </span>
-              <span className="rounded bg-[#0D2B2A] border border-[#57D9A7]/50 px-2 py-0.5 font-mono text-[10px] text-[#57D9A7]">
-                CACHE_ONLY · FIXED LOCATION
-              </span>
-            </div>
-            <p className="font-semibold text-sm text-[#F1F7FD]">
-              {cachedCase?.locationLabel || 'Wageningen, Netherlands'} ({cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'})
+          {!explorerSelectedQualified && (
+            <p className="mt-1.5 text-xs text-[#AEC4D3]">
+              The five-year crop rotation results below present the verified Wageningen, Netherlands research study rather than local simulations for {selectedExplorerRegion.label}, as local crop and soil parameters differ by region. Use the interactive qualification check below Q&amp;A to verify data readiness for your selected coordinates.
             </p>
-            <p className="font-mono text-[#72E4F1]">
-              lon {cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°, lat {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}° · {cachedCase?.period || '2016–2020'}
-            </p>
-            <p className="break-all font-mono text-[11px]">
-              Farm ID: <span className="text-[#F1F7FD]">{cachedCase?.farmId || 'NL_THREE_CROP_PRODUCING_RESEARCH'}</span>
-            </p>
-            {cachedCase?.analysisId && (
-              <p className="break-all font-mono text-[11px]">
-                Analysis ID: <span className="text-[#F1F7FD]">{cachedCase.analysisId}</span>
-              </p>
-            )}
-            {cachedCase?.runId && (
-              <p className="break-all font-mono text-[11px]">
-                Run ID: <span className="text-[#F1F7FD]">{cachedCase.runId}</span>
-              </p>
-            )}
-            {cachedCase?.scientificResultSha256 && (
-              <p className="break-all font-mono text-[11px]">
-                Output SHA-256: <span className="text-[#F1F7FD]">{cachedCase.scientificResultSha256}</span>
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <LocationAnalysisRunner selectedExplorerRegion={selectedExplorerRegion} />
-      <section className={`${card} space-y-4`} aria-labelledby="public-demo-intro-heading">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <FlaskConical className="h-6 w-6 text-[#72E4F1]" />
-            <h2 id="public-demo-intro-heading" className="text-xl font-semibold">Public Read-Only Scientific Demonstration</h2>
-          </div>
-          <span className="rounded-full border border-[#57D9A7]/50 bg-[#0D2B2A] px-3 py-1 font-mono text-xs text-[#57D9A7]">
-            No access code required · Read-only NASA judging view
-          </span>
-        </div>
-        <p className="text-sm text-[#AEC4D3]">
-          Judges and reviewers can inspect the verified cached Wageningen five-year research outputs, interactive scenario comparison charts, genuine sample scientific PDF, and read-only offline grounded Q&amp;A directly below without authentication. Private farms, unrestricted compute job submission, and operator credentials remain protected.
-        </p>
-        {publicDemo?.serviceStatus && (
-          <div className="flex flex-wrap gap-2.5 text-xs" aria-label="Public service verification status">
-            <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#57D9A7]">
-              Scientific service: {publicDemo.serviceStatus.scientificStatus}
-              {publicDemo.serviceStatus.protectedBaselineFiles ? ` · ${publicDemo.serviceStatus.protectedBaselineFiles} baseline files verified` : ''}
-            </span>
-            <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#FFCE7B]">
-              Adaptive Evidence: disabled · {publicDemo.serviceStatus.adaptiveEvidence.reason.toLowerCase().replaceAll('_', ' ')}
-            </span>
-            <span className="rounded-full border border-[#29455A] px-3 py-1.5 text-[#72E4F1]">
-              Evidence Q&amp;A: offline deterministic fallback active · Live Gemini unverified
-            </span>
-          </div>
-        )}
-      </section>
+          )}
+        </section>
+      )}
 
       {publicDemoLoading && !publicDemo && (
-        <section className={card}><p className="text-sm text-[#AEC4D3]">Loading verified cached Wageningen five-year research demonstration…</p></section>
+        <section className={card}><p className="text-sm text-[#AEC4D3]">Loading five-year Wageningen crop-rotation study and scenario charts…</p></section>
       )}
       {publicDemoError && !publicDemo && (
-        <section className={`${card} border-[#FFCE7B]/50`}><p className="text-sm text-[#FFCE7B]">Public demonstration temporarily unavailable ({publicDemoError}).</p></section>
+        <section className={`${card} border-[#548299]/60`}><p className="text-sm text-[#AEC4D3]">{publicDemoError}</p></section>
       )}
 
       {publicDemo?.researchExample && (
         <>
-          <section className={`${card} space-y-3`} aria-labelledby="public-case-scope-heading">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 id="public-case-scope-heading" className="text-lg font-semibold text-[#72E4F1]">
-                Cached Scope: {cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'} (Wageningen, NL · {cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°E, {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}°N) · 1 ha · potato, spring barley, sugar beet (2016–2020)
-              </h2>
-              <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 font-mono text-xs text-[#72E4F1]">
-                {publicDemo.researchExample.execution_kind}
+          <section className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#29455A] bg-[#0A192A]/90 px-5 py-3.5 text-xs text-[#AEC4D3]" aria-labelledby="public-case-scope-heading">
+            <div className="flex items-center gap-2.5">
+              <FlaskConical className="h-4 w-4 shrink-0 text-[#72E4F1]" />
+              <span id="public-case-scope-heading" className="font-medium text-[#F1F7FD]">
+                {cachedCase?.locationLabel || 'Wageningen, Netherlands'} ({cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°E, {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}°N · 1 ha · Potato, Spring Barley, Sugar Beet)
               </span>
             </div>
-            <p className="text-sm text-[#AEC4D3]">
-              Uses public NASA POWER historical daily weather ({cachedCase?.acquisitionMode || 'CACHE_ONLY'}, 2016–2020) specifically at Wageningen with unmeasured teaching soil and declared initial nutrient states across three paired weather/nitrogen scenarios. Historical research scenarios are NOT field-validated farming recommendations.
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-[#548299]/50 bg-[#07111F] px-3 py-1 text-[#72E4F1]">
+                NASA POWER Weather ({cachedCase?.period || '2016–2020'})
+              </span>
+              <span className="rounded-full border border-[#57D9A7]/40 bg-[#0D2B2A] px-3 py-1 text-[#57D9A7]">
+                Verified 5-Year Study Results
+              </span>
+            </div>
           </section>
 
           <ScientificResultView
@@ -579,9 +577,10 @@ export default function ResearchPage() {
             onScenarioChange={setPublicScenario}
             reportAvailable={publicDemo.researchExample.report_available}
             pdfHref={publicDemo.researchExample.pdfDownloadUrl}
-            pdfLabel="Download sample scientific PDF"
-            headingText="Verified Cached Five-Year Pareto Alternatives (Wageningen, NL), Interactive Charts & Sample PDF"
+            pdfLabel="Download Scientific Report (PDF)"
+            headingText="Five-Year Crop Rotation Alternatives, Charts & Report"
             headingId="public-comparison-heading"
+            hideRawAuditInline
           />
 
           <section
@@ -593,17 +592,17 @@ export default function ResearchPage() {
               <div className="flex items-center gap-3">
                 <MessageSquareText className="h-6 w-6 text-[#72E4F1]" />
                 <h2 id="public-chat-heading" className="text-xl font-semibold">
-                  Ask about this cached Wageningen example (Read-Only Offline Q&amp;A)
+                  Ask About This Research Study
                 </h2>
               </div>
-              <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 font-mono text-[11px] text-[#72E4F1]">
-                Scoped strictly to {cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'} ({cachedCase?.coordinatesLonLat?.[0] ?? 5.67}°E, {cachedCase?.coordinatesLonLat?.[1] ?? 51.97}°N)
+              <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-1 text-[11px] text-[#72E4F1]">
+                Wageningen 5-Year Evidence Reader
               </span>
             </div>
             <p className="text-sm text-[#AEC4D3]">
-              Answers use the genuine offline deterministic evidence engine bound strictly to the cached Wageningen five-year analysis (and retain evidence citations). Live Gemini is unverified; new simulations cannot be triggered publicly.
-              {selectedExplorerRegion && selectedExplorerRegion.siteKey !== 'nl-wageningen-growth'
-                ? ` Note: Q&A explains ONLY the cached Wageningen case below — not your Explorer selection (${selectedExplorerRegion.label}).`
+              Ask questions about water balance, nitrate leaching, crop dry matter, or why no single alternative is ranked best overall. Responses are generated directly from verified Wageningen five-year research records with cited numerical metrics (deterministic evidence engine, not live generative AI).
+              {selectedExplorerRegion && !explorerSelectedQualified
+                ? ` Note: Answers cover the verified Wageningen case above, not ${selectedExplorerRegion.label}.`
                 : ''}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -613,7 +612,6 @@ export default function ResearchPage() {
                 'Compare both alternatives',
                 'Explain nitrogen',
                 'What evidence is missing?',
-                'Does this apply to my selected location?',
               ].map((q) => (
                 <button
                   key={q}
@@ -632,7 +630,7 @@ export default function ResearchPage() {
             </div>
             <form className="flex flex-col gap-3 sm:flex-row" onSubmit={askPublic}>
               <label className="sr-only" htmlFor="public-demo-question">
-                Question about cached Wageningen analysis
+                Question about Wageningen research study
               </label>
               <input
                 id="public-demo-question"
@@ -640,7 +638,7 @@ export default function ResearchPage() {
                 value={publicQuestion}
                 onChange={(e) => setPublicQuestion(e.target.value)}
                 maxLength={500}
-                placeholder="Ask about Wageningen water, nitrogen, crop DM, or missing evidence..."
+                placeholder="Ask about water balance, nitrogen leaching, crop yields, or study evidence..."
                 required
               />
               <button
@@ -649,11 +647,11 @@ export default function ResearchPage() {
                 className={primary}
                 disabled={publicChatSending || !publicQuestion.trim()}
               >
-                {publicChatSending ? 'Reading evidence…' : 'Ask'}
+                {publicChatSending ? 'Searching evidence…' : 'Ask'}
               </button>
             </form>
             {publicChatError && (
-              <div role="alert" className="rounded-xl border border-[#FF9299]/50 bg-[#FF9299]/10 p-3 text-xs text-[#FF9299]">
+              <div role="alert" className="rounded-xl border border-[#548299]/60 bg-[#07111F] p-3 text-xs text-[#E4CFA3]">
                 {publicChatError}
               </div>
             )}
@@ -667,12 +665,12 @@ export default function ResearchPage() {
                   <p className="whitespace-pre-wrap text-sm text-[#AEC4D3]">
                     {item.reply.answer || 'No textual response returned.'}
                   </p>
-                  <p className="font-mono text-[11px] text-[#72E4F1]">
-                    {item.reply.mode} · Scenario {item.reply.scenario} · Cached case: {item.reply.cachedCaseReference}
+                  <p className="text-[11px] text-[#72E4F1]">
+                    Scenario: {formatScenarioLabel(item.reply.scenario)} · Source: Wageningen 5-Year Research Record
                   </p>
                   {item.reply.claims?.length ? (
                     <JsonDetails
-                      title={`${item.reply.claims.length} evidence citations`}
+                      title={`View ${item.reply.claims.length} cited evidence records`}
                       value={item.reply.claims}
                     />
                   ) : null}
@@ -683,41 +681,86 @@ export default function ResearchPage() {
         </>
       )}
 
-      {publicDemo?.blockedExample && (
-        <section className={`${card} space-y-4`} aria-labelledby="public-blocked-heading">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h2 id="public-blocked-heading" className="text-lg font-semibold text-[#FFCE7B]">
-              Fail-Closed Abstention Example · Missing Local Evidence ({publicDemo.blockedExample.farm_id} · {publicDemo.blockedExample.siteId || 'AU_WAGGA_REGION'})
-            </h2>
-            <span className="rounded-full border border-[#FFCE7B]/50 bg-[#2B2212] px-3 py-1 font-mono text-xs text-[#FFCE7B]">
-              {publicDemo.blockedExample.status}
-            </span>
-          </div>
-          <p className="text-sm text-[#AEC4D3]">
-            {publicDemo.blockedExample.summary || 'Satellite climate context alone never qualifies a farm decision when local soil hydraulics, calibrated crop coefficients, or shared water supply bounds are absent.'}
-          </p>
-          {publicDemo.blockedExample.missing_requirements.length > 0 && (
-            <JsonDetails
-              title={`${publicDemo.blockedExample.missing_requirements.length} documented missing evidence requirements`}
-              value={publicDemo.blockedExample.missing_requirements}
-            />
-          )}
-        </section>
-      )}
-
-      <section className={`${card} mx-auto max-w-xl space-y-4`} aria-labelledby="local-access-heading">
-        <div className="flex items-center justify-between gap-2">
-          <ShieldCheck className="h-8 w-8 text-[#72E4F1]" />
-          <span className="inline-flex items-center gap-1 rounded-full border border-[#29455A] px-2.5 py-1 font-mono text-[11px] text-[#90A8BA]">
-            <Lock className="h-3 w-3" /> Operator / Private Workspace
+      <details
+        data-testid="interactive-region-runner-details"
+        className={`${card} space-y-4`}
+      >
+        <summary className="flex cursor-pointer flex-wrap items-center justify-between gap-2 text-base font-semibold text-[#F1F7FD] select-none">
+          <span>Interactive Regional Qualification &amp; Live Re-Optimization</span>
+          <span className="rounded-full border border-[#548299]/60 bg-[#07111F] px-3 py-0.5 text-xs font-medium text-[#72E4F1]">
+            Expand to check coordinates or re-run (~90s)
           </span>
+        </summary>
+        <div className="pt-4">
+          <LocationAnalysisRunner selectedExplorerRegion={selectedExplorerRegion} />
         </div>
-        <h2 id="local-access-heading" className="text-xl font-semibold">Open the local demonstration</h2>
-        <p className="text-sm text-[#AEC4D3]">Judges do not need an access code for the public scientific demonstration above. Enter the private local access code only to unlock operator job submission, custom canonical requests, private farms, and interactive scenario what-if tools.</p>
-        <form onSubmit={unlock} className="space-y-4"><label className="block text-sm" htmlFor="access-code">Local access code</label>
-          <input id="access-code" className={input} type="password" autoComplete="off" value={code} onChange={e => setCode(e.target.value)} required maxLength={200} />
-          <button className={primary} disabled={busy || !checked}>Open workspace <ArrowRight className="h-4 w-4" /></button></form>
-      </section>
+      </details>
+
+      <details
+        data-testid="technical-audit-details"
+        className={`${card} space-y-4`}
+      >
+        <summary className="flex cursor-pointer flex-wrap items-center justify-between gap-2 text-base font-semibold text-[#F1F7FD] select-none">
+          <span>Technical Evidence Audit, Regional Example &amp; Operator Sign-In</span>
+          <span className="inline-flex items-center gap-1 rounded-full border border-[#29455A] px-2.5 py-0.5 text-xs font-normal text-[#90A8BA]">
+            <Lock className="h-3 w-3" /> Provenance &amp; Workspace
+          </span>
+        </summary>
+        <div className="mt-4 space-y-6">
+          <section className="rounded-xl border border-[#29455A] bg-[#07111F] p-4 space-y-2 text-xs text-[#AEC4D3]">
+            <h3 className="font-semibold text-[#72E4F1]">Verified Demonstration Provenance &amp; Audit Record</h3>
+            <p>
+              Primary study serves cached verified Wageningen results ({cachedCase?.siteId || 'NL_WAGENINGEN_GROWTH'} · {cachedCase?.farmId || 'NL_THREE_CROP_PRODUCING_RESEARCH'}). Selecting external coordinates never overwrites or fabricates Wageningen outputs.
+            </p>
+            <div className="grid gap-1.5 font-mono text-[11px] sm:grid-cols-2">
+              <div>Execution Mode: {publicDemo?.researchExample?.execution_kind || 'VERIFIED_CACHED_REPLAY'}</div>
+              <div>Acquisition: {cachedCase?.acquisitionMode || 'CACHE_ONLY'} · fresh_scientific_jobs = {cachedCase?.freshScientificJobs ?? 0}</div>
+              {cachedCase?.analysisId && <div className="break-all">Analysis ID: {cachedCase.analysisId}</div>}
+              {cachedCase?.runId && <div className="break-all">Run ID: {cachedCase.runId}</div>}
+              {cachedCase?.scientificResultSha256 && <div className="break-all sm:col-span-2">Output SHA-256: {cachedCase.scientificResultSha256}</div>}
+            </div>
+          </section>
+
+          {publicDemo?.blockedExample && (
+            <section className="rounded-xl border border-[#29455A] bg-[#07111F] p-4 space-y-3" aria-labelledby="public-blocked-heading">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h3 id="public-blocked-heading" className="text-sm font-semibold text-[#FFCE7B]">
+                  Regional Abstention Reference ({publicDemo.blockedExample.farm_id} · {publicDemo.blockedExample.siteId || 'AU_WAGGA_REGION'})
+                </h3>
+                <span className="rounded-full border border-[#FFCE7B]/50 bg-[#2B2212] px-2.5 py-0.5 font-mono text-[11px] text-[#FFCE7B]">
+                  {publicDemo.blockedExample.status}
+                </span>
+              </div>
+              <p className="text-xs text-[#AEC4D3]">
+                {publicDemo.blockedExample.summary || 'Satellite climate context alone never qualifies a farm decision when local soil hydraulics, calibrated crop coefficients, or shared water supply bounds are absent.'}
+              </p>
+              {publicDemo.blockedExample.missing_requirements.length > 0 && (
+                <JsonDetails
+                  title={`${publicDemo.blockedExample.missing_requirements.length} documented missing evidence requirements`}
+                  value={publicDemo.blockedExample.missing_requirements}
+                />
+              )}
+            </section>
+          )}
+
+          <section className="rounded-xl border border-[#29455A] bg-[#07111F] p-5 space-y-4" aria-labelledby="local-access-heading">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2.5">
+                <ShieldCheck className="h-6 w-6 text-[#72E4F1]" />
+                <h3 id="local-access-heading" className="text-lg font-semibold">Operator / Private Workspace Sign-In</h3>
+              </div>
+            </div>
+            <p className="text-xs text-[#AEC4D3]">
+              No access code is needed to explore the dashboard, charts, PDF report, or Q&amp;A above. Enter a local operator access code only for administrative job queue access.
+            </p>
+            <form onSubmit={unlock} className="max-w-md space-y-3">
+              <label className="block text-xs" htmlFor="access-code">Local access code</label>
+              <input id="access-code" className={input} type="password" autoComplete="off" value={code} onChange={e => setCode(e.target.value)} required maxLength={200} />
+              <button className={primary} disabled={busy || !checked}>Open workspace <ArrowRight className="h-4 w-4" /></button>
+            </form>
+          </section>
+        </div>
+      </details>
     </div> : <>
       <section className="flex flex-wrap gap-3 text-xs" aria-label="Service status">
         <span className="rounded-full border border-[#29455A] px-3 py-2 text-[#57D9A7]">Scientific service: {service?.status || 'checking'}</span>

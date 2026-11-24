@@ -33,6 +33,8 @@ export interface EoOverlaySpec {
   disclosure: string;
 }
 
+import { withBasePath } from '@/lib/base-path';
+
 export const OPENFREEMAP_TILEJSON_URL =
   process.env.NEXT_PUBLIC_MAPLIBRE_STYLE_URL?.trim() || 'https://tiles.openfreemap.org/planet';
 
@@ -46,7 +48,7 @@ export const EOX_S2_CLOUDLESS_2016_TILE_URL =
 export const NASA_GIBS_BLUE_MARBLE_TILE_URL =
   'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_NextGeneration/default/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpeg';
 
-export const NATURAL_EARTH_COUNTRIES_PATH = '/geodata/ne_110m_admin_0_countries.geojson';
+export const NATURAL_EARTH_COUNTRIES_PATH = withBasePath('/geodata/ne_110m_admin_0_countries.geojson');
 
 export const MAP_PROVIDER_CATALOG: readonly MapProviderDescriptor[] = [
   {

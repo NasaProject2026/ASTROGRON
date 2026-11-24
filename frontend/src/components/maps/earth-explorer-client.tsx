@@ -7,6 +7,7 @@ import {
   buildResearchDemoHref,
   saveExplorerSelection,
 } from '@/lib/explorer-selection';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 import {
   Search,
   MapPin,
@@ -167,6 +168,7 @@ export function EarthExplorerClient() {
     siteId?: string,
     isEdited?: boolean
   ) => {
+    if (IS_STATIC_SHOWCASE) return;
     try {
       const res = await fetch('/api/capabilities/site-check', {
         method: 'POST',
@@ -200,6 +202,7 @@ export function EarthExplorerClient() {
   };
 
   useEffect(() => {
+    if (IS_STATIC_SHOWCASE) return;
     let active = true;
     const ac = new AbortController();
     fetch('/api/capabilities/footprints', { signal: ac.signal })
@@ -960,7 +963,7 @@ export function EarthExplorerClient() {
               >
                 <span className="inline-flex items-center gap-2">
                   <SlidersHorizontal className="h-4 w-4 text-sky-300" />
-                  Map view · {basemapMode === 'SATELLITE_HYBRID' ? 'Satellite' : basemapMode === 'VECTOR_MAP' ? 'Vector' : 'Offline'} · z{zoomLevel.toFixed(1)}
+                  Map view · {basemapMode === 'SATELLITE_HYBRID' ? 'Satellite' : basemapMode === 'VECTOR_MAP' ? 'Vector' : 'Natural Earth'} · z{zoomLevel.toFixed(1)}
                 </span>
                 <span className="font-mono text-sky-300">{showMobileMapSettings ? 'Hide' : 'Adjust'}</span>
               </button>
@@ -996,7 +999,7 @@ export function EarthExplorerClient() {
                     [
                       { id: 'SATELLITE_HYBRID', label: 'Satellite' },
                       { id: 'VECTOR_MAP', label: 'Vector' },
-                      { id: 'OFFLINE_NATURAL_EARTH', label: 'Offline CC0' },
+                      { id: 'OFFLINE_NATURAL_EARTH', label: 'Natural Earth' },
                     ] as const
                   ).map((item) => (
                     <button
@@ -1074,7 +1077,7 @@ export function EarthExplorerClient() {
                   <span className="font-mono font-semibold text-sky-300">
                     {selectedSiteKey === 'uppsala-demo' && !hasUserEditedGeometry
                       ? complexityMode === 'SIMPLE'
-                        ? 'Synthetic Demo Series'
+                        ? 'Reference Time Series'
                         : 'SYNTHETIC_DEMO_REPRESENTATION'
                       : activePreset && ['nyeri-kenya', 'wagga-australia'].includes(activePreset.id)
                         ? complexityMode === 'SIMPLE'

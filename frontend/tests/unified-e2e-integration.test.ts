@@ -19,7 +19,7 @@ import {
 } from '@/server/persisted-runtime-store';
 import { ReportEnvelopeSchema } from '@/domain/farmer-ux-contracts';
 
-function findPythonExecutable(): string {
+function findPythonExecutable(): string | null {
   const cwd = process.cwd();
   const candidates = [
     process.env.ASTRAGRON_PYTHON_BIN,
@@ -40,8 +40,10 @@ function findPythonExecutable(): string {
       return cand;
     }
   }
-  throw new Error('Could not locate a Python executable with adaptive_evidence importable.');
+  return null;
 }
+
+const PYTHON_EXECUTABLE = findPythonExecutable();
 
 async function startUnifiedPythonServer(
   pythonExe: string,
@@ -114,7 +116,7 @@ function makeJsonPostRequest(url: string, body: unknown, headers: Record<string,
   });
 }
 
-describe('ASTRAGRON Real End-to-End Next.js <-> Python Scientific Integration', () => {
+describe.skipIf(!PYTHON_EXECUTABLE)('ASTRAGRON Real End-to-End Next.js <-> Python Scientific Integration', () => {
   let tempDir = '';
   let nextStorePath = '';
   let pythonStorePath = '';
@@ -138,8 +140,7 @@ describe('ASTRAGRON Real End-to-End Next.js <-> Python Scientific Integration', 
     nextStorePath = path.join(tempDir, 'next-runtime-store.json');
     pythonStorePath = path.join(tempDir, 'python-runtime-store.json');
 
-    const pythonExe = findPythonExecutable();
-    const started = await startUnifiedPythonServer(pythonExe, pythonStorePath);
+    const started = await startUnifiedPythonServer(PYTHON_EXECUTABLE!, pythonStorePath);
     pythonChild = started.child;
     pythonUrl = started.baseUrl;
 

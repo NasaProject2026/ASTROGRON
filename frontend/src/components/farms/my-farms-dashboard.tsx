@@ -28,6 +28,7 @@ import {
 } from '@/adapters/storage-adapters';
 import type { UserFarmDraft } from '@/domain/contracts';
 import { FarmPolygonPreview } from './farm-polygon-preview';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 
 export function MyFarmsDashboard() {
   const router = useRouter();
@@ -140,7 +141,11 @@ export function MyFarmsDashboard() {
         text: `Created copy "${copy.name}".`,
       });
       if (openAfter) {
-        router.push(`/farm/${copy.id}`);
+        router.push(
+          IS_STATIC_SHOWCASE
+            ? `/farm/new?from=${encodeURIComponent(copy.id)}`
+            : `/farm/${copy.id}`
+        );
       }
     }
   };
@@ -493,7 +498,11 @@ export function MyFarmsDashboard() {
                     ) : (
                       <div className="flex items-center justify-between gap-2 pt-2 border-t border-[#29455A]/70">
                         <Link
-                          href={`/farm/${farm.id}`}
+                          href={
+                            IS_STATIC_SHOWCASE
+                              ? `/farm/new?from=${encodeURIComponent(farm.id)}`
+                              : `/farm/${farm.id}`
+                          }
                           className="inline-flex min-h-[42px] flex-1 items-center justify-center gap-2 rounded-xl bg-[#72E4F1] px-4 py-2 text-xs font-semibold text-[#061320] transition hover:bg-[#93EDF7]"
                         >
                           <span>Open farm</span>

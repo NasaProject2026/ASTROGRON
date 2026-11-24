@@ -22,11 +22,12 @@ import { SYNTHETIC_DECISION_DATASET } from '@/fixtures/m14-decision-fixture';
 import { useAstragron } from '@/hooks/use-astragron-store';
 import { isBuiltInResearchSite } from '@/adapters/storage-adapters';
 import { useMessages } from '@/lib/i18n';
+import { withBasePath } from '@/lib/base-path';
 
 const PREVIEW_SITES = [
-  { id: 'uppsala-demo' as const, label: 'Uppsala, Sweden (59.86°N · Synthetic Demo)' },
-  { id: 'nyeri-kenya' as const, label: 'Nyeri, Kenya (-0.42°S · Coverage Only)' },
-  { id: 'wagga-australia' as const, label: 'Wagga Wagga, Australia (-35.11°S · Coverage Only)' },
+  { id: 'uppsala-demo' as const, label: 'Uppsala, Sweden (59.86°N · Research Preview)' },
+  { id: 'nyeri-kenya' as const, label: 'Nyeri, Kenya (-0.42°S · Regional Coverage)' },
+  { id: 'wagga-australia' as const, label: 'Wagga Wagga, Australia (-35.11°S · Regional Coverage)' },
 ];
 
 export function CinematicLanding() {
@@ -75,19 +76,26 @@ export function CinematicLanding() {
           data-motion-active={shouldAnimateDrift ? 'true' : 'false'}
           className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
         >
-          <picture className="block h-full w-full">
-            <source media="(min-width: 768px)" srcSet="/assets/orbital-earth-horizon-wide.jpg" />
-            <img
-              src="/assets/orbital-earth-horizon-mobile.jpg"
-              alt="Curved Earth horizon illuminated by sunlight along a blue atmospheric limb with an unbranded gold-foil Earth-observation spacecraft in Low Earth Orbit"
-              loading="eager"
-              decoding="sync"
-              fetchPriority="high"
-              className={`h-full w-full object-cover object-bottom md:object-[72%_center] transition-transform duration-1000 ${
+          <div className="relative h-full w-full overflow-hidden bg-[#02050B]">
+            <div
+              className={`absolute -bottom-[55%] -right-[14%] sm:-bottom-[48%] sm:-right-[8%] aspect-square w-[135vw] sm:w-[92vw] lg:w-[68vw] max-w-[1120px] rounded-full overflow-hidden shadow-[0_0_120px_rgba(114,228,241,0.34),inset_24px_24px_90px_rgba(145,184,255,0.45)] border border-[#72E4F1]/35 ${
                 shouldAnimateDrift ? 'animate-orbital-drift' : ''
               }`}
-            />
-          </picture>
+            >
+              <img
+                src={withBasePath('/orbit-ab-assets/earth_day_4096.jpg')}
+                alt="Curved sunlit Earth horizon rendered from NASA Blue Marble Next Generation imagery in Low Earth Orbit"
+                loading="eager"
+                decoding="sync"
+                fetchPriority="high"
+                className="h-full w-full object-cover object-[28%_32%] scale-125 brightness-95 contrast-110"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,transparent_42%,rgba(2,5,11,0.88)_86%)]"
+              />
+            </div>
+          </div>
 
           {/* The original editorial photograph is the public-facing default.
               The experimental independent orbital scene remains accessible at
@@ -217,7 +225,7 @@ export function CinematicLanding() {
 
         {/* Discreet Atmospheric Art Attribution on Lower Right (Zero Obstructive HUD Overlay) */}
         <div className="pointer-events-none absolute bottom-4 right-5 hidden md:block z-10 max-w-md text-right font-mono text-[10px] tracking-wide text-[#9FB5C7]/85">
-          Illustrative Low Earth Orbit scene · Proprietary editorial visual, not a NASA photo or live telemetry
+          Earth horizon composition · NASA Blue Marble Next Generation (Public Domain)
         </div>
       </section>
 
@@ -313,19 +321,41 @@ export function CinematicLanding() {
           </div>
 
           <div className="lg:col-span-6">
-            <figure className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#081523]">
-              <img
-                src="/assets/agricultural-watershed-swath.jpg"
-                alt="High-altitude Earth horizon overlooking river meanders and irrigated circular agricultural plots"
-                className="aspect-[16/10] w-full object-cover"
-              />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#040B15]/90 to-transparent"
-              />
-              <figcaption className="relative z-10 px-5 pb-4 -mt-8 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-[#AEC4D3]">
+            <figure className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#061220]">
+              <svg
+                viewBox="0 0 640 400"
+                role="img"
+                aria-label="Schematic showing coarse ~50 km NASA POWER grid, ~11 km GPM IMERG cell, ~9 km SMAP cell, and localized 1 ha agricultural parcels"
+                className="aspect-[16/10] w-full bg-[radial-gradient(circle_at_70%_25%,rgba(114,228,241,0.12),transparent_60%),linear-gradient(180deg,#081523_0%,#040B15_100%)]"
+              >
+                <defs>
+                  <pattern id="eo-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                    <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(114,228,241,0.08)" strokeWidth="1" />
+                  </pattern>
+                </defs>
+                <rect width="640" height="400" fill="url(#eo-grid)" />
+                {/* Orbital swath ribbon */}
+                <path
+                  d="M -30 340 C 140 245, 290 155, 670 40 L 670 150 C 310 250, 175 320, -30 400 Z"
+                  fill="rgba(114,228,241,0.09)"
+                />
+                {/* ~50 km NASA POWER coarse grid */}
+                <rect x="70" y="42" width="490" height="296" rx="14" fill="rgba(145,184,255,0.06)" stroke="#91B8FF" strokeWidth="1.5" strokeDasharray="7 5" />
+                <text x="86" y="68" fill="#91B8FF" fontSize="13" fontFamily="monospace">NASA POWER Agro-Climatology (~50 km x 50 km grid)</text>
+                {/* ~11 km GPM IMERG cell */}
+                <rect x="195" y="96" width="285" height="205" rx="12" fill="rgba(87,217,167,0.06)" stroke="#57D9A7" strokeWidth="1.5" strokeDasharray="5 4" />
+                <text x="210" y="122" fill="#57D9A7" fontSize="12" fontFamily="monospace">GPM IMERG Precipitation (~11 km cell)</text>
+                {/* ~9 km SMAP L4 cell */}
+                <rect x="245" y="140" width="180" height="128" rx="10" fill="rgba(114,228,241,0.08)" stroke="#72E4F1" strokeWidth="1.5" />
+                <text x="256" y="164" fill="#72E4F1" fontSize="11.5" fontFamily="monospace">SMAP L4 Soil (~9 km)</text>
+                {/* Local Field Parcels (1 ha scale inside cell) */}
+                <polygon points="300,190 348,184 358,224 306,232" fill="rgba(220,192,138,0.34)" stroke="#FFCE7B" strokeWidth="2" />
+                <polygon points="354,186 398,195 392,235 362,226" fill="rgba(87,217,167,0.28)" stroke="#57D9A7" strokeWidth="1.5" />
+                <text x="292" y="253" fill="#FFCE7B" fontSize="11.5" fontFamily="monospace" fontWeight="bold">Local Field Parcel (1 ha · Soil &amp; Crop Measured)</text>
+              </svg>
+              <figcaption className="px-5 py-3.5 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-[#AEC4D3]">
                 <span>Regional EO Grid (~9–50 km) vs. Field Reality</span>
-                <span className="text-[#8EA6B8]">Illustrative Swath · Not Field Surveyed</span>
+                <span className="text-[#8EA6B8]">Resolution Schematic · Explicit Scale Boundary</span>
               </figcaption>
             </figure>
           </div>

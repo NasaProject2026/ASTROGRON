@@ -520,63 +520,56 @@ export function DemoDisclosureStrip({ connectedResearch = false }: { connectedRe
   const { datasetMode } = useAstragron();
   const [expandedMobile, setExpandedMobile] = React.useState(false);
 
-  const displayMode = connectedResearch ? 'RESEARCH' : datasetMode;
+  const displayMode = connectedResearch ? 'Research Workspace' : datasetMode === 'RECORDED_M14_RESEARCH' ? 'Recorded M14' : datasetMode === 'REAL_SCIENTIFIC_BACKEND' ? 'Live Engine' : 'Research Preview';
   const watermarkText = connectedResearch
-    ? 'CONDITIONAL RESEARCH — HISTORICAL WEATHER & TEACHING SOIL'
+    ? 'Wageningen 5-Year Study · NASA POWER Weather (2016–2020)'
     : datasetMode === 'RECORDED_M14_RESEARCH'
-      ? m.recordedUi.recordedWatermark
+      ? 'Recorded M14 Research Archive'
       : datasetMode === 'REAL_SCIENTIFIC_BACKEND'
-        ? m.recordedUi.liveWatermark
-        : m.banners.demoWatermark;
+        ? 'Connected Scientific Engine'
+        : 'ASTRAGRON Earth & Agricultural Research';
 
   const qualifierText = connectedResearch
-    ? 'Execution and provenance labeled per analysis · Not field validated'
-    : datasetMode === 'RECORDED_M14_RESEARCH'
-      ? m.recordedUi.recordedQualifier
-      : datasetMode === 'REAL_SCIENTIFIC_BACKEND'
-        ? m.recordedUi.liveQualifier
-        : m.banners.researchQualifier;
+    ? 'Five-year crop-rotation alternatives and provenance documented per study · Not field-validated advice'
+    : 'Using NASA Earth-observation concepts · Exploratory research workspace';
 
   const watermarkPillClass =
-    datasetMode === 'RECORDED_M14_RESEARCH'
-      ? 'border-emerald-400/45 bg-[#0D2322] text-emerald-300'
+    datasetMode === 'RECORDED_M14_RESEARCH' || connectedResearch
+      ? 'border-emerald-400/35 bg-[#0D2322]/90 text-emerald-200'
       : datasetMode === 'REAL_SCIENTIFIC_BACKEND'
-        ? 'border-[#FF9299]/45 bg-[#2C141B] text-[#FF9299]'
-        : 'border-[#DCC08A]/45 bg-[#231D12] text-[#E6CD9A]';
+        ? 'border-sky-400/35 bg-[#0C1D2E]/90 text-sky-200'
+        : 'border-[#548299]/40 bg-[#0A192A]/90 text-[#9FDCE8]';
 
   return (
-    <div className="w-full border-b border-white/[0.07] bg-[#040912]/95 px-3 sm:px-6 py-1.5 text-[11px] text-[#AEC4D3] no-print">
+    <div className="w-full border-b border-white/[0.06] bg-[#040912]/90 px-3 sm:px-6 py-1 text-[11px] text-[#AEC4D3] no-print">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <div className="flex flex-wrap items-center gap-2 min-w-0">
           <span
             data-testid="disclosure-watermark-badge"
-            className={`inline-flex items-center rounded border px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wide ${watermarkPillClass}`}
+            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-medium tracking-wide ${watermarkPillClass}`}
           >
             {watermarkText}
           </span>
-          <span className="hidden sm:inline-flex items-center rounded bg-[#0C1D2E] border border-[#548299]/40 px-2 py-0.5 font-mono text-[10px] text-[#72E4F1]">
-            MODE: {displayMode}
-          </span>
-          <span className="hidden xl:inline text-[#7D98AC]">{qualifierText}</span>
+          <span className="hidden xl:inline text-[#8CA6B8]">{qualifierText}</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="hidden lg:inline font-mono text-[10px] text-[#8EA6B8]">
+          <span className="hidden lg:inline text-[10px] text-[#8EA6B8]">
             {m.banners.nasaDisclaimer}
           </span>
           <button
             type="button"
             onClick={() => setExpandedMobile((v) => !v)}
             aria-expanded={expandedMobile}
-            className="lg:hidden font-mono text-[10px] text-[#91B8FF] underline underline-offset-2 cursor-pointer"
+            className="lg:hidden text-[10px] text-[#91B8FF] underline underline-offset-2 cursor-pointer"
           >
-            {expandedMobile ? 'Hide details' : `Mode: ${displayMode} · Details`}
+            {expandedMobile ? 'Hide details' : `${displayMode} · Info`}
           </button>
         </div>
       </div>
 
       {expandedMobile && (
-        <div className="mx-auto mt-1.5 max-w-[1440px] border-t border-white/[0.06] pt-1.5 font-mono text-[10px] text-[#8EA6B8] lg:hidden space-y-0.5">
+        <div className="mx-auto mt-1.5 max-w-[1440px] border-t border-white/[0.06] pt-1.5 text-[10px] text-[#8EA6B8] lg:hidden space-y-0.5">
           <div>{qualifierText}</div>
           <div>{m.banners.nasaDisclaimer}</div>
         </div>

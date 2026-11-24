@@ -47,6 +47,25 @@ export function requireSameOrigin(request: Request) {
     if (request.headers.get('sec-fetch-site') === 'cross-site') throw new CoreProblem(403, 'SAME_ORIGIN_REQUIRED');
     return;
   }
+  // Allow deployed Vercel / TLS hosts when Origin matches the request's own HTTPS Host
+  const vercelHost = process.env.VERCEL_URL?.trim();
+  const proto = request.headers.get('x-forwarded-proto');
+  if (origin && host && proto === 'https') {
+    try {
+      const source = new URL(origin);
+      if (
+        source.protocol === 'https:' &&
+        source.host === host &&
+        source.origin === origin &&
+        !source.username &&
+        !source.password &&
+        (host.endsWith('.vercel.app') || host === vercelHost || origin === publicOrigin)
+      ) {
+        if (request.headers.get('sec-fetch-site') === 'cross-site') throw new CoreProblem(403, 'SAME_ORIGIN_REQUIRED');
+        return;
+      }
+    } catch { /* fall through to loopback check */ }
+  }
   // Next may normalize request.url to localhost internally. Bind the browser Origin
   // to the actual HTTP Host, and accept loopback hostnames only in this local release.
   if (!/^(127\.0\.0\.1|localhost|\[::1\]):[0-9]{2,5}$/.test(host)) throw new CoreProblem(403, 'SAME_ORIGIN_REQUIRED');
@@ -56,6 +75,15 @@ export function requireSameOrigin(request: Request) {
   if (request.headers.get('sec-fetch-site') === 'cross-site') throw new CoreProblem(403, 'SAME_ORIGIN_REQUIRED');
 }
 export function configuredPublicOrigin(): string | null {
+  const envOrigin = process.env.ASTRAGRON_PUBLIC_ORIGIN?.trim();
+  if (envOrigin) {
+    try {
+      const url = new URL(envOrigin);
+      if (url.protocol === 'https:' && !url.username && !url.password && !url.search && !url.hash && url.pathname === '/' && envOrigin === url.origin) {
+        return envOrigin;
+      }
+    } catch { /* ignore malformed env origin */ }
+  }
   const file = process.env.ASTRAGRON_PUBLIC_ORIGIN_FILE;
   if (!file) return null;
   try {

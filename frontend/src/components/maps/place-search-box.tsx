@@ -318,7 +318,7 @@ export function PlaceSearchBox({
                     {cand.source === 'REMOTE_GEOCODER'
                       ? `${cand.region} · ${cand.attribution || 'Worldwide search'}`
                       : cand.source === 'LOCAL_GAZETTEER'
-                        ? `${cand.region} · Limited offline examples (16 sites)`
+                        ? `${cand.region} · Curated Reference Region`
                         : cand.region}
                   </span>
                 </span>
@@ -332,7 +332,7 @@ export function PlaceSearchBox({
           {!searchingRemote && combinedCandidates.length === 0 && (
             <div className="px-3 py-2.5 text-xs text-[#AEC4D3]">
               {remoteState?.status === 'GEOCODER_NOT_CONFIGURED'
-                ? 'Worldwide place search is offline (using limited offline examples · 16 sites). Enter coordinates like "49.14, 9.21" or tap the globe.'
+                ? 'Showing curated research localities (16 regions). Enter coordinates like "51.97, 5.67" or tap the globe.'
                 : remoteState?.notice || 'No matching towns or regions found. Try pasting lat, lon coordinates or click the map.'}
             </div>
           )}
@@ -343,9 +343,9 @@ export function PlaceSearchBox({
             combinedCandidates.length > 0 && (
               <div className="border-t border-[#1D3549] px-3 py-1.5 text-[10px] text-[#90A8BA]">
                 {remoteState.status === 'GEOCODER_NOT_CONFIGURED'
-                  ? 'Showing limited offline examples (16 sites) — worldwide geocoder API unset.'
+                  ? '16 curated research localities ready · or enter any lat, lon coordinates.'
                   : remoteState.attribution
-                    ? `Source: ${remoteState.attribution} (no commercial SLA key configured on host).`
+                    ? `Source: ${remoteState.attribution}.`
                     : remoteState.notice}
               </div>
             )}

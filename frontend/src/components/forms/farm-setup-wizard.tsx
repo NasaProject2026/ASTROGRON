@@ -25,6 +25,7 @@ import { SmartFieldEditor } from '@/components/forms/smart-field-editor';
 import type { CapabilityToastNotice } from '@/components/maps/maplibre-globe-canvas';
 import { useAstragron, formatAreaWithUnit } from '@/hooks/use-astragron-store';
 import { useMessages } from '@/lib/i18n';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 import type {
   EvidencePurpose,
   FieldGeometrySource,
@@ -248,7 +249,7 @@ function FarmSetupWizardInner({ initialDraft }: { initialDraft: UserFarmDraft })
   const activeFieldGeometry = activeField?.geometry ?? null;
 
   React.useEffect(() => {
-    if (!capabilityOverlayEnabled || capabilityGeoJson) return;
+    if (IS_STATIC_SHOWCASE || !capabilityOverlayEnabled || capabilityGeoJson) return;
     let active = true;
     const ac = new AbortController();
     void fetch('/api/capabilities/footprints', { signal: ac.signal })
@@ -266,7 +267,7 @@ function FarmSetupWizardInner({ initialDraft }: { initialDraft: UserFarmDraft })
   }, [capabilityOverlayEnabled, capabilityGeoJson]);
 
   React.useEffect(() => {
-    if (!locationSelected) {
+    if (IS_STATIC_SHOWCASE || !locationSelected) {
       setCapabilityCheck(null);
       setCapabilityToast(null);
       return;
@@ -626,6 +627,11 @@ function FarmSetupWizardInner({ initialDraft }: { initialDraft: UserFarmDraft })
     }
     setActivePreference(saved.selectedPreference);
     const targetId = saved.id;
+    const isStaticPreset = ['uppsala-demo', 'nyeri-kenya', 'wagga-australia', 'uppsala-m14'].includes(targetId);
+    if (IS_STATIC_SHOWCASE && !isStaticPreset) {
+      router.push('/farms');
+      return;
+    }
     if (destination === 'ANALYSIS') {
       router.push(`/farm/${targetId}/analysis?autostart=1`);
     } else if (destination === 'RESULTS') {

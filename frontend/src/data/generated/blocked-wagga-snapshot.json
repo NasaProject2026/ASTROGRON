@@ -1,0 +1,48 @@
+{
+  "analysisId": "25e32822f99c465b899fdbe9678c8911",
+  "siteId": "AU_WAGGA_REGION",
+  "coordinatesLonLat": [
+    147.35,
+    -35.05
+  ],
+  "status": "EVIDENCE_BLOCKED",
+  "farm_id": "engineering-research-example",
+  "summary": "The requested comparison is incomplete or lacks required evidence. Review the listed blockers; no field recommendation is issued.",
+  "missing_requirements": [
+    {
+      "action": "Supply explicit dated/source/unit/uncertainty-bound research assumption or independently qualified evidence; no implicit geographic transfer",
+      "path": "crop_profiles.research:AU:earlier_sowing",
+      "reason": "NO_TARGET_CROP_COEFFICIENTS"
+    },
+    {
+      "action": "Supply explicit dated/source/unit/uncertainty-bound research assumption or independently qualified evidence; no implicit geographic transfer",
+      "path": "crop_profiles.research:AU:later_sowing",
+      "reason": "NO_TARGET_CROP_COEFFICIENTS"
+    },
+    {
+      "action": "Supply explicit dated/source/unit/uncertainty-bound research assumption or independently qualified evidence; no implicit geographic transfer",
+      "path": "fields.F1.soil",
+      "reason": "ROOT_ZONE_INITIAL_STATE_AND_HYDRAULICS_REQUIRED"
+    },
+    {
+      "action": "Supply explicit dated/source/unit/uncertainty-bound research assumption or independently qualified evidence; no implicit geographic transfer",
+      "path": "fields.F2.soil",
+      "reason": "ROOT_ZONE_INITIAL_STATE_AND_HYDRAULICS_REQUIRED"
+    },
+    {
+      "action": "Supply explicit dated/source/unit/uncertainty-bound research assumption or independently qualified evidence; no implicit geographic transfer",
+      "path": "supply",
+      "reason": "DAILY_AND_ANNUAL_SHARED_SUPPLY_REQUIRED"
+    }
+  ],
+  "warnings": [
+    "NO_FIELD_VALIDATION",
+    "HISTORICAL_ANALOG_NOT_FORECAST",
+    "FINITE_SEARCH_NOT_GLOBAL_OPTIMUM",
+    "WATER_RIGHTS_NOT_VERIFIED",
+    "YIELD_RESPONSE_NOT_QUALIFIED",
+    "REGULATORY_PESTICIDE_NOT_VERIFIED",
+    "NUTRIENT_INVENTORY_IS_NOT_PLANT_AVAILABILITY",
+    "ECONOMICS_UNAVAILABLE"
+  ]
+}

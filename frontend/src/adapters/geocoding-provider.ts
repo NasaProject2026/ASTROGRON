@@ -1,5 +1,6 @@
 import type { LocalGazetteerEntry } from '@/fixtures/sites-and-coverage';
 import { searchLocationsViaAdapter } from '@/adapters/repositories';
+import { IS_STATIC_SHOWCASE } from '@/lib/base-path';
 
 export interface RemoteGeocodePlace {
   id: string;
@@ -70,6 +71,17 @@ export class ServerBackedGeocodingProvider implements GeocodingProvider {
         results: [],
         notice: 'Enter at least 2 characters to search remote locations.',
         providerHost: null,
+      };
+    }
+
+    if (IS_STATIC_SHOWCASE) {
+      return {
+        ok: true,
+        status: 'GEOCODER_NOT_CONFIGURED',
+        results: [],
+        notice: 'Showing 16 curated reference regions · or enter coordinates like "51.97, 5.67".',
+        providerHost: null,
+        providerTier: 'UNCONFIGURED',
       };
     }
 
