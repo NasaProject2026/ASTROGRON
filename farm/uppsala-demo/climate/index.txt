@@ -1,0 +1,45 @@
+1:"$Sreact.fragment"
+2:"/ASTROGRON/_next/static/chunks/1aba2klsinkop.js"
+3:"/ASTROGRON/_next/static/chunks/2wos5h2dwcsgw.js"
+4:"/ASTROGRON/_next/static/chunks/24v9eibduewhz.js"
+5:"/ASTROGRON/_next/static/chunks/224vomj3jiot3.js"
+6:"AstragronProvider"
+7:I[46099,["$2","$3","$4","$5"],"$6"]
+8:"WebVitalsReporter"
+9:I[18108,["$2","$3","$4","$5"],"$8"]
+a:"TopNavigationBar"
+b:I[90427,["$2","$3","$4","$5"],"$a"]
+c:I[39756,["$2","$3","$4","$5"],"default"]
+d:I[37457,["$2","$3","$4","$5"],"default"]
+e:I[90427,["$2","$3","$4","$5"],"SiteFooter"]
+15:I[47257,["$2","$3","$4","$5"],"ClientPageRoot"]
+16:"/ASTROGRON/_next/static/chunks/0t8s9xzdkldlq.js"
+17:I[94779,["$2","$3","$4","$5","$16"],"default"]
+1a:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+1d:"ViewportBoundary"
+1e:I[97367,["$2","$3","$4","$5"],"$1d"]
+20:"MetadataBoundary"
+21:I[97367,["$2","$3","$4","$5"],"$20"]
+23:I[68027,["$2","$3","$4","$5"],"default",1]
+:HL["/ASTROGRON/_next/static/chunks/169kuf5rku8sv.css","style"]
+:HL["/ASTROGRON/_next/static/chunks/2j2nxeu-c8o9w.css","style"]
+:HL["/ASTROGRON/_next/static/media/237858b39a32779d-s.p.2cyn07wtgehh0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ASTROGRON/_next/static/media/9a321a2c78eff0b5-s.p.1bkzbscqrt8rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ASTROGRON/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+10:X
+14:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","$L15",null,{"Component":"$17","serverProvidedParams":{"searchParams":{},"params":{"id":"uppsala-demo"},"promises":["$@18","$@19"]}}],[["$","script","script-0",{"src":"/ASTROGRON/_next/static/chunks/0t8s9xzdkldlq.js","async":true,"nonce":"$undefined"}]],["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]]}],"p":false,"v":null}}]]
+13:[["children",{"s":"climate","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$Lc",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$10"},"c":"$Q14"}]]
+11:[["children",{"s":{"n":"id","t":"d","k":"uppsala-demo","s":["new"]},"h":512,"d":{"r":["$","$1","c",{"children":[null,"$L12"]}],"p":false,"v":null},"c":"$Q13"}]]
+f:[["children",{"s":"farm","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$Lc",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$10"},"c":"$Q11"}]]
+0:{"P":null,"c":["","farm","uppsala-demo","climate",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/ASTROGRON/_next/static/chunks/169kuf5rku8sv.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/ASTROGRON/_next/static/chunks/2j2nxeu-c8o9w.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/ASTROGRON/_next/static/chunks/1aba2klsinkop.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/ASTROGRON/_next/static/chunks/2wos5h2dwcsgw.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/ASTROGRON/_next/static/chunks/24v9eibduewhz.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/ASTROGRON/_next/static/chunks/224vomj3jiot3.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","dir":"ltr","className":"U3WLya_variable AL5Iea_variable un90DG_variable","children":["$","body",null,{"className":"flex min-h-screen flex-col bg-[#07111F] text-[#F1F7FD] antialiased","children":["$","$L7",null,{"children":[["$","$L9",null,{}],["$","$Lb",null,{}],["$","div",null,{"className":"flex-1","children":["$","$Lc",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$Le",null,{}]]}]}]}]]}],"p":false,"v":null},"c":"$Qf"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1e",null,{"children":"$L1f"}],["$","$L21",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1b",null,{"name":"Next.Metadata","children":"$L22"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":false,"v":null}},"m":"$undefined","G":["$23",[["$","link","0",{"rel":"stylesheet","href":"/ASTROGRON/_next/static/chunks/169kuf5rku8sv.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/ASTROGRON/_next/static/chunks/2j2nxeu-c8o9w.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"Qh153lSTsTi9zmlz-YEYS"}
+24:"FarmWorkspaceShell"
+25:I[90427,["$2","$3","$4","$5"],"$24"]
+10:C
+18:{}
+19:"$14:0:1:d:r:props:children:0:props:serverProvidedParams:params"
+12:["$","$L25",null,{"farmId":"uppsala-demo","children":["$","$Lc",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}]
+1f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+26:I[27201,["$2","$3","$4","$5"],"IconMark"]
+1c:null
+22:[["$","title","0",{"children":"ASTRAGRON — Orbital Intelligence for Agricultural Research & Decision Support"}],["$","meta","1",{"name":"description","content":"Explore Earth observations, evaluate multi-year agricultural research scenarios, and inspect the evidence and uncertainty behind every result."}],["$","link","2",{"rel":"icon","href":"/ASTROGRON/icon.svg?icon.1abmfnzfrbiql.svg","sizes":"any","type":"image/svg+xml"}],["$","$L26","3",{}]]

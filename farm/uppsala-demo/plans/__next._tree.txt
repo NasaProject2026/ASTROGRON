@@ -1,0 +1,10 @@
+:HL["/ASTROGRON/_next/static/chunks/169kuf5rku8sv.css","style"]
+:HL["/ASTROGRON/_next/static/chunks/2j2nxeu-c8o9w.css","style"]
+:HL["/ASTROGRON/_next/static/media/237858b39a32779d-s.p.2cyn07wtgehh0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ASTROGRON/_next/static/media/9a321a2c78eff0b5-s.p.1bkzbscqrt8rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ASTROGRON/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+4:[["children",{"s":"__PAGE__","h":160}]]
+3:[["children",{"s":"plans","h":96,"c":"$Q4"}]]
+2:[["children",{"s":{"n":"id","t":"d","k":"uppsala-demo","s":["new"]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"farm","h":96,"c":"$Q2"}]]
+0:{"b":"Qh153lSTsTi9zmlz-YEYS","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
